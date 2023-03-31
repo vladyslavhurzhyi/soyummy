@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 export const App = () => {
   return (
     <div
@@ -10,6 +11,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
+      <Loader />
       React homework template
     </div>
   );
