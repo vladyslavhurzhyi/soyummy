@@ -1,15 +1,21 @@
-@import-normalize; /* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-title {
+  @apply font-main font-semibold text-mainText text-customLg hover:text-accentMain;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* just for add recipe section*/
+/* .title {
+  @apply font-main font-medium text-secondaryText text-customBase;
+} */
+
+.main-btn {
+  @apply transition duration-300 py-5 px-52px ml-2  rounded-tr-3xl rounded-br-lg rounded-bl-3xl rounded-tl-lg border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
+}
+.custom-btn {
+  @apply transition duration-300 py-6 px-14 ml-2  rounded-tr-full rounded-bl-full border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
 }
