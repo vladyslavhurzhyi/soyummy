@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 export const App = () => {
   return (
     <div className="flex justify-center mt-8">
@@ -6,6 +7,7 @@ export const App = () => {
       </h1>
       <button className="main-btn">Search</button>
       <button className="custom-btn">Search</button>
+      <Loader />
     </div>
   );
 };
