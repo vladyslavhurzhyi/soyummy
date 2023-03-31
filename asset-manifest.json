@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/soyummy/static/css/main.21da0c5c.css",
-    "main.js": "/soyummy/static/js/main.b31ef5f6.js",
+    "main.js": "/soyummy/static/js/main.10201821.js",
     "index.html": "/soyummy/index.html",
     "main.21da0c5c.css.map": "/soyummy/static/css/main.21da0c5c.css.map",
-    "main.b31ef5f6.js.map": "/soyummy/static/js/main.b31ef5f6.js.map"
+    "main.10201821.js.map": "/soyummy/static/js/main.10201821.js.map"
   },
   "entrypoints": [
     "static/css/main.21da0c5c.css",
-    "static/js/main.b31ef5f6.js"
+    "static/js/main.10201821.js"
   ]
 }
