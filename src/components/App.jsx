@@ -1,13 +1,13 @@
-import { Loader } from 'components/Loader/Loader';
+import { Route, Routes } from 'react-router-dom';
+import { SharedLayout } from './SharedLayout/SharedLayout';
+import { Home } from 'pages/Home/Home';
+
 export const App = () => {
   return (
-    <div className="flex justify-center mt-8">
-      <h1 className="section-title">
-        Categories Add recipe Favorites My recipes Search Shopping list
-      </h1>
-      <button className="main-btn">Search</button>
-      <button className="custom-btn">Search</button>
-      <Loader />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
