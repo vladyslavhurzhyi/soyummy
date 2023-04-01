@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.2f81f0fc.css",
-    "main.js": "/soyummy/static/js/main.2eb17e0a.js",
+    "main.css": "/soyummy/static/css/main.4a343088.css",
+    "main.js": "/soyummy/static/js/main.4ffb580a.js",
     "static/js/415.45aacfb3.chunk.js": "/soyummy/static/js/415.45aacfb3.chunk.js",
     "static/js/271.805376a3.chunk.js": "/soyummy/static/js/271.805376a3.chunk.js",
     "index.html": "/soyummy/index.html",
-    "main.2f81f0fc.css.map": "/soyummy/static/css/main.2f81f0fc.css.map",
-    "main.2eb17e0a.js.map": "/soyummy/static/js/main.2eb17e0a.js.map",
+    "main.4a343088.css.map": "/soyummy/static/css/main.4a343088.css.map",
+    "main.4ffb580a.js.map": "/soyummy/static/js/main.4ffb580a.js.map",
     "415.45aacfb3.chunk.js.map": "/soyummy/static/js/415.45aacfb3.chunk.js.map",
     "271.805376a3.chunk.js.map": "/soyummy/static/js/271.805376a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f81f0fc.css",
-    "static/js/main.2eb17e0a.js"
+    "static/css/main.4a343088.css",
+    "static/js/main.4ffb580a.js"
   ]
 }
