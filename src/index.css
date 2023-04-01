@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 .section-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl;
+  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl tracking-tight;
 }
 
 .section-title-accent {
-  @apply font-main font-semibold text-accentMain text-customLg md:text-customXl xl:text-customXxl;
+  @apply font-main font-semibold text-accentMain text-customLg md:text-customXl xl:text-customXxl tracking-tight;
 }
 
 /* just for add recipe section*/
