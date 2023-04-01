@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <>
       <div>Home</div>
-      <MainPageTitle pageTitle="Categories" className="section-title" />
-      <MainPageTitle pageTitle="Categories" className="section-title-accent" />
+      <MainPageTitle pageTitle="Categories" className="main-title" />
+      <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
         <button className="main-btn">Search</button>
         <button className="custom-btn">Search</button>
