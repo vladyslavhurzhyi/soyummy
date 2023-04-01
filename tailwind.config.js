@@ -20,6 +20,8 @@ module.exports = {
         main: ['Poppins'],
       },
       fontSize: {
+        customRecipesText: ['8px', '10px'],
+        customRecipesTime: ['10px', '14px'],
         customXxs: ['14px', '14px'],
         customXs: ['14px', '21px'],
         customSm: ['16px', '20px'],
