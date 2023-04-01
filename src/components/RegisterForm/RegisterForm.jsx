@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export const RegisterForm = () => {
+const RegisterForm = () => {
   //   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -94,3 +94,5 @@ export const RegisterForm = () => {
     </div>
   );
 };
+
+export default RegisterForm;

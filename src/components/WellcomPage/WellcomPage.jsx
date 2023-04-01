@@ -1,6 +1,6 @@
 import { AuthNav } from '../AuthNav/AuthNav';
 
-export const WellcomPage = () => {
+const WellcomPage = () => {
   //   const { isLoggedIn } = useAuth();
 
   return (
@@ -22,3 +22,5 @@ export const WellcomPage = () => {
     </div>
   );
 };
+
+export default WellcomPage;
