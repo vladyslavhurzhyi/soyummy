@@ -3,6 +3,7 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Home } from 'pages/Home/Home';
 import { Register } from 'pages/RegisterPage/RegisterPage';
 import { Lognin } from 'pages/LogninPage/LogninPage';
+import { WellcomPage } from 'components/WellcomPage/WellcomPage';
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Lognin />} />
+        <Route path="/welcomePage" element={<WellcomPage />} />
       </Route>
     </Routes>
   );
