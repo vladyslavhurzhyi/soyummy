@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/soyummy/static/css/main.0bfc2423.css",
-    "main.js": "/soyummy/static/js/main.af215ce4.js",
-    "static/js/163.6a263bd4.chunk.js": "/soyummy/static/js/163.6a263bd4.chunk.js",
-    "static/js/271.805376a3.chunk.js": "/soyummy/static/js/271.805376a3.chunk.js",
-    "static/js/815.afa4534a.chunk.js": "/soyummy/static/js/815.afa4534a.chunk.js",
-    "static/js/594.4090d21b.chunk.js": "/soyummy/static/js/594.4090d21b.chunk.js",
-    "static/js/478.5035df5f.chunk.js": "/soyummy/static/js/478.5035df5f.chunk.js",
+    "main.js": "/soyummy/static/js/main.5a56dea6.js",
+    "static/js/163.c4c8e279.chunk.js": "/soyummy/static/js/163.c4c8e279.chunk.js",
+    "static/js/271.509e3397.chunk.js": "/soyummy/static/js/271.509e3397.chunk.js",
+    "static/js/815.c1d88f32.chunk.js": "/soyummy/static/js/815.c1d88f32.chunk.js",
+    "static/js/594.5f1a6fe9.chunk.js": "/soyummy/static/js/594.5f1a6fe9.chunk.js",
+    "static/js/478.cb541434.chunk.js": "/soyummy/static/js/478.cb541434.chunk.js",
     "index.html": "/soyummy/index.html",
     "main.0bfc2423.css.map": "/soyummy/static/css/main.0bfc2423.css.map",
-    "main.af215ce4.js.map": "/soyummy/static/js/main.af215ce4.js.map",
-    "163.6a263bd4.chunk.js.map": "/soyummy/static/js/163.6a263bd4.chunk.js.map",
-    "271.805376a3.chunk.js.map": "/soyummy/static/js/271.805376a3.chunk.js.map",
-    "815.afa4534a.chunk.js.map": "/soyummy/static/js/815.afa4534a.chunk.js.map",
-    "594.4090d21b.chunk.js.map": "/soyummy/static/js/594.4090d21b.chunk.js.map",
-    "478.5035df5f.chunk.js.map": "/soyummy/static/js/478.5035df5f.chunk.js.map"
+    "main.5a56dea6.js.map": "/soyummy/static/js/main.5a56dea6.js.map",
+    "163.c4c8e279.chunk.js.map": "/soyummy/static/js/163.c4c8e279.chunk.js.map",
+    "271.509e3397.chunk.js.map": "/soyummy/static/js/271.509e3397.chunk.js.map",
+    "815.c1d88f32.chunk.js.map": "/soyummy/static/js/815.c1d88f32.chunk.js.map",
+    "594.5f1a6fe9.chunk.js.map": "/soyummy/static/js/594.5f1a6fe9.chunk.js.map",
+    "478.cb541434.chunk.js.map": "/soyummy/static/js/478.cb541434.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0bfc2423.css",
-    "static/js/main.af215ce4.js"
+    "static/js/main.5a56dea6.js"
   ]
 }
