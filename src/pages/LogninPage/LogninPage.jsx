@@ -1,9 +1,11 @@
-import { LogninForm } from 'components/LoginForm/LoginForm';
+import LogninForm from 'components/LoginForm/LoginForm';
 
-export const Lognin = () => {
+const Lognin = () => {
   return (
     <div>
       <LogninForm />
     </div>
   );
 };
+
+export default Lognin;
