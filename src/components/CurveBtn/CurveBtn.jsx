@@ -1,3 +1,4 @@
+//
 //registration-btn --- class for curve btn registration + style  borderRadius: '9% 23% 11% 21% / 26% 57% 34% 60% '
 //signin-btn --- class for curve btn welcome page bg-transparent
 //searchbl-btn --- class for curve search btn (black bg)

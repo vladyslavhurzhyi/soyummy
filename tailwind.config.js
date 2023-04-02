@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
+      backgroundImage: {
+        hero: "url('/src/pages/salat.png')",
+      },
       colors: {
         accentMain: '#8BAA36',
         accentLighter: '#EBF3D4',

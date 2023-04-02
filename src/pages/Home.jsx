@@ -1,5 +1,7 @@
+import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Loader } from 'components/Loader/Loader';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
+
 import React from 'react';
 
 const Home = () => {
@@ -9,10 +11,12 @@ const Home = () => {
       <MainPageTitle pageTitle="Categories" className="main-title" />
       <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
-        <button className="main-btn">Search</button>
-        <button className="custom-btn">Search</button>
-        <Loader />
+        <div className="flex bg-hero w-full py-56 justify-center gap-4 bg-cover bg-center bg-no-repeat">
+          <CurveBtn cssClass="registration-btn" text="Registration"></CurveBtn>
+          <CurveBtn cssClass="signin-btn" text="Sign in"></CurveBtn>
+        </div>
       </div>
+      <Loader />
     </>
   );
 };
