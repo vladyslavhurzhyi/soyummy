@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.094ab8fb.css",
+    "main.css": "/soyummy/static/css/main.94ed4dd9.css",
     "main.js": "/soyummy/static/js/main.3b910b1b.js",
     "static/js/515.3bc6c332.chunk.js": "/soyummy/static/js/515.3bc6c332.chunk.js",
     "static/js/271.509e3397.chunk.js": "/soyummy/static/js/271.509e3397.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/logosvg.svg": "/soyummy/static/media/logosvg.1987482c40bce4af801c48fdab08cbb2.svg",
     "index.html": "/soyummy/index.html",
-    "main.094ab8fb.css.map": "/soyummy/static/css/main.094ab8fb.css.map",
+    "main.94ed4dd9.css.map": "/soyummy/static/css/main.94ed4dd9.css.map",
     "main.3b910b1b.js.map": "/soyummy/static/js/main.3b910b1b.js.map",
     "515.3bc6c332.chunk.js.map": "/soyummy/static/js/515.3bc6c332.chunk.js.map",
     "271.509e3397.chunk.js.map": "/soyummy/static/js/271.509e3397.chunk.js.map",
@@ -19,7 +19,7 @@
     "478.2d927854.chunk.js.map": "/soyummy/static/js/478.2d927854.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.094ab8fb.css",
+    "static/css/main.94ed4dd9.css",
     "static/js/main.3b910b1b.js"
   ]
 }
