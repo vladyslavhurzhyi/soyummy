@@ -3,6 +3,9 @@
 //signin-btn --- class for curve btn welcome page bg-transparent
 //searchbl-btn --- class for curve search btn (black bg)
 //searchgreen-btn --- class for curve search btn (green bg)
+//addbgreen-btn --- class for curve add btn (green bg)
+//addblack-btn --- class for curve add btn (black bg)
+//othercateg-btn --- class for curve other categories (transprent bg)
 
 export const CurveBtn = ({ text, cssClass, onClick }) => {
   return (
