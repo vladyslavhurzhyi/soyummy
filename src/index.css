@@ -53,3 +53,11 @@
 .searchgreen-btn {
   @apply transition duration-300 px-[31.7px] py-[15.7px] md:px-[52-px] md:py-[18px] xl:px-[52px] xl:py-[23px] text-sm bg-accentMain font-main text-zinc-50 md:text-base hover:bg-accentDark focus:ring sm:leading-4 md:leading-4 xl:leading-4;
 }
+
+.othercateg-btn {
+  @apply transition duration-300 px-[31.7px] py-[15.7px] md:px-[52-px] md:py-[18px] xl:px-[52px] xl:py-[23px] border-2 border-accentMain text-accentDark text-sm bg-transparent hover:bg-accentMain  hover:text-zinc-50 font-main md:text-base  focus:ring sm:leading-4 md:leading-4 xl:leading-4;
+}
+
+.addblack-btn {
+  @apply transition duration-300 px-[48px] py-[12px] xl:px-[64px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6;
+}
