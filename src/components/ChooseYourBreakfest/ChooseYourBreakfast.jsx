@@ -5,7 +5,7 @@ export const ChooseYourBreakfast = () => {
         <span>Delicious and healthy</span>
         way to enjoy a variety of fresh ingredients in one satisfying meal
       </p>
-      <ChooseLink to="/categories/breakfast">
+//       <ChooseLink to="/categories/breakfast">
         See recipes{' '}
         <svg
           class="w-4 h-3 ml-1 flex"
@@ -20,7 +20,7 @@ export const ChooseYourBreakfast = () => {
             strokeLinejoin="round"
           />
         </svg>
-      </ChooseLink>
+//       </ChooseLink>
     </div>
   );
 };
