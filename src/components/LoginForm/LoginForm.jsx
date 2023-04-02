@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export const LogninForm = () => {
+const LogninForm = () => {
   //   const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
@@ -77,3 +77,5 @@ export const LogninForm = () => {
     </div>
   );
 };
+
+export default LogninForm;

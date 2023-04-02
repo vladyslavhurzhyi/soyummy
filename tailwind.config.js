@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
+      backgroundImage: {
+        hero: "url('/src/pages/salat.png')",
+      },
       colors: {
         accentMain: '#8BAA36',
         accentLighter: '#EBF3D4',
@@ -27,7 +30,8 @@ module.exports = {
         customSm: ['16px', '20px'],
         customBase: ['24px', '24px'],
         customLg: ['28px', '28px'],
-        customXl: ['44px', '44px'],
+        customXl: ['32px', '32px'],
+        customXxl: ['44px', '44px'],
       },
     },
   },
