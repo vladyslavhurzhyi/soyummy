@@ -4,14 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl tracking-tight;
-}
-
-.main-title-accent {
-  @apply font-main font-semibold text-accentMain text-customLg md:text-customXl xl:text-customXxl tracking-tight;
-}
-
 .section-title {
   @apply font-main font-semibold text-mainText text-customLg hover:text-accentMain;
 }
@@ -26,4 +18,38 @@
 }
 .custom-btn {
   @apply transition duration-300 py-6 px-14 ml-2  rounded-tr-full rounded-bl-full border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
+}
+
+.subscribe-btn {
+  @apply flex justify-center items-center transition duration-300 text-sm rounded-md px-[71px] py-[11px]  gap-2 md:px-[50px] md:py-[16px]  xl:px-[138px] xl:py-[21px] font-main text-zinc-50 md:text-base bg-accentMain hover:text-accentDark focus:ring;
+}
+
+.signup-btn {
+  @apply flex justify-center items-center transition duration-300 rounded-md px-[110px] py-[14px]  gap-2 md:px-[138px] md:py-[21px] font-main text-zinc-50 text-sm md:text-base bg-accentMain hover:text-accentDark focus:ring;
+}
+
+.logout-btn {
+  @apply flex justify-center items-center transition duration-300 text-sm
+   rounded-md px-[21px] py-[18px]  gap-2 md:px-[39px] md:py-[21px] md:text-base font-main text-zinc-50  bg-accentMain hover:bg-accentDark focus:ring;
+}
+
+.cancel-btn {
+  @apply flex justify-center items-center transition duration-300 text-sm
+   rounded-md px-[21px] py-[18px]  gap-2 md:px-[39px] md:py-[21px] md:text-base font-main text-accentDark bg-accentGray hover:bg-transparent hover:outline hover:outline-1 hover:outline-accentDark m-2 focus:ring;
+}
+
+.registration-btn {
+  @apply transition duration-300 px-[44px] py-[22px] font-main text-zinc-50 text-sm md:text-base bg-accentMain hover:bg-accentDark  focus:ring;
+}
+
+.signin-btn {
+  @apply transition duration-300 px-[44px] py-[22px] outline outline-2 outline-zinc-50 text-zinc-50 bg-transparent font-main  text-sm md:text-base hover:bg-zinc-50 hover:text-accentMain hover:outline-accentMain  focus:ring;
+}
+
+.searchbl-btn {
+  @apply transition duration-300 px-[31.7px] py-[15.7px] md:px-[52-px] md:py-[18px] xl:px-[52px] xl:py-[23px]  rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring;
+}
+
+.searchgreen-btn {
+  @apply transition duration-300 px-[31.7px] py-[15.7px] md:px-[52-px] md:py-[18px] xl:px-[52px] xl:py-[23px] text-sm bg-accentMain font-main text-zinc-50 md:text-base hover:bg-accentDark focus:ring;
 }
