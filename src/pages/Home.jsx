@@ -1,3 +1,4 @@
+import { FollowUs } from 'components/FollowUs/FollowUs';
 import { Loader } from 'components/Loader/Loader';
 import React from 'react';
 
@@ -13,6 +14,7 @@ const Home = () => {
         <button className="custom-btn">Search</button>
         <Loader />
       </div>
+      <FollowUs />
     </>
   );
 };

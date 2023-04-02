@@ -14,8 +14,8 @@
 } */
 
 .main-btn {
-  @apply transition duration-300 py-5 px-52px ml-2  rounded-tr-3xl rounded-br-lg rounded-bl-3xl rounded-tl-lg border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
+  @apply py-5 px-52px ml-2  rounded-tr-3xl rounded-br-lg rounded-bl-3xl rounded-tl-lg border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
 }
 .custom-btn {
-  @apply transition duration-300 py-6 px-14 ml-2  rounded-tr-full rounded-bl-full border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
+  @apply py-6 px-14 ml-2  rounded-tr-full rounded-bl-full border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
 }
