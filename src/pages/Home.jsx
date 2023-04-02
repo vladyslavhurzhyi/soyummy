@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { FollowUs } from 'components/FollowUs/FollowUs';
-=======
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
->>>>>>> main
 import { Loader } from 'components/Loader/Loader';
 import { Logo } from 'components/Logo/Logo';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
@@ -16,9 +13,7 @@ const Home = () => {
       <div>
         <Logo />
       </div>
-<<<<<<< HEAD
       <FollowUs />
-=======
       <MainPageTitle pageTitle="Categories" className="main-title" />
       <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
@@ -33,7 +28,6 @@ const Home = () => {
         </div>
       </div>
       <Loader />
->>>>>>> main
     </>
   );
 };
