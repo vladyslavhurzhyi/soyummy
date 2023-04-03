@@ -6,6 +6,7 @@ import { current } from 'redux/auth/authOperatins';
 import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { MyRecipesList } from './MyRecipesList/MyRecipesList';
+import { Search } from '../pages/Search/Search';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
@@ -57,6 +58,7 @@ export const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WellcomPage />} />
+        <Route path="/search" element={<Search />} />
       </Route>
     </Routes>
   );

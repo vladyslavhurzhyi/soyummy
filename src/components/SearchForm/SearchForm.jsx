@@ -1,5 +1,6 @@
-import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import React, { useState } from 'react';
+
+import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
 export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
   const [searchValue, setInputValue] = useState(startQuery ?? '');
@@ -21,7 +22,11 @@ export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
           value={searchValue}
           onChange={handleInputChange}
         ></input>
-        <CurveBtn type="submit" text="Search"></CurveBtn>
+        <CurveBtn
+          type="submit"
+          text="Search"
+          cssClass="searchgreen-btn"
+        ></CurveBtn>
       </form>
     </div>
   );
