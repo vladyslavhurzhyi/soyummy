@@ -8,6 +8,14 @@
   @apply font-main font-semibold text-mainText text-customLg hover:text-accentMain;
 }
 
+.main-title {
+  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl tracking-tight;
+}
+
+.main-title-accent {
+  @apply font-main font-semibold text-accentMain text-customLg md:text-customXl xl:text-customXxl tracking-tight;
+}
+
 /* just for add recipe section*/
 /* .title {
   @apply font-main font-medium text-secondaryText text-customBase;
