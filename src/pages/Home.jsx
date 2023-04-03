@@ -1,3 +1,4 @@
+import { FollowUs } from 'components/FollowUs/FollowUs';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Loader } from 'components/Loader/Loader';
 import { Logo } from 'components/Logo/Logo';
@@ -12,6 +13,7 @@ const Home = () => {
       <div>
         <Logo />
       </div>
+      <FollowUs className="w-5 h-5" />
       <MainPageTitle pageTitle="Categories" className="main-title" />
       <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
