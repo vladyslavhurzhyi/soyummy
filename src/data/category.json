@@ -1,0 +1,16 @@
+[
+  { "type": "Beef" },
+  { "type": "Breakfast" },
+  { "type": "Chicken" },
+  { "type": "Dessert" },
+  { "type": "Goat" },
+  { "type": "Lamb" },
+  { "type": "Miscellaneous" },
+  { "type": "Pasta" },
+  { "type": "Pork" },
+  { "type": "Seafood" },
+  { "type": "Side" },
+  { "type": "Starter" },
+  { "type": "Vegan" },
+  { "type": "Vegetarian" }
+]
