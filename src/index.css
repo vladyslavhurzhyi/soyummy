@@ -4,14 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl tracking-tight;
-}
-
-.main-title-accent {
-  @apply font-main font-semibold text-accentMain text-customLg md:text-customXl xl:text-customXxl tracking-tight;
-}
-
 .section-title {
   @apply font-main font-semibold text-mainText text-customLg hover:text-accentMain;
 }
