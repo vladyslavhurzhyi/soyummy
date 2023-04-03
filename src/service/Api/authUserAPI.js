@@ -37,3 +37,9 @@ export const subscribeUserAPI = email => {
     return data;
   });
 };
+
+export const getCategoriesList = () => {
+  return axios.get('/recipes/category-list').then(({ data }) => {
+    return data;
+  });
+};
