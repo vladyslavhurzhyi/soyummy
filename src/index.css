@@ -9,11 +9,11 @@
 }
 
 .main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl;
+  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl mt-[50px] md:mt-[72px] xl:mt-[100px];
 }
 
 .main-title-accent {
-  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl;
+  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl mt-20 md:mt-[72px] xl:mt-[100px];
 }
 
 .main-btn {

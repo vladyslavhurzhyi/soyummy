@@ -14,10 +14,10 @@ const Home = () => {
       <div>
         <Logo />
       </div>
+      <MainPageTitle pageTitle="Categories" className="main-title" />
+      {/* <MainPageTitle pageTitle="Categories" className="main-title-accent" /> */}
       <FollowUs className="followus-footer" />
       <ToggleButton />
-      <MainPageTitle pageTitle="Categories" className="main-title" />
-      <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
         <div className="flex bg-hero w-full py-56 justify-center gap-4 bg-cover bg-center bg-no-repeat">
           <div>
