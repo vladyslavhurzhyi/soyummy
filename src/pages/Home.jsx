@@ -13,7 +13,7 @@ const Home = () => {
       <div>
         <Logo />
       </div>
-      <FollowUs className="w-5 h-5" />
+      <FollowUs className="followus-footer" />
       <MainPageTitle pageTitle="Categories" className="main-title" />
       <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
