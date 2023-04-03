@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/271.509e3397.chunk.js","mappings":"2HAQA,UARkB,WAChB,OACE,+BACE,yCAGL,C","sources":["pages/AddRecipe.jsx"],"sourcesContent":["const AddRecipe = () => {\n  return (\n    <>\n      <div>Add Recipe</div>\n    </>\n  );\n};\n\nexport default AddRecipe;\n"],"names":[],"sourceRoot":""}
