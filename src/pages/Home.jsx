@@ -5,6 +5,7 @@ import { Logo } from 'components/Logo/Logo';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 
 import React from 'react';
+import { ToggleButton } from 'components/ToggleButton/ToggleButton';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <Logo />
       </div>
       <FollowUs className="followus-footer" />
+      <ToggleButton />
       <MainPageTitle pageTitle="Categories" className="main-title" />
       <MainPageTitle pageTitle="Categories" className="main-title-accent" />
       <div className="flex justify-center mt-8">
