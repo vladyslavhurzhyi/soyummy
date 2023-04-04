@@ -3,8 +3,7 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Loader } from 'components/Loader/Loader';
 import { Logo } from 'components/Logo/Logo';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-
-import React from 'react';
+import { Favorites } from 'components/Favorites/Favorites';
 
 const Home = () => {
   return (
@@ -28,6 +27,7 @@ const Home = () => {
         </div>
       </div>
       <Loader />
+      <Favorites />
     </>
   );
 };
