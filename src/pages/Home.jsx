@@ -1,9 +1,11 @@
+import { FollowUs } from 'components/FollowUs/FollowUs';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Loader } from 'components/Loader/Loader';
 import { Logo } from 'components/Logo/Logo';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 
 import React from 'react';
+import { ToggleButton } from 'components/ToggleButton/ToggleButton';
 
 const Home = () => {
   return (
@@ -13,7 +15,9 @@ const Home = () => {
         <Logo />
       </div>
       <MainPageTitle pageTitle="Categories" className="main-title" />
-      <MainPageTitle pageTitle="Categories" className="main-title-accent" />
+      {/* <MainPageTitle pageTitle="Categories" className="main-title-accent" /> */}
+      <FollowUs className="followus-footer" />
+      <ToggleButton />
       <div className="flex justify-center mt-8">
         <div className="flex bg-hero w-full py-56 justify-center gap-4 bg-cover bg-center bg-no-repeat">
           <div>
