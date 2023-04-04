@@ -6,12 +6,12 @@ import { current } from 'redux/auth/authOperatins';
 import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { MyRecipesList } from './MyRecipesList/MyRecipesList';
-import { Search } from '../pages/Search/Search';
+import { Search } from '../pages/Search';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
-const Register = lazy(() => import('../pages/RegisterPage/RegisterPage'));
-const Lognin = lazy(() => import('../pages/LogninPage/LogninPage'));
+const Register = lazy(() => import('../pages/RegisterPage'));
+const Lognin = lazy(() => import('../pages/LogninPage'));
 const WellcomPage = lazy(() => import('components/WellcomPage/WellcomPage'));
 
 export const App = () => {
