@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.backURL = process.env.SO_YUMMY_URL_BACK;
+// axios.defaults.backURL = process.env.SO_YUMMY_URL_BACK;
+axios.defaults.baseURL = 'https://so-yummy-golt.onrender.com/api/v1';
 
 export const signUpUserAPI = user => {
   return axios.post('/auth/signup', user).then(({ data }) => {
