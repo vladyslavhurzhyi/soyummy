@@ -9,8 +9,7 @@ export const getAllRecipes = () => {
   return axios
     .get('/recipes', {
       headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmM2YWJiN2M1ZmYwNTcwMjgzODY5OSIsIm5hbWUiOiJKb2huIEpvaG4iLCJlbWFpbCI6ImpvaG5zbWl0aEBtYWlsLmNvbSIsImlhdCI6MTY4MDYzMjUwNywiZXhwIjoxNjgwNzE4OTA3fQ.V2ZcR5bfHSb6NEyrVNFwHkDOEdZDBAjPNZn284YWupo',
+        Authorization: `Bearer ${process.env.REACT_APP_SO_YUMMY_URL_BACK}`,
       },
     })
     .then(({ data }) => {

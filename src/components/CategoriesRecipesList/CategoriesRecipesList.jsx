@@ -1,10 +1,13 @@
+//TODO when API is ready
+// import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 import { getAllRecipes } from 'service/Api/getRecipesAPI';
 
 const CategoriesRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
-  const { category } = useParams();
+  //TODO when API is ready
+  // const { category } = useParams();
   useEffect(() => {
     getAllRecipes().then(({ data }) => setRecipes(data));
   }, []);

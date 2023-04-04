@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+//TODO use when API is ready
+// import { useEffect, useState } from 'react';
+// import { getRecipesByCategory, getAllRecipes } from 'service/Api/getRecipesAPI';
 import { NavLink } from 'react-router-dom';
-import { getRecipesByCategory, getAllRecipes } from 'service/Api/getRecipesAPI';
 
 const categoriesList = [
   {
@@ -68,7 +69,7 @@ const CategoriesList = () => {
         {categoriesList.map(category => {
           return (
             <li className="mr-14" key={category._id}>
-              <NavLink to={`/categoriesPage/${category.category}`}>
+              <NavLink to={`/categories/${category.category}`}>
                 {category.category}
               </NavLink>
             </li>
