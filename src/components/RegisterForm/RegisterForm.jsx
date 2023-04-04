@@ -1,20 +1,21 @@
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/operations';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signUp } from 'redux/auth/authOperatins';
 import { NavLink } from 'react-router-dom';
 
 const RegisterForm = () => {
-  //   const dispatch = useDispatch();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    const form = e.currentTarget;
+    dispatch(
+      signUp({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
   };
 
   return (
@@ -40,8 +41,6 @@ const RegisterForm = () => {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Username"
-                value={name}
-                onChange={e => setName(e.target.value)}
               />
             </div>
             <div>
@@ -56,8 +55,6 @@ const RegisterForm = () => {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -72,8 +69,6 @@ const RegisterForm = () => {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
               />
             </div>
           </div>
