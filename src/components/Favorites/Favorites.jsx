@@ -13,7 +13,6 @@ export const Favorites = () => {
   return (
     <>
       <div>
-        <h1>Favorites</h1>
         <ul className="flex flex-col">
           <FavoriteItem
             img={imgDish}
