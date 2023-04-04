@@ -7,12 +7,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { MyRecipesList } from './MyRecipesList/MyRecipesList';
 import { Search } from '../pages/Search';
+import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
 const Register = lazy(() => import('../pages/RegisterPage'));
 const Lognin = lazy(() => import('../pages/LogninPage'));
 const WellcomPage = lazy(() => import('components/WellcomPage/WellcomPage'));
+const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -59,6 +61,12 @@ export const App = () => {
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WellcomPage />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/categories" element={<CategoriesPage />}>
+          <Route
+            path="/categories/:category"
+            element={<CategoriesRecipesList />}
+          />
+        </Route>
       </Route>
     </Routes>
   );
