@@ -1,6 +1,7 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Logo } from 'components/Logo/Logo';
 import React from 'react';
+import logo from './trash.svg';
 
 export const FavoriteItem = ({ img, title, description, time }) => {
   return (
@@ -13,11 +14,15 @@ export const FavoriteItem = ({ img, title, description, time }) => {
               <div className="flex mb-8">
                 <h2 className="text-2xl ">{title}</h2>
                 <button className="flex ml-auto ">
-                  <Logo />
+                  <Logo
+                    newLogo={logo}
+                    cssClassIcon="iconTrash"
+                    cssClassDiv="divIconTrash"
+                  />
                 </button>
               </div>
               <div className="flex h-full justify-between flex-col">
-                <p className="text-lg mr-40 ">{description}</p>
+                <p className="text-lg mr-[123px] ">{description}</p>
                 <div className="flex justify-between">
                   <p className="mt-auto text-sm font-medium">{time}</p>
                   <CurveBtn cssClass="seerecipe-btn" text="See recipe" />

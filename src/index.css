@@ -77,6 +77,21 @@ body {
   @apply transition duration-300 px-[48px] py-[12px] xl:px-[38px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6 whitespace-nowrap;
 }
 
+.divIconLogo {
+  @apply transition duration-300  flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl;
+}
+.iconLogo {
+  @apply transition duration-300   fill-white w-7 h-7 xl:w-[30px] xl:h-[30px];
+}
+
+.divIconTrash {
+  @apply transition duration-300  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain hover:fill-zinc-50;
+}
+
+.iconTrash {
+  @apply transition duration-300 w-[14px] h-[14px] md:w-[22px] md:h-[22px] xl:w-[24px] xl:h-[24px];
+}
+
 .-z-1 {
   z-index: -1;
 }
