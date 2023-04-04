@@ -61,9 +61,9 @@ export const App = () => {
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WellcomPage />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/categoriesPage" element={<CategoriesPage />}>
+        <Route path="/categories" element={<CategoriesPage />}>
           <Route
-            path="/categoriesPage/:category"
+            path="/categories/:category"
             element={<CategoriesRecipesList />}
           />
         </Route>

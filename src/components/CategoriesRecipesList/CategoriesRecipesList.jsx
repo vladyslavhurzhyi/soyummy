@@ -9,8 +9,6 @@ const CategoriesRecipesList = () => {
     getAllRecipes().then(({ data }) => setRecipes(data));
   }, []);
 
-  console.log(recipes);
-
   return (
     <div>
       <ul className="flex flex-wrap w-full h-full gap-y-24">
