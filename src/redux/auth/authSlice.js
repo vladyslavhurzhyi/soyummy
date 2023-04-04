@@ -13,6 +13,7 @@ const initialState = {
   accessToken: null,
   Login: false,
   userFetching: false,
+  isRefreshing: false,
   userData: {
     email: null,
     name: null,
