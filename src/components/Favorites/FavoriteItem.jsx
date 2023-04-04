@@ -10,16 +10,14 @@ export const FavoriteItem = ({ img, title, description, time }) => {
           <div className="flex my-10 mx-10 ">
             <img className="w-[318px] h-[324px] mr-10" src={img} alt={img} />
             <div className="flex flex-col">
-              <div className="flex mb-12">
+              <div className="flex mb-8">
                 <h2 className="text-2xl ">{title}</h2>
                 <button className="flex ml-auto ">
                   <Logo />
                 </button>
               </div>
               <div className="flex h-full justify-between flex-col">
-                <div className="flex">
-                  <p className="text-lg mr-40 ">{description}</p>
-                </div>
+                <p className="text-lg mr-40 ">{description}</p>
                 <div className="flex justify-between">
                   <p className="mt-auto text-sm font-medium">{time}</p>
                   <CurveBtn cssClass="seerecipe-btn" text="See recipe" />
