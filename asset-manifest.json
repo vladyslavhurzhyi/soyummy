@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.de493eae.css",
-    "main.js": "/soyummy/static/js/main.ca353053.js",
+    "main.css": "/soyummy/static/css/main.bdf5ab9e.css",
+    "main.js": "/soyummy/static/js/main.529c3a0f.js",
     "static/js/166.0c42e7d2.chunk.js": "/soyummy/static/js/166.0c42e7d2.chunk.js",
     "static/js/897.3c1df327.chunk.js": "/soyummy/static/js/897.3c1df327.chunk.js",
     "static/js/751.cd5171ef.chunk.js": "/soyummy/static/js/751.cd5171ef.chunk.js",
     "static/js/105.d643f17a.chunk.js": "/soyummy/static/js/105.d643f17a.chunk.js",
-    "static/js/478.2d927854.chunk.js": "/soyummy/static/js/478.2d927854.chunk.js",
+    "static/js/15.2a50badf.chunk.js": "/soyummy/static/js/15.2a50badf.chunk.js",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/logosvg.svg": "/soyummy/static/media/logosvg.1987482c40bce4af801c48fdab08cbb2.svg",
     "index.html": "/soyummy/index.html",
     "static/media/search-icon.svg": "/soyummy/static/media/search-icon.808a38e2b42b6a770b17ffac2f38a2c4.svg",
-    "main.de493eae.css.map": "/soyummy/static/css/main.de493eae.css.map",
-    "main.ca353053.js.map": "/soyummy/static/js/main.ca353053.js.map",
+    "main.bdf5ab9e.css.map": "/soyummy/static/css/main.bdf5ab9e.css.map",
+    "main.529c3a0f.js.map": "/soyummy/static/js/main.529c3a0f.js.map",
     "166.0c42e7d2.chunk.js.map": "/soyummy/static/js/166.0c42e7d2.chunk.js.map",
     "897.3c1df327.chunk.js.map": "/soyummy/static/js/897.3c1df327.chunk.js.map",
     "751.cd5171ef.chunk.js.map": "/soyummy/static/js/751.cd5171ef.chunk.js.map",
     "105.d643f17a.chunk.js.map": "/soyummy/static/js/105.d643f17a.chunk.js.map",
-    "478.2d927854.chunk.js.map": "/soyummy/static/js/478.2d927854.chunk.js.map"
+    "15.2a50badf.chunk.js.map": "/soyummy/static/js/15.2a50badf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de493eae.css",
-    "static/js/main.ca353053.js"
+    "static/css/main.bdf5ab9e.css",
+    "static/js/main.529c3a0f.js"
   ]
 }
