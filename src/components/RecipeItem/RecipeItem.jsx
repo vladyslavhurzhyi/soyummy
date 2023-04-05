@@ -2,7 +2,6 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Logo } from 'components/Logo/Logo';
 import React from 'react';
 import logo from './trash.svg';
-import imgDish from '../../images/salat.png';
 
 export const RecipeItem = ({
   img,
@@ -18,7 +17,7 @@ export const RecipeItem = ({
           <div className="flex my-10 mx-10 ">
             <img
               className="w-[318px] h-[324px] mr-10 rounded-lg object-cover"
-              src={imgDish}
+              src={img}
               alt={img}
             />
             <div className="flex flex-col">
@@ -35,7 +34,7 @@ export const RecipeItem = ({
               <div className="flex h-full justify-between flex-col">
                 <p className="text-lg mr-[123px] ">{description}</p>
                 <div className="flex justify-between">
-                  <p className="mt-auto text-sm font-medium">{time}</p>
+                  <p className="mt-auto text-sm font-medium">{time} min</p>
                   <CurveBtn cssClass={cssClass} text="See recipe" />
                 </div>
               </div>

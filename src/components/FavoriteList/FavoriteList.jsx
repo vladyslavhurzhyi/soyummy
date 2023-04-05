@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 import { RecipesList } from 'components/RecipesList/RecipesList';
 // import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
+import api from 'service/Api/axiosBaseURL';
+
+export const setAuthHeader = token => {
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+setAuthHeader(
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmQ5YWVmMDViNmMxN2NkNWU0YmE3ZiIsIm5hbWUiOiJKb2huIiwiZW1haWwiOiJzbWl0aHF3ZXF3ZXNAbWFpbC5jb20iLCJpYXQiOjE2ODA3MTA0MjAsImV4cCI6MTY4MDc5NjgyMH0.UnGqFNBVe19RmL66MD2QgQ2S4s885HE1B4fdXQEekPA'
+);
 
 const itemProps = [
   {
@@ -34,7 +42,23 @@ export const FavoriteList = () => {
   const [data, setData] = useState(itemProps);
 
   useEffect(() => {
-    setData(itemProps);
+    const getRecipes = async (limit = 12, page = 1) => {
+      try {
+        const { data } = await api.get('/recipes', {
+          params: {
+            limit,
+            page,
+          },
+        });
+        console.log('data', data.data);
+
+        setData(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getRecipes(12, 1);
   }, []);
 
   return <RecipesList data={data} />;

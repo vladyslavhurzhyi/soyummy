@@ -8,8 +8,8 @@ export const RecipesList = ({ data, cssClass }) => {
           {data.map(itemProps => {
             return (
               <RecipeItem
-                key={itemProps.id}
-                img={itemProps.imgDish}
+                key={itemProps._id}
+                img={itemProps.preview}
                 title={itemProps.title}
                 description={itemProps.description}
                 time={itemProps.time}
