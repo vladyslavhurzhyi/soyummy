@@ -2,7 +2,6 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Logo } from 'components/Logo/Logo';
 import React from 'react';
 import logo from './trash.svg';
-// import imgDish from '../../images/salat.png';
 
 export const RecipeItem = ({
   img,
