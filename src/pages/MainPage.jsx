@@ -52,30 +52,31 @@ const MainPage = () => {
 
   return (
     <>
-      {/* <div className="bg-main bg-no-repeat bg-center bg-cover absolute top-21 left-0 z-0 w-full"></div> */}
-      <div className="flex  flex-wrap justify-start mb-40 w-96">
-        <h1 className="text-accentDark font-normal text-customXxxl font-main">
-          <span className="font-normal text-customXxxl leading-10 text-center tracking-tighter text-accentMain">
-            So
-          </span>
-          Yummy
-        </h1>
-        <p className="font-normal text-lg leading-6 text-left mb-12">
-          "What to cook?" is not only a recipe app, it is, in fact, your
-          cookbook. You can add your own recipes to save them for the future.
-        </p>
-        {/* <ChooseYourBreakfast /> */}
-        <SearchForm handleOnSubmit={handelOnSubmit} />
-      </div>
-      {/* <PreviewCategories /> */}
-      <div>
-        <Link to="/categories/beef">
-          <CurveBtn
-            type={'button'}
-            onClick={onClick}
-            text={'Other categories'}
-          />
-        </Link>
+      <div className="bg-main bg-no-repeat  bg-cover h-48.5 p-56">
+        <div className="flex  flex-col justify-start mb-40 ">
+          <h1 className="text-accentDark font-normal text-customXxxl font-main">
+            <span className="font-normal text-customXxxl leading-10 text-center tracking-tighter text-accentMain">
+              So
+            </span>
+            Yummy
+          </h1>
+          <p className="font-normal text-lg font-main leading-6 text-left mb-12 w-[460px] tracking-tight">
+            "What to cook?" is not only a recipe app, it is, in fact, your
+            cookbook. You can add your own recipes to save them for the future.
+          </p>
+          {/* <ChooseYourBreakfast /> */}
+          <SearchForm handleOnSubmit={handelOnSubmit} />
+        </div>
+        {/* <PreviewCategories /> */}
+        <div>
+          <Link to="/categories/beef">
+            <CurveBtn
+              type={'button'}
+              onClick={onClick}
+              text={'Other categories'}
+            />
+          </Link>
+        </div>
       </div>
     </>
   );
