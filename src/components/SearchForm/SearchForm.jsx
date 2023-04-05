@@ -15,7 +15,7 @@ export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
   }
 
   return (
-    <div className="w-[510px] h-13 rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
+    <div className="w-[510px] h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
       <form
         onSubmit={handleSubmit}
         className="flex justify-end rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] h-full relative"
@@ -29,7 +29,7 @@ export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
         <CurveBtn
           type="submit"
           text="Search"
-          cssClass="searchgreen-btn absolute right-0 -top-0.5 h-13"
+          cssClass="searchgreen-btn absolute right-0 -top-0.5 h-[72px]"
         ></CurveBtn>
       </form>
     </div>
