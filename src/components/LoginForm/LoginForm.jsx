@@ -1,19 +1,21 @@
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/operations';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signIn } from 'redux/auth/authOperatins';
 import { NavLink } from 'react-router-dom';
 
 const LogninForm = () => {
-  //   const dispatch = useDispatch();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    console.log('Email:', email);
-    console.log('Password:', password);
+    const form = e.currentTarget;
+    dispatch(
+      signIn({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
   };
 
   return (
@@ -21,7 +23,7 @@ const LogninForm = () => {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Logn In
+            Sign in
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -29,7 +31,7 @@ const LogninForm = () => {
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="email" className="sr-only">
-                Email address
+                Email
               </label>
               <input
                 id="email"
@@ -38,9 +40,7 @@ const LogninForm = () => {
                 autoComplete="email"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
+                placeholder="Email"
               />
             </div>
             <div>
@@ -55,8 +55,6 @@ const LogninForm = () => {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
               />
             </div>
           </div>
@@ -66,7 +64,7 @@ const LogninForm = () => {
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-accentMain hover:bg-accentDark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Register
+              Sign in
             </button>
           </div>
           <NavLink className="" to="/register">

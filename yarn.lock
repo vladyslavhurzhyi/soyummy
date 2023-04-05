@@ -2101,6 +2101,11 @@
     "@typescript-eslint/types" "5.25.0"
     "eslint-visitor-keys" "^3.3.0"
 
+"@upload-io/upload-api-client-upload-js@^2.15.0":
+  "integrity" "sha512-UGqT4wxCDhTTKnTLvqtKCyPJSswA2z6/Z6/sMakWGdJBBuwCHcOyXgoWafbPILrgWp3oMMQjnTfwwMBmR0O54w=="
+  "resolved" "https://registry.npmjs.org/@upload-io/upload-api-client-upload-js/-/upload-api-client-upload-js-2.15.0.tgz"
+  "version" "2.15.0"
+
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz"
@@ -3004,6 +3009,11 @@
   "integrity" "sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA=="
   "resolved" "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz"
   "version" "1.2.2"
+
+"classnames@^2.2.6":
+  "integrity" "sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw=="
+  "resolved" "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
+  "version" "2.3.2"
 
 "clean-css@^5.2.2":
   "integrity" "sha512-YYuuxv4H/iNb1Z/5IbMRoxgrzjWGhOEFfd+groZ5dMCVkpENiMZmwspdrzBo9286JjM1gZJPAyL7ZIdzuvu2AQ=="
@@ -7217,6 +7227,11 @@
     "picocolors" "^0.2.1"
     "source-map" "^0.6.1"
 
+"preact@^10.6.5":
+  "integrity" "sha512-q44QFLhOhty2Bd0Y46fnYW0gD/cbVM9dUVtNTDKPcdXSMA7jfY+Jpd6rk3GB0lcQss0z5s/6CmVP0Z/hV+g6pw=="
+  "resolved" "https://registry.npmjs.org/preact/-/preact-10.13.2.tgz"
+  "version" "10.13.2"
+
 "prelude-ls@^1.2.1":
   "integrity" "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
@@ -7253,6 +7268,11 @@
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
   "version" "2.0.1"
+
+"progress-smoother@^1.4.0":
+  "integrity" "sha512-ctIG/KF/3DQ1zQHMWbXjcnicggTsEzZEA2JEnJNrPtK88tmqN9cfQf01yfLWGCBF93R5XN1EUe/z/IV5NKrmCw=="
+  "resolved" "https://registry.npmjs.org/progress-smoother/-/progress-smoother-1.4.0.tgz"
+  "version" "1.4.0"
 
 "promise@^8.1.0":
   "integrity" "sha512-W04AqnILOL/sPRXziNicCjSNRruLAuIHEOVBazepu0545DDNGYHz7ar9ZgZ1fMU8/MA4mVxp5rkBWRi6OXIy3Q=="
@@ -7571,7 +7591,14 @@
   dependencies:
     "clsx" "^1.1.1"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>= 16.8.0", "react@>=16", "react@>=16.8", "react@>=16.8.0":
+"react-uploader@^3.13.0":
+  "integrity" "sha512-DAkeApJWfyU+7UZA/Pmr4mWf4jhUWoEmkwu1/6VoHL5hS4i6TisRQzHyiZf4YiMS01oAS22Q+Bj4UWv+LEx4gw=="
+  "resolved" "https://registry.npmjs.org/react-uploader/-/react-uploader-3.13.0.tgz"
+  "version" "3.13.0"
+  dependencies:
+    "uploader" "^3.12.0"
+
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>= 16.8.0", "react@>=16", "react@>=16.3.0", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"
@@ -8817,6 +8844,23 @@
   "integrity" "sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg=="
   "resolved" "https://registry.npmjs.org/upath/-/upath-1.2.0.tgz"
   "version" "1.2.0"
+
+"upload-js@^2.11.0":
+  "integrity" "sha512-q6IkwFLA3kL1MbBMvzCbJC0EHjMgjJ399f5QH3Up5rkoVjYXZxTKRgyJQeRT1HpqPQ3gCJdvZuL/Cv1LjBRGMg=="
+  "resolved" "https://registry.npmjs.org/upload-js/-/upload-js-2.11.2.tgz"
+  "version" "2.11.2"
+  dependencies:
+    "@upload-io/upload-api-client-upload-js" "^2.15.0"
+    "progress-smoother" "^1.4.0"
+
+"uploader@^3.12.0":
+  "integrity" "sha512-7ZYuX4ltWAy3WtiMyrYNp1IXZP2ILS/6evCCS5AjTeBnLgOw47K1vCjWBT1bvvXK4s/awulVLaCEFwxCXQzVSA=="
+  "resolved" "https://registry.npmjs.org/uploader/-/uploader-3.13.0.tgz"
+  "version" "3.13.0"
+  dependencies:
+    "classnames" "^2.2.6"
+    "preact" "^10.6.5"
+    "upload-js" "^2.11.0"
 
 "uri-js@^4.2.2":
   "integrity" "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="
