@@ -11,9 +11,9 @@ import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
 const Register = lazy(() => import('../pages/RegisterPage'));
-const Lognin = lazy(() => import('../pages/LogninPage'));
+const Signin = lazy(() => import('../pages/SigninPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
-const WelcomPage = lazy(() => import('pages/WelcomPage'));
+const WellcomPage = lazy(() => import('pages/WellcomPage'));
 const MainPage = lazy(() => import('pages/MainPage'));
 const FavoritePage = lazy(() => import('pages/FavoritesPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipesPage'));
@@ -61,8 +61,8 @@ export const App = () => {
         <Route path="/add" element={<AddRecipePage />} />
         <Route path="/my" element={<MyRecipesPage />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<Lognin />} />
-        <Route path="/welcomePage" element={<WelcomPage />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/wellcomPage" element={<WellcomPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/favorite" element={<FavoritePage />} />
