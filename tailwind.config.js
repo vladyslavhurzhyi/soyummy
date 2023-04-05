@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "url('/src/images/salat.png')",
-        main: "url('/src/images/bg_main.jpg')",
+        main: "url('/src/images/bg_main-desc.jpg')",
       },
       colors: {
         accentMain: '#8BAA36',
@@ -38,8 +38,9 @@ module.exports = {
         customXxl: ['44px', '44px'],
         customXxxl: ['100px', '100px'],
       },
-      weight: {
-        block: '100px',
+
+      height: {
+        48.5: '777px',
       },
     },
   },
