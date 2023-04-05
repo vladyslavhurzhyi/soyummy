@@ -7,14 +7,18 @@ import timeList from '../../data/time.json';
 // console.log(categories);
 // console.log(timeList);
 
-export const ResipeDescriptionFields = () => {
+export const ResipeDescriptionFields = ({ data, setData }) => {
   const [images, setImages] = useState([]);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
-  const [time, setTime] = useState('');
 
-  console.log(images);
+  // console.log(images);
+
+  const handleFieldChange = e => {
+    const { id, value } = e.target;
+    let _formData = { ...data };
+    // _formData[id] = id === 'isPublic' ? !_formData.isPublic : value;
+    _formData[id] = value;
+    setData(_formData);
+  };
 
   const uploader = Uploader({ apiKey: 'free' });
   const uploaderOptions = {
@@ -83,7 +87,7 @@ export const ResipeDescriptionFields = () => {
     });
 
   return (
-    <form id="form" noValidate className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row">
       <div className="w-[280px] h-[280px] mx-auto mb-8 xl:w-[360px] xl:h-[360px] md:mx-0 md:mb-o md:mr-8 bg-accentMain rounded-lg flex justify-center items-center">
         {images.length ? (
           <MyUploadedImages images={images} />
@@ -106,10 +110,11 @@ export const ResipeDescriptionFields = () => {
             name="title"
             placeholder=" "
             autoComplete="off"
+            id="title"
             required
             className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
-            value={title}
-            onChange={e => setTitle(e.target.value)}
+            value={data.title}
+            onChange={handleFieldChange}
           />
           <label
             htmlFor="title"
@@ -125,9 +130,11 @@ export const ResipeDescriptionFields = () => {
             name="description"
             placeholder=" "
             autoComplete="off"
+            id="description"
+            required
             className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
-            value={description}
-            onChange={e => setDescription(e.target.value)}
+            value={data.description}
+            onChange={handleFieldChange}
           />
           <label
             htmlFor="description"
@@ -143,8 +150,10 @@ export const ResipeDescriptionFields = () => {
           <div className="relative z-0 w-full ">
             <select
               name="category"
-              value={category}
-              onChange={e => setCategory(e.target.value)}
+              id="category"
+              required
+              value={data.category}
+              onChange={handleFieldChange}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
             >
               {categories.map(({ type }) => (
@@ -170,8 +179,10 @@ export const ResipeDescriptionFields = () => {
           <div className="relative z-0 w-full ">
             <select
               name="time"
-              value={time}
-              onChange={e => setTime(e.target.value)}
+              id="time"
+              required
+              value={data.time}
+              onChange={handleFieldChange}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
             >
               {timeList.map(({ time }) => (
@@ -196,7 +207,7 @@ export const ResipeDescriptionFields = () => {
           </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
