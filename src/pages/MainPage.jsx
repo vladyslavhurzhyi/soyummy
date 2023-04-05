@@ -1,7 +1,7 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 // import {PreviewCategories} from "components/PreviewCategories/PreviewCategories"
 import { SearchForm } from 'components/SearchForm/SearchForm';
-// import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
+import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 // import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 
@@ -52,8 +52,8 @@ const MainPage = () => {
 
   return (
     <>
-      <div className="bg-main bg-no-repeat  bg-cover h-48.5 p-56">
-        <div className="flex  flex-col justify-start mb-40 ">
+      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-56 pb-56 flex justify-between flex-row items-end">
+        <div className="flex  flex-col justify-start mb-8 ">
           <h1 className="text-accentDark font-normal text-customXxxl font-main">
             <span className="font-normal text-customXxxl leading-10 text-center tracking-tighter text-accentMain">
               So
@@ -64,19 +64,20 @@ const MainPage = () => {
             "What to cook?" is not only a recipe app, it is, in fact, your
             cookbook. You can add your own recipes to save them for the future.
           </p>
-          {/* <ChooseYourBreakfast /> */}
+
           <SearchForm handleOnSubmit={handelOnSubmit} />
         </div>
-        {/* <PreviewCategories /> */}
-        <div>
-          <Link to="/categories/beef">
-            <CurveBtn
-              type={'button'}
-              onClick={onClick}
-              text={'Other categories'}
-            />
-          </Link>
-        </div>
+        <ChooseYourBreakfast />
+      </div>
+      {/* <PreviewCategories /> */}
+      <div>
+        <Link to="/categories/beef">
+          <CurveBtn
+            type={'button'}
+            onClick={onClick}
+            text={'Other categories'}
+          />
+        </Link>
       </div>
     </>
   );
