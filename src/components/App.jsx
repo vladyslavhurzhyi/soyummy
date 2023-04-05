@@ -2,7 +2,7 @@ import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { PrivateRoute, RegisterRoute } from 'service/routes';
 import { getAccessToken } from 'redux/auth/authSelectors';
-import { current } from 'redux/auth/authOperatins';
+import { current } from 'redux/auth/authOperations';
 import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Search } from '../pages/Search';
