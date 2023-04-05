@@ -2,17 +2,6 @@ import React, { useState } from 'react';
 
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-// export const CurveInput = () => {
-//   return (
-//     <input
-//       style={{
-//         height: '50px',
-//         borderRadius: '9% 23% 11% 21% / 26% 57% 34% 60%  ',
-//       }}
-//     />
-//   );
-// };
-
 export const SearchForm = ({ onSubmit }) => {
   const [searchValue, setInputValue] = useState('');
 
@@ -41,7 +30,6 @@ export const SearchForm = ({ onSubmit }) => {
         className="flex justify-end rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] h-full relative"
       >
         <input
-          className="h-15"
           type="text"
           value={searchValue}
           onChange={handleInputChange}
