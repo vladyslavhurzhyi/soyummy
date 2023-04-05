@@ -1,54 +1,41 @@
-import { MyRecipesItem } from 'components/MyRecipesItem/MyRecipesItem';
-import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+import { RecipesList } from 'components/RecipesList/RecipesList';
+// import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
 
-const API_KEY = '30633743-fecdcb797cf8e375f7471d26b';
+const itemProps = [
+  {
+    title: 'Salmon Eggs Benedict',
+    description:
+      'Salmon eggs are rich in essential nutrients, low in calories, and recommended as part of a healthy diet. Including salmon in a balanced diet can help decrease the chances of heart disease, ease inflammation, and more. ',
+    time: '10min',
 
-// axios.defaults.baseURL = `https://pixabay.com/api/`;
+    id: 1,
+  },
+  {
+    title: 'Apple Frangipan Tart',
+    description:
+      'Apple Frangipane Tart is a classic and elegant treat fit for any dessert table. A crisp, sweet-crust is filled with rich almond frangipane filling, baked with sliced apples and finished with apricot preserves.',
+    time: '20min',
 
-// async function getImages(query, page = 1) {
-//   const response = await axios.get(
-//     `https://pixabay.com/api/?q=${query}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-//   );
-//   return response;
-// }
+    id: 2,
+  },
+  {
+    title: "Tso's Chicken",
+    description:
+      'General Tso’s Chicken Is A Favorite Chinese Food Takeout Choice That Is Sweet And Slightly Spicy With A Kick From Garlic And Ginger. General Tso’s Chicken was one of my favorite college days late night Chinese food delivery orders. The spicier, zestier less popular cousin to the ever popular Orange Chicken, General Tso’s Chicken is a fantastic option.',
+    time: '20min',
 
-export const MyRecipesList = () => {
-  const [data, setData] = useState(null);
-  console.log('render');
+    id: 3,
+  },
+];
+
+export const MyRecipesList = ({ cssClass }) => {
+  const [data, setData] = useState(itemProps);
 
   useEffect(() => {
-    async function getImages(page = 1) {
-      const response = await axios.get(
-        `https://pixabay.com/api/?q=cat&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-      );
-      return setData(response.data.hits);
-    }
-    getImages();
+    setData(itemProps);
   }, []);
 
-  return (
-    <section className="bg-[#FAFAFA]">
-      <div className=" max-w-[375px] mx-auto">
-        <div className="py-[50px] font-main font-semibold text-customLg tracking-[-0.02em] text-mainText mx-auto">
-          <h2>My recipes</h2>
-        </div>
-        <ul className="grid gap-[18px]">
-          {data
-            ?.slice(0, 4)
-            .map(({ id, webformatURL, tags, user, previewHeight }) => (
-              <MyRecipesItem
-                key={id}
-                webformatURL={webformatURL}
-                tags={tags}
-                user={user}
-                previewHeight={previewHeight}
-              />
-            ))}
-        </ul>
-        <RecipesListPaginator />
-      </div>
-    </section>
-  );
+  return <RecipesList cssClass={cssClass} data={data} />;
 };
