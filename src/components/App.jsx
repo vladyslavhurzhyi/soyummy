@@ -15,7 +15,7 @@ const Register = lazy(() => import('../pages/RegisterPage'));
 const Lognin = lazy(() => import('../pages/LogninPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 const WelcomPage = lazy(() => import('pages/WelcomPage'));
-
+const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -68,6 +68,7 @@ export const App = () => {
             element={<CategoriesRecipesList />}
           />
         </Route>
+        <Route path="/shopping-list" element={<ShoppingListPage />} />
       </Route>
     </Routes>
   );
