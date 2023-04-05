@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { signUp } from 'redux/auth/authOperatins';
+import { signUp } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 
 const RegisterForm = () => {
