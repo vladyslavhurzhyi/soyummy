@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { MyRecipesList } from './MyRecipesList/MyRecipesList';
 import { Search } from '../pages/Search';
+import { RecipePage } from 'pages/RecipePage';
+import { PrivateRoute } from 'service/routes';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
@@ -59,6 +61,8 @@ export const App = () => {
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WelcomPage />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/recipe/:recipeId" element={<RecipePage />} />{' '}
+        {/* element={<PrivateRoute component={RecipePage} redirectTo="/login" */}
       </Route>
     </Routes>
   );
