@@ -1,5 +1,9 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchRecipeById, addToFavorite, removeFromFavorite } from './recipesOperations';
+import {
+  fetchRecipeById,
+  addToFavorite,
+  removeFromFavorite,
+} from './recipesOperations';
 
 const initialState = {
   items: [],

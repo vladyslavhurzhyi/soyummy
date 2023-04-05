@@ -1,6 +1,7 @@
 import { RecipePageHero } from 'components/Recipe/RecipePageHero';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
   selectRecipes,
@@ -10,16 +11,16 @@ import {
 
 const RecipePage = () => {
   const recipes = useSelector(selectRecipes);
+  console.log(recipes);
   // const isLoading = useSelector(selectIsLoading);
   // const error = useSelector(selectError);
   const dispatch = useDispatch();
 
-  const data = process.env.SO_YUMMY_URL_BACK;
-  console.log(data);
+  const id = useParams();
 
   useEffect(() => {
-    dispatch(fetchRecipeById());
-  }, [dispatch]);
+    dispatch(fetchRecipeById(id.recipeId));
+  }, [dispatch, id.recipeId]);
 
   return (
     <main>
