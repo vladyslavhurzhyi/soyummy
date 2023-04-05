@@ -2,26 +2,47 @@ import React, { useState } from 'react';
 
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
-  const [searchValue, setInputValue] = useState(startQuery ?? '');
+// export const CurveInput = () => {
+//   return (
+//     <input
+//       style={{
+//         height: '50px',
+//         borderRadius: '9% 23% 11% 21% / 26% 57% 34% 60%  ',
+//       }}
+//     />
+//   );
+// };
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+export const SearchForm = ({ onSubmit }) => {
+  const [searchValue, setInputValue] = useState('');
+
+  function handleInputChange(e) {
+    setInputValue(e.target.value);
+    console.log(searchValue);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    handleOnSubmit(searchValue, type);
+  function handleSubmit(e) {
+    e.preventDefault();
+    const query = searchValue.toLowerCase();
+    if (query === '') {
+      alert('enter something to find');
+      return;
+    }
+
+    console.log(query);
+    onSubmit(query);
+    setInputValue('');
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
+          className="h-15"
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-        ></input>
+        />
         <CurveBtn
           type="submit"
           text="Search"

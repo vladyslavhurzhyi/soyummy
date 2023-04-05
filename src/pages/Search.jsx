@@ -1,6 +1,5 @@
+import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { Searchbar } from 'components/Searchbar/Searchbar';
-
-const { MainPageTitle } = require('components/MainPageTitle/MainPageTitle');
 
 export const Search = () => {
   return (
