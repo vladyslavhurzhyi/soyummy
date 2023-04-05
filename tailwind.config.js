@@ -16,6 +16,7 @@ module.exports = {
         accentGray: '#D9D9D9',
         mainText: '#001833',
         secondaryText: '#3E4462',
+        whiteText: '#FAFAFA',
       },
       spacing: {
         '52px': '52px',
@@ -26,6 +27,7 @@ module.exports = {
       fontSize: {
         customRecipesText: ['8px', '10px'],
         customRecipesTime: ['10px', '14px'],
+        customShoppingList: ['12px', '18px'],
         customXxs: ['14px', '14px'],
         customXs: ['14px', '21px'],
         customSm: ['16px', '20px'],
