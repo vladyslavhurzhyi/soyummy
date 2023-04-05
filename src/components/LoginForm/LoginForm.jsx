@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { signIn } from 'redux/auth/authOperatins';
+import { signIn } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 
 const LogninForm = () => {

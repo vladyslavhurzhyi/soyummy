@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { logOut } from "../../../redux/auth/authOperatins";
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../../redux/auth/authOperations';
 // import CloseButton from "../../MobileMenu/CloseButton/CloseButton";
 
 export const UserConfirmModal = ({ toggleConfirmModal }) => {
@@ -35,4 +35,3 @@ export const UserConfirmModal = ({ toggleConfirmModal }) => {
     </div>
   );
 };
-

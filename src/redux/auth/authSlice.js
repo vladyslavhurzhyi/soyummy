@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signUp, signIn, logOut, edit, current } from './authOperatins';
+import { signUp, signIn, logOut, edit, current } from './authOperations';
 
 const pending = state => {
   state.userFetching = true;
