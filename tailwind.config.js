@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/src/pages/salat.png')",
+        hero: "url('/src/images/salat.png')",
       },
       colors: {
         accentMain: '#8BAA36',
