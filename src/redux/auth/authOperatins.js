@@ -10,6 +10,8 @@ import {
   editUserAPI,
 } from 'service/Api/authUserAPI';
 
+axios.defaults.baseURL = 'https://so-yummy-golt.onrender.com/api/v1';
+
 export const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
