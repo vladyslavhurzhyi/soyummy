@@ -5,7 +5,6 @@ import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperatins';
 import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { MyRecipesList } from './MyRecipesList/MyRecipesList';
 import { Search } from '../pages/Search';
 import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 
@@ -16,6 +15,8 @@ const Lognin = lazy(() => import('../pages/LogninPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 const WelcomPage = lazy(() => import('pages/WelcomPage'));
 const MainPage = lazy(() => import('pages/MainPage'));
+const FavoritePage = lazy(() => import('pages/FavoritesPage'));
+const MyRecipesPage = lazy(() => import('pages/MyRecipesPage'));
 const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
 
 export const App = () => {
@@ -58,12 +59,13 @@ export const App = () => {
       >
         <Route index element={<HomePage />} />
         <Route path="/add" element={<AddRecipePage />} />
-        <Route path="/myrecipes" element={<MyRecipesList />} />
+        <Route path="/my" element={<MyRecipesPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WelcomPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/favorite" element={<FavoritePage />} />
         <Route path="/categories" element={<CategoriesPage />}>
           <Route
             path="/categories/:category"
