@@ -1,17 +1,14 @@
 import { RecipePageHero } from 'components/Recipe/RecipePageHero';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
-import {
-  selectRecipes,
-  // selectIsLoading,
-  // selectError,
-} from 'redux/recipes/recipesSelectors';
+import // selectRecipes,
+// selectIsLoading,
+// selectError,
+'redux/recipes/recipesSelectors';
 
 const RecipePage = () => {
-  const recipes = useSelector(selectRecipes);
-  console.log(recipes);
   // const isLoading = useSelector(selectIsLoading);
   // const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -24,7 +21,7 @@ const RecipePage = () => {
 
   return (
     <main>
-      <RecipePageHero data={recipes} />
+      <RecipePageHero />
     </main>
   );
 };

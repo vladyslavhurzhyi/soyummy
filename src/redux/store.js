@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/authSlice';
-import recipesReducer from './auth/authSlice';
+import recipesReducer from './recipes/recipesSlice';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import {
   persistStore,
