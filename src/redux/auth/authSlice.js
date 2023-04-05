@@ -16,7 +16,7 @@ const initialState = {
   userData: {
     email: null,
     name: null,
-    avatar: null,
+    avatarURL: null,
   },
 };
 
@@ -26,30 +26,30 @@ export const authSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(signUp.fulfilled, (state, { payload }) => {
-        state.userData.email = payload.user.email;
-        state.userData.name = payload.user.name;
-        state.userData.avatar = payload.user.avatar;
+        state.userData.name = payload.data.name;
+        state.userData.email = payload.data.email;
+        state.userData.avatarURL = payload.data.avatarURL;
 
         state.accessToken = payload.accessToken;
         state.Login = true;
         state.userFetching = false;
       })
       .addCase(signIn.fulfilled, (state, { payload }) => {
-        state.userData.email = payload.user.email;
-        state.userData.name = payload.user.name;
-        state.userData.avatar = payload.user.avatarURL;
+        state.userData.email = payload.data.email;
+        state.userData.name = payload.data.name;
+        state.userData.avatarURL = payload.data.avatarURL;
 
         state.accessToken = payload.accessToken;
         state.Login = true;
         state.userFetching = false;
       })
       .addCase(edit.fulfilled, (state, { payload }) => {
-        state.userData.name = payload.user.name;
-        state.userData.avatar = payload.user.avatarURL;
+        state.userData.name = payload.data.name;
+        state.userData.avatarURL = payload.data.avatarURL;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
-        state.userData.name = payload.user.name;
-        state.userData.avatar = payload.user.avatarURL;
+        state.userData.name = payload.data.name;
+        state.userData.avatarURL = payload.data.avatarURL;
 
         state.accessToken = payload.accessToken;
         state.userFetching = false;
