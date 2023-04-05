@@ -13,7 +13,7 @@
 }
 
 .main-title-accent {
-  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl mt-20 mb-[18px] md:mt-[72px] md:mb-6 xl:mt-[100px];
+  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl mt-20 mb-[18px] md:mt-[72px] md:mb-6 xl:mt-[100px] text-center;
 }
 
 .main-btn {

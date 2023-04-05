@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "url('/src/pages/salat.png')",
-        recipePage: "url('/src/images//recipePage.jpg)",
+        recipePage: "url('/src/images/recipePage.jpg')",
       },
       colors: {
         accentMain: '#8BAA36',
