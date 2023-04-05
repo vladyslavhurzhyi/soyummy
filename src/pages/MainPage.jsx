@@ -1,5 +1,6 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 // import {PreviewCategories} from "components/PreviewCategories/PreviewCategories"
+import { Container } from 'components/Container/Container';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 // import { useEffect } from 'react';
@@ -52,22 +53,27 @@ const MainPage = () => {
 
   return (
     <>
-      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-56 pb-56 flex justify-between flex-row items-end">
-        <div className="flex  flex-col justify-start mb-8 ">
-          <h1 className="text-accentDark font-normal text-customXxxl font-main">
-            <span className="font-normal text-customXxxl leading-10 text-center tracking-tighter text-accentMain">
-              So
-            </span>
-            Yummy
-          </h1>
-          <p className="font-normal text-lg font-main leading-6 text-left mb-12 w-[460px] tracking-tight">
-            "What to cook?" is not only a recipe app, it is, in fact, your
-            cookbook. You can add your own recipes to save them for the future.
-          </p>
+      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-56 pb-56 ">
+        <Container>
+          <div class="flex justify-between flex-row items-end">
+            <div className="flex  flex-col justify-start mb-8 ">
+              <h1 className="text-accentDark font-normal text-customXxxl font-main">
+                <span className="font-normal text-customXxxl leading-10 text-center tracking-tighter text-accentMain">
+                  So
+                </span>
+                Yummy
+              </h1>
+              <p className="font-normal text-lg font-main leading-6 text-left mb-12 w-[460px] tracking-tight">
+                "What to cook?" is not only a recipe app, it is, in fact, your
+                cookbook. You can add your own recipes to save them for the
+                future.
+              </p>
 
-          <SearchForm handleOnSubmit={handelOnSubmit} />
-        </div>
-        <ChooseYourBreakfast />
+              <SearchForm handleOnSubmit={handelOnSubmit} />
+            </div>
+            <ChooseYourBreakfast />
+          </div>
+        </Container>
       </div>
       {/* <PreviewCategories /> */}
       <div>
