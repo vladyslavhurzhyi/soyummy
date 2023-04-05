@@ -10,7 +10,7 @@ import timeList from '../../data/time.json';
 export const ResipeDescriptionFields = ({ data, setData }) => {
   const [images, setImages] = useState([]);
 
-  // console.log(images);
+  console.log(images);
 
   const handleFieldChange = e => {
     const { id, value } = e.target;
