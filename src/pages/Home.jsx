@@ -4,7 +4,7 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Loader } from 'components/Loader/Loader';
 import { Logo } from 'components/Logo/Logo';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-import { Favorites } from 'components/Favorites/Favorites';
+
 import { ToggleButton } from 'components/ToggleButton/ToggleButton';
 
 const Home = () => {
@@ -30,7 +30,6 @@ const Home = () => {
         </div>
       </div>
       <Loader />
-      <Favorites />
     </>
   );
 };

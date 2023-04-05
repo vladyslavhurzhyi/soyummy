@@ -1,6 +1,6 @@
 import React from 'react';
 import { FavoriteItem } from './FavoriteItem';
-import imgDish from '../../pages/salat.png';
+import imgDish from '../../images/salat.png';
 
 const itemProps = {
   title: 'Salmon Eggs Benedict',
@@ -9,7 +9,7 @@ const itemProps = {
   time: '10min',
 };
 
-export const Favorites = () => {
+export const FavoriteList = () => {
   return (
     <>
       <div>
