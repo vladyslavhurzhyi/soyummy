@@ -6,15 +6,16 @@ import { Logo } from 'components/Logo/Logo';
 
 export const Footer = () => {
   return (
-    <div style={{zIndex: 10, position: 'relative',}}>
+    <div
+      style={{ zIndex: 0, position: 'relative', overflow: 'visible' }}
+    >
       <div className='blur-sm' style={{
             position: 'absolute',
             left: 0,
-            zIndex: 0,
+            zIndex: -100,
             top: -425,
           }}>
           <img src={require("./images/bgBottomLeftImage.png")} alt="leafs" width={558} height={852} />
-          {/* <img src={"https://cdn.pixabay.com/photo/2023/03/20/00/30/anthurium-7863531_1280.jpg"} alt="leafs" width={558} height={852} /> */}
         </div>
       <div
         style={{
@@ -28,9 +29,9 @@ export const Footer = () => {
           marginLeft: 'auto',
           marginRight: 'auto',
           paddingHorizontal: 100,
-          position: 'relative',
-          // overflow: 'hidden'
-          zIndex: 1000,
+          // position: 'relative',
+          // overflow: 'visible',
+          // zIndex: 1000,
         }}
       >
         
@@ -91,11 +92,10 @@ export const Footer = () => {
         {/* <div className='blur-sm' style={{
             position: 'absolute',
             left: 0,
-            zIndex: 0,
+            zIndex: -100,
             top: -425,
           }}>
           <img src={require("./images/bgBottomLeftImage.png")} alt="leafs" width={558} height={852} />
-          <img src={"https://cdn.pixabay.com/photo/2023/03/20/00/30/anthurium-7863531_1280.jpg"} alt="leafs" width={558} height={852} /> 
         </div> */}
       
       </div>
