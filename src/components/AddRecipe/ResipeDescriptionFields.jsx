@@ -2,20 +2,29 @@ import { useState } from 'react';
 import categories from '../../data/category.json';
 import timeList from '../../data/time.json';
 
-console.log(categories);
-console.log(timeList);
+// console.log(categories);
+// console.log(timeList);
 
 export const ResipeDescriptionFields = () => {
+  const [image, setImage] = useState({});
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [time, setTime] = useState('');
 
+  console.log(image);
+
   return (
     // <div className="w-full ">
     <form id="form" noValidate className="flex flex-col md:flex-row">
       <div className="w-[280px] h-[280px] mx-auto mb-8 xl:w-[360px] xl:h-[360px] md:mx-0 md:mb-o md:mr-8 bg-accentMain rounded-lg flex justify-center items-center">
-        <p>Input for photo</p>
+        {/* <p>Input for photo</p> */}
+        <input
+          type="file"
+          multiple
+          accept="image/*"
+          onChange={e => setImage(e.target.files)}
+        />
       </div>
       <div className=" flex flex-col md:w-[400px] mt-2">
         <div className="relative z-0 w-full mb-6">
