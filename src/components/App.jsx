@@ -5,15 +5,19 @@ import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperatins';
 import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { MyRecipesList } from './MyRecipesList/MyRecipesList';
 import { Search } from '../pages/Search';
+import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
 const Register = lazy(() => import('../pages/RegisterPage'));
 const Lognin = lazy(() => import('../pages/LogninPage'));
+const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 const WelcomPage = lazy(() => import('pages/WelcomPage'));
 const RecipePage = lazy(() => import('pages/RecipePage'));
+const FavoritePage = lazy(() => import('pages/FavoritesPage'));
+const MyRecipesPage = lazy(() => import('pages/MyRecipesPage'));
+const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -55,13 +59,21 @@ export const App = () => {
       >
         <Route index element={<HomePage />} />
         <Route path="/add" element={<AddRecipePage />} />
-        <Route path="/myrecipes" element={<MyRecipesList />} />
+        <Route path="/my" element={<MyRecipesPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WelcomPage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/recipe/:recipeId" element={<RecipePage />} />
         {/* element={<PrivateRoute component={RecipePage} redirectTo="/login" */}
+        <Route path="/favorite" element={<FavoritePage />} />
+        <Route path="/categories" element={<CategoriesPage />}>
+          <Route
+            path="/categories/:category"
+            element={<CategoriesRecipesList />}
+          />
+        </Route>
+        <Route path="/shopping-list" element={<ShoppingListPage />} />
       </Route>
     </Routes>
   );

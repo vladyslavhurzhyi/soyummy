@@ -1,15 +1,16 @@
-import React from 'react';
+//cssClassIcon="iconLogo" cssClassDiv="divIconLogo"
+//cssClass for trash - "iconTrash", cssClassDiv = "divIconTrash"
 import logo from './logosvg.svg';
 
-export const Logo = () => {
+export const Logo = ({
+  newLogo = logo,
+  cssClassIcon = 'iconLogo',
+  cssClassDiv = 'divIconLogo',
+}) => {
   return (
     <>
-      <div className="flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl">
-        <img
-          src={logo}
-          alt="logo"
-          className="fill-white w-7 h-7 xl:w-[30px] xl:h-[30px] "
-        ></img>
+      <div className={cssClassDiv}>
+        <img src={newLogo} alt="logo" className={cssClassIcon}></img>
       </div>
     </>
   );
