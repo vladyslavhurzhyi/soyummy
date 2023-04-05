@@ -33,7 +33,7 @@ export const SearchForm = ({ onSubmit }) => {
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-          className="text-base leading-6 w-full bg-transparent border-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px]"
+          className="text-greyInput  font-main text-base leading-6 w-full bg-transparent border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] placeholder:hover:border-none placeholder:hover:outline-none placeholder:active:border-none placeholder:active:outline-none placeholder:focus:border-none placeholder:focus:outline-none "
         />
         <CurveBtn
           type="submit"

@@ -18,6 +18,7 @@ module.exports = {
         mainText: '#001833',
         secondaryText: '#3E4462',
         whiteText: '#FAFAFA',
+        greyInput: '#BDBDBD',
       },
       spacing: {
         '52px': '52px',
