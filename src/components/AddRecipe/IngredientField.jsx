@@ -77,7 +77,7 @@ export const IngredientField = () => {
           <line x1="18" y1="9" x2="12" y2="15"></line>
           <line x1="12" y1="9" x2="18" y2="15"></line>
         </svg>
-      </button>
+      </button> */}
       <button
         className="ml-3"
         type="button"
@@ -97,7 +97,7 @@ export const IngredientField = () => {
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-      </button> */}
+      </button>
     </div>
   );
 };
