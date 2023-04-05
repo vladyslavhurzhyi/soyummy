@@ -15,6 +15,7 @@ const Register = lazy(() => import('../pages/RegisterPage'));
 const Lognin = lazy(() => import('../pages/LogninPage'));
 const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
 const WelcomPage = lazy(() => import('pages/WelcomPage'));
+const MainPage = lazy(() => import('pages/MainPage'));
 const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
 
 export const App = () => {
@@ -61,6 +62,7 @@ export const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WelcomPage />} />
+        <Route path="/main" element={<MainPage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/categories" element={<CategoriesPage />}>
           <Route
