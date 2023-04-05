@@ -1,15 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import { Navigation } from './Navigation';
-import { Nav } from './Nav';
-import { SubscribeForm } from './SubscribeForm';
-import { FollowUs } from 'components/FollowUs/FollowUs';
+import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
+// import { transform } from 'framer-motion';
 
 export const Footer = () => {
   return (
-    <div>
-
+    <div style={{zIndex: 10, position: 'relative',}}>
+      <div className='blur-sm' style={{
+            position: 'absolute',
+            left: 0,
+            zIndex: 0,
+            top: -425,
+          }}>
+          <img src={require("./images/bgBottomLeftImage.png")} alt="leafs" width={558} height={852} />
+          {/* <img src={"https://cdn.pixabay.com/photo/2023/03/20/00/30/anthurium-7863531_1280.jpg"} alt="leafs" width={558} height={852} /> */}
+        </div>
       <div
         style={{
           backgroundColor: '#22252A',
@@ -22,13 +28,16 @@ export const Footer = () => {
           marginLeft: 'auto',
           marginRight: 'auto',
           paddingHorizontal: 100,
+          position: 'relative',
+          // overflow: 'hidden'
+          zIndex: 1000,
         }}
       >
-        {/* <Navigation></Navigation> */}
+        
 
         <div style={{
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           justifyContent: 'space-between',
         }}>
           <div style={{
@@ -64,21 +73,33 @@ export const Footer = () => {
               listStyleType: 'disc',
               width: 418,
             }}>
-              <li><p>Database of recipes that can be replenished </p></li>
-              <li style={{marginTop: 12}}><p>Flexible search for desired and unwanted ingredients</p></li>
-              <li style={{marginTop: 12}}><p>Ability to add your own recipes with photos</p></li>
-              <li style={{marginTop: 12}}><p>Convenient and easy to use</p></li>
+              <li><p>Database of recipes that can be replenished</p></li>
+              <li className='mt-3'><p>Flexible search for desired and unwanted ingredients</p></li>
+              <li className='mt-3'><p>Ability to add your own recipes with photos</p></li>
+              <li className='mt-3'><p>Convenient and easy to use</p></li>
             </ul>
           </div>
-          <Nav/>
-          <SubscribeForm/>
+          <Navigation/>
+          {/* <Nav/>
+          <SubscribeForm/> */}
         </div>
-        <div style={{marginTop: 41}}>
+
+        {/* <div style={{marginTop: 41}}>
           <FollowUs />
-        </div>
+        </div> */}
+
+        {/* <div className='blur-sm' style={{
+            position: 'absolute',
+            left: 0,
+            zIndex: 0,
+            top: -425,
+          }}>
+          <img src={require("./images/bgBottomLeftImage.png")} alt="leafs" width={558} height={852} />
+          <img src={"https://cdn.pixabay.com/photo/2023/03/20/00/30/anthurium-7863531_1280.jpg"} alt="leafs" width={558} height={852} /> 
+        </div> */}
       
       </div>
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBlock: 50}}>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBlock: 50, position: 'relative', overflow: 'hidden'}}>
         <p style={{
           fontFamily: 'Poppins',
           fontWeight: 500,
@@ -94,14 +115,16 @@ export const Footer = () => {
           opacity: 0.5,
           marginLeft: 40,
         }}>Terms of Service</NavLink>
-        {/* <img src="/bgBottomRightImage.png" alt="leafs" width={438} height={474}
-          style={{
+        <div className='blur-sm' style={{
             position: 'absolute',
             right: 0,
-            zIndex: -1,
-            // filter: blur('4.5px'),
-            // transform: rotate()
-          }} /> */}
+            zIndex: 100,
+            bottom: 0,
+          }}>
+          <img src={require("./images/bgBottomRightImage.png")} alt="leafs" width={438} height={474} />
+          {/* <img src="https://cdn.pixabay.com/photo/2016/10/27/22/53/heart-1776746_1280.jpg" alt="leafs" width={438} height={474} /> */}
+        </div>
+        
       </div>
     </div>
   )
