@@ -7,14 +7,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { MyRecipesList } from './MyRecipesList/MyRecipesList';
 import { Search } from '../pages/Search';
-import { RecipePage } from 'pages/RecipePage';
-import { PrivateRoute } from 'service/routes';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
 const Register = lazy(() => import('../pages/RegisterPage'));
 const Lognin = lazy(() => import('../pages/LogninPage'));
 const WelcomPage = lazy(() => import('pages/WelcomPage'));
+const RecipePage = lazy(() => import('pages/RecipePage'));
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -61,7 +60,7 @@ export const App = () => {
         <Route path="/signin" element={<Lognin />} />
         <Route path="/welcomePage" element={<WelcomPage />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/recipe/:recipeId" element={<RecipePage />} />{' '}
+        <Route path="/recipe/:recipeId" element={<RecipePage />} />
         {/* element={<PrivateRoute component={RecipePage} redirectTo="/login" */}
       </Route>
     </Routes>

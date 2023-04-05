@@ -1,9 +1,11 @@
 import { RecipePageHero } from 'components/Recipe/RecipePageHero';
 
-export const RecipePage = () => {
+const RecipePage = () => {
   return (
     <>
       <RecipePageHero />
     </>
   );
 };
+
+export default RecipePage;
