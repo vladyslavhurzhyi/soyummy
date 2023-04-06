@@ -1,15 +1,13 @@
-//TODO when API is ready
-// import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAllRecipes } from 'service/Api/getRecipesApi';
+import { getRecipesByCategory } from 'service/Api/getRecipesApi';
 
 const CategoriesRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
-  //TODO when API is ready
-  // const { category } = useParams();
+  const { category } = useParams();
   useEffect(() => {
-    getAllRecipes().then(({ data }) => setRecipes(data));
-  }, []);
+    getRecipesByCategory(category).then(({ data }) => setRecipes(data));
+  }, [category]);
 
   return (
     <div>
@@ -17,14 +15,15 @@ const CategoriesRecipesList = () => {
         {recipes.map(({ thumb, _id, title }) => {
           return (
             <li key={_id} className="w-1/4 h-80">
-              <div
-                className="bg-gray-200 bg-cover bg-center w-full h-full bg-no-repeat relative "
+              <NavLink
+                to={`/recipe/${_id}`}
+                className="bg-gray-200 bg-cover bg-center w-full h-full bg-no-repeat relative block"
                 style={{ backgroundImage: `url('${thumb}` }}
               >
                 <div className="flex items-center justify-center absolute bottom-6 right-4 w-64 h-12 bg-slate-50 rounded-lg">
                   {title}
                 </div>
-              </div>
+              </NavLink>
             </li>
           );
         })}

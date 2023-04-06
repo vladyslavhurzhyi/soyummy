@@ -1,10 +1,6 @@
 import api from './axiosBaseURL';
 
-<<<<<<< Updated upstream
 // import { token } from 'redux/auth/authOperations';
-=======
-axios.defaults.baseURL = 'https://so-yummy-golt.onrender.com/api/v1';
->>>>>>> Stashed changes
 
 export const getAllRecipes = () => {
   return api
@@ -20,16 +16,12 @@ export const getAllRecipes = () => {
 
 export const getCategoriesList = () => {
   return api.get('/recipes/category-list').then(({ data }) => {
-    return data;
+    return data.data;
   });
 };
 
 export const getRecipesByCategory = category => {
-<<<<<<< Updated upstream
   return api.get(`/recipes/category/${category}`).then(({ data }) => {
-=======
-  return axios.get(`/recipes/category/${category}?limit=8`).then(({ data }) => {
->>>>>>> Stashed changes
     return data;
   });
 };
