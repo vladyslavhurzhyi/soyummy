@@ -4,7 +4,7 @@ import axios from 'axios';
 import api from 'service/Api/axiosBaseURL';
 
 // axios.defaults.baseURL = process.env.REACT_APP_SO_YUMMY_URL_BACK;
-api.defaults.headers.common.Authorization = process.env.REACT_APP_TOKEN;
+// api.defaults.headers.common.Authorization = process.env.REACT_APP_TOKEN;
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',
