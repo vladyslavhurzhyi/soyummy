@@ -3,14 +3,13 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import api from 'service/Api/axiosBaseURL';
 
-// axios.defaults.baseURL = process.env.REACT_APP_SO_YUMMY_URL_BACK;
 api.defaults.headers.common.Authorization = process.env.REACT_APP_TOKEN;
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',
   async (formData, thunkAPI) => {
     try {
-      const response = await api.post(`/recipes`, formData);
+      const response = await axios.post(`/recipes`, formData);
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {
@@ -25,7 +24,7 @@ export const fetchRecipeById = createAsyncThunk(
   'recipes/fetchRecipeById',
   async (recipeId, thunkAPI) => {
     try {
-      const response = await axios.get(`/recipes/${recipeId}`);
+      const response = await api.get(`/recipes/${recipeId}`);
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {
