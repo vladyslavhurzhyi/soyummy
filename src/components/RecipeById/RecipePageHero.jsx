@@ -7,6 +7,10 @@ export const RecipePageHero = data => {
   const recipes = useSelector(selectRecipes);
   const { title, description, time } = recipes.data[0];
 
+  const handleClick = () => {
+    console.log(123);
+  };
+
   return (
     <>
       <div className="flex flex-col font-main bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center mb-8">
@@ -24,7 +28,7 @@ export const RecipePageHero = data => {
             <CurveBtn
               text="Add to favorite recipes"
               cssClass="othercateg-btn text-customRecipesTime px-[16.9px] py-[8.9px] mb-[42px]"
-              // onClick=""
+              onClick={handleClick}
             />
             <div className="flex justify-center items-center">
               <svg

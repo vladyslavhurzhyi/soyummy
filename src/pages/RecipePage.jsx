@@ -1,5 +1,6 @@
 import { Loader } from 'components/Loader/Loader';
-import { RecipePageHero } from 'components/Recipe/RecipePageHero';
+import { IngredientList } from 'components/RecipeById/IngredientList';
+import { RecipePageHero } from 'components/RecipeById/RecipePageHero';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -24,7 +25,12 @@ const RecipePage = () => {
 
   return (
     <main>
-      {recipes.code && <RecipePageHero />}
+      {recipes.code && (
+        <>
+          <RecipePageHero />
+          <IngredientList />
+        </>
+      )}
       {isLoading && !error && <Loader />}
     </main>
   );
