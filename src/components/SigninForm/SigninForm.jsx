@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { signIn } from 'redux/auth/authOperatins';
+import { signIn } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 
-const LogninForm = () => {
+const SigninForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -10,7 +10,6 @@ const LogninForm = () => {
     const form = e.currentTarget;
     dispatch(
       signIn({
-        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -76,4 +75,4 @@ const LogninForm = () => {
   );
 };
 
-export default LogninForm;
+export default SigninForm;
