@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Reorder } from 'framer-motion';
 
 const API_KEY = '30633743-fecdcb797cf8e375f7471d26b';
 
@@ -16,16 +16,20 @@ export const IngredientsShoppingList = () => {
     }
     getImages();
   }, []);
+  if (!data) {
+    return;
+  }
   return (
     <>
       <motion.div
         initial={{
-          x: -200,
+          y: -50,
           opacity: 0,
         }}
-        transition={{ duration: 1.2 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
         whileInView={{
-          x: 0,
+          y: 0,
           opacity: 1,
         }}
         className="flex flex-row items-center justify-center px-[10px] md:px-[20px] xl:px-10 h-9 md:h-[60px] bg-accentMain rounded-lg"
@@ -40,14 +44,16 @@ export const IngredientsShoppingList = () => {
           Remove
         </h3>
       </motion.div>
-      <ul className="mt-2">
-        {data?.slice(0, 5).map(({ id, webformatURL, user, previewHeight }) => (
-          <motion.li
+      <Reorder.Group className="mt-2" values={data} onReorder={setData}>
+        {data?.map(({ id, webformatURL, user, previewHeight }, idx, arr) => (
+          <Reorder.Item
+            value={arr[idx]}
             initial={{
-              x: 200,
+              x: idx % 2 === 0 ? -200 : 200,
               opacity: 0,
             }}
-            transition={{ duration: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ duration: 0.6 }}
             whileInView={{
               x: 0,
               opacity: 1,
@@ -72,9 +78,9 @@ export const IngredientsShoppingList = () => {
             >
               X
             </button>
-          </motion.li>
+          </Reorder.Item>
         ))}
-      </ul>
+      </Reorder.Group>
     </>
   );
 };
