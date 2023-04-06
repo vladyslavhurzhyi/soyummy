@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
-  selectError,
-  selectIsLoading,
+//   selectError,
+//   selectIsLoading,
   selectRecipes,
 } from 'redux/recipes/recipesSelectors';
 
