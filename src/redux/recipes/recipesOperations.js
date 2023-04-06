@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import api from 'service/Api/axiosBaseURL';
 
-api.defaults.headers.common.Authorization = process.env.REACT_APP_TOKEN;
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',

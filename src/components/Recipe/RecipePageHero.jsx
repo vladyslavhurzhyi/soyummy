@@ -1,7 +1,7 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-import { useSelector } from 'react-redux';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+// import { useSelector } from 'react-redux';
+// import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
 export const RecipePageHero = data => {
   const recipes = useSelector(selectRecipes);

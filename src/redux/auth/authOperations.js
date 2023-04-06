@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from 'service/Api/axiosBaseURL';
 
 import {
   signUpUserAPI,
@@ -10,14 +10,12 @@ import {
   editUserAPI,
 } from 'service/Api/authUserAPI';
 
-axios.defaults.baseURL = 'https://so-yummy-golt.onrender.com/api/v1';
-
 export const token = {
   set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    axios.defaults.headers.common.Authorization = '';
+    api.defaults.headers.common.Authorization = '';
   },
 };
 
@@ -28,7 +26,8 @@ export const signUp = createAsyncThunk(
       const { email, password } = user;
       await signUpUserAPI(user);
       const data = await signInUserAPI({ email, password });
-      token.set(data.accessToken);
+
+      token.set(data.token);
       return data;
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
@@ -44,7 +43,7 @@ export const signIn = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const data = await signInUserAPI(user);
-      token.set(data.accessToken);
+      token.set(data.token);
       return data;
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
