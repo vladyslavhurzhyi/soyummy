@@ -1,25 +1,24 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-import { useSelector } from 'react-redux';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+// import { useSelector } from 'react-redux';
+// import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
-export const RecipePageHero = () => {
-  const recipes = useSelector(selectRecipes);
-  console.log(recipes);
-  // const { title, description } = recipes.data;
+export const RecipePageHero = data => {
+  // const recipes = useSelector(selectRecipes);
+  // console.log(data.data[0].title);
 
   return (
     <>
       <div className="flex flex-col font-main bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center">
-        {recipes && (
+        {data.length > 0 && (
           <div>
             <div>
               <MainPageTitle
-                pageTitle="title"
+                pageTitle={data}
                 className="main-title-accent mb-[18px] md:mb-[100px] md:px-8 xl:px-24 mx-auto"
               />
               <p className="block text-xs mx-auto max-w-[285px] mb-6">
-                "description"
+                {data.description}
               </p>
             </div>
             <div>
