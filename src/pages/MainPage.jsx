@@ -72,6 +72,7 @@ const MainPage = () => {
           <ChooseYourBreakfast />
         </div>
       </div>
+ </Container>
       {/* <PreviewCategories /> */}
       <div>
         <Link to="/categories/beef">
@@ -81,7 +82,7 @@ const MainPage = () => {
             text={'Other categories'}
           />
         </Link>
- </Container>
+
       </div>
     </>
   );
