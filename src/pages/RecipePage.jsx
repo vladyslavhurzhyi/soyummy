@@ -11,8 +11,8 @@ import {
 
 const RecipePage = () => {
   const recipes = useSelector(selectRecipes);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+//   const isLoading = useSelector(selectIsLoading);
+//   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   const { recipeId } = useParams();
