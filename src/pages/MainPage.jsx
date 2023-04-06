@@ -1,6 +1,5 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 // import {PreviewCategories} from "components/PreviewCategories/PreviewCategories"
-import { Container } from 'components/Container/Container';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 // import { useEffect } from 'react';
@@ -68,12 +67,10 @@ const MainPage = () => {
                 cookbook. You can add your own recipes to save them for the
                 future.
               </p>
-
-              <SearchForm handleOnSubmit={handelOnSubmit} />
-            </div>
-            <ChooseYourBreakfast />
+            <SearchForm handleOnSubmit={handelOnSubmit} />
           </div>
-        </Container>
+          <ChooseYourBreakfast />
+        </div>
       </div>
       {/* <PreviewCategories /> */}
       <div>
