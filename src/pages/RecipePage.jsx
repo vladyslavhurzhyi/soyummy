@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 import { RecipePageHero } from 'components/Recipe/RecipePageHero';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +24,8 @@ const RecipePage = () => {
 
   return (
     <main>
-      <RecipePageHero data={recipes.data} />
+      {recipes.code && <RecipePageHero />}
+      {isLoading && !error && <Loader />}
     </main>
   );
 };

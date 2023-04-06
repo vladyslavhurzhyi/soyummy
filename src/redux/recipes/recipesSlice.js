@@ -7,7 +7,7 @@ import {
 } from './recipesOperations';
 
 const initialState = {
-  items: [],
+  items: {},
   isLoading: false,
   error: null,
 };
