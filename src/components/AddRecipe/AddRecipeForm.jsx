@@ -4,8 +4,12 @@ import { ResipeIngredientsFields } from './RecipeIngredientsFields';
 import { ResipeMethodFields } from './RecipeMethodFields';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { FollowUs } from 'components/FollowUs/FollowUs';
+import { useDispatch } from 'react-redux';
+import { addRecipe } from 'redux/recipes/recipesOperations';
 
 export const AddRecipeForm = () => {
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -47,6 +51,7 @@ export const AddRecipeForm = () => {
     // simple validation..
     const { title, description, category, time, ingredients, instructions } =
       formData;
+
     if (
       !title ||
       !description ||
@@ -57,8 +62,11 @@ export const AddRecipeForm = () => {
     ) {
       alert('Please, provide all required fields');
     }
+
     console.log(formData);
     console.table(formData.ingredients);
+
+    dispatch(addRecipe(formData));
   };
 
   return (
@@ -74,9 +82,9 @@ export const AddRecipeForm = () => {
           type="submit"
           text="Publish recipe"
           cssClass="searchbl-btn"
-          onClick={() => {
-            console.log(`Click add recipe`);
-          }}
+          // onClick={() => {
+          //   console.log(`Click add recipe`);
+          // }}
         />
       </form>
       <div className="lg:w-40 absolute top-0 left-[900px] xl:left-[1056px]">

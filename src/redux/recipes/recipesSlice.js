@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
+  addRecipe,
   fetchRecipeById,
   // addToFavorite,
   // removeFromFavorite,
@@ -20,6 +21,11 @@ export const recipesSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
+      .addCase(addRecipe.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
       .addCase(fetchRecipeById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -40,6 +46,7 @@ export const recipesSlice = createSlice({
       // })
       .addMatcher(
         isAnyOf(
+          addRecipe.rejected,
           fetchRecipeById.rejected
           // addToFavorite.rejected,
           // removeFromFavorite.rejected

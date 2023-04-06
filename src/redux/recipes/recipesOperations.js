@@ -5,6 +5,21 @@ import axios from 'axios';
 axios.defaults.baseURL = process.env.REACT_APP_SO_YUMMY_URL_BACK;
 axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmQ3MzNjYmJmYjI0OTg2YTA5MGYzMyIsIm5hbWUiOiJNYXNldmlrIiwiZW1haWwiOiJtYXNldmlrQG1haWwuY29tIiwiaWF0IjoxNjgwNzEyMDM4LCJleHAiOjE2ODA3OTg0Mzh9.qSSIK06oURgPpHIGqNCKzbRDox_cuw-rQdKCsc912C8`;
 
+export const addRecipe = createAsyncThunk(
+  'recipes/addRecipe',
+  async (formData, thunkAPI) => {
+    try {
+      const response = await axios.post(`/recipes`, formData);
+      return response.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later', {
+        autoClose: 3000,
+      });
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const fetchRecipeById = createAsyncThunk(
   'recipes/fetchRecipeById',
   async (recipeId, thunkAPI) => {
