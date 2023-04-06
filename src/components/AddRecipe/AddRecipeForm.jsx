@@ -62,7 +62,7 @@ export const AddRecipeForm = () => {
   };
 
   return (
-    <div className="px-4 md:px-8 xl:px-24 relative">
+    <div className="relative">
       <form noValidate="" onSubmit={handleSubmit}>
         <ResipeDescriptionFields data={formData} setData={handleFieldsChange} />
         <ResipeIngredientsFields
