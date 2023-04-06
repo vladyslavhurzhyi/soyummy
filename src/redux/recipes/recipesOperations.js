@@ -1,15 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import api from 'service/Api/axiosBaseURL';
 
-axios.defaults.baseURL = process.env.REACT_APP_SO_YUMMY_URL_BACK;
-axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmQ3MzNjYmJmYjI0OTg2YTA5MGYzMyIsIm5hbWUiOiJNYXNldmlrIiwiZW1haWwiOiJtYXNldmlrQG1haWwuY29tIiwiaWF0IjoxNjgwNzEyMDM4LCJleHAiOjE2ODA3OTg0Mzh9.qSSIK06oURgPpHIGqNCKzbRDox_cuw-rQdKCsc912C8`;
+// axios.defaults.baseURL = process.env.REACT_APP_SO_YUMMY_URL_BACK;
+api.defaults.headers.common.Authorization = process.env.REACT_APP_TOKEN;
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',
   async (formData, thunkAPI) => {
     try {
-      const response = await axios.post(`/recipes`, formData);
+      const response = await api.post(`/recipes`, formData);
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {
