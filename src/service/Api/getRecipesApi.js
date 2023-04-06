@@ -1,12 +1,16 @@
 import api from './axiosBaseURL';
 
+<<<<<<< Updated upstream
 // import { token } from 'redux/auth/authOperations';
+=======
+axios.defaults.baseURL = 'https://so-yummy-golt.onrender.com/api/v1';
+>>>>>>> Stashed changes
 
 export const getAllRecipes = () => {
   return api
     .get('/recipes', {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_SO_YUMMY_URL_BACK}`,
+        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
       },
     })
     .then(({ data }) => {
@@ -21,7 +25,11 @@ export const getCategoriesList = () => {
 };
 
 export const getRecipesByCategory = category => {
+<<<<<<< Updated upstream
   return api.get(`/recipes/category/${category}`).then(({ data }) => {
+=======
+  return axios.get(`/recipes/category/${category}?limit=8`).then(({ data }) => {
+>>>>>>> Stashed changes
     return data;
   });
 };
