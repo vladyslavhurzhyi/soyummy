@@ -8,8 +8,8 @@ body {
   @apply bg-[#ECECEC];
 }
 
-.section-title {
-  @apply font-main font-semibold text-mainText text-customLg hover:text-accentMain;
+.container {
+  @apply px-4 md:px-8 xl:px-24;
 }
 
 .main-title {
