@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
-//   selectError,
-//   selectIsLoading,
+  selectError,
+  selectIsLoading,
   selectRecipes,
 } from 'redux/recipes/recipesSelectors';
 
 const RecipePage = () => {
   const recipes = useSelector(selectRecipes);
-//   const isLoading = useSelector(selectIsLoading);
-//   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   const { recipeId } = useParams();
