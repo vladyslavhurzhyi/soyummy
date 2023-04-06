@@ -53,7 +53,7 @@ const MainPage = () => {
 
   return (
     <>
-      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-56 pb-56 ">
+      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-80 pb-[32rem] ">
         <Container>
           <div class="flex justify-between flex-row items-end">
             <div className="flex  flex-col justify-start mb-8 ">
