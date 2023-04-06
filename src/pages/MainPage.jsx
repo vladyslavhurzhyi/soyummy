@@ -81,6 +81,7 @@ const MainPage = () => {
             text={'Other categories'}
           />
         </Link>
+ <Container/>
       </div>
     </>
   );
