@@ -3,14 +3,6 @@ import { RecipesList } from 'components/RecipesList/RecipesList';
 // import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
 import api from 'service/Api/axiosBaseURL';
 
-export const setAuthHeader = token => {
-  api.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-setAuthHeader(
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmQ5YWVmMDViNmMxN2NkNWU0YmE3ZiIsIm5hbWUiOiJKb2huIiwiZW1haWwiOiJzbWl0aHF3ZXF3ZXNAbWFpbC5jb20iLCJpYXQiOjE2ODA3MTA0MjAsImV4cCI6MTY4MDc5NjgyMH0.UnGqFNBVe19RmL66MD2QgQ2S4s885HE1B4fdXQEekPA'
-);
-
 const itemProps = [
   {
     title: 'Sushi',
