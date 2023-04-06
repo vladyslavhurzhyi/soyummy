@@ -53,7 +53,7 @@ const MainPage = () => {
   return (
     <>
       <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-80 pb-[32rem] ">
-        <Container>
+        {/* <Container> */}
           <div class="flex justify-between flex-row items-end">
             <div className="flex  flex-col justify-start mb-8 ">
               <h1 className="text-accentDark font-normal text-customXxxl font-main">
@@ -72,7 +72,6 @@ const MainPage = () => {
           <ChooseYourBreakfast />
         </div>
       </div>
- </Container>
       {/* <PreviewCategories /> */}
       <div>
         <Link to="/categories/beef">
