@@ -9,20 +9,35 @@ export const Navigation = () => {
 
     return (
         <nav>
-            {/* <NavLink to='/'>Home</NavLink> */}
-            {/* {isLoggedIn && <NavLink to='/contacts'>Contacts</NavLink>} */}
-            <div style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'space-between',
-            }}>
-                <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                    <Nav />
-                    <div className="mt-24">
-                        <FollowUs />
+            <div className='md:w-full justify-center justify-items-center justify-self-center'>
+                <div className='flex flex-col xl:flex-row'
+                    style={{
+                        display: 'flex',
+                        width: '100%',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-between',
+                }}>
+                    <div className='flex flex-col justify-center items-center'
+                        // style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
+                    >
+                        <div className="block md:hidden xl:block">
+                        <Nav /> 
+                        </div>
+                        
+                        <div className="hidden xl:block xl:mt-24">
+                            <FollowUs />
+                        </div>
+                    </div>
+                    <div className='block md:hidden xl:block'>
+                        <SubscribeForm/>
                     </div>
                 </div>
-                <SubscribeForm/>
+                <div className='hidden md:block xl:hidden'>
+                    <SubscribeForm/>
+                </div>
+                <div className="block xl:hidden mt-[44px] xl:mt-24">
+                    <FollowUs />
+                </div>
             </div>
         </nav>
     )
