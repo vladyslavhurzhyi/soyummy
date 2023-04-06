@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        recipePage: "url('/src/images/recipePage.jpg')",
         hero: "url('/src/images/salat.png')",
         main: "url('/src/images/bg_main-desc.png')",
       },

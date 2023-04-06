@@ -2,16 +2,18 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { motion, Reorder } from 'framer-motion';
 
-const API_KEY = '30633743-fecdcb797cf8e375f7471d26b';
+// const API_KEY = '30633743-fecdcb797cf8e375f7471d26b';
+// Секретні дані винесіть у .env. GitHub не пропускає комміти
 
 export const IngredientsShoppingList = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
     async function getImages(page = 1) {
-      const response = await axios.get(
-        `https://pixabay.com/api/?q=cat&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-      );
+      const response = await axios
+        .get
+        // `https://pixabay.com/api/?q=cat&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
+        ();
       return setData(response.data.hits);
     }
     getImages();
