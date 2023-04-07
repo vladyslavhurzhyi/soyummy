@@ -1,6 +1,6 @@
 import { IngredientList } from './IngredientList';
 
-export const Ingredients = data => {
+export const RecipeIngredientsList = data => {
   return (
     <>
       <div className="container">

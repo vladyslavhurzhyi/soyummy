@@ -61,7 +61,7 @@ export const RecipePageHero = data => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="text-customRecipesTime">{time} min</p>
+              {time && <p className="text-customRecipesTime">{time} min</p>}
             </div>
           </div>
         </div>
