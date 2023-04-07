@@ -23,8 +23,6 @@ export const IngredientsShoppingList = () => {
     visibleList(staticData, staticIngredient)
   );
 
-  useEffect(() => {}, []);
-
   return (
     <>
       {data.length > 0 ? (
