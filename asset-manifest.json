@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.63408f1a.css",
-    "main.js": "/soyummy/static/js/main.2f544afc.js",
+    "main.css": "/soyummy/static/css/main.7f18a80f.css",
+    "main.js": "/soyummy/static/js/main.e54a64c0.js",
     "static/js/415.4cb3c789.chunk.js": "/soyummy/static/js/415.4cb3c789.chunk.js",
     "static/js/710.d5e0a114.chunk.js": "/soyummy/static/js/710.d5e0a114.chunk.js",
     "static/js/751.676fded6.chunk.js": "/soyummy/static/js/751.676fded6.chunk.js",
@@ -18,12 +18,14 @@
     "static/media/recipePage.jpg": "/soyummy/static/media/recipePage.628958ad7b5b9dadbe08.jpg",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.27c02cb8d863c0b05eab.png",
+    "static/media/bgBottomLeftImage.png": "/soyummy/static/media/bgBottomLeftImage.4ec749f515dddfa62f8d.png",
+    "static/media/bgBottomRightImage.png": "/soyummy/static/media/bgBottomRightImage.2ebd596451eacc0a0501.png",
     "static/media/logosvg.svg": "/soyummy/static/media/logosvg.1987482c40bce4af801c48fdab08cbb2.svg",
     "index.html": "/soyummy/index.html",
     "static/media/trash.svg": "/soyummy/static/media/trash.b64908bfb2afd2d11b16eec0bbe55278.svg",
     "static/media/search-icon.svg": "/soyummy/static/media/search-icon.808a38e2b42b6a770b17ffac2f38a2c4.svg",
-    "main.63408f1a.css.map": "/soyummy/static/css/main.63408f1a.css.map",
-    "main.2f544afc.js.map": "/soyummy/static/js/main.2f544afc.js.map",
+    "main.7f18a80f.css.map": "/soyummy/static/css/main.7f18a80f.css.map",
+    "main.e54a64c0.js.map": "/soyummy/static/js/main.e54a64c0.js.map",
     "415.4cb3c789.chunk.js.map": "/soyummy/static/js/415.4cb3c789.chunk.js.map",
     "710.d5e0a114.chunk.js.map": "/soyummy/static/js/710.d5e0a114.chunk.js.map",
     "751.676fded6.chunk.js.map": "/soyummy/static/js/751.676fded6.chunk.js.map",
@@ -39,7 +41,7 @@
     "11.48a9222a.chunk.js.map": "/soyummy/static/js/11.48a9222a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63408f1a.css",
-    "static/js/main.2f544afc.js"
+    "static/css/main.7f18a80f.css",
+    "static/js/main.e54a64c0.js"
   ]
 }
