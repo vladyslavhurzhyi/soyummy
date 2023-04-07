@@ -10,7 +10,7 @@ const CategoriesPage = () => {
 
   useEffect(() => {
     navigate('/categories/Breakfast');
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="mx-auto">
