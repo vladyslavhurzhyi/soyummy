@@ -1,6 +1,5 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 // import {PreviewCategories} from "components/PreviewCategories/PreviewCategories"
-import { Container } from 'components/Container/Container';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 // import { useEffect } from 'react';
@@ -53,8 +52,8 @@ const MainPage = () => {
 
   return (
     <>
-      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-56 pb-56 ">
-        <Container>
+      <div className="bg-main bg-no-repeat  bg-cover h-48.5 pt-80 pb-[32rem] ">
+        {/* <Container> */}
           <div class="flex justify-between flex-row items-end">
             <div className="flex  flex-col justify-start mb-8 ">
               <h1 className="text-accentDark font-normal text-customXxxl font-main">
@@ -68,12 +67,10 @@ const MainPage = () => {
                 cookbook. You can add your own recipes to save them for the
                 future.
               </p>
-
-              <SearchForm handleOnSubmit={handelOnSubmit} />
-            </div>
-            <ChooseYourBreakfast />
+            <SearchForm handleOnSubmit={handelOnSubmit} />
           </div>
-        </Container>
+          <ChooseYourBreakfast />
+        </div>
       </div>
       {/* <PreviewCategories /> */}
       <div>
@@ -84,6 +81,7 @@ const MainPage = () => {
             text={'Other categories'}
           />
         </Link>
+
       </div>
     </>
   );
