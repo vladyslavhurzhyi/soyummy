@@ -1,13 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import api from 'service/Api/axiosBaseURL';
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',
   async (formData, thunkAPI) => {
     try {
-      const response = await axios.post(`/recipes`, formData);
+      const response = await api.post(`/recipes`, formData);
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {
