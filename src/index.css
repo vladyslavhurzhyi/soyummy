@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  @apply px-4 md:px-8 xl:px-24;
+  @apply px-4 md:px-8 xl:px-24 mx-auto;
 }
 
 .main-title {
