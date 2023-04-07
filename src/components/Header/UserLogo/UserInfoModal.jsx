@@ -1,5 +1,5 @@
 import React from 'react';
-import { UseEffect } from 'react';
+import { useEffect } from 'react';
 
 import { LogoutBtn } from './LogoutBtn';
 import { ReactComponent as EditPen } from './../images/editPen.svg';
@@ -7,7 +7,7 @@ import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
 
 
 export const UserInfoModal = ({ onClose, editOpen, logOutOpen }) => {
-  UseEffect(() => {
+  useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
         onClose();
