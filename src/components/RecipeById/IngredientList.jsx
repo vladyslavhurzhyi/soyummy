@@ -9,10 +9,12 @@ export const IngredientList = data => {
   return (
     <>
       <div className="container">
-        <div className="flex w-full">
+        <div className="flex justify-between placeholder:w-full">
           <div>Ingredients</div>
-          <div>Number</div>
-          <div>Add to list</div>
+          <div className="flex">
+            <div className="w-16">Number</div>
+            <div className="w-16">Add to list</div>
+          </div>
         </div>
       </div>
     </>
