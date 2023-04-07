@@ -3,8 +3,9 @@ import { Button } from "components/Button/Button";
 
 export const SubscribeForm = () => {
     return (
-        <div style={{marginLeft: 235}}>
-            <div style={{width: 339}}>
+        <div className="ml-0 md:ml-0 xl:ml-[235px] justify-center">
+            <div className="hidden md:hidden xl:block"
+                style={{ width: 339 }}>
                 <h3 style={{
                     fontFamily: 'Poppins',
                     fontWeight: 700,
@@ -21,13 +22,19 @@ export const SubscribeForm = () => {
                     marginTop: 14,
                 }}>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</p>
             </div>
-            <div style={{marginTop: 28}}>
+            <div className="flex flex-col md:flex-row xl:flex-col mt-[32px] xl:mt-[28px] w-[204px] md:w-[442px] xl:w-[338px] "
+                // style={{ marginTop: 28 }}
+            >
                 <input type="email" name="email" id="" placeholder="Enter your email address"
                     placeholderTextColor='#ffffff'
                     style={{
-                        backgroundColor: 'inherit', borderRadius: 6, width: '100%', color: '#ffffff',
-                        marginBottom: 16, paddingTop: 17.5, paddingBottom: 17.5, fontSize: 18,
-                    }} />
+                        backgroundColor: 'inherit', borderRadius: 6,
+                        // width: '100%',
+                        color: '#ffffff',
+                        //   fontSize: 18,
+                    }}
+                    className="mb-[16px] md:mb-0 xl:mb-[16px] py-[11.5px] md:py-[14.5px] xl:py-[17.5px] px-[42px] text-[10px]/[15px] md:text-[14px]/[21px] md:mr-[14px] xl:mr-0 w-full"
+                />
                 <Button cssClass="subscribe-btn" text="Subcribe"></Button>
             </div>
         </div>
