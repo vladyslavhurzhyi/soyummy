@@ -17,13 +17,13 @@ export const RecipePageHero = data => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="flex flex-col font-main bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center mb-8">
+      <div className="flex flex-col bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center mb-8">
         <div>
           <MainPageTitle
             pageTitle={title}
             className="main-title-accent mb-[18px] md:mb-[100px] md:px-8 xl:px-24 mx-auto"
           />
-          <p className="block text-xs text-accentDark mx-auto max-w-[285px] mb-6">
+          <p className="block text-xs text-accentDark mx-auto max-w-[299px] mb-6">
             {description}
           </p>
         </div>

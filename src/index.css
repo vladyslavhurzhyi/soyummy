@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-whiteText dark:bg-accentDarker;
+  @apply bg-whiteText dark:bg-accentDarker font-main;
 }
 
 .container {
@@ -105,7 +105,7 @@ body {
 .origin-0 {
   transform-origin: 0%;
 }
-.bg-size_main{
+.bg-size_main {
   background-size: 100% 100%;
 }
 input:focus ~ label,
