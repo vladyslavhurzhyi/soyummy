@@ -24,8 +24,8 @@ export const Modal = ({ toggleModal, children }) => {
   };
 
   return createPortal(
-    <div className="fixed top-0 left-0 w-full h-full z-50 bg-black bg-opacity-50" onClick={backdropClick}>
-      <div className="bg-white rounded-lg shadow-lg p-6 mx-auto my-12">
+    <div className="fixed; top: 0; left: 0; width: 100vw; height: 100vh;" onClick={backdropClick}>
+      <div className="width: auto; height: auto; flex items-center justify-center">
         {children}
       </div>
     </div>,
