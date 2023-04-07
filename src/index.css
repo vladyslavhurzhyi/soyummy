@@ -105,7 +105,9 @@ body {
 .origin-0 {
   transform-origin: 0%;
 }
-
+.bg-size_main{
+  background-size: 100% 100%;
+}
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label,
 select:focus ~ label,

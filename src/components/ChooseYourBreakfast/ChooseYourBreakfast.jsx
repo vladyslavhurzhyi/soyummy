@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 export const ChooseYourBreakfast = () => {
   return (
-    <div className="w-[298px] h-28 bg-white rounded-lg p-2 leading-5 text-secondaryText mb-8 flex justify-between flex-col">
+    <div className="hidden  w-[298px] h-28 bg-white rounded-lg p-2 leading-5 text-secondaryText mb-8 md:mb-0 md:flex justify-between flex-col">
       <p className="font-main font-medium text-sm tracking-tight">
         <span className="text-accentMain">Delicious and healthy </span>
         way to enjoy a variety of fresh ingredients in one satisfying meal
