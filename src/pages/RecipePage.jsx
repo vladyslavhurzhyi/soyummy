@@ -1,7 +1,6 @@
 import { Loader } from 'components/Loader/Loader';
-import { IngredientList } from 'components/RecipeById/IngredientList';
+import { RecipeIngredientsList } from 'components/RecipeById/RecipeIngredientsList';
 import { RecipePageHero } from 'components/RecipeById/RecipePageHero';
-import { ToggleButton } from 'components/ToggleButton/ToggleButton';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -26,11 +25,10 @@ const RecipePage = () => {
 
   return (
     <main>
-      <ToggleButton />
       {recipes.code && (
         <>
           <RecipePageHero />
-          <IngredientList />
+          <RecipeIngredientsList />
         </>
       )}
       {isLoading && !error && <Loader />}
