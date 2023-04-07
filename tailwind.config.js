@@ -5,8 +5,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        recipePage: "url('/src/images/recipePage.jpg')",
         hero: "url('/src/images/salat.png')",
-        main: "url('/src/images/bg_main.jpg')",
+        main: "url('/src/images/bg_main-desc.png')",
       },
       colors: {
         accentMain: '#8BAA36',
@@ -18,6 +19,7 @@ module.exports = {
         mainText: '#001833',
         secondaryText: '#3E4462',
         whiteText: '#FAFAFA',
+        greyInput: '#BDBDBD',
       },
       spacing: {
         '52px': '52px',
@@ -38,8 +40,10 @@ module.exports = {
         customXxl: ['44px', '44px'],
         customXxxl: ['100px', '100px'],
       },
-      weight: {
-        block: '100px',
+      border: { grey1: '#F0F0F0' },
+      height: {
+        13: '51px',
+        48.5: '777px',
       },
     },
   },

@@ -69,20 +69,25 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
       const filePath = img.filePath;
       const fileUrl = uploader.url(filePath, 'thumbnail'); // "raw" for un-transformed file.
       return (
-        <p
-          key={fileUrl}
-          className="border-dashed border-2 rounded-xl border-accentGray text-zinc-50 py-4 px-2 flex flex-col items-center"
-        >
-          Downloaded successfully
-          <a
-            href={fileUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-accentGray text-xs"
-          >
-            click to preview
-          </a>
-        </p>
+        <img
+          src={fileUrl}
+          alt="recipe poster"
+          className="block w-full h-full object-cover"
+        ></img>
+        // <p
+        //   key={fileUrl}
+        //   className="border-dashed border-2 rounded-xl border-accentGray text-zinc-50 py-4 px-2 flex flex-col items-center"
+        // >
+        //   Downloaded successfully
+        //   <a
+        //     href={fileUrl}
+        //     target="_blank"
+        //     rel="noreferrer"
+        //     className="text-accentGray text-xs"
+        //   >
+        //     click to preview
+        //   </a>
+        // </p>
       );
     });
 

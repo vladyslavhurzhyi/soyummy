@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authSlice from './auth/authSlice';
+import authReducer from './auth/authSlice';
+import recipesReducer from './recipes/recipesSlice';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import {
   persistStore,
@@ -15,14 +16,15 @@ import {
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['accessToken'],
 };
 
-export const persistedReducerAuth = persistReducer(persistConfig, authSlice);
+export const persistedReducerAuth = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
     auth: persistedReducerAuth,
+    recipes: recipesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

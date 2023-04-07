@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signUp, signIn, logOut, edit, current } from './authOperatins';
+import { signUp, signIn, logOut, edit, current } from './authOperations';
 
 const pending = state => {
   state.userFetching = true;
@@ -31,7 +31,7 @@ export const authSlice = createSlice({
         state.userData.email = payload.data.email;
         state.userData.avatarURL = payload.data.avatarURL;
 
-        state.accessToken = payload.accessToken;
+        state.accessToken = payload.token;
         state.Login = true;
         state.userFetching = false;
       })
@@ -40,7 +40,7 @@ export const authSlice = createSlice({
         state.userData.name = payload.data.name;
         state.userData.avatarURL = payload.data.avatarURL;
 
-        state.accessToken = payload.accessToken;
+        state.accessToken = payload.token;
         state.Login = true;
         state.userFetching = false;
       })
@@ -52,7 +52,7 @@ export const authSlice = createSlice({
         state.userData.name = payload.data.name;
         state.userData.avatarURL = payload.data.avatarURL;
 
-        state.accessToken = payload.accessToken;
+        state.accessToken = payload.token;
         state.userFetching = false;
       })
       .addCase(logOut.fulfilled, () => ({ ...initialState }))

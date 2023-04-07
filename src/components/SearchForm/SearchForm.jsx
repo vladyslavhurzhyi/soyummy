@@ -2,30 +2,43 @@ import React, { useState } from 'react';
 
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
-  const [searchValue, setInputValue] = useState(startQuery ?? '');
+export const SearchForm = ({ onSubmit }) => {
+  const [searchValue, setInputValue] = useState('');
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+  function handleInputChange(e) {
+    setInputValue(e.target.value);
+    console.log(searchValue);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    handleOnSubmit(searchValue, type);
+  function handleSubmit(e) {
+    e.preventDefault();
+    const query = searchValue.toLowerCase();
+    if (query === '') {
+      alert('enter something to find');
+      return;
+    }
+
+    console.log(query);
+    onSubmit(query);
+    setInputValue('');
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="w-[510px] h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
+      <form
+        onSubmit={handleSubmit}
+        className="flex justify-end rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] h-full relative"
+      >
         <input
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-        ></input>
+          className="text-greyInput  font-main text-base leading-6 w-full bg-transparent border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] placeholder:hover:border-none placeholder:hover:outline-none placeholder:active:border-none placeholder:active:outline-none placeholder:focus:border-none placeholder:focus:outline-none "
+        />
         <CurveBtn
           type="submit"
           text="Search"
-          cssClass="searchgreen-btn"
+          cssClass="searchgreen-btn absolute right-0 -top-0.5 h-[72px]"
         ></CurveBtn>
       </form>
     </div>
