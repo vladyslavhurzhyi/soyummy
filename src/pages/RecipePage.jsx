@@ -1,6 +1,7 @@
 import { Loader } from 'components/Loader/Loader';
 import { RecipeIngredientsList } from 'components/RecipeById/RecipeIngredientsList';
 import { RecipePageHero } from 'components/RecipeById/RecipePageHero';
+import { RecipePreparation } from 'components/RecipeById/RecipePreparation';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -29,6 +30,7 @@ const RecipePage = () => {
         <>
           <RecipePageHero />
           <RecipeIngredientsList />
+          <RecipePreparation />
         </>
       )}
       {isLoading && !error && <Loader />}

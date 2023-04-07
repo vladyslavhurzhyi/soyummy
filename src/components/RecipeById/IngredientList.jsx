@@ -17,7 +17,7 @@ export const IngredientList = () => {
   };
 
   return (
-    <ul>
+    <ul className="mb-[50px]">
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
           name={_id}
@@ -34,7 +34,9 @@ export const IngredientList = () => {
                 alt="placeholder"
               />
             )}
-            <p className="text-customShoppingList font-medium">{ttl}</p>
+            <p className="text-customShoppingList font-medium text-secondaryText">
+              {ttl}
+            </p>
           </div>
           <div className="flex items-center gap-[28px]">
             <div className="flex justify-between items-center h-6 bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime my-[31px] gap-1 px-1 min-w-max">
