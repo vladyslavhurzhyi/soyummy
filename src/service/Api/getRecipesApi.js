@@ -6,7 +6,7 @@ export const getAllRecipes = () => {
   return api
     .get('/recipes', {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_SO_YUMMY_URL_BACK}`,
+        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
       },
     })
     .then(({ data }) => {
@@ -16,7 +16,7 @@ export const getAllRecipes = () => {
 
 export const getCategoriesList = () => {
   return api.get('/recipes/category-list').then(({ data }) => {
-    return data;
+    return data.data;
   });
 };
 

@@ -1,12 +1,23 @@
-// import { useEffect } from 'react';
-// import { getCategoriesList } from 'service/Api/authUserAPI';
+import { useEffect } from 'react';
+
 import CategoriesList from 'components/CategoriesList/CategoriesList';
 import CategoriesRecipesList from 'components/CategoriesRecipeList/CategoriesRecipeList';
+import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
+import { useNavigate } from 'react-router-dom';
 
 const CategoriesPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate('/categories/Breakfast');
+  }, [navigate]);
+
   return (
     <div className="mx-auto">
-      <h1>Categories</h1>
+      <MainPageTitle
+        pageTitle={'Categories'}
+        className={'font-semibold font text-5xl mb-28'}
+      />
       <CategoriesList />
       <CategoriesRecipesList />
     </div>
