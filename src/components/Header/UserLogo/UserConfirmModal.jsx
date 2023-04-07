@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../../redux/auth/authOperations';
-// import CloseButton from "../../MobileMenu/CloseButton/CloseButton";
+import { CloseButton }  from "./CloseButton";
 
 export const UserConfirmModal = ({ toggleConfirmModal }) => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export const UserConfirmModal = ({ toggleConfirmModal }) => {
             Confirm
           </button>
         </div>
-        {/* <CloseButton toggleModal={toggleConfirmModal} /> */}
+        <CloseButton toggleModal={toggleConfirmModal} />
       </div>
     </div>
   );
