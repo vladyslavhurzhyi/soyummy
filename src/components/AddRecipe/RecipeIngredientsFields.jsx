@@ -2,9 +2,10 @@
 
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import measureList from '../../data/measure.json';
-import categories from '../../data/category.json';
+// import categories from '../../data/category.json';
 
-export const ResipeIngredientsFields = ({ items, setItems }) => {
+export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
+  console.log(ingredients);
   const handleAddClick = e => {
     e.preventDefault();
     const _items = [...items];
@@ -47,9 +48,9 @@ export const ResipeIngredientsFields = ({ items, setItems }) => {
               onChange={e => handleFieldChange(e, item.id)}
               className="pt-3 pb-2 pl-2 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
             >
-              {categories.map(({ type }) => (
-                <option key={type} value={type} className="bg-lime-50 ">
-                  {type}
+              {ingredients.map(({ ttl, _id }) => (
+                <option key={_id} value={_id} className="bg-lime-50 ">
+                  {ttl}
                 </option>
               ))}
             </select>
