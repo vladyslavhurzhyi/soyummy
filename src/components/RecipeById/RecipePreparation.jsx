@@ -6,7 +6,8 @@ export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipes);
   const { preview, instructions } = recipes.data[0];
 
-  const instructionsArr = instructions.split('\r\n\r\n');
+  const steps = instructions.split('\r\n');
+  // const filteredSteps = steps.filter(step => step !== '');
 
   return (
     <>
@@ -16,14 +17,18 @@ export const RecipePreparation = () => {
             Recipe Preparation
           </h2>
           <ul className="flex flex-col gap-y-3.5 mb-[50px] text-xs text-[#000000]">
-            {instructionsArr.map((step, index) => (
-              <li key={index} className="flex ">
-                <div className="flex justify-center items-center rounded-full w-5 h-5 mr-3.5 px-2.5 bg-accentMain text-customShoppingList font-semibold text-white">
-                  {index + 1}
-                </div>
-                <p>{step}</p>
-              </li>
-            ))}
+            {steps.map((step, index) => {
+              if (step !== '')
+                return (
+                  <li key={index} className="flex ">
+                    <div className="flex justify-center items-center rounded-full w-5 h-5 mr-3.5 px-2.5 bg-accentMain text-customShoppingList font-semibold text-white">
+                      {index + 1}
+                    </div>
+                    <p>{step}</p>
+                  </li>
+                );
+              return '';
+            })}
           </ul>
           <div className="w-[343px] h-[250px] overflow-auto">
             {{ preview } ? (
