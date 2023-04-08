@@ -1,19 +1,27 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
 import placeholder from 'images/ingred_placeholder.jpg';
+import {
+  addShoppingList,
+  deleteShoppingList,
+} from 'redux/shoppingList/shoppingListOperations';
 
 export const IngredientList = () => {
+  const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
   const { _id: recipeId, ingredients } = recipes.data[0];
 
   const handleChange = event => {
-    console.log(event.target.checked);
-
     const id = event.target.dataset.ingrid;
     const amount = event.target.dataset.ingramount;
     const measure = event.target.dataset.ingrmeasure;
-    const data = { recipeId, id, amount, measure };
-    console.log(data);
+    const ingredient = { recipeId, id, amount, measure };
+
+    if (event.target.checked) {
+      dispatch(addShoppingList(ingredient));
+    } else {
+      dispatch(deleteShoppingList({ recipeId, ingredient }));
+    }
   };
 
   return (

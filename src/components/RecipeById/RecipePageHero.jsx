@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   addFavoriteRecipes,
   // getFavoriteRecipes,
-  removeFromFavorite,
+  // removeFromFavorite,
 } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 // import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';

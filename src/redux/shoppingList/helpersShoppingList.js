@@ -14,9 +14,9 @@ export const helperFulfilledFetch = (state, action) => {
 };
 
 export const helperFulfilledAdd = (state, action) => {
-  //   state.isLoading = false;
-  //   state.error = null;
-  //   state.shoppingList.push(action.payload);
+  state.isLoading = false;
+  state.error = null;
+  state.shoppingList.push(action.payload);
 };
 
 export const helperFulfilledDelete = (state, action) => {
