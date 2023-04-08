@@ -1,58 +1,73 @@
 import { useState } from 'react';
-import { Modal } from './Modal';
-import { UserLogoModal } from './UserLogoModal';
 import { UserInfoModal } from './UserInfoModal';
-import { UserConfirmModal } from './UserConfirmModal';
+import { UserLogoutModal } from './UserLogoutModal';
+import { UserEditModal } from './UserEdit';
 import { getUser } from 'redux/auth/authSelectors';
 import { useSelector } from 'react-redux';
 
 export const UserPanel = () => {
   const [userInfoModal, setUserInfoModal] = useState(false);
-  const [userLogoModal, setUserLogoModal] = useState(false);
-  const [userConfirmModal, setUserConfirmModal] = useState(false);
+  const [userEditModal, setUserEditModal] = useState(false);
+  const [userLogoutModal, setUserLogoutModal] = useState(false);
 
-  const { name, email, avatarUrl } = useSelector(getUser);
+  const { name, avatarUrl } = useSelector(getUser);
+
+  const openModal = modalName => {
+    switch (modalName) {
+      case 'userInfo':
+        setUserInfoModal(true);
+        setUserEditModal(false);
+        setUserLogoutModal(false);
+        break;
+      case 'userEdit':
+        setUserInfoModal(false);
+        setUserEditModal(true);
+        setUserLogoutModal(false);
+        break;
+      case 'userLogout':
+        setUserInfoModal(false);
+        setUserEditModal(false);
+        setUserLogoutModal(true);
+        break;
+    }
+  };
+
+  const closeModals = () => {
+    setUserInfoModal(false);
+    setUserEditModal(false);
+    setUserLogoutModal(false);
+  };
+
+  const onUserBtnClick = () => openModal('userInfo');
   console.log(useSelector(getUser));
-  const toggleLogoModal = () => {
-    setUserLogoModal(!userLogoModal);
-  };
-  const toggleInfoModal = () => {
-    setUserInfoModal(!userInfoModal);
-  };
-
-  const toggleConfirmModal = () => {
-    setUserConfirmModal(!userConfirmModal);
-  };
-
   return (
     <div className="flex-grow-1 flex justify-end">
       <div
-        onClick={toggleLogoModal}
+        onClick={onUserBtnClick}
         className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8"
       >
         <div className="px-4">{name}</div>
-        <img src={avatarUrl} alt={`User avatar of ${name}`} />
+        <img
+          src={avatarUrl}
+          alt={`User avatar of ${name}`}
+          style={{ width: 50, height: 50, borderRadius: '50%' }}
+        />
       </div>
-      {userLogoModal && (
-        <Modal toggleModal={toggleLogoModal}>
-          <UserLogoModal
-            toggleLogoModal={toggleLogoModal}
-            toggleInfoModal={toggleInfoModal}
-            toggleConfirmModal={toggleConfirmModal}
-          />
-        </Modal>
-      )}
-      {userInfoModal && (
-        <Modal toggleModal={toggleInfoModal}>
-          <UserInfoModal toggleInfoModal={toggleInfoModal} />
-        </Modal>
-      )}
-
-      {userConfirmModal && (
-        <Modal toggleModal={toggleConfirmModal}>
-          <UserConfirmModal toggleConfirmModal={toggleConfirmModal} />
-        </Modal>
-      )}
+      <UserInfoModal
+        isOpen={userInfoModal}
+        handleClose={closeModals}
+        handleOpen={openModal}
+      />
+      <UserLogoutModal
+        isOpen={userLogoutModal}
+        handleClose={closeModals}
+        handleOpen={openModal}
+      />
+      <UserEditModal
+        isOpen={userEditModal}
+        handleClose={closeModals}
+        handleOpen={openModal}
+      />
     </div>
   );
 };

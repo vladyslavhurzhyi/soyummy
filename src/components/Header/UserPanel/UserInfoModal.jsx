@@ -1,70 +1,49 @@
 import React from 'react';
-import { useEffect } from 'react';
-
-import { LogoutBtn } from './LogoutBtn';
+import { ModalTW } from './ModalTW';
 import { ReactComponent as EditPen } from './../images/editPen.svg';
 import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
 
-
-export const UserInfoModal = ({ onClose, editOpen, logOutOpen }) => {
-  useEffect(() => {
-    const handleKeyDown = e => {
-      if (e.code === 'Escape') {
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [onClose]);
-
-  const handleOverlayClick = e => {
-    if (e.currentTarget === e.target) {
-      onClose();
-    }
-  };
+export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
+  const onEditBtnClick = () => handleOpen('userEdit');
+  const onLogoutBtnClick = () => handleOpen('userLogout');
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50" onClick={handleOverlayClick}>
-      <div className="max-w-screen-lg h-full w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6" onClick={handleOverlayClick}>
-        <div className='absolute bg-white rounded-md border border-green-400 top-16 right-4 md:top-20'>
-          <div className='p-4'> 
-            <div onClick={
-              () => {
-                onClose();
-                editOpen();
-              }
-            }>
-              Edit profile
-              <EditPen/>
-            </div>
-            <LogoutBtn
-              onClick={() => {
-                onClose();
-                logOutOpen();
-              }}
-            >
-              Log-out
-              <UserArrow />
-            </LogoutBtn>
-          </div>
+    <ModalTW isOpen={isOpen} handleClose={handleClose} backdrop="grey">
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          className="p-4"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <button
+            type="button"
+            onClick={onEditBtnClick}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '15px',
+            }}
+          >
+            <span style={{ marginRight: '10px' }}>Edit profile</span>
+            <EditPen />
+          </button>
+          <button type="button" onClick={onLogoutBtnClick}>
+            Logout
+            <UserArrow />
+          </button>
         </div>
       </div>
-    </div>
+    </ModalTW>
   );
 };
-
-
-
-
 
 // import React from 'react';
 
 // import { LogoutBtn } from './LogoutBtn';
 // import { ReactComponent as EditPen } from './../images/editPen.svg';
 // import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
-
 
 // export const UserInfoModal = ({ closeModal, openEdit, openConfirm, container }) => {
 //   const rect = container.getBoundingClientRect();
@@ -96,9 +75,6 @@ export const UserInfoModal = ({ onClose, editOpen, logOutOpen }) => {
 //     </div>
 //   );
 // };
-
-
-
 
 // import { useState } from "react";
 // // import { useDispatch } from "react-redux";
@@ -195,4 +171,3 @@ export const UserInfoModal = ({ onClose, editOpen, logOutOpen }) => {
 //     </div>
 //   );
 // };
-
