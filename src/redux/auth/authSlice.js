@@ -2,8 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { signUp, signIn, logOut, edit, current } from './authOperations';
 
 const pending = state => {
+  state.isRefreshing = true;
   state.userFetching = true;
 };
+
 const rejected = state => {
   state.userFetching = false;
   state.Login = false;
@@ -32,8 +34,10 @@ export const authSlice = createSlice({
         state.userData.avatarUrl = payload.data.avatarUrl;
 
         state.accessToken = payload.token;
-        state.Login = true;
+
         state.userFetching = false;
+        state.isRefreshing = false;
+        state.Login = true;
       })
       .addCase(signIn.fulfilled, (state, { payload }) => {
         state.userData.email = payload.data.email;
@@ -43,11 +47,15 @@ export const authSlice = createSlice({
         state.accessToken = payload.token;
         state.Login = true;
         state.userFetching = false;
+        state.isRefreshing = false;
       })
       .addCase(edit.fulfilled, (state, { payload }) => {
         state.userData.name = payload.data.name;
         state.userData.avatarUrl = payload.data.avatarUrl;
       })
+      .addCase(current.pending, pending)
+      .addCase(signUp.pending, pending)
+      .addCase(signIn.pending, pending)
       .addCase(current.fulfilled, (state, { payload }) => {
         state.userData.name = payload.data.name;
         state.userData.avatarUrl = payload.data.avatarUrl;
@@ -55,12 +63,10 @@ export const authSlice = createSlice({
 
         state.accessToken = payload.token;
         state.userFetching = false;
+        state.Login = true;
+        state.isRefreshing = false;
       })
       .addCase(logOut.fulfilled, () => ({ ...initialState }))
-
-      .addCase(signUp.pending, pending)
-      .addCase(signIn.pending, pending)
-      .addCase(current.pending, pending)
 
       .addCase(signUp.rejected, rejected)
       .addCase(signIn.rejected, rejected)

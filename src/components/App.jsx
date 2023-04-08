@@ -1,24 +1,23 @@
-import { lazy, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { PrivateRoute, RegisterRoute } from 'service/routes';
 import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
 import { useSelector, useDispatch } from 'react-redux';
-import { SharedLayout } from './SharedLayout/SharedLayout';
-import { Search } from '../pages/Search';
-import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 
-const HomePage = lazy(() => import('../pages/Home'));
-const AddRecipePage = lazy(() => import('../pages/AddRecipe'));
-const Register = lazy(() => import('../pages/RegisterPage'));
-const Signin = lazy(() => import('../pages/SigninPage'));
-const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
-const RecipePage = lazy(() => import('pages/RecipePage'));
-const WellcomPage = lazy(() => import('pages/WellcomPage'));
-const MainPage = lazy(() => import('pages/MainPage'));
-const FavoritePage = lazy(() => import('pages/FavoritesPage'));
-const MyRecipesPage = lazy(() => import('pages/MyRecipesPage'));
-const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
+import { PrivateRoute, PublicRoute } from 'service/routes';
+import Register from 'pages/RegisterPage';
+import Signin from 'pages/SigninPage';
+import MainPage from 'pages/MainPage';
+import { SharedLayout } from './SharedLayout/SharedLayout';
+import AddRecipe from 'pages/AddRecipe';
+import FavoritesPage from 'pages/FavoritesPage';
+import WellcomPage from 'pages/WellcomPage';
+import ShoppingListPage from 'pages/ShoppingListPage';
+import MyRecipesPage from 'pages/MyRecipesPage';
+import { Search } from 'pages/Search';
+import RecipePage from 'pages/RecipePage';
+import CategoriesPage from 'pages/CategoriesPage';
+import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -31,52 +30,91 @@ export const App = () => {
   }, [dispatcher, token]);
 
   return (
-    <Routes>
-      {/* <>
+    <>
+      <Routes>
         <Route
-          path="/"
-          element={<RegisterRoute restricted>{<Main />}</RegisterRoute>}
+          path="/welcome"
+          element={
+            <PublicRoute
+              component={WellcomPage}
+              redirectTo="/main"
+              restricted
+            />
+          }
         />
+
         <Route
           path="/register"
-          element={<RegisterRoute restricted>{<Register />}</RegisterRoute>}
+          element={
+            <PublicRoute component={Register} redirectTo="/main" restricted />
+          }
         />
         <Route
           path="/signin"
-          element={<RegisterRoute restricted>{<Signin />}</RegisterRoute>}
+          element={
+            <PublicRoute component={Signin} redirectTo="/main" restricted />
+          }
         />
+
         <Route
-          path="/confirm-email"
-          element={<RegisterRoute restricted>{<Subscribe />}</RegisterRoute>}
-        />
-      </> */}
-      <Route
-        path="/"
-        element={
-          // <PrivateRoute>
-          <SharedLayout />
-          // </PrivateRoute>
-        }
-      >
-        <Route index element={<HomePage />} />
-        <Route path="/add" element={<AddRecipePage />} />
-        <Route path="/my" element={<MyRecipesPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/wellcomPage" element={<WellcomPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/recipe/:recipeId" element={<RecipePage />} />
-        {/* element={<PrivateRoute component={RecipePage} redirectTo="/login" */}
-        <Route path="/favorite" element={<FavoritePage />} />
-        <Route path="/categories" element={<CategoriesPage />}>
+          path="/"
+          element={
+            <PrivateRoute component={SharedLayout} redirectTo="/welcome" />
+          }
+        >
           <Route
-            path="/categories/:category"
-            element={<CategoriesRecipesList />}
+            path="/main"
+            element={<PrivateRoute component={MainPage} redirectTo="/signin" />}
           />
+          <Route
+            path="/add"
+            element={
+              <PrivateRoute component={AddRecipe} redirectTo="/signin" />
+            }
+          />
+          <Route
+            path="/favorite"
+            element={
+              <PrivateRoute component={FavoritesPage} redirectTo="/signin" />
+            }
+          />
+          <Route
+            path="/shopping-list"
+            element={
+              <PrivateRoute component={ShoppingListPage} redirectTo="/signin" />
+            }
+          />
+          <Route
+            path="/my"
+            element={
+              <PrivateRoute component={MyRecipesPage} redirectTo="/signin" />
+            }
+          />
+          <Route
+            path="/search"
+            element={<PrivateRoute component={Search} redirectTo="/signin" />}
+          />
+          <Route
+            path="/recipe/:recipeId"
+            element={
+              <PrivateRoute component={RecipePage} redirectTo="/signin" />
+            }
+          />
+
+          <Route
+            path="/categories"
+            element={
+              <PrivateRoute component={CategoriesPage} redirectTo="/signin" />
+            }
+          >
+            <Route
+              path="/categories/:category"
+              element={<CategoriesRecipesList />}
+            />
+            <Route />
+          </Route>
         </Route>
-        <Route path="/shopping-list" element={<ShoppingListPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 };
