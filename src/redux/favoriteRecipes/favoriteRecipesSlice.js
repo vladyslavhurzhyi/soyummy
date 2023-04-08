@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
+  addFavoriteRecipes,
   getFavoriteRecipes,
   removeFromFavorite,
 } from './favoriteRecipesOperations';
@@ -24,7 +25,11 @@ export const favoriteRecipesSlice = createSlice({
         state.error = null;
         state.items = action.payload;
       })
-
+      .addCase(addFavoriteRecipes.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
       .addCase(removeFromFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -33,10 +38,17 @@ export const favoriteRecipesSlice = createSlice({
         );
         state.items.splice(index, 1);
       })
-      .addMatcher(isAnyOf(getFavoriteRecipes.rejected), (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+      .addMatcher(
+        isAnyOf(
+          getFavoriteRecipes.rejected,
+          addFavoriteRecipes.rejected,
+          removeFromFavorite.rejected
+        ),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        }
+      )
       .addMatcher(isPendingAction, state => {
         state.isLoading = true;
       });

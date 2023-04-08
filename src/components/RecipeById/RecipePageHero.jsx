@@ -1,15 +1,31 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { Helmet } from 'react-helmet-async';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addFavoriteRecipes,
+  getFavoriteRecipes,
+  removeFromFavorite,
+} from 'redux/favoriteRecipes/favoriteRecipesOperations';
+import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
 export const RecipePageHero = data => {
+  const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-  const { title, description, time } = recipes.data[0];
+  const favorites = useSelector(selectFavRecipes);
+  const { _id: recipeId, title, description, time } = recipes.data[0];
+  const isFavorites = favorites.filter(item => item._id === recipeId).toBoolean;
+  console.log(favorites);
+  console.log(isFavorites);
 
-  const handleClick = () => {
-    console.log(123);
+  const handleClickAddFavorite = () => {
+    dispatch(addFavoriteRecipes(recipeId));
+  };
+
+  const handleClickRemoveFavorite = () => {
+    dispatch(removeFromFavorite(recipeId));
+    dispatch(getFavoriteRecipes());
   };
 
   return (
@@ -28,11 +44,20 @@ export const RecipePageHero = data => {
           </p>
         </div>
         <div>
-          <CurveBtn
-            text="Add to favorite recipes"
-            cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
-            onClick={handleClick}
-          />
+          {true && (
+            <CurveBtn
+              text="Add to favorite recipes"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
+              onClick={() => handleClickAddFavorite()}
+            />
+          )}
+          {true && (
+            <CurveBtn
+              text="Remove from favorite recipes"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
+              onClick={() => handleClickRemoveFavorite()}
+            />
+          )}
           <div className="flex justify-center items-center">
             <svg
               width="14"
