@@ -4,43 +4,43 @@ import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   addFavoriteRecipes,
-  getFavoriteRecipes,
+  // getFavoriteRecipes,
   removeFromFavorite,
 } from 'redux/favoriteRecipes/favoriteRecipesOperations';
-import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
+// import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
 export const RecipePageHero = data => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-  const favorites = useSelector(selectFavRecipes);
+  // const favorites = useSelector(selectFavRecipes);
   const { _id: recipeId, title, description, time } = recipes.data[0];
 
   // const isFavorites = favorites.some(item => item._id === recipeId);
 
-  console.log(favorites);
+  // console.log(favorites);
   // console.log(isFavorites);
 
   const handleClickAddFavorite = () => {
     dispatch(addFavoriteRecipes(recipeId));
-    dispatch(getFavoriteRecipes());
-  };
-
-  const handleClickRemoveFavorite = () => {
-    dispatch(removeFromFavorite(recipeId));
     // dispatch(getFavoriteRecipes());
   };
+
+  // const handleClickRemoveFavorite = () => {
+  //   dispatch(removeFromFavorite(recipeId));
+  //   dispatch(getFavoriteRecipes());
+  // };
 
   return (
     <>
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="flex flex-col bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center mb-8">
+      <div className="flex flex-col bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 px-16 md:px-8 xl:px-24 ">
         <div>
           <MainPageTitle
             pageTitle={title}
-            className="main-title-accent mb-[18px] md:mb-[100px] md:px-8 xl:px-24 mx-auto"
+            className="main-title-accent mb-[18px] md:mb-[100px] mx-auto"
           />
           <p className="block text-xs text-accentDark mx-auto max-w-[299px] mb-6">
             {description}
@@ -54,13 +54,13 @@ export const RecipePageHero = data => {
               onClick={() => handleClickAddFavorite()}
             />
           )}
-          {true && (
+          {/* {true && (
             <CurveBtn
               text="Remove from favorite recipes"
               cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
               onClick={() => handleClickRemoveFavorite()}
             />
-          )}
+          )} */}
           <div className="flex justify-center items-center">
             <svg
               width="14"
