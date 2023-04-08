@@ -17,7 +17,7 @@ const initialState = {
   userData: {
     email: null,
     name: null,
-    avatarURL: null,
+    avatarUrl: null,
   },
 };
 
@@ -29,7 +29,7 @@ export const authSlice = createSlice({
       .addCase(signUp.fulfilled, (state, { payload }) => {
         state.userData.name = payload.data.name;
         state.userData.email = payload.data.email;
-        state.userData.avatarURL = payload.data.avatarURL;
+        state.userData.avatarUrl = payload.data.avatarUrl;
 
         state.accessToken = payload.token;
         state.Login = true;
@@ -38,7 +38,7 @@ export const authSlice = createSlice({
       .addCase(signIn.fulfilled, (state, { payload }) => {
         state.userData.email = payload.data.email;
         state.userData.name = payload.data.name;
-        state.userData.avatarURL = payload.data.avatarURL;
+        state.userData.avatarUrl = payload.data.avatarUrl;
 
         state.accessToken = payload.token;
         state.Login = true;
@@ -46,11 +46,12 @@ export const authSlice = createSlice({
       })
       .addCase(edit.fulfilled, (state, { payload }) => {
         state.userData.name = payload.data.name;
-        state.userData.avatarURL = payload.data.avatarURL;
+        state.userData.avatarUrl = payload.data.avatarUrl;
       })
       .addCase(current.fulfilled, (state, { payload }) => {
         state.userData.name = payload.data.name;
-        state.userData.avatarURL = payload.data.avatarURL;
+        state.userData.avatarUrl = payload.data.avatarUrl;
+        state.userData.email = payload.data.email;
 
         state.accessToken = payload.token;
         state.userFetching = false;
