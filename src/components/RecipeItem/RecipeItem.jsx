@@ -1,29 +1,41 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { Logo } from 'components/Logo/Logo';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import logo from './trash.svg';
 
 export const RecipeItem = ({
   img,
+  id,
   title,
   description,
   time,
   cssClass = 'seerecipe-btn',
+  remove,
 }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <>
-      <li className="flex mx-auto mb-10">
-        <div className=" bg-zinc-50 w-[1240px] rounded-lg">
-          <div className="flex my-10 mx-10 ">
+      <li className="flex mx-auto mb-10 bg-[#ffffff] rounded-lg">
+        <div className="w-[1240px]">
+          <div className="flex my-10">
             <img
-              className="w-[318px] h-[324px] mr-10 rounded-lg object-cover"
+              className="w-[318px] h-[324px] mr-10 rounded-lg object-cover ml-10"
               src={img}
               alt={img}
             />
-            <div className="flex flex-col">
-              <div className="flex mb-8">
+            <div className="flex flex-col mr-10 w-full">
+              <div className="flex mb-8 ">
                 <h2 className="text-2xl ">{title}</h2>
-                <button className="flex ml-auto ">
+                <button
+                  className="flex ml-auto "
+                  onClick={() => {
+                    dispatch(remove(id));
+                  }}
+                >
                   <Logo
                     newLogo={logo}
                     cssClassIcon="iconTrash"
@@ -31,11 +43,19 @@ export const RecipeItem = ({
                   />
                 </button>
               </div>
-              <div className="flex h-full justify-between flex-col">
-                <p className="text-lg mr-[123px] ">{description}</p>
-                <div className="flex justify-between">
-                  <p className="mt-auto text-sm font-medium">{time} min</p>
-                  <CurveBtn cssClass={cssClass} text="See recipe" />
+              <div className="flex h-full w-full justify-between flex-col ">
+                <p className="text-lg">{description}</p>
+                <div className="flex justify-between ">
+                  <p className="mt-auto text-sm font-medium font-main">
+                    {time} min
+                  </p>
+                  <CurveBtn
+                    cssClass={cssClass}
+                    text="See recipe"
+                    onClick={() => {
+                      navigate(`/recipe/${id}`);
+                    }}
+                  />
                 </div>
               </div>
             </div>

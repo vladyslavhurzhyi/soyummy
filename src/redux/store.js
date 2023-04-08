@@ -3,6 +3,9 @@ import authReducer from './auth/authSlice';
 import recipesReducer from './recipes/recipesSlice';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import shoppingListReducer from './shoppingList/shoppingListSlice';
+import favoriteRecipesReducer from './favoriteRecipes/favoriteRecipesSlice';
+import myRecipesReducer from './myRecipes/myRecipesRecipesSlice';
+
 import {
   persistStore,
   FLUSH,
@@ -27,6 +30,8 @@ export const store = configureStore({
     auth: persistedReducerAuth,
     recipes: recipesReducer,
     shoppingList: shoppingListReducer,
+    favoriteRecipes: favoriteRecipesReducer,
+    myRecipes: myRecipesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
