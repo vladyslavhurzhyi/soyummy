@@ -7,6 +7,7 @@ export const getEmail = state => state.auth.userData.email;
 export const getName = state => state.auth.userData.name;
 export const getAvatar = state => state.auth.userData.avatarUrl;
 export const getToken = state => state.auth.accessToken;
+export const isLoggedIn = state => state.auth.Login;
 //---ADDITIONALLY
 export const getLoges = state => state.auth.Login;
 export const getUserFetching = state => state.auth.userFetching;
