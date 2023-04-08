@@ -1,21 +1,12 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
-// import {PreviewCategories} from "components/PreviewCategories/PreviewCategories"
+import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-// import { getAllIngredients } from 'redux/ingredients/ingredientsOperations';
-// import { getCategoryList, getPopularList } from 'redux/outerRecipes/outerRecipesOperations';
-// import { getFullCategoryList, getPopular } from 'redux/outerRecipes/outerRecipesSelectors';
 
 const MainPage = () => {
-  //   const ingredients = useSelector(getIngredients);
-  //   const categories = useSelector(getFullCategoryList);
-  //   const popularRecipes = useSelector(getPopular);
-  //   const dispatcher = useDispatch();
   const navigate = useNavigate();
 
   const onClick = e => {
@@ -32,28 +23,9 @@ const MainPage = () => {
     navigate(`/search?query=${query}&type=${type}`);
   };
 
-  //   useEffect(() => {
-  //     if (categories.length === 0) {
-  //       dispatcher(getCategoryList());
-  //     }
-  //   }, [dispatcher, categories.length]);
-
-  //   useEffect(() => {
-  //     if (categories.length === 0) {
-  //       dispatcher(getPopularRecipes());
-  //     }
-  //   }, [dispatcher, popularRecipes.length]);
-
-  //   useEffect(() => {
-  //     if (categories.length === 0) {
-  //       dispatcher(getAllIngredients());
-  //     }
-  //   }, [dispatcher, ingredients.length]);
-
   return (
-    <section className=" bg-white">
+    <section>
       <div className=" bg-main_m md:bg-main_t xl:bg-main_d bg-no-repeat bg-center bg-size_main h-48.5 md:h-[768px] pt-[68px]  xl:pt-52  md:flex items-center">
-        {/* <Container> */}
         <div class="container  flex justify-between flex-row items-end xl:pb-64">
           <div className="flex  flex-col mx-auto md:mx-0 xl:justify-start  mb-8 ">
             <h1 className="text-accentDark text-center md:text-left font-normal text-[60px] md:text-[72px] xl:text-[100px] font-main">
@@ -74,12 +46,13 @@ const MainPage = () => {
       </div>
 
       <div className="relative z-[1]">
-        {/* <PreviewCategories className="relative z-10" /> */}
+        <PreviewCategories className="relative z-10" />
         <Link to="/categories/beef">
           <CurveBtn
             type={'button'}
             onClick={onClick}
             text={'Other categories'}
+            cssClass="othercateg-btn"
           />
         </Link>
       </div>
