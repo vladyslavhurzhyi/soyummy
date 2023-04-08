@@ -26,7 +26,7 @@ export const SubscribeForm = () => {
                 // style={{ marginTop: 28 }}
             >
                 <input type="email" name="email" id="" placeholder="Enter your email address"
-                    placeholderTextColor='#ffffff'
+                    placeholdertextcolor='#ffffff'
                     style={{
                         backgroundColor: 'inherit', borderRadius: 6,
                         // width: '100%',
