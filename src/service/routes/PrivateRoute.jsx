@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { getUserFetching, getLoges } from '../../redux/auth/authSelectors';
-import { Loader } from 'components/Loader/Loader';
+import { getLoges, getIsRefreshing } from 'redux/auth/authSelectors';
 
-export const PrivateRoute = ({ children }) => {
-  const userFetching = useSelector(getUserFetching);
-  const Login = useSelector(getLoges);
-  return Login ? userFetching ? <Loader /> : children : <Navigate to="/" />;
+export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
+  const isLoggedIn = useSelector(getLoges);
+  const isRefreshing = useSelector(getIsRefreshing);
+
+  const shouldRedirect = !isRefreshing && !isLoggedIn;
+
+  return <>{shouldRedirect ? <Navigate to={redirectTo} /> : <Component />}</>;
 };
