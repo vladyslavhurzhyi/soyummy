@@ -28,14 +28,14 @@ export const favoriteRecipesSlice = createSlice({
       .addCase(addFavoriteRecipes.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.items.push(action.payload);
       })
       .addCase(removeFromFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = state.items.findIndex(
-          item => item.id === action.payload.id
-        );
+        console.log(action.payload);
+        const index = state.items.findIndex(item => item.id === action.payload);
+        console.log(index);
         state.items.splice(index, 1);
       })
       .addMatcher(

@@ -15,17 +15,20 @@ export const RecipePageHero = data => {
   const recipes = useSelector(selectRecipes);
   const favorites = useSelector(selectFavRecipes);
   const { _id: recipeId, title, description, time } = recipes.data[0];
-  const isFavorites = favorites.filter(item => item._id === recipeId).toBoolean;
+
+  // const isFavorites = favorites.some(item => item._id === recipeId);
+
   console.log(favorites);
-  console.log(isFavorites);
+  // console.log(isFavorites);
 
   const handleClickAddFavorite = () => {
     dispatch(addFavoriteRecipes(recipeId));
+    dispatch(getFavoriteRecipes());
   };
 
   const handleClickRemoveFavorite = () => {
     dispatch(removeFromFavorite(recipeId));
-    dispatch(getFavoriteRecipes());
+    // dispatch(getFavoriteRecipes());
   };
 
   return (

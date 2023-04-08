@@ -13,7 +13,7 @@ body {
 }
 
 .main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[50px] md:pt-[72px] xl:pt-[100px];
+  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[72px] xl:pt-[100px];
 }
 
 .main-title-accent {
