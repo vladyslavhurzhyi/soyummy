@@ -91,7 +91,7 @@ body {
 }
 
 .divIconFooterMob {
-  @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md;
+  @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
 }
 .iconLogoFooterMob {
   @apply transition duration-300 stroke-current  text-red-600  w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
