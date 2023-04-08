@@ -1,6 +1,6 @@
 import { AuthNav } from '../components/AuthNav/AuthNav';
 
-const WelcomPage = () => {
+const WellcomPage = () => {
   //   const { isLoggedIn } = useAuth();
 
   return (
@@ -55,4 +55,4 @@ const WelcomPage = () => {
   );
 };
 
-export default WelcomPage;
+export default WellcomPage;

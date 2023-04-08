@@ -1,5 +1,5 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
-import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
+// import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 
@@ -46,7 +46,7 @@ const MainPage = () => {
       </div>
 
       <div className="relative z-[1]">
-        <PreviewCategories className="relative z-10" />
+        {/* <PreviewCategories className="relative z-10" /> */}
         <Link to="/categories/beef">
           <CurveBtn
             type={'button'}
