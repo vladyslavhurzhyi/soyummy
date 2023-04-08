@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { Modal } from "./Modal";
-import { UserLogoModal } from "./UserLogoModal";
-import { UserInfoModal } from "./UserInfoModal";
-import { UserConfirmModal } from "./UserConfirmModal";
-import { UserAvatar } from './UserAvatar';
-import { UserName }  from './UserName';
+import { useState } from 'react';
+import { Modal } from './Modal';
+import { UserLogoModal } from './UserLogoModal';
+import { UserInfoModal } from './UserInfoModal';
+import { UserConfirmModal } from './UserConfirmModal';
+import { getUser } from 'redux/auth/authSelectors';
+import { useSelector } from 'react-redux';
 
-export const UserLogo = () => {
+export const UserPanel = () => {
   const [userInfoModal, setUserInfoModal] = useState(false);
   const [userLogoModal, setUserLogoModal] = useState(false);
   const [userConfirmModal, setUserConfirmModal] = useState(false);
 
+  const { name, email, avatarUrl } = useSelector(getUser);
+  console.log(useSelector(getUser));
   const toggleLogoModal = () => {
     setUserLogoModal(!userLogoModal);
   };
@@ -24,9 +26,12 @@ export const UserLogo = () => {
 
   return (
     <div className="flex-grow-1 flex justify-end">
-      <div onClick={toggleLogoModal} className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8">
-        <UserAvatar />
-        <UserName />
+      <div
+        onClick={toggleLogoModal}
+        className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8"
+      >
+        <div className="px-4">{name}</div>
+        <img src={avatarUrl} alt={`User avatar of ${name}`} />
       </div>
       {userLogoModal && (
         <Modal toggleModal={toggleLogoModal}>
@@ -51,4 +56,3 @@ export const UserLogo = () => {
     </div>
   );
 };
-
