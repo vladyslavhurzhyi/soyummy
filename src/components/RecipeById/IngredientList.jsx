@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import placeholder from 'images/ingred_placeholder.jpg';
 
 export const IngredientList = () => {
   const recipes = useSelector(selectRecipes);
@@ -16,16 +17,25 @@ export const IngredientList = () => {
   };
 
   return (
-    <ul>
+    <ul className="mb-[50px]">
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
-          name={_id}
           key={_id}
           className="flex justify-between items-center bg-accentLighter pl-[18px] pr-[29px] rounded-lg mb-4"
         >
           <div className="flex items-center gap-2">
-            <img src={thb} className="w-14 h-14" alt="ingredient_photo" />
-            <p className="text-customShoppingList font-medium">{ttl}</p>
+            {{ thb } ? (
+              <img src={thb} className="w-14 h-14" alt="ingredient_photo" />
+            ) : (
+              <img
+                className="w-14 h-14 rounded-[3px]"
+                src={placeholder}
+                alt="placeholder"
+              />
+            )}
+            <p className="text-customShoppingList font-medium text-secondaryText">
+              {ttl}
+            </p>
           </div>
           <div className="flex items-center gap-[28px]">
             <div className="flex justify-between items-center h-6 bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime my-[31px] gap-1 px-1 min-w-max">

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-whiteText dark:bg-accentDarker;
+  @apply bg-whiteText dark:bg-accentDarker font-main;
 }
 
 .container {
