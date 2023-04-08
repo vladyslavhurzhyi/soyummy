@@ -1,12 +1,10 @@
 import { AuthNav } from '../components/AuthNav/AuthNav';
 
 const WelcomPage = () => {
-  //   const { isLoggedIn } = useAuth();
-
   return (
-    <>
-      <div className=" flex flex-col justify-center max-w-md px-10 bg-hero bg-cover bg-center  h-80 w-96 ">
-        <div className=" block p-3 rounded justify-center w-12 m-auto bg-lime-400">
+    <section className="  bg-hero w-full  text-center gap-4 bg-cover bg-center bg-no-repeat ">
+      <div className=" container px-9 pt-72 pb-64 max-w-7xl mx-auto text-center">
+        <div className=" p-3 rounded-xl	 justify-center w-12 m-auto bg-lime-400">
           {' '}
           <svg
             width="30"
@@ -38,20 +36,17 @@ const WelcomPage = () => {
             />
           </svg>
         </div>
-        <h1 className=" text-center font-main font-semibold text-amber-50  text-customLg">
+        <h1 className=" mt-11 text-center font-main text-customBase font-semibold text-whiteText">
           Welcome to the app!
         </h1>
-        <p className="text-center text-amber-50 mt ">
+        <p className=" mt-3 max-w-xs mx-auto  text-amber-50 ">
           This app offers more than just a collection of recipes - it is
           designed to be your very own digital cookbook. You can easily save and
           retrieve your own recipes at any time.
         </p>
         <AuthNav />
-
-        {/* <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
       </div>
-    </>
+    </section>
   );
 };
 
