@@ -29,6 +29,8 @@ export const UserPanel = () => {
         setUserEditModal(false);
         setUserLogoutModal(true);
         break;
+      default:
+        return;
     }
   };
 
