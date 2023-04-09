@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../service/Api/axiosBaseURL';
+import { toast } from 'react-toastify';
 
 export const fetchShoppingList = createAsyncThunk(
   'shoppingList/ShoppingList',
@@ -23,6 +24,16 @@ export const addShoppingList = createAsyncThunk(
       const {
         data: { data },
       } = await api.post('/shopping-list', ingredient);
+      toast.success('Added to Shopping list', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -32,10 +43,26 @@ export const addShoppingList = createAsyncThunk(
 
 export const deleteShoppingList = createAsyncThunk(
   'shoppingList/deleteShoppingList',
-  async ({ recipeId, productId }, thunkAPI) => {
+  async ({ recipeId, id }, thunkAPI) => {
+    console.log(id);
+    console.log(recipeId);
+
+    const payload = {
+      recipeId: [recipeId],
+    };
+
     try {
-      const { data } = await api.delete(`/shopping-list/${recipeId}}`, {
-        recipeId: [productId],
+      console.log(payload);
+      const { data } = await api.delete(`/shopping-list/${id}`, payload);
+      toast.success('Remove from Shopping list', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
       });
       return data;
     } catch (e) {
@@ -50,7 +77,7 @@ export const deleteShoppingListItem = createAsyncThunk(
     console.log(id);
     console.log(recipeId);
     try {
-      const { data } = await api.delete(`/shopping-list/${id}}`, {
+      const { data } = await api.delete(`/shopping-list/${id}`, {
         recipeId: [...recipeId],
       });
       return data;
