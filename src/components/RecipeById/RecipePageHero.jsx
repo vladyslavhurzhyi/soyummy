@@ -14,13 +14,8 @@ import { selectRecipes } from 'redux/recipes/recipesSelectors';
 export const RecipePageHero = data => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-<<<<<<< HEAD
   const favorites = useSelector(selectFavRecipes);
   const { _id: recipeId, title, description, time } = recipes;
-=======
-  // const favorites = useSelector(selectFavRecipes);
-  const { _id: recipeId, title, description, time } = recipes.data;
->>>>>>> main
 
   const isFavorites = favorites.some(item => item._id === recipeId);
 

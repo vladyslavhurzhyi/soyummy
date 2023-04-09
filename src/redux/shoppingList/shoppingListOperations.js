@@ -56,7 +56,7 @@ export const deleteShoppingListItem = createAsyncThunk(
     console.log(id);
     console.log(recipeId);
     try {
-      const { data } = await api.delete(`/shopping-list/${id}}`, {
+      const { data } = await api.delete(`/shopping-list/${id}`, {
         recipeId: [...recipeId],
       });
       return data;

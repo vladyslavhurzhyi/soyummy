@@ -4,23 +4,16 @@ import placeholder from 'images/ingred_placeholder.jpg';
 import {
   addShoppingList,
   deleteShoppingList,
+  deleteShoppingListItem,
 } from 'redux/shoppingList/shoppingListOperations';
-import {
-  selectError,
-  selectIsLoading,
-} from 'redux/shoppingList/shoppingListSelectors';
+import { selectError } from 'redux/shoppingList/shoppingListSelectors';
 
 export const IngredientList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-<<<<<<< HEAD
-  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   const { _id: recipeId, ingredients } = recipes;
-=======
-  const { _id: recipeId, ingredients } = recipes.data;
->>>>>>> main
 
   const handleChange = event => {
     const id = event.target.dataset.ingrid;
