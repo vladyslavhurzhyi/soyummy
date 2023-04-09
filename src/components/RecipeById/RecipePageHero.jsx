@@ -15,7 +15,7 @@ export const RecipePageHero = data => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
   const favorites = useSelector(selectFavRecipes);
-  const { _id: recipeId, title, description, time } = recipes.data;
+  const { _id: recipeId, title, description, time } = recipes;
 
   const isFavorites = favorites.some(item => item._id === recipeId);
 

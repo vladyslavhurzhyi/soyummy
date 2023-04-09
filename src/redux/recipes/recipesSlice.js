@@ -24,7 +24,7 @@ export const recipesSlice = createSlice({
       .addCase(fetchRecipeById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.items = action.payload.data;
       })
       .addMatcher(
         isAnyOf(addRecipe.rejected, fetchRecipeById.rejected),
