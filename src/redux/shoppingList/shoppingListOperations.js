@@ -2,10 +2,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../service/Api/axiosBaseURL';
 
 export const fetchShoppingList = createAsyncThunk(
-  'shoppingList/fetchContacts',
+  'shoppingList/ShoppingList',
   async (_, thunkAPI) => {
     try {
-      const { data } = await api.get('/shopping-list');
+      const {
+        data: { data },
+      } = await api.get('/shopping-list');
+
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -17,7 +20,9 @@ export const addShoppingList = createAsyncThunk(
   'shoppingList/addShoppingList',
   async (ingredient, thunkAPI) => {
     try {
-      const { data } = await api.post('/shopping-list', ingredient);
+      const {
+        data: { data },
+      } = await api.post('/shopping-list', ingredient);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -31,6 +36,22 @@ export const deleteShoppingList = createAsyncThunk(
     try {
       const { data } = await api.delete(`/shopping-list/${recipeId}}`, {
         recipeId: [productId],
+      });
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
+export const deleteShoppingListItem = createAsyncThunk(
+  'shoppingList/deleteShoppingList',
+  async ({ id, recipeId }, thunkAPI) => {
+    console.log(id);
+    console.log(recipeId);
+    try {
+      const { data } = await api.delete(`/shopping-list/${id}}`, {
+        recipeId: [...recipeId],
       });
       return data;
     } catch (e) {
