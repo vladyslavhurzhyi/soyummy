@@ -30,11 +30,11 @@ export const RecipePreparation = () => {
               return '';
             })}
           </ul>
-          <div className="w-[343px] h-[250px] overflow-auto">
+          <div className="max-w-[343px] h-[250px] overflow-hidden">
             {{ preview } ? (
               <img
                 src={preview}
-                className="block   w-full rounded mr-auto"
+                className="block w-full rounded mr-auto"
                 alt="ingredient_photo"
               />
             ) : (

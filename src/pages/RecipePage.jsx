@@ -5,6 +5,7 @@ import { RecipePreparation } from 'components/RecipeById/RecipePreparation';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
   selectError,
@@ -22,6 +23,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     dispatch(fetchRecipeById(recipeId));
+    dispatch(getFavoriteRecipes());
   }, [dispatch, recipeId]);
 
   return (
