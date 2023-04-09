@@ -4,7 +4,7 @@ export const RecipesList = ({ data, cssClass, removeRecipe }) => {
   return (
     <>
       <div>
-        <ul className="flex flex-col mt-[100px] mb-[200px] font-main">
+        <ul className="flex flex-col mt-[100px] mb-[200px] font-main dark:bg-accentDarker dark:text-[#FAFAFA99]">
           {data.map(itemProps => {
             return (
               <RecipeItem
