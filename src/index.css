@@ -13,7 +13,7 @@ body {
 }
 
 .main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[136px] xl:pt-[164px];
+  @apply font-main font-semibold text-mainText dark:text-whiteText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[136px] xl:pt-[164px];
 }
 
 .main-title-accent {
@@ -98,7 +98,7 @@ body {
 }
 
 .divIconTrash {
-  @apply transition duration-300  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain hover:fill-zinc-50;
+  @apply transition duration-300  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain hover:fill-zinc-50 dark:bg-accentDarker;
 }
 
 .iconTrash {

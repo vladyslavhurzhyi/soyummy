@@ -6,10 +6,12 @@ export const FollowUs = ({ className }) => {
   let fill;
   let size;
   if (className === 'followus-footer') {
-    fill = 'fill-accentMain hover:fill-white focus:fill-white';
+    fill =
+      'fill-accentMain hover:fill-white focus:fill-white dark:fill-whiteText dark:hover:fill-accentDarker dark:focus:fill-accentDarker';
     size = 'h-5 w-5';
   } else {
-    fill = 'fill-accentMain hover:fill-accentDarker focus:fill-accentDarker';
+    fill =
+      'fill-accentMain hover:fill-accentDarker focus:fill-accentDarker dark:fill-whiteText dark:hover:fill-accentMain dark:focus:fill-accentMain';
     size = 'w-[26px] h-[26px]';
   }
 
