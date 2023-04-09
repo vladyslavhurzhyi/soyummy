@@ -25,9 +25,11 @@ export const myRecipesSlice = createSlice({
       .addCase(removeMyRecipes.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
+
         const index = state.items.findIndex(
           item => item.id === action.payload.id
         );
+        console.log(index);
         state.items.splice(index, 1);
       })
       .addMatcher(isAnyOf(getMyRecipes.rejected), (state, action) => {
