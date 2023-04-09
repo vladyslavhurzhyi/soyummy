@@ -1,16 +1,10 @@
 [
-  { "type": "Beef" },
-  { "type": "Breakfast" },
-  { "type": "Chicken" },
-  { "type": "Dessert" },
-  { "type": "Goat" },
-  { "type": "Lamb" },
-  { "type": "Miscellaneous" },
-  { "type": "Pasta" },
-  { "type": "Pork" },
-  { "type": "Seafood" },
-  { "type": "Side" },
-  { "type": "Starter" },
-  { "type": "Vegan" },
-  { "type": "Vegetarian" }
+  {
+    "_id": "64284d2e5cc669661c595915",
+    "category": "Beef"
+  },
+  {
+    "_id": "64284d2e5cc669661c595916",
+    "category": "Breakfast"
+  }
 ]

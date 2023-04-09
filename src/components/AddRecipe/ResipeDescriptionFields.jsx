@@ -9,15 +9,18 @@ import timeList from '../../data/time.json';
 
 export const ResipeDescriptionFields = ({ data, setData }) => {
   const [images, setImages] = useState([]);
+  // const [url, setUrl] = useState('');
 
-  console.log(images);
+  // console.log(images);
 
   const handleFieldChange = e => {
     const { id, value } = e.target;
     let _formData = { ...data };
     // _formData[id] = id === 'isPublic' ? !_formData.isPublic : value;
     _formData[id] = value;
+
     setData(_formData);
+    // setImgUrl(url);
   };
 
   const uploader = Uploader({ apiKey: 'free' });
@@ -68,8 +71,11 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
       // Tip: save 'filePath' to your DB (not 'fileUrl').
       const filePath = img.filePath;
       const fileUrl = uploader.url(filePath, 'thumbnail'); // "raw" for un-transformed file.
+      // setUrl(fileUrl);
+      // console.log(url);
       return (
         <img
+          key={fileUrl}
           src={fileUrl}
           alt="recipe poster"
           className="block w-full h-full object-cover"
@@ -161,13 +167,14 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
               onChange={handleFieldChange}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
             >
-              {categories.map(({ type }) => (
+              <option value="" disabled hidden></option>
+              {categories.map(({ _id, category }) => (
                 <option
-                  key={type}
-                  value={type}
+                  key={_id}
+                  value={_id}
                   className="bg-lime-50 text-center"
                 >
-                  {type}
+                  {category}
                 </option>
               ))}
             </select>
@@ -190,6 +197,7 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
               onChange={handleFieldChange}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
             >
+              <option value="" disabled hidden></option>
               {timeList.map(({ time }) => (
                 <option
                   key={time}
