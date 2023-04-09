@@ -1,5 +1,9 @@
 import { RecipesList } from 'components/RecipesList/RecipesList';
 
-export const SearchedRecipesList = ({ recipes, cssClass }) => {
-  return <RecipesList cssClass={cssClass} data={recipes} />;
+export const SearchedRecipesList = ({ recipes }) => {
+  return (
+    <>
+      <RecipesList recipes={recipes} />
+    </>
+  );
 };

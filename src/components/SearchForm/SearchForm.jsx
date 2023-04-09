@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
 export const SearchForm = ({ onSubmit }) => {
   const [searchValue, setInputValue] = useState('');
+  const [, setSearchParams] = useSearchParams();
 
   function handleInputChange(e) {
     setInputValue(e.target.value);
@@ -15,16 +16,19 @@ export const SearchForm = ({ onSubmit }) => {
     const query = searchValue.toLowerCase();
     if (query === '') {
       alert('enter something to find');
+      setSearchParams();
       return;
     }
 
     console.log(query);
+    setSearchParams({ query });
+
     onSubmit(query);
     setInputValue('');
   }
 
   return (
-    <div className="w-[510px] h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
+    <div className="mx-8 w-[510px] h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
       <form
         onSubmit={handleSubmit}
         className="flex justify-end rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] h-full relative"

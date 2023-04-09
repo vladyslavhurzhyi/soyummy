@@ -6,7 +6,7 @@ export const getAllRecipes = () => {
   return api
     .get('/recipes', {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+        // Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
       },
     })
     .then(({ data }) => {
@@ -26,9 +26,9 @@ export const getRecipesByCategory = category => {
   });
 };
 
-export const getRecipesByQuery = query => {
+export const getRecipesByQuery = (query, type) => {
   return api
-    .get(`/recipes?limit=12&page=1&filter%5Btitle%5D=${query}`, {
+    .get(`/recipes?limit=12&page=1&filter%5B${type}%5D=${query}`, {
       headers: {
         // Authorization: `${TOKEN}`,
       },
