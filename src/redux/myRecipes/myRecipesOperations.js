@@ -7,10 +7,7 @@ export const getMyRecipes = createAsyncThunk(
   'myRecipes/getRecipes',
   async (page = 1, thunkAPI) => {
     try {
-      const { data } = await api.get(
-        // `/recipes/my`
-        `/recipes/my?page=${page}&limit=2`
-      );
+      const { data } = await api.get(`/recipes/my?page=${page}&limit=2`);
       const myRecipes = data.data;
       return myRecipes;
     } catch (error) {
