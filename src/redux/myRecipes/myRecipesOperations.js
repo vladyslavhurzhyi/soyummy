@@ -7,8 +7,8 @@ export const getMyRecipes = createAsyncThunk(
   'myRecipes/getRecipes',
   async (page = 1, thunkAPI) => {
     try {
-      const { data } = await api.get(`/recipes/my?page=${page}&limit=2`);
-      const myRecipes = data.data;
+      const { data } = await api.get(`/recipes/my?page=${page}&limit=4`);
+      const myRecipes = data;
       return myRecipes;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {

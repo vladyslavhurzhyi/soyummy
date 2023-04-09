@@ -9,7 +9,7 @@ import {
 export const IngredientList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-  const { _id: recipeId, ingredients } = recipes.data[0];
+  const { _id: recipeId, ingredients } = recipes.data;
 
   const handleChange = event => {
     const id = event.target.dataset.ingrid;

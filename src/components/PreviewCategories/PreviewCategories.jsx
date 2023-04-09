@@ -8,25 +8,26 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
 export const PreviewCategories = () => {
   const categories = useSelector(getContentForMain);
-  // console.log(categories);
+  console.log(categories);
   const dispatch = useDispatch();
   const isDesktop = useMediaQuery({ minWidth: 1440 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
-    // const navigate = useNavigate();
-  
-    // const onClick = e => {
-    //   navigate(`/categories/${_id}`);
-    // };
+  // const navigate = useNavigate();
+
+  // const onClick = e => {
+  //   navigate(`/categories/${_id}`);
+  // };
 
   useEffect(() => {
-    dispatch(getMainCategories());
+    const params = { categoriesLimit: 4, recipesInCategory: 4 };
+    dispatch(getMainCategories(params));
   }, [dispatch]);
 
   let numCard;
   if (isDesktop) {
-    numCard = 4; 
+    numCard = 4;
   } else if (isTablet) {
-    numCard = 2; 
+    numCard = 2;
   } else {
     numCard = 1;
   }
@@ -34,7 +35,6 @@ export const PreviewCategories = () => {
   return (
     <ul className="container   xl:px-0 flex flex-col gap-24">
       {categories.map(({ category, recipes }) => (
-        
         <li key={category}>
           <p className="font-semibold leading-7 text-[28px] md:text-[44px] md:leading-[44px] tracking-tight text-mainText capitalize mb-10 ">
             {category}
@@ -71,5 +71,4 @@ export const PreviewCategories = () => {
       ))}
     </ul>
   );
-
 };

@@ -12,7 +12,7 @@ export const ResipeMethodFields = ({ data, setData }) => {
     <div className="w-full ">
       <label
         htmlFor="method"
-        className="font-main font-semibold text-secondaryText text-customBase"
+        className="font-main font-semibold text-secondaryText text-customBase dark:text-whiteText"
       >
         Recipe Preparation
       </label>
@@ -23,7 +23,7 @@ export const ResipeMethodFields = ({ data, setData }) => {
         required
         placeholder="Enter recipe method"
         onChange={handleFieldChange}
-        className="p-3 block w-full h-40 my-[18px] md:my-[32px] md:w-2/3 lg:w-1/2 rounded-lg bg-accentGray border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+        className="p-3 block w-full h-40 my-[18px] md:my-[32px] md:w-2/3 lg:w-1/2 rounded-lg bg-accentGray border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 focus:border-accentMain border-transparent dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
       ></textarea>
       <label className="text-gray-500 text-customXs md:text-customSm ">
         <input type="checkbox" className="appearance-none " /> add to the public

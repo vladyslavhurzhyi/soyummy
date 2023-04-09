@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
 import { RecipesList } from 'components/RecipesList/RecipesList';
 import {
   getMyRecipes,
@@ -12,11 +13,10 @@ import {
   selectMyRecipes,
 } from 'redux/myRecipes/myRecipesSelectors';
 
-import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
-
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
-  const myRecipes = useSelector(selectMyRecipes);
+  const { current_page, data, total, per_page } = useSelector(selectMyRecipes);
+  const myRecipes = data;
   const error = useSelector(selectMyError);
   const isLoading = useSelector(selectMyIsLoading);
   const dispatch = useDispatch();
@@ -25,20 +25,29 @@ export const MyRecipesList = ({ cssClass }) => {
     dispatch(getMyRecipes(paginationPage));
   }, [dispatch, paginationPage]);
 
-  const pagePlusOne = () => {
+  const pageIncrement = () => {
     setPaginationPage(prev => prev + 1);
+  };
+  const pageDecrement = () => {
+    setPaginationPage(prev => prev - 1);
+  };
+
+  const handlePaginationClick = event => {
+    const buttonValue = Number(event.target.textContent);
+
+    setPaginationPage(buttonValue);
   };
 
   return (
     <>
-      <button
-        onClick={() => {
-          pagePlusOne();
-        }}
-      >
-        page+1
-      </button>
-      <RecipesListPaginator />
+      <RecipesListPaginator
+        current_page={current_page}
+        total={total}
+        per_page={per_page}
+        handlePaginationClick={handlePaginationClick}
+        pageIncrement={pageIncrement}
+        pageDecrement={pageDecrement}
+      />
       {error && <div className=" bg-red-500">Error</div>}
       {isLoading ? (
         <Loader />

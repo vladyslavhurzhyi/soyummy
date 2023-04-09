@@ -1,36 +1,82 @@
 import React from 'react';
 
-const data = [1, 2, 3, 4, 5, 6, 7];
+export const RecipesListPaginator = ({
+  total,
+  current_page,
+  per_page,
+  handlePaginationClick,
+}) => {
+  const pageNumber = [];
+  const allPage = Math.ceil(total / per_page);
 
-export const RecipesListPaginator = () => {
+  for (let i = 1; i <= allPage; i++) {
+    pageNumber.push(i);
+  }
+
   return (
     <>
-      <div>
+      <div className="">
         <nav
-          className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+          className="inline-flex items-center -space-x-px "
           aria-label="Pagination"
         >
-          <button className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-            <span className="sr-only">Previous</span>
-            {'<'}
-          </button>
-          {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-          {data.map(item => {
-            return (
-              <button
-                aria-current="page"
-                className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+          <ul className="flex items-center border border-gray-300 rounded-3xl shadow-custom text-[12px] py-[14px] max-h-[55px]">
+            <button
+              disabled={current_page === 1 ? true : false}
+              className="nextBtn"
+            >
+              <span className="sr-only">Previous</span>
 
-                // className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                {item}
-              </button>
-            );
-          })}
-          <button className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-            <span className="sr-only">Next</span>
-            {'>'}
-          </button>
+                <path
+                  fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+
+            {pageNumber.map(item => {
+              return (
+                <button
+                  onClick={handlePaginationClick}
+                  key={item}
+                  aria-current="page"
+                  className={
+                    item === current_page ? 'currentPage' : 'paginationPage'
+                  }
+                >
+                  {item}
+                </button>
+              );
+            })}
+
+            <button
+              disabled={current_page === allPage ? true : false}
+              className="prevBtn"
+            >
+              <span className="sr-only">Next</span>
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </ul>
         </nav>
       </div>
     </>
