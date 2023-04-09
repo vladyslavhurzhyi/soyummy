@@ -5,9 +5,12 @@ import api from 'service/Api/axiosBaseURL';
 
 export const getMyRecipes = createAsyncThunk(
   'myRecipes/getRecipes',
-  async (_, thunkAPI) => {
+  async (page = 1, thunkAPI) => {
     try {
-      const { data } = await api.get(`/recipes/my`);
+      const { data } = await api.get(
+        // `/recipes/my`
+        `/recipes/my?page=${page}&limit=2`
+      );
       const myRecipes = data.data;
       return myRecipes;
     } catch (error) {
