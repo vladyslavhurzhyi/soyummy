@@ -104,11 +104,11 @@ export const AddRecipeForm = () => {
           <CurveBtn
             type="submit"
             text="Publish recipe"
-            cssClass="searchbl-btn mt-6 mb-16 md:mb-24 lg:mb-0"
+            cssClass="searchbl-btn mt-6 mb-16 md:mb-24 lg:mb-0 dark:bg-accentMain dark:text-accentDarker  dark:hover:bg-accentLighter dark:focus:bg-accentLighter"
           />
         </form>
         <div className="hidden lg:block w-40 absolute top-0 left-[900px] xl:left-[1056px]">
-          <h2 className="font-main font-semibold text-secondaryText text-customBase mb-10">
+          <h2 className="font-main font-semibold text-secondaryText text-customBase mb-10 dark:text-whiteText">
             Follow Us
           </h2>
           <FollowUs className="followus-addrecipe" />
