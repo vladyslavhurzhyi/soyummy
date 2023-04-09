@@ -13,10 +13,14 @@ import {
 export const IngredientList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
+<<<<<<< HEAD
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   const { _id: recipeId, ingredients } = recipes;
+=======
+  const { _id: recipeId, ingredients } = recipes.data;
+>>>>>>> main
 
   const handleChange = event => {
     const id = event.target.dataset.ingrid;

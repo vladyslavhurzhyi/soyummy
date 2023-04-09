@@ -8,7 +8,7 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
 export const PreviewCategories = () => {
   const categories = useSelector(getContentForMain);
-  // console.log(categories);
+  console.log(categories);
   const dispatch = useDispatch();
   const isDesktop = useMediaQuery({ minWidth: 1440 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
@@ -19,7 +19,8 @@ export const PreviewCategories = () => {
   // };
 
   useEffect(() => {
-    dispatch(getMainCategories());
+    const params = { categoriesLimit: 4, recipesInCategory: 4 };
+    dispatch(getMainCategories(params));
   }, [dispatch]);
 
   let numCard;
@@ -33,6 +34,7 @@ export const PreviewCategories = () => {
 
   return (
     <ul className="container   xl:px-0 flex flex-col gap-24">
+<<<<<<< HEAD
       {categories.map(({ category, recipes }) => {
         if (recipes.length >= 4)
           return (
@@ -72,6 +74,43 @@ export const PreviewCategories = () => {
           );
         return '';
       })}
+=======
+      {categories.map(({ category, recipes }) => (
+        <li key={category}>
+          <p className="font-semibold leading-7 text-[28px] md:text-[44px] md:leading-[44px] tracking-tight text-mainText capitalize mb-10 ">
+            {category}
+          </p>
+          <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3">
+            {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
+              <div
+                key={_id}
+                className="w-[343px] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
+              >
+                {/* <Link to={`/recipes/${category}`}> */}
+                <img
+                  src={preview}
+                  alt={title}
+                  className="h-[323px] w-full rounded-lg"
+                />
+                <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[307px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis">
+                  {title}
+                </p>
+                {/* </Link> */}
+              </div>
+            ))}
+          </ul>
+          <CurveBtn
+            type={'button'}
+            // to={`/categories/${category}`}
+            // onClick={onClick}
+            text={'Other categories'}
+            cssClass="othercateg-btn"
+          />
+          {/* <div to={`/categories/${_id}`}>See all</div> */}
+          {/* to={`/categories/${meals}`} */}
+        </li>
+      ))}
+>>>>>>> main
     </ul>
   );
 };

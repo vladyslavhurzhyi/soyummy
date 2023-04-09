@@ -123,13 +123,13 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
             autoComplete="off"
             id="title"
             required
-            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
+            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200 dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             value={data.title}
             onChange={handleFieldChange}
           />
           <label
             htmlFor="title"
-            className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm"
+            className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm dark:text-whiteText"
           >
             Enter Recipe Title
           </label>
@@ -143,13 +143,13 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
             autoComplete="off"
             id="description"
             required
-            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
+            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             value={data.description}
             onChange={handleFieldChange}
           />
           <label
             htmlFor="description"
-            className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm"
+            className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm dark:text-whiteText"
           >
             Enter adout recipe
           </label>
@@ -165,14 +165,14 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
               required
               value={data.category}
               onChange={handleFieldChange}
-              className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
+              className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             >
               <option value="" disabled hidden></option>
               {categories.map(({ _id, category }) => (
                 <option
                   key={_id}
                   value={_id}
-                  className="bg-lime-50 text-center"
+                  className="bg-lime-50 text-center dark:bg-accentMain"
                 >
                   {category}
                 </option>
@@ -180,7 +180,7 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
             </select>
             <label
               htmlFor="category"
-              className="absolute duration-300 top-3 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm"
+              className="absolute duration-300 top-3 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm dark:text-whiteText"
             >
               Category
             </label>
@@ -195,14 +195,14 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
               required
               value={data.time}
               onChange={handleFieldChange}
-              className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200"
+              className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200 dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             >
               <option value="" disabled hidden></option>
               {timeList.map(({ time }) => (
                 <option
                   key={time}
                   value={time}
-                  className="bg-lime-50 text-center"
+                  className="bg-lime-50 text-center dark:bg-accentMain"
                 >
                   {time}
                 </option>
@@ -210,7 +210,7 @@ export const ResipeDescriptionFields = ({ data, setData }) => {
             </select>
             <label
               htmlFor="time"
-              className="absolute duration-300 top-3 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm"
+              className="absolute duration-300 top-3 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm dark:text-whiteText"
             >
               Cooking time
             </label>
