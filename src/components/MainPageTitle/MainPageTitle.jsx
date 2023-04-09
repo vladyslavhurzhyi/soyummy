@@ -29,12 +29,9 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           <div
             className="
           absolute 
-<<<<<<< HEAD
-          bg-accentDark dark:bg-whiteText
-=======
           bg-accentDark 
           dark:bg-whiteText
->>>>>>> main
+
           rounded-[3px] 
           rotate-[-25deg] 
           w-1.5 md:w-3 
