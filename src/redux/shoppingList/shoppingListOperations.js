@@ -14,24 +14,24 @@ export const fetchShoppingList = createAsyncThunk(
 );
 
 export const addShoppingList = createAsyncThunk(
-  'shoppingList/addShoppingList'
-  //   async ({}, thunkAPI) => {
-  //     try {
-  //       const { data } = await api.post('/shopping-list', {});
-  //       return data;
-  //     } catch (e) {
-  //       return thunkAPI.rejectWithValue(e.message);
-  //     }
-  //   }
+  'shoppingList/addShoppingList',
+  async (ingredient, thunkAPI) => {
+    try {
+      const { data } = await api.post('/shopping-list', ingredient);
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
 );
 
 export const deleteShoppingList = createAsyncThunk(
   'shoppingList/deleteShoppingList',
   async ({ recipeId, productId }, thunkAPI) => {
     try {
-      const { data } = await api.delete(
-        `/shopping-list/${recipeId}/${productId}`
-      );
+      const { data } = await api.delete(`/shopping-list/${recipeId}}`, {
+        recipeId: [productId],
+      });
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

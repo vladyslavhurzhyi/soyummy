@@ -13,11 +13,11 @@ body {
 }
 
 .main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[50px] md:pt-[72px] xl:pt-[100px];
+  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[136px] xl:pt-[164px];
 }
 
 .main-title-accent {
-  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl pt-[114px] mb-[18px] md:pt-[72px] md:mb-6 xl:pt-[100px];
+  @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl pt-[114px] mb-[18px] md:pt-[136px] md:mb-6 xl:pt-[164px];
 }
 
 .main-btn {

@@ -1,38 +1,66 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { Helmet } from 'react-helmet-async';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addFavoriteRecipes,
+  // getFavoriteRecipes,
+  // removeFromFavorite,
+} from 'redux/favoriteRecipes/favoriteRecipesOperations';
+// import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
 export const RecipePageHero = data => {
+  const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-  const { title, description, time } = recipes.data[0];
+  // const favorites = useSelector(selectFavRecipes);
+  const { _id: recipeId, title, description, time } = recipes.data[0];
 
-  const handleClick = () => {
-    console.log(123);
+  // const isFavorites = favorites.some(item => item._id === recipeId);
+
+  // console.log(favorites);
+  // console.log(isFavorites);
+
+  const handleClickAddFavorite = () => {
+    dispatch(addFavoriteRecipes(recipeId));
+    // dispatch(getFavoriteRecipes());
   };
+
+  // const handleClickRemoveFavorite = () => {
+  //   dispatch(removeFromFavorite(recipeId));
+  //   dispatch(getFavoriteRecipes());
+  // };
 
   return (
     <>
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="flex flex-col bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] text-center mb-8">
+      <div className="flex flex-col justify-between bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 md:mb-[50px] px-8 md:px-26 xl:px-96 ">
         <div>
           <MainPageTitle
             pageTitle={title}
-            className="main-title-accent mb-[18px] md:mb-[100px] md:px-8 xl:px-24 mx-auto"
+            className="main-title-accent mb-[18px] md:mb-6 mx-auto"
           />
-          <p className="block text-xs text-accentDark mx-auto max-w-[299px] mb-6">
+          <p className="block text-xs md:text-lg md:leading-6 text-accentDark mx-auto max-w-[299px] md:max-w-[500px] xl:max-w-[656px]">
             {description}
           </p>
         </div>
-        <div>
-          <CurveBtn
-            text="Add to favorite recipes"
-            cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
-            onClick={handleClick}
-          />
+        <div className="pb-[110px] md:pb-[120px] xl:pb-8">
+          {true && (
+            <CurveBtn
+              text="Add to favorite recipes"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px] md:mb-[40px] xl:mb-12"
+              onClick={() => handleClickAddFavorite()}
+            />
+          )}
+          {/* {true && (
+            <CurveBtn
+              text="Remove from favorite recipes"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px] md:mb-[40px] xl:mb-12"
+              onClick={() => handleClickRemoveFavorite()}
+            />
+          )} */}
           <div className="flex justify-center items-center">
             <svg
               width="14"

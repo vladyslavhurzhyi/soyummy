@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalTW } from './ModalTW';
+import { ModalTW } from 'components/ModalTW';
 import { ReactComponent as EditPen } from './../images/editPen.svg';
 import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
 

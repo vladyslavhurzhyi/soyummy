@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { ModalTW } from './ModalTW';
-import { logOut } from '../../../redux/auth/authOperations';
+import { ModalTW } from 'components/ModalTW';
+import { logOut } from 'redux/auth/authOperations';
 import { CloseButton } from './CloseButton';
 
 export const UserLogoutModal = ({ isOpen, handleClose }) => {

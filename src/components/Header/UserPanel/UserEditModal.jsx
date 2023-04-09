@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { ModalTW } from './ModalTW';
+import { ModalTW } from 'components/ModalTW';
 import { useState } from 'react';
 import { edit } from 'redux/auth/authOperations';
 import { AiOutlineUser, AiOutlineReload } from 'react-icons/ai';

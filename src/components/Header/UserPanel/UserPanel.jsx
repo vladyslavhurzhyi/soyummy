@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { UserInfoModal } from './UserInfoModal';
 import { UserLogoutModal } from './UserLogoutModal';
-import { UserEditModal } from './UserEdit';
+import { UserEditModal } from './UserEditModal';
 import { getUser } from 'redux/auth/authSelectors';
 import { useSelector } from 'react-redux';
 
@@ -41,7 +41,6 @@ export const UserPanel = () => {
   };
 
   const onUserBtnClick = () => openModal('userInfo');
-  console.log(useSelector(getUser));
   return (
     <div className="flex-grow-1 flex justify-end">
       <div
