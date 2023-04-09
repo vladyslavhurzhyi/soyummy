@@ -1,4 +1,4 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getRecipesByCategory } from 'service/Api/getRecipesApi';
 import { useSelector } from 'react-redux';
