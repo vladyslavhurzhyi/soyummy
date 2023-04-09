@@ -2,7 +2,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { addRecipe, fetchRecipeById } from './recipesOperations';
 
 const initialState = {
-  items: {},
+  items: [],
   isLoading: false,
   error: null,
 };

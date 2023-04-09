@@ -20,7 +20,7 @@ export const IngredientList = () => {
     if (event.target.checked) {
       dispatch(addShoppingList(ingredient));
     } else {
-      dispatch(deleteShoppingList({ recipeId, ingredient }));
+      dispatch(deleteShoppingList({ recipeId, id }));
     }
   };
 

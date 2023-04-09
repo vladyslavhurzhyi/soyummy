@@ -28,7 +28,7 @@ const RecipePage = () => {
 
   return (
     <main>
-      {recipes && (
+      {recipes._id && (
         <>
           <RecipePageHero />
           <RecipeIngredientsList />
