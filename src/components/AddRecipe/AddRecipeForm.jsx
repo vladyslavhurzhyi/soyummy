@@ -28,7 +28,7 @@ export const AddRecipeForm = () => {
         measure: 'pcs',
       },
     ],
-    thumb: '',
+    // thumb: '',
     isPublic: false,
     instructions: '',
   });
@@ -79,6 +79,7 @@ export const AddRecipeForm = () => {
     console.table(formData.ingredients);
 
     dispatch(addRecipe(formData));
+    navigate(`/my`);
   };
 
   return (
@@ -103,9 +104,6 @@ export const AddRecipeForm = () => {
             type="submit"
             text="Publish recipe"
             cssClass="searchbl-btn mt-6"
-            onClick={() => {
-              navigate(`/my`);
-            }}
           />
         </form>
         <div className="lg:w-40 absolute top-0 left-[900px] xl:left-[1056px]">
