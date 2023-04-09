@@ -24,9 +24,9 @@ export const Modal = ({ toggleModal, children }) => {
   };
 
   return createPortal(
-    <div className="fixed; top: 0; left: 0; width: 100vw; height: 100vh;" onClick={backdropClick}>
+    <div onClick={backdropClick} className="fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
       <div className="width: auto; height: auto; flex items-center justify-center">
-        {children}
+        {children} Наша модалка
       </div>
     </div>,
     modalRoot

@@ -1,101 +1,75 @@
-import React from 'react';
-import { useEffect } from 'react';
+// import { useDispatch, useSelector } from "react-redux";
+// import { updateUser } from "redux/auth/operations";
+import { useEffect} from "react";
+// import { useAuth } from "hooks";
+import { createPortal } from "react-dom";
+import { BackdropUserLogo } from "./BackdropUserLogo";
+import { ModalWindowUsereLogo } from "./ModalWindowUsereLogo";
 
-import { LogoutBtn } from './LogoutBtn';
-import { ReactComponent as EditPen } from './../images/editPen.svg';
-import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
+// import CloseButton from 
+// import { UserPreviewImg } from "./UserPreviewImg";
+// import { Loader } from "components/Loader/Loader";
+// import { UpdateUserSchema } from "helpers/validations";
 
 
-export const UserInfoModal = ({ onClose, editOpen, logOutOpen }) => {
+const modalRoot = document.querySelector("#modal-info");
+
+export const UserInfoModal = ({ children, toggleLogoModal }) => {
   useEffect(() => {
-    const handleKeyDown = e => {
-      if (e.code === 'Escape') {
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [onClose]);
+    window.addEventListener("keydown", handleKeyDown);
 
-  const handleOverlayClick = e => {
-    if (e.currentTarget === e.target) {
-      onClose();
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  });
+
+  const handleKeyDown = (e) => {
+    if (e.code === "Escape") {
+  toggleLogoModal();
     }
   };
 
-  return (
-    <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50" onClick={handleOverlayClick}>
-      <div className="max-w-screen-lg h-full w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6" onClick={handleOverlayClick}>
-        <div className='absolute bg-white rounded-md border border-green-400 top-16 right-4 md:top-20'>
-          <div className='p-4'> 
-            <div onClick={
-              () => {
-                onClose();
-                editOpen();
-              }
-            }>
-              Edit profile
-              <EditPen/>
-            </div>
-            <LogoutBtn
-              onClick={() => {
-                onClose();
-                logOutOpen();
-              }}
-            >
-              Log-out
-              <UserArrow />
-            </LogoutBtn>
-          </div>
-        </div>
-      </div>
-    </div>
+  const handleBackdropClick = (e) => {
+    if (e.currentTarget === e.target) {
+  toggleLogoModal();
+    }
+  };
+
+// export const UserInfoModal = ({ toggleInfoModal }) => {
+//   const {
+//     user: { avatarURL },
+//   } = useAuth();
+
+//   const {
+//     user: { name },
+//     isLoading,
+//   } = useAuth();
+//   const dispatch = useDispatch();
+//   const [photo, setPhoto] = useState(avatarURL);
+
+//   const initialValues = {
+//     file: null,
+//     nickname: name,
+//   };
+
+//   const getPhoto = (url) => {
+//     setPhoto(url);
+//   };
+
+
+  return createPortal (
+    <BackdropUserLogo onClick={handleBackdropClick} className="fixed top-0 left-0 w-full h-full z-50 bg-black opacity-50">
+      <ModalWindowUsereLogo className="bg-white p-4 w-[300px] h-[300px]  rounded-lg shadow-md">{children}
+{/* //         <UserInfoModal></UserInfoModal>
+//       Edit profile <EditIcon/>
+//         <CurveBtn text="Log out" onClick={toggleLogoModal} cssClass="addbgreen-btn" /> */}
+    </ModalWindowUsereLogo>
+</BackdropUserLogo>,
+modalRoot      
   );
-};
+}; 
 
 
-
-
-
-// import React from 'react';
-
-// import { LogoutBtn } from './LogoutBtn';
-// import { ReactComponent as EditPen } from './../images/editPen.svg';
-// import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
-
-
-// export const UserInfoModal = ({ closeModal, openEdit, openConfirm, container }) => {
-//   const rect = container.getBoundingClientRect();
-//   const viewportWidth = window.innerWidth;
-//   const style = {
-//     top: `${Math.round(rect.bottom + 15)}px`,
-//     right: `${Math.round(viewportWidth - rect.right)}px`,
-//   };
-//   const handleEditBtnClick = () => {
-//     closeModal();
-//     openEdit();
-//   };
-//   const handleLogOutBtnClick = () => {
-//     closeModal();
-//     openConfirm();
-//   };
-//   return (
-//     <div style={style} className="">
-//       <button onClick={handleEditBtnClick} className="">
-//         <span className="">Edit profile</span>
-//         <EditPen className="" />
-//       </button>
-
-//       <div onClick={handleLogOutBtnClick} className="">
-//         <LogoutBtn typeBtn="submit" title={'Log out'}>
-//           <UserArrow/>
-//         </LogoutBtn>
-//       </div>
-//     </div>
-//   );
-// };
 
 
 
