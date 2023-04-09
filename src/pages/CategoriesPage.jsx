@@ -9,7 +9,7 @@ const CategoriesPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate('/categories/Breakfast');
+    navigate('/categories/');
   }, [navigate]);
 
   return (

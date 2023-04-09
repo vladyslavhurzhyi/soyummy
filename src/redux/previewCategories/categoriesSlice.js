@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getMainCategories } from './categoriesOperations';
+import { getMainCategories, getPopularRecipes } from './categoriesOperations';
 
 const pending = state => {
   state.isCategoryFetching = true;
@@ -9,10 +9,11 @@ const rejected = state => {
 };
 
 export const outerRecipesSlice = createSlice({
-  name: 'outerRecipes',
+  name: 'mainRecipes',
   initialState: {
     isCategoryFetching: false,
     mainCategories: [],
+    popularRecipes: [],
     isError: false,
   },
 
@@ -26,7 +27,14 @@ export const outerRecipesSlice = createSlice({
 
       .addCase(getMainCategories.pending, pending)
 
-      .addCase(getMainCategories.rejected, rejected),
+      .addCase(getMainCategories.rejected, rejected)
+
+      .addCase(getPopularRecipes.fulfilled, (state, { payload }) => {
+        state.popularRecipes = payload;
+        state.isCategoryFetching = false;
+      })
+      .addCase(getPopularRecipes.pending, pending)
+      .addCase(getPopularRecipes.rejected, rejected),
 });
 
 export const mainRecipeReduser = outerRecipesSlice.reducer;

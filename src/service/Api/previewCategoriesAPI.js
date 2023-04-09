@@ -12,3 +12,10 @@ export const getMainCategoriestAPI = (
       return data.data;
     });
 };
+
+export const getPopularRecipesAPI = () => {
+  return api.get('/recipes/popular').then(({ data }) => {
+    console.log(data);
+    return data;
+  });
+};
