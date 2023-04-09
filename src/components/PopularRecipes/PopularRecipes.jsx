@@ -1,12 +1,15 @@
 export const PopularRecipes = ({ data }) => {
   return (
-    <div className="relative md:w-80 lg:absolute lg:top-[500px] lg:left-[900px] xl:left-[1056px]">
+    <div className="relative md:w-full lg:w-80 lg:absolute lg:top-[500px] lg:left-[900px] xl:left-[1056px]">
       <h2 className="mb-2 font-main font-semibold text-secondaryText text-customBase">
         Popular recipe
       </h2>
-      <ul className="flex flex-col">
+      <ul className="flex flex-col md:flex-row md:flex-wrap lg:flex-col">
         {data.map(({ _id, title, description, thumb }) => (
-          <li key={_id} className="flex border-b-2 pb-3.5 pt-6 ">
+          <li
+            key={_id}
+            className="flex md:w-1/2 lg:w-full border-b-2 pb-3.5 pt-6 pr-2"
+          >
             <img
               className="w-[104px] h-[85px] rounded-md mr-3"
               src={thumb}
