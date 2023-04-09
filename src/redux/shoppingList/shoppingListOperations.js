@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../service/Api/axiosBaseURL';
+import { toast } from 'react-toastify';
 
 export const fetchShoppingList = createAsyncThunk(
   'shoppingList/ShoppingList',
@@ -23,6 +24,16 @@ export const addShoppingList = createAsyncThunk(
       const {
         data: { data },
       } = await api.post('/shopping-list', ingredient);
+      toast.success('Added to Shopping list', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -43,6 +54,16 @@ export const deleteShoppingList = createAsyncThunk(
     try {
       console.log(payload);
       const { data } = await api.delete(`/shopping-list/${id}`, payload);
+      toast.success('Remove from Shopping list', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

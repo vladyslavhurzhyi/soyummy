@@ -4,14 +4,13 @@ import placeholder from 'images/ingred_placeholder.jpg';
 import {
   addShoppingList,
   deleteShoppingList,
-  deleteShoppingListItem,
 } from 'redux/shoppingList/shoppingListOperations';
-import { selectError } from 'redux/shoppingList/shoppingListSelectors';
+import { selectShoppingListIsError } from 'redux/shoppingList/shoppingListSelector';
 
 export const IngredientList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
-  const error = useSelector(selectError);
+  const error = useSelector(selectShoppingListIsError);
 
   const { _id: recipeId, ingredients } = recipes;
 
