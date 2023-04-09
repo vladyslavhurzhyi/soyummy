@@ -7,7 +7,7 @@ export const getMainCategories = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await getMainCategoriestAPI();
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);

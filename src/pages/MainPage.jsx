@@ -1,5 +1,5 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
-// import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
+import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 
@@ -26,7 +26,7 @@ const MainPage = () => {
   return (
     <section>
       <div className=" bg-main_m md:bg-main_t xl:bg-main_d bg-no-repeat bg-center bg-size_main h-48.5 md:h-[768px] pt-[68px]  xl:pt-52  md:flex items-center">
-        <div class="container  flex justify-between flex-row items-end xl:pb-64">
+        <div className="container  flex justify-between flex-row items-end xl:pb-64">
           <div className="flex  flex-col mx-auto md:mx-0 xl:justify-start  mb-8 ">
             <h1 className="text-accentDark text-center md:text-left font-normal text-[60px] md:text-[72px] xl:text-[100px] font-main">
               <span className="  leading-10  tracking-tighter text-accentMain">
@@ -46,7 +46,7 @@ const MainPage = () => {
       </div>
 
       <div className="relative z-[1]">
-        {/* <PreviewCategories className="relative z-10" /> */}
+        <PreviewCategories className="relative z-10" />
         <Link to="/categories/beef">
           <CurveBtn
             type={'button'}

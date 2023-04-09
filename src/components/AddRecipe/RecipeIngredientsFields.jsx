@@ -5,15 +5,14 @@ import measureList from '../../data/measure.json';
 // import categories from '../../data/category.json';
 
 export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
-  console.log(ingredients);
+  // console.log(ingredients);
   const handleAddClick = e => {
     e.preventDefault();
     const _items = [...items];
     _items.push({
-      id: Date.now(),
-      name: '',
-      amount: '1',
-      measure: '',
+      id: '',
+      amount: '0',
+      measure: 'pcs',
     });
     setItems(_items);
   };
@@ -43,8 +42,8 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
           <div key={item.id} className="flex mb-4 md:mb-6">
             <select
               name="name"
-              data-name="name"
-              value={item.name}
+              data-name="id"
+              value={item.id}
               onChange={e => handleFieldChange(e, item.id)}
               className="pt-3 pb-2 pl-2 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
             >
@@ -63,7 +62,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 step="0.5"
                 min="0.5"
                 required
-                className="pt-3 pb-2 pl-5 block w-full px-0  bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-3 pb-2 pl-3 block w-full px-0  bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
                 value={item.amount}
                 onChange={e => handleFieldChange(e, item.id)}
               />
@@ -81,7 +80,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 data-name="measure"
                 value={item.measure}
                 onChange={e => handleFieldChange(e, item.id)}
-                className="pt-3 pb-2 pl-4 block w-full px-0 mt-0 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-3 pb-2 pl-3 block w-full px-0 mt-0 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
               >
                 {measureList.map(({ type }) => (
                   <option key={type} value={type} className="bg-lime-50 ">
