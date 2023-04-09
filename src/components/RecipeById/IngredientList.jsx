@@ -25,28 +25,32 @@ export const IngredientList = () => {
   };
 
   return (
-    <ul className="mb-[50px]">
+    <ul className="flex flex-col mb-[50px] md:mb-24 gap-4">
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
           key={_id}
-          className="flex justify-between items-center bg-accentLighter pl-[18px] pr-[29px] rounded-lg mb-4"
+          className="flex justify-between items-center bg-accentLighter pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg "
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6">
             {{ thb } ? (
-              <img src={thb} className="w-14 h-14" alt="ingredient_photo" />
+              <img
+                src={thb}
+                className="w-14 md:w-28 h-14 md:h-28"
+                alt="ingredient_photo"
+              />
             ) : (
               <img
-                className="w-14 h-14 rounded-[3px]"
+                className="w-14 md:w-28 h-14 md:h-28 rounded-[3px]"
                 src={placeholder}
                 alt="placeholder"
               />
             )}
-            <p className="text-customShoppingList font-medium text-secondaryText">
+            <p className="text-customShoppingList md:text-customBase font-medium text-secondaryText">
               {ttl}
             </p>
           </div>
-          <div className="flex items-center gap-[28px]">
-            <div className="flex justify-between items-center h-6 bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime my-[31px] gap-1 px-1 min-w-max">
+          <div className="flex items-center gap-[28px] md:gap-[78px]">
+            <div className="flex justify-center items-center h-6 md:h-[36px] bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime md:text-lg my-[31px] md:my-[71px] gap-1 px-1 min-w-max w-10 md:w-16">
               {amount && <p className="">{amount}</p>}
               {measure && <p className="">{measure}</p>}
             </div>
@@ -57,9 +61,9 @@ export const IngredientList = () => {
                 data-ingrid={_id}
                 data-ingramount={amount}
                 data-ingrmeasure={measure}
-                className="appearance-none text-accentMain cursor-pointer w-[18px] h-[18px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
+                className="appearance-none text-accentMain cursor-pointer w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
               />
-              <div className="absolute flex justify-center items-center w-[18px] h-[18px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100">
+              <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100">
                 <svg
                   width="10"
                   height="10"

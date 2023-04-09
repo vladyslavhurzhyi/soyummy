@@ -13,10 +13,10 @@ export const RecipePreparation = () => {
     <>
       <div className="container">
         <div className="mb-[100px]">
-          <h2 className="text-customBase text-secondaryText font-semibold mb-[28px]">
+          <h2 className="text-customBase text-secondaryText font-semibold mb-[28px] md:mb-8">
             Recipe Preparation
           </h2>
-          <ul className="flex flex-col gap-y-3.5 mb-[50px] text-xs text-[#000000]">
+          <ul className="flex flex-col gap-y-3.5 md:gap-[18px] mb-[50px] text-xs md:text-customXs md:leading-[18px] text-[#000000]">
             {steps.map((step, index) => {
               if (step !== '')
                 return (
@@ -30,7 +30,7 @@ export const RecipePreparation = () => {
               return '';
             })}
           </ul>
-          <div className="max-w-[343px] h-[250px] overflow-hidden">
+          <div className="max-w-[343px] md:max-w-[433px] h-[250px] md:h-[332px] overflow-hidden">
             {{ preview } ? (
               <img
                 src={preview}

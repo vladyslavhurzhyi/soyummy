@@ -4,6 +4,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        xl: '1440px',
+      },
       backgroundImage: {
         recipePage: "url('/src/images/recipePage.jpg')",
         hero: "url('/src/images/salat.png')",
