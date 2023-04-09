@@ -3,6 +3,9 @@ import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSele
 
 export const Searchbar = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-5 mb-20"></div>
+    <div className="flex flex-col justify-center items-center gap-5 mb-20">
+      <SearchForm />
+      <SearchTypeSelector />
+    </div>
   );
 };

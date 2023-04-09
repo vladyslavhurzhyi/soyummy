@@ -1,61 +1,80 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useState } from 'react';
-import { getRecipesByQuery } from 'service/Api/getRecipesApi';
-import { RecipesList } from 'components/RecipesList/RecipesList';
-import { SearchForm } from 'components/SearchForm/SearchForm';
+import {
+  getRecipesByQuery,
+  getRecipesByIngredients,
+} from 'redux/searchOperations';
 import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectQueryType } from 'redux/search/selectors';
+import { Searchbar } from 'components/Searchbar/Searchbar';
+import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
 
 export const Search = () => {
-  const [recipes, setRecipes] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-
+  const [searchParams] = useSearchParams();
+  const queryType = useSelector(selectQueryType);
+  const dispatch = useDispatch();
   const query = searchParams.get('query');
-  const type = searchParams.get('type');
 
   useEffect(() => {
     if (!query) {
       return;
     }
-    async function findByQuery() {
-      try {
-        const recipes = await getRecipesByQuery(query, type);
-        if (!recipes) {
-          alert('nothing was found');
-          return;
-        }
-        console.log(recipes.data);
-        setRecipes(recipes.data);
-      } catch (error) {
-        console.log(error);
-      }
+
+    switch (queryType) {
+      case 'title':
+        dispatch(getRecipesByQuery(query));
+        break;
+      case 'ingredients':
+        dispatch(getRecipesByIngredients(query));
+        break;
+      default:
+        return;
     }
-    findByQuery(query, type);
-  }, [query, type]);
-
-  const handleChange = newType => {
-    return newType;
-  };
-
-  const handleFormSubmit = (newQuery, type = 'title') => {
-    type = handleChange(type);
-    setSearchParams({ query: newQuery, type });
-  };
+  }, [dispatch, query, queryType]);
 
   return (
     <main>
-      <SearchTypeSelector onChange={handleChange} />
       <MainPageTitle pageTitle="Search" className="main-title ml-10" />
-      <SearchForm onSubmit={handleFormSubmit} />
-
-      {!recipes ? (
-        <p>try to find good recipe</p>
-      ) : (
-        <RecipesList data={recipes} />
-      )}
-
-      {recipes === 0 && <p>nothing was found</p>}
+      <Searchbar />
+      <SearchTypeSelector className="" />
+      <SearchedRecipesList />
     </main>
   );
 };
+
+// const [recipes, setRecipes] = useState(null);
+// const [searchParams, setSearchParams] = useSearchParams();
+
+// const query = searchParams.get('query'); //get from store
+// const type = searchParams.get('type'); // ^
+
+// useEffect(() => {
+//   if (!query) {
+//     return;
+//   }
+//   async function findByQuery() {
+//     try {
+//       const recipes = await getRecipesByQuery(query, type);
+//       if (!recipes) {
+//         alert('nothing was found');
+//         return;
+//       }
+//       console.log(recipes.data);
+//       setRecipes(recipes.data);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+//   findByQuery(query, type);
+// }, [query, type]);
+
+// const handleChange = newType => {
+//   return newType;
+// };
+
+// const handleFormSubmit = (newQuery, type = 'title') => {
+//   type = handleChange(type);
+//   setSearchParams({ query: newQuery, type });
+// };

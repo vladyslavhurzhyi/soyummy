@@ -11,7 +11,7 @@ export const SearchTypeSelector = ({ onChange }) => {
   };
 
   return (
-    <div className="mx-8 flex items-center gap-5">
+    <div className="mx-auto justify-center flex items-center gap-5">
       <label>Search by:</label>
       <select name="type" onChange={getType}>
         <option value="title">title</option>
