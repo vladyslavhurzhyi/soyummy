@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
-import logosvgMob from '../Logo/logosvgMob.svg';
 import { Nav } from './Nav';
 
 export const Footer = () => {
@@ -78,8 +77,7 @@ export const Footer = () => {
                 }}
               >
                 <Logo
-                  newLogo={logosvgMob}
-                  cssClassIcon="iconLogoFooterMob "
+                  cssClassIcon="iconLogoFooterMob"
                   cssClassDiv="divIconFooterMob"
                 />
 
