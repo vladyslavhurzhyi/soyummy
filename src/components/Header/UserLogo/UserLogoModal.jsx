@@ -1,37 +1,51 @@
-import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { BackdropUserLogo } from "./BackdropUserLogo";
-import { ModalWindowUsereLogo } from "./ModalWindowUsereLogo";
+import { useEffect } from 'react';
+
+import { ReactComponent as EditIcon } from "./../images/editPen.svg";
+import { CurveBtn } from "components/CurveBtn/CurveBtn";
 
 
-const modalRoot = document.querySelector("#modal-root");
-export const UserLogoModal = ({ children, onClose }) => {
+
+const modalRoot = document.querySelector("#modal-logo");
+
+export const UserLogoModal = ({ onClose, editOpen, logOutOpen }) => {
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+    const handleKeyDown = e => {
+      if (e.code === 'Escape') {
+        onClose();
+      }
     };
-  });
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
 
-  const handleKeyDown = (e) => {
-    if (e.code === "Escape") {
-      onClose();
-    }
-  };
-
-  const handleBackdropClick = (e) => {
+  const handleOverlayClick = e => {
     if (e.currentTarget === e.target) {
       onClose();
     }
   };
 
-  return createPortal(
-<BackdropUserLogo onClick={handleBackdropClick} className="fixed top-0 left-0 w-full h-full z-50 bg-black opacity-50">
-<ModalWindowUsereLogo className="bg-white p-4 rounded-lg shadow-md">{children}</ModalWindowUsereLogo>
-</BackdropUserLogo>,
-modalRoot
-);
+  return createPortal (
+    <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50" >
+      <div className="max-w-screen-lg h-full w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6">
+        <div className='absolute bg-white rounded-md border  top-16 right-4 md:top-20'>
+          <div className='p-4'> 
+            <button
+              onClick={handleOverlayClick}
+              className="flex px-4 py-2 "
+            >
+              <span className="text-base font-medium text-gray-800">Edit profile</span>
+              <EditIcon className="w-5 h-5 " />
+            </button>
+            <CurveBtn text="Log out" onClick={onClose} cssClass="addbgreen-btn" />
+          </div>
+        </div>
+      </div>
+    </div>,
+    modalRoot
+  );
 };
 
 
@@ -40,28 +54,57 @@ modalRoot
 
 
 
-// import React, { useState } from "react";
-// import { Modal, Button } from "react-bootstrap";
+
+
+// // import { CurveBtn } from "components/CurveBtn/CurveBtn";
+// import { useEffect } from "react";
+// import { createPortal } from "react-dom";
+// // import { BackdropUserLogo } from "./BackdropUserLogo";
+// // import { ModalWindowUsereLogo } from "./ModalWindowUsereLogo";
+// // import { ReactComponent as EditIcon } from "./../images/editPen.svg";
 // import { UserInfoModal } from "./UserInfoModal";
 
-// export const UserLogoModal = () => {
-//   const [showUserInfoModal, setShowUserInfoModal] = useState(false);
 
-//   const handleEditProfile = () => {
-//     setShowUserInfoModal(true);
+
+// const modalRoot = document.querySelector("#modal-root");
+// export const UserLogoModal = ({ children, toggleLogoModal }) => {
+//   useEffect(() => {
+//     window.addEventListener("keydown", handleKeyDown);
+
+//     return () => {
+//       window.removeEventListener("keydown", handleKeyDown);
+//     };
+//   });
+
+//   const handleKeyDown = (e) => {
+//     if (e.code === "Escape") {
+//   toggleLogoModal();
+//     }
 //   };
 
-//   const handleLogout = () => {
-//     // выполнить логаут пользователя
+//   const handleBackdropClick = (e) => {
+//     if (e.currentTarget === e.target) {
+//   toggleLogoModal();
+//     }
 //   };
 
-//   return (
-//     <>
-//       <Modal show={showUserInfoModal} onHide={() => setShowUserInfoModal(false)}>
-//         <UserInfoModal/>
-//       </Modal>
-//       <Button variant="primary" onClick={handleEditProfile}>EditProfile</Button>
-//       <Button variant="secondary" onClick={handleLogout}>Logout</Button>
-//     </>
-//   );
-// }
+//   return createPortal(
+//      <UserInfoModal onClick={handleBackdropClick}></UserInfoModal>,
+// modalRoot
+// );
+// };
+
+
+
+// {<BackdropUserLogo onClick={handleBackdropClick} className="fixed top-0 left-0 w-full h-full z-50 bg-black opacity-50">
+//       <ModalWindowUsereLogo className="bg-white p-4 w-[300px] h-[300px]  rounded-lg shadow-md">{children}
+//         <UserInfoModal></UserInfoModal>
+//       Edit profile <EditIcon/>
+//         <CurveBtn text="Log out" onClick={toggleLogoModal} cssClass="addbgreen-btn" />
+//       </ModalWindowUsereLogo>
+// </BackdropUserLogo>, }
+
+
+
+
+

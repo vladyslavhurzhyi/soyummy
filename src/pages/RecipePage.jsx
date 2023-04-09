@@ -1,10 +1,11 @@
 import { Loader } from 'components/Loader/Loader';
-import { IngredientList } from 'components/RecipeById/IngredientList';
+import { RecipeIngredientsList } from 'components/RecipeById/RecipeIngredientsList';
 import { RecipePageHero } from 'components/RecipeById/RecipePageHero';
-import { ToggleButton } from 'components/ToggleButton/ToggleButton';
+import { RecipePreparation } from 'components/RecipeById/RecipePreparation';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
   selectError,
@@ -22,15 +23,16 @@ const RecipePage = () => {
 
   useEffect(() => {
     dispatch(fetchRecipeById(recipeId));
+    dispatch(getFavoriteRecipes());
   }, [dispatch, recipeId]);
 
   return (
     <main>
-      <ToggleButton />
       {recipes.code && (
         <>
           <RecipePageHero />
-          <IngredientList />
+          <RecipeIngredientsList />
+          <RecipePreparation />
         </>
       )}
       {isLoading && !error && <Loader />}

@@ -28,7 +28,7 @@ export const SearchForm = ({ onSubmit }) => {
   }
 
   return (
-    <div className="mx-8 w-[510px] h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border">
+    <div className="w-[295px] md:w-[369px] xl:w-[510px] h-[52px] xl:h-[71px] rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] border-grey1 border-solid border mx-auto">
       <form
         onSubmit={handleSubmit}
         className="flex justify-end rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] h-full relative"
@@ -37,12 +37,12 @@ export const SearchForm = ({ onSubmit }) => {
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-          className="text-greyInput  font-main text-base leading-6 w-full bg-transparent border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] placeholder:hover:border-none placeholder:hover:outline-none placeholder:active:border-none placeholder:active:outline-none placeholder:focus:border-none placeholder:focus:outline-none "
+          className="text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px]"
         />
         <CurveBtn
           type="submit"
           text="Search"
-          cssClass="searchgreen-btn absolute right-0 -top-0.5 h-[72px]"
+          cssClass="searchbl-btn absolute right-[-1px] -top-0.5 h-[53px] xl:h-[72px]"
         ></CurveBtn>
       </form>
     </div>

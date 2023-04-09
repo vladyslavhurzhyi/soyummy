@@ -4,10 +4,15 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        xl: '1440px',
+      },
       backgroundImage: {
         recipePage: "url('/src/images/recipePage.jpg')",
         hero: "url('/src/images/salat.png')",
-        main: "url('/src/images/bg_main-desc.png')",
+        main_d: "url('/src/images/bg_main-desc.png')",
+        main_t: "url('/src/images/bg_main-tablet.png')",
+        main_m: "url('/src/images/bg_main-mob.png')",
       },
       colors: {
         accentMain: '#8BAA36',
@@ -38,7 +43,6 @@ module.exports = {
         customLg: ['28px', '28px'],
         customXl: ['32px', '32px'],
         customXxl: ['44px', '44px'],
-        customXxxl: ['100px', '100px'],
       },
       border: { grey1: '#F0F0F0' },
       height: {

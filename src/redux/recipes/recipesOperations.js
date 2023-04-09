@@ -1,13 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import api from 'service/Api/axiosBaseURL';
 
 export const addRecipe = createAsyncThunk(
   'recipes/addRecipe',
   async (formData, thunkAPI) => {
     try {
-      const response = await axios.post(`/recipes`, formData);
+      const response = await api.post(`/recipes`, formData);
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {
@@ -32,41 +31,6 @@ export const fetchRecipeById = createAsyncThunk(
     }
   }
 );
-
-// export const addToFavorite = createAsyncThunk(
-//   'recipes/fetchRecipeById',
-//   async (_, thunkAPI) => {
-//     const id = useParams();
-//     console.log(id);
-
-//     try {
-//       const response = await axios.get(`/recipes/${id}`);
-//       return response.data;
-//     } catch (error) {
-//       toast.error('Something went wrong, please try again later', {
-//         autoClose: 3000,
-//       });
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const removeFromFavorite = createAsyncThunk(
-//   'recipes/fetchRecipeById',
-//   async (recipeId, thunkAPI) => {
-//     try {
-//       const response = await axios.get(`/recipes/${recipeId}`);
-//       return response.data;
-//     } catch (error) {
-//       toast.error('Something went wrong, please try again later', {
-//         autoClose: 3000,
-//       });
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// import { getAllRecipes } from 'service/Api/getRecipesApi.js';
 
 // export const getAllRecipes = createAsyncThunk(
 //   'ownRecipes/getRecipes',
