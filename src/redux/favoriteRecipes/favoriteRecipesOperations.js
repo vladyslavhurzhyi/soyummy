@@ -5,10 +5,12 @@ import api from 'service/Api/axiosBaseURL';
 
 export const getFavoriteRecipes = createAsyncThunk(
   'favoriteRecipes/getRecipes',
-  async (_, thunkAPI) => {
+  async (page = 1, thunkAPI) => {
     try {
-      const { data } = await api.get(`/recipes/my/favorite`);
-      const favRecipe = data.data;
+      const { data } = await api.get(
+        `/recipes/my/favorite?page=${page}&limit=4`
+      );
+      const favRecipe = data;
       return favRecipe;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {

@@ -40,23 +40,27 @@ export const MyRecipesList = ({ cssClass }) => {
 
   return (
     <>
-      <RecipesListPaginator
-        current_page={current_page}
-        total={total}
-        per_page={per_page}
-        handlePaginationClick={handlePaginationClick}
-        pageIncrement={pageIncrement}
-        pageDecrement={pageDecrement}
-      />
       {error && <div className=" bg-red-500">Error</div>}
       {isLoading ? (
         <Loader />
       ) : (
-        <RecipesList
-          removeRecipe={removeMyRecipes}
-          cssClass={cssClass}
-          data={myRecipes}
-        />
+        <>
+          <RecipesList
+            removeRecipe={removeMyRecipes}
+            cssClass={cssClass}
+            data={myRecipes}
+          />
+          {total > 0 && (
+            <RecipesListPaginator
+              current_page={current_page}
+              total={total}
+              per_page={per_page}
+              handlePaginationClick={handlePaginationClick}
+              pageIncrement={pageIncrement}
+              pageDecrement={pageDecrement}
+            />
+          )}
+        </>
       )}
     </>
   );
