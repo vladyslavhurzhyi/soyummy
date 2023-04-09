@@ -1,5 +1,6 @@
 import { AuthNav } from '../components/AuthNav/AuthNav';
 
+
 const WelcomPage = () => {
   return (
     <section className="  bg-hero w-full  text-center gap-4 bg-cover bg-center bg-no-repeat ">
@@ -47,4 +48,4 @@ const WelcomPage = () => {
   );
 };
 
-export default WelcomPage;
+export default WellcomPage;

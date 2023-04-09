@@ -6,7 +6,7 @@ export const getAllRecipes = () => {
   return api
     .get('/recipes', {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+        // Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
       },
     })
     .then(({ data }) => {

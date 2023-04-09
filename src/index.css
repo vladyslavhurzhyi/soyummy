@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-whiteText dark:bg-accentDarker;
+  @apply bg-whiteText dark:bg-accentDarker font-main;
 }
 
 .container {
@@ -90,6 +90,13 @@ body {
   @apply transition duration-300   fill-white w-7 h-7 xl:w-[30px] xl:h-[30px];
 }
 
+.divIconFooterMob {
+  @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
+}
+.iconLogoFooterMob {
+  @apply transition duration-300 stroke-current  text-red-600  w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
+}
+
 .divIconTrash {
   @apply transition duration-300  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain hover:fill-zinc-50;
 }
@@ -105,7 +112,7 @@ body {
 .origin-0 {
   transform-origin: 0%;
 }
-.bg-size_main{
+.bg-size_main {
   background-size: 100% 100%;
 }
 input:focus ~ label,
