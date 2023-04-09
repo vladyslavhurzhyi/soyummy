@@ -25,28 +25,32 @@ export const IngredientList = () => {
   };
 
   return (
-    <ul className="mb-[50px]">
+    <ul className="flex flex-col mb-[50px] md:mb-24 gap-4">
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
           key={_id}
-          className="flex justify-between items-center bg-accentLighter pl-[18px] pr-[29px] rounded-lg mb-4"
+          className="flex justify-between items-center bg-accentLighter pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg "
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6 xl:gap-10">
             {{ thb } ? (
-              <img src={thb} className="w-14 h-14" alt="ingredient_photo" />
+              <img
+                src={thb}
+                className="w-14 md:w-28 xl:w-32 h-14 md:h-28 xl:h-32"
+                alt="ingredient_photo"
+              />
             ) : (
               <img
-                className="w-14 h-14 rounded-[3px]"
+                className="w-14 md:w-28 xl:w-32 h-14 md:h-28 xl:h-32 rounded-[3px]"
                 src={placeholder}
                 alt="placeholder"
               />
             )}
-            <p className="text-customShoppingList font-medium text-secondaryText">
+            <p className="text-customShoppingList md:text-customBase font-medium text-secondaryText">
               {ttl}
             </p>
           </div>
-          <div className="flex items-center gap-[28px]">
-            <div className="flex justify-between items-center h-6 bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime my-[31px] gap-1 px-1 min-w-max">
+          <div className="flex items-center gap-[28px] md:gap-[78px] xl:gap-[151px]">
+            <div className="flex justify-center items-center h-6 md:h-[36px] bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime md:text-lg my-[31px] md:my-[71px] xl:my-[73px] gap-1 px-1 min-w-max w-10 md:w-16 xl:w-20">
               {amount && <p className="">{amount}</p>}
               {measure && <p className="">{measure}</p>}
             </div>
@@ -57,15 +61,14 @@ export const IngredientList = () => {
                 data-ingrid={_id}
                 data-ingramount={amount}
                 data-ingrmeasure={measure}
-                className="appearance-none text-accentMain cursor-pointer w-[18px] h-[18px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
+                className="appearance-none text-accentMain cursor-pointer w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
               />
-              <div className="absolute flex justify-center items-center w-[18px] h-[18px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100">
+              <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100">
                 <svg
-                  width="10"
-                  height="10"
                   viewBox="0 0 10 10"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="w-2.5 md:w-5 h-2.5 md:h-5"
                 >
                   <path
                     d="M7.77377 1.01229C8.04472 0.612637 8.58836 0.508303 8.98801 0.779256C9.38767 1.05021 9.492 1.59384 9.22105 1.9935L4.47925 8.98765C4.13243 9.4992 3.37879 9.4992 3.03197 8.98765L0.779622 5.66544C0.508669 5.26578 0.613003 4.72215 1.01266 4.45119C1.41231 4.18024 1.95595 4.28457 2.2269 4.68423L3.75561 6.93907L7.77377 1.01229Z"

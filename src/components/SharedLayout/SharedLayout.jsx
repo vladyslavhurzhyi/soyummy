@@ -14,7 +14,8 @@ export const SharedLayout = () => {
           <Outlet />
         </div>
       </Suspense>
-       <Footer />
+
+      <Footer />
     </>
   );
 };

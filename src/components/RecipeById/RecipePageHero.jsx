@@ -36,28 +36,28 @@ export const RecipePageHero = data => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="flex flex-col bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 px-16 md:px-8 xl:px-24 ">
+      <div className="flex flex-col justify-between bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 md:mb-[50px] px-8 md:px-26 xl:px-96 ">
         <div>
           <MainPageTitle
             pageTitle={title}
-            className="main-title-accent mb-[18px] md:mb-[100px] mx-auto"
+            className="main-title-accent mb-[18px] md:mb-6 mx-auto"
           />
-          <p className="block text-xs text-accentDark mx-auto max-w-[299px] mb-6">
+          <p className="block text-xs md:text-lg md:leading-6 text-accentDark mx-auto max-w-[299px] md:max-w-[500px] xl:max-w-[656px]">
             {description}
           </p>
         </div>
-        <div>
+        <div className="pb-[110px] md:pb-[120px] xl:pb-8">
           {true && (
             <CurveBtn
               text="Add to favorite recipes"
-              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px] md:mb-[40px] xl:mb-12"
               onClick={() => handleClickAddFavorite()}
             />
           )}
           {/* {true && (
             <CurveBtn
               text="Remove from favorite recipes"
-              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px]"
+              cssClass="othercateg-btn text-customRecipesTime text-accentDark px-[16.9px] py-[8.9px] mb-[42px] md:mb-[40px] xl:mb-12"
               onClick={() => handleClickRemoveFavorite()}
             />
           )} */}
