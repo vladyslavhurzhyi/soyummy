@@ -48,4 +48,4 @@ const WelcomPage = () => {
   );
 };
 
-export default WellcomPage;
+export default WelcomPage;
