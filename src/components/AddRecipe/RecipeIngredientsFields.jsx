@@ -1,5 +1,6 @@
 // import { useState } from 'react';
-
+import { Logo } from '../Logo/Logo';
+import logo from '../../images/trash.svg';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import measureList from '../../data/measure.json';
 // import categories from '../../data/category.json';
@@ -45,7 +46,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
               data-name="id"
               value={item.id}
               onChange={e => handleFieldChange(e, item.id)}
-              className="pt-3 pb-2 pl-2 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+              className="pt-2 pb-1 md:pt-3 md:pb-2 pl-2 md:pl-4 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
             >
               {ingredients.map(({ ttl, _id }) => (
                 <option key={_id} value={_id} className="bg-lime-50 ">
@@ -62,7 +63,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 step="0.5"
                 min="0.5"
                 required
-                className="pt-3 pb-2 pl-3 block w-full px-0  bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
                 value={item.amount}
                 onChange={e => handleFieldChange(e, item.id)}
               />
@@ -80,7 +81,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 data-name="measure"
                 value={item.measure}
                 onChange={e => handleFieldChange(e, item.id)}
-                className="pt-3 pb-2 pl-3 block w-full px-0 mt-0 bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
               >
                 {measureList.map(({ type }) => (
                   <option key={type} value={type} className="bg-lime-50 ">
@@ -100,23 +101,33 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
             </div>
             {items.length > 1 && (
               <button
-                className="ml-3"
-                type="button"
+                className="flex ml-1 md:ml-3 lg:ml-5 "
                 onClick={() => handleRemoveClick(item.id)}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-8 h-8 stroke-[1.5px] fill-transparent hover:stroke-accentMain focus:stroke-accentMain stroke-secondaryText"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <Logo
+                  newLogo={logo}
+                  cssClassIcon="iconTrash"
+                  cssClassDiv="divIconTrash"
+                />
               </button>
+              // <button
+              //   className="ml-3"
+              //   type="button"
+              //   onClick={() => handleRemoveClick(item.id)}
+              // >
+              //   <svg
+              //     xmlns="http://www.w3.org/2000/svg"
+              //     viewBox="0 0 24 24"
+              //     stroke="currentColor"
+              //     className="w-8 h-8 stroke-[1.5px] fill-transparent hover:stroke-accentMain focus:stroke-accentMain stroke-secondaryText"
+              //   >
+              //     <path
+              //       strokeLinecap="round"
+              //       strokeLinejoin="round"
+              //       d="M6 18L18 6M6 6l12 12"
+              //     />
+              //   </svg>
+              // </button>
             )}
           </div>
         );
