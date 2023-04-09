@@ -19,7 +19,8 @@ export const PreviewCategories = () => {
   // };
 
   useEffect(() => {
-    dispatch(getMainCategories());
+    const params = { categoriesLimit: 4, recipesInCategory: 4 };
+    dispatch(getMainCategories(params));
   }, [dispatch]);
 
   let numCard;
