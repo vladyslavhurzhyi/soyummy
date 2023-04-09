@@ -7,6 +7,7 @@ import { mainRecipeReduser } from './previewCategories/categoriesSlice';
 import favoriteRecipesReducer from './favoriteRecipes/favoriteRecipesSlice';
 import myRecipesReducer from './myRecipes/myRecipesRecipesSlice';
 import ingredientsReducer from './ingredients/ingredientsSlice';
+import categoryReducer from './categories/categoriesSlice';
 
 import {
   persistStore,
@@ -47,6 +48,7 @@ export const store = configureStore({
     favoriteRecipes: favoriteRecipesReducer,
     myRecipes: myRecipesReducer,
     ingredients: ingredientsReducer,
+    currentCategory: categoryReducer,
   },
 
   middleware: getDefaultMiddleware =>
