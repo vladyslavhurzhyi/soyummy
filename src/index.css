@@ -138,3 +138,19 @@ select:focus ~ label {
   color: rgba(0, 0, 0, var(--tw-text-opacity));
   left: 0px;
 }
+
+.currentPage {
+  @apply z-10 px-[10px] py-[6px] mx-3  leading-tight text-accentDark  rounded-full bg-[#EBF3D4] hover:cursor-not-allowed dark:border-gray-700 dark:bg-gray-700 dark:text-white;
+}
+
+.paginationPage {
+  @apply px-[10px] py-[6px] mx-3  leading-tight text-[#656565] bg-[#FAFAFA] rounded-full  hover:bg-[#9ea38d] hover:rounded-full hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
+
+.nextBtn {
+  @apply mr-[28px] ml-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:hover:text-white;
+}
+
+.prevBtn {
+  @apply ml-[28px] mr-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:hover:text-white;
+}
