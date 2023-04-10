@@ -9,7 +9,7 @@ export const getRecipesByQuery = createAsyncThunk(
 
       console.log(response.data);
 
-      return response.data;
+      return response.data.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }
@@ -26,7 +26,7 @@ export const getRecipesByIngredient = createAsyncThunk(
 
       console.log(response.data);
 
-      return response.data;
+      return response.data.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }
