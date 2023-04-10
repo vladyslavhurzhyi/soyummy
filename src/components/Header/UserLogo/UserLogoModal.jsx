@@ -29,15 +29,15 @@ export const UserLogoModal = ({ onClose, editOpen, logOutOpen }) => {
 
   return createPortal (
     <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50" >
-      <div className="max-w-screen-lg h-full w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6">
+      <div className="max-w-screen-lg h- w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6">
         <div className='absolute bg-white rounded-md border  top-16 right-4 md:top-20'>
           <div className='p-4'> 
             <button
               onClick={handleOverlayClick}
               className="flex px-4 py-2 "
             >
-              <span className="text-base font-medium text-gray-800">Edit profile</span>
-              <EditIcon className="w-5 h-5 " />
+            <span className="text-#23262A font-normal mr-[54px] ">Edit profile</span>
+              <EditIcon className="w-[12px] h-[12px] " />
             </button>
             <CurveBtn text="Log out" onClick={onClose} cssClass="addbgreen-btn" />
           </div>
