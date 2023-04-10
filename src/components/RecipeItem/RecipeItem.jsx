@@ -18,7 +18,7 @@ export const RecipeItem = ({
 
   return (
     <>
-      <li className="flex mx-auto mb-10 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark">
+      <li className="flex mx-auto mb-10 last:mb-0 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark">
         <div className="w-[1240px]">
           <div className="flex my-10">
             <img
