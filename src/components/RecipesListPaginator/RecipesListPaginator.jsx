@@ -5,6 +5,8 @@ export const RecipesListPaginator = ({
   current_page,
   per_page,
   handlePaginationClick,
+  pageIncrement,
+  pageDecrement,
 }) => {
   const pageNumber = [];
   const allPage = Math.ceil(total / per_page);
@@ -15,7 +17,7 @@ export const RecipesListPaginator = ({
 
   return (
     <>
-      <div className="flex justify-center mb-[100px]">
+      <div className="flex justify-center mb-[100px]  dark:bg-accentDarker">
         <nav
           className="inline-flex items-center -space-x-px "
           aria-label="Pagination"
@@ -23,7 +25,12 @@ export const RecipesListPaginator = ({
           <ul className="flex items-center border border-gray-300 rounded-3xl shadow-custom text-[12px] py-[14px] max-h-[55px]">
             <button
               disabled={current_page === 1 ? true : false}
-              className="nextBtn"
+              className={`nextBtn ${
+                current_page === 1
+                  ? 'hover:text-[#A9A9A9] cursor-not-allowed'
+                  : 'hover:text-gray-700'
+              }`}
+              onClick={pageDecrement}
             >
               <span className="sr-only">Previous</span>
 
@@ -59,7 +66,12 @@ export const RecipesListPaginator = ({
 
             <button
               disabled={current_page === allPage ? true : false}
-              className="prevBtn"
+              className={`prevBtn ${
+                current_page === allPage
+                  ? 'hover:text-[#A9A9A9] cursor-not-allowed'
+                  : 'hover:text-gray-700'
+              }`}
+              onClick={pageIncrement}
             >
               <span className="sr-only">Next</span>
               <svg
@@ -72,7 +84,7 @@ export const RecipesListPaginator = ({
                 <path
                   fill-rule="evenodd"
                   d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>

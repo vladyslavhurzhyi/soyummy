@@ -12,6 +12,7 @@ import {
   selectMyIsLoading,
   selectMyRecipes,
 } from 'redux/myRecipes/myRecipesSelectors';
+import { toast } from 'react-toastify';
 
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
@@ -40,10 +41,12 @@ export const MyRecipesList = ({ cssClass }) => {
 
   return (
     <>
-      {error && <div className=" bg-red-500">Error</div>}
-      {isLoading ? (
-        <Loader />
-      ) : (
+      {isLoading && <Loader />}
+      {error &&
+        toast.error('Something went wrong, please try again later', {
+          autoClose: 3000,
+        })}
+      {myRecipes?.length > 0 && (
         <>
           <RecipesList
             removeRecipe={removeMyRecipes}
