@@ -7,6 +7,16 @@ export const addRecipe = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const response = await api.post(`/recipes`, formData);
+      toast.success('Recipe was added', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       return response.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later', {

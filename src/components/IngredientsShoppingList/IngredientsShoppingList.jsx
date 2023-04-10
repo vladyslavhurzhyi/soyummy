@@ -1,27 +1,44 @@
 // import axios from 'axios';
-import {  useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, Reorder } from 'framer-motion';
-import { staticData } from './staticData';
-import { staticIngredient } from './staticData';
-import { EmptyShoppingList } from './EmptyShoppingList';
 
-const visibleList = (data, ingredient) => {
-  const res = data.map(item => {
-    ingredient.forEach(element => {
-      element._id === item.id
-        ? (item = { ...item, ttl: element.ttl, thb: element.thb })
-        : (item = { ...item });
-    });
-    return item;
-  });
-  return res;
-};
+import { EmptyShoppingList } from './EmptyShoppingList';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  deleteShoppingListItem,
+  fetchShoppingList,
+} from 'redux/shoppingList/shoppingListOperations';
+import {
+  selectShoppingList,
+  selectShoppingListIsError,
+  selectShoppingListIsLoading,
+} from 'redux/shoppingList/shoppingListSelector';
+import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
+import { ErrorPage } from 'components/ErrorPage/ErrorPage';
+import { Loader } from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
-  //   const [data, setData] = useState([]);
-  const [data, setData] = useState(() =>
-    visibleList(staticData, staticIngredient)
-  );
+  const [data, setData] = useState([]);
+
+  const dispatch = useDispatch();
+
+  const list = useSelector(selectShoppingList);
+  const loading = useSelector(selectShoppingListIsLoading);
+  const error = useSelector(selectShoppingListIsError);
+
+  useEffect(() => {
+    if (list.length <= 0) {
+      dispatch(fetchShoppingList());
+    }
+    setData(list);
+  }, [dispatch, list]);
+
+  const handleDeleteItem = (id, recipeId) => {
+    dispatch(deleteShoppingListItem({ id, recipeId }));
+  };
+  if (error) {
+    return <ErrorPage />;
+  }
 
   return (
     <>
@@ -50,43 +67,30 @@ export const IngredientsShoppingList = () => {
               Remove
             </h3>
           </motion.div>
-          <Reorder.Group className="mt-2" values={data} onReorder={setData}>
-            {data?.map(({ id, thb, ttl, amount, measure }, idx, arr) => (
-              <Reorder.Item
-                value={arr[idx]}
-                initial={{
-                  x: idx % 2 === 0 ? -200 : 200,
-                  opacity: 0,
-                }}
-                whileTap={{ scale: 0.8 }}
-                transition={{ duration: 0.6 }}
-                whileInView={{
-                  x: 0,
-                  opacity: 1,
-                }}
-                key={id}
-                className="flex flex-row items-start py-6 md:py-11 px-2 border-b xl:px-10"
-              >
-                <img
-                  src={thb}
-                  alt="ingredient"
-                  className="rounded-md object-cover max-w-[60px] h-[60px] md:max-w-[93px] md:h-[97px]"
-                />
-                <p className="ml-[10px] md:ml-4 font-main font-medium text-[10px] leading-3 md:text-base text-secondaryText">
-                  {ttl}
-                </p>
-                <p className="flex items-center justify-center ml-auto w-[37px] h-[23px] md:w-[68px] md:h-[35PX] rounded bg-accentMain font-main font-semibold text-[10px] leading-[15px] md:text-[18px] md:leading-[27px] text-whiteText">
-                  {`${amount} ${measure}`}
-                </p>
-                <button
-                  type="button"
-                  className="ml-[46px] mr-5 md:mr-12 md:ml-28 xl:ml-44 w-[14px] h-[14px] md:w-5 md:h-5 hover:animate-ping"
-                >
-                  X
-                </button>
-              </Reorder.Item>
-            ))}
-          </Reorder.Group>
+          {loading ? (
+            <div className="mx-auto flex items-center justify-center h-64">
+              <Loader />
+            </div>
+          ) : (
+            <Reorder.Group className="mt-2" values={data} onReorder={setData}>
+              {data?.map(
+                ({ id, thb, ttl, amount, measure, recipeId }, idx, arr) => (
+                  <IngredientsShoppingListItem
+                    key={id}
+                    id={id}
+                    thb={thb}
+                    ttl={ttl}
+                    amount={amount}
+                    measure={measure}
+                    recipeId={recipeId}
+                    idx={idx}
+                    arr={arr}
+                    handleDeleteItem={handleDeleteItem}
+                  />
+                )
+              )}
+            </Reorder.Group>
+          )}
         </>
       ) : (
         <EmptyShoppingList />

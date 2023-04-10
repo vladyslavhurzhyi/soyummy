@@ -1,10 +1,20 @@
+import { useDispatch } from 'react-redux';
+import { changeQueryType } from 'redux/search/searchSlice';
+
 export const SearchTypeSelector = () => {
+  const dispatch = useDispatch();
+
+  const changeType = e => {
+    const type = e.target.value;
+    dispatch(changeQueryType(type));
+  };
+
   return (
-    <div className="flex items-center gap-5">
-      <label htmlFor="search-type">Search by:</label>
-      <select id="search-type" name="search-type">
-        <option value="query">title</option>
-        <option value="ingridient">ingridient</option>
+    <div className="mx-auto justify-center flex items-center gap-5">
+      <label>Search by:</label>
+      <select onChange={changeType}>
+        <option value="title">title</option>
+        <option value="ingredients">ingredient</option>
       </select>
     </div>
   );

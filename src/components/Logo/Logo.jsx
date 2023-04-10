@@ -1,17 +1,22 @@
 //cssClassIcon="iconLogo" cssClassDiv="divIconLogo"
 //cssClass for trash - "iconTrash", cssClassDiv = "divIconTrash"
 //cssClass for mobile ---divIconFooterMob / iconLogoFooterMob
-import logo from './logosvg.svg';
+import { ReactComponent as Svg } from './logosvg.svg';
+import { ReactComponent as SvgTrash } from '../../images/svg/trash.svg';
 
 export const Logo = ({
-  newLogo = logo,
+  trash = false,
   cssClassIcon = 'iconLogo',
   cssClassDiv = 'divIconLogo',
 }) => {
   return (
     <>
       <div className={cssClassDiv}>
-        <img src={newLogo} alt="logo" className={cssClassIcon}></img>
+        {trash ? (
+          <SvgTrash alt="logo" className={cssClassIcon}></SvgTrash>
+        ) : (
+          <Svg alt="logo" className={cssClassIcon}></Svg>
+        )}
       </div>
     </>
   );

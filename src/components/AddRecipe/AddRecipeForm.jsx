@@ -9,11 +9,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addRecipe } from 'redux/recipes/recipesOperations';
 import { getIngredients } from 'redux/ingredients/ingredientsOperations';
-
 import { selectIngredients } from 'redux/ingredients/ingredientsSelectors';
+import { getCategories } from 'redux/categories/categoriesOperations';
+import { selectCategories } from 'redux/categories/categoriesSelectors';
 
 export const AddRecipeForm = () => {
   const ingredientsList = useSelector(selectIngredients);
+  const categoriesList = useSelector(selectCategories);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,6 +38,7 @@ export const AddRecipeForm = () => {
 
   useEffect(() => {
     dispatch(getIngredients());
+    dispatch(getCategories());
   }, [dispatch]);
 
   // const handleFieldChange = e => {
@@ -89,6 +92,7 @@ export const AddRecipeForm = () => {
         <form noValidate="" onSubmit={handleSubmit}>
           <ResipeDescriptionFields
             data={formData}
+            categories={categoriesList}
             setData={handleFieldsChange}
           />
           <ResipeIngredientsFields
@@ -104,11 +108,11 @@ export const AddRecipeForm = () => {
           <CurveBtn
             type="submit"
             text="Publish recipe"
-            cssClass="searchbl-btn mt-6 mb-16 md:mb-24 lg:mb-0"
+            cssClass="searchbl-btn mt-6 mb-16 md:mb-24 lg:mb-0 dark:bg-accentMain dark:text-accentDarker  dark:hover:bg-accentLighter dark:focus:bg-accentLighter"
           />
         </form>
         <div className="hidden lg:block w-40 absolute top-0 left-[900px] xl:left-[1056px]">
-          <h2 className="font-main font-semibold text-secondaryText text-customBase mb-10">
+          <h2 className="font-main font-semibold text-secondaryText text-customBase mb-10 dark:text-whiteText">
             Follow Us
           </h2>
           <FollowUs className="followus-addrecipe" />

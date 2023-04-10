@@ -9,10 +9,11 @@ const rejected = state => {
 };
 
 export const outerRecipesSlice = createSlice({
-  name: 'outerRecipes',
+  name: 'mainRecipes',
   initialState: {
     isCategoryFetching: false,
     mainCategories: [],
+
     isError: false,
   },
 

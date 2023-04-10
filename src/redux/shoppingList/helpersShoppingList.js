@@ -22,7 +22,7 @@ export const helperFulfilledAdd = (state, action) => {
 export const helperFulfilledDelete = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  state.shoppingList = state.shoppingList.filter(
-    item => item.id !== action.payload.id
-  );
+  state.shoppingList = state.shoppingList.filter(item => {
+    return item.id !== action.payload;
+  });
 };
