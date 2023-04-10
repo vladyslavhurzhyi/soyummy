@@ -1,78 +1,80 @@
-// import { useDispatch, useSelector } from "react-redux";
-// import { updateUser } from "redux/auth/operations";
-import { useEffect} from "react";
-// import { useAuth } from "hooks";
-import { createPortal } from "react-dom";
-import { BackdropUserLogo } from "./BackdropUserLogo";
-import { ModalWindowUsereLogo } from "./ModalWindowUsereLogo";
+import React from 'react';
+import { ModalTW } from 'components/ModalTW';
+import { ReactComponent as EditPen } from './../images/editPen.svg';
+import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
 
-// import CloseButton from 
-// import { UserPreviewImg } from "./UserPreviewImg";
-// import { Loader } from "components/Loader/Loader";
-// import { UpdateUserSchema } from "helpers/validations";
+export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
+  const onEditBtnClick = () => handleOpen('userEdit');
+  const onLogoutBtnClick = () => handleOpen('userLogout');
 
-
-const modalRoot = document.querySelector("#modal-info");
-
-export const UserInfoModal = ({ children, toggleLogoModal }) => {
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  });
-
-  const handleKeyDown = (e) => {
-    if (e.code === "Escape") {
-  toggleLogoModal();
-    }
-  };
-
-  const handleBackdropClick = (e) => {
-    if (e.currentTarget === e.target) {
-  toggleLogoModal();
-    }
-  };
-
-// export const UserInfoModal = ({ toggleInfoModal }) => {
-//   const {
-//     user: { avatarURL },
-//   } = useAuth();
-
-//   const {
-//     user: { name },
-//     isLoading,
-//   } = useAuth();
-//   const dispatch = useDispatch();
-//   const [photo, setPhoto] = useState(avatarURL);
-
-//   const initialValues = {
-//     file: null,
-//     nickname: name,
-//   };
-
-//   const getPhoto = (url) => {
-//     setPhoto(url);
-//   };
-
-
-  return createPortal (
-    <BackdropUserLogo onClick={handleBackdropClick} className="fixed top-0 left-0 w-full h-full z-50 bg-black opacity-50">
-      <ModalWindowUsereLogo className="bg-white p-4 w-[300px] h-[300px]  rounded-lg shadow-md">{children}
-{/* //         <UserInfoModal></UserInfoModal>
-//       Edit profile <EditIcon/>
-//         <CurveBtn text="Log out" onClick={toggleLogoModal} cssClass="addbgreen-btn" /> */}
-    </ModalWindowUsereLogo>
-</BackdropUserLogo>,
-modalRoot      
+  return (
+    <ModalTW isOpen={isOpen} handleClose={handleClose} backdrop="grey">
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          className="p-4"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <button
+            type="button"
+            onClick={onEditBtnClick}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '15px',
+            }}
+          >
+            <span style={{ marginRight: '10px' }}>Edit profile</span>
+            <EditPen />
+          </button>
+          <button type="button" onClick={onLogoutBtnClick}>
+            Logout
+            <UserArrow />
+          </button>
+        </div>
+      </div>
+    </ModalTW>
   );
-}; 
+};
 
+// import React from 'react';
 
+// import { LogoutBtn } from './LogoutBtn';
+// import { ReactComponent as EditPen } from './../images/editPen.svg';
+// import { ReactComponent as UserArrow } from './../images/arrow-right.svg';
 
+// export const UserInfoModal = ({ closeModal, openEdit, openConfirm, container }) => {
+//   const rect = container.getBoundingClientRect();
+//   const viewportWidth = window.innerWidth;
+//   const style = {
+//     top: `${Math.round(rect.bottom + 15)}px`,
+//     right: `${Math.round(viewportWidth - rect.right)}px`,
+//   };
+//   const handleEditBtnClick = () => {
+//     closeModal();
+//     openEdit();
+//   };
+//   const handleLogOutBtnClick = () => {
+//     closeModal();
+//     openConfirm();
+//   };
+//   return (
+//     <div style={style} className="">
+//       <button onClick={handleEditBtnClick} className="">
+//         <span className="">Edit profile</span>
+//         <EditPen className="" />
+//       </button>
 
-
+//       <div onClick={handleLogOutBtnClick} className="">
+//         <LogoutBtn typeBtn="submit" title={'Log out'}>
+//           <UserArrow/>
+//         </LogoutBtn>
+//       </div>
+//     </div>
+//   );
+// };
 
 // import { useState } from "react";
 // // import { useDispatch } from "react-redux";
@@ -169,4 +171,3 @@ modalRoot
 //     </div>
 //   );
 // };
-

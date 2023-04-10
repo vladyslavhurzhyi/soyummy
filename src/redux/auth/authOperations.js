@@ -69,9 +69,9 @@ export const logOut = createAsyncThunk(
 
 export const edit = createAsyncThunk(
   'auth/edit',
-  async (user, { rejectWithValue }) => {
+  async (formData, { rejectWithValue }) => {
     try {
-      const data = await editUserAPI(user);
+      const data = await editUserAPI(formData);
       return data;
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
