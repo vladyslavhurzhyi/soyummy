@@ -1,12 +1,11 @@
 import { useSearchParams } from 'react-router-dom';
 
-export const SearchTypeSelector = ({ onChange }) => {
+export const SearchTypeSelector = () => {
   const [, setSearchParams] = useSearchParams();
 
   const getType = e => {
     const type = e.target.value;
     console.log(type);
-    onChange(type);
     setSearchParams({ type });
   };
 

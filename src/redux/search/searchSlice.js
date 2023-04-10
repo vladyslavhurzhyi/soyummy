@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getRecipesByQuery } from './searchOperations';
-import { getRecipeByIngredients } from './searchOperations';
+import { getRecipesByIngredient } from './searchOperations';
 
 const initialState = {
   items: [],
@@ -20,22 +20,22 @@ export const searchSlice = createSlice({
         state.items = action.payload;
         state.queryType = action.payload;
       })
-      .addCase(getRecipeByIngredients.fulfilled, (state, action) => {
+      .addCase(getRecipesByIngredient.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
         state.queryType = action.payload;
       })
-      .addCase(getRecipesByQuery.pending, (state, action) => {
+      .addCase(getRecipesByQuery.pending, state => {
         state.isLoading = true;
       })
-      .addCase(getRecipeByIngredients.pending, (state, action) => {
+      .addCase(getRecipesByIngredient.pending, state => {
         state.isLoading = true;
       })
       .addCase(getRecipesByQuery.rejected, (state, action) => {
         state.error = action.payload;
       })
-      .addCase(getRecipeByIngredients.rejected, (state, action) => {
+      .addCase(getRecipesByIngredient.rejected, (state, action) => {
         state.error = action.payload;
       });
   },

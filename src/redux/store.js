@@ -7,7 +7,7 @@ import { mainRecipeReduser } from './previewCategories/categoriesSlice';
 import favoriteRecipesReducer from './favoriteRecipes/favoriteRecipesSlice';
 import myRecipesReducer from './myRecipes/myRecipesRecipesSlice';
 import ingredientsReducer from './ingredients/ingredientsSlice';
-import searchSlice from './search/searchSlice';
+import searchReducer from './search/searchSlice';
 
 import {
   persistStore,
@@ -48,7 +48,7 @@ export const store = configureStore({
     favoriteRecipes: favoriteRecipesReducer,
     myRecipes: myRecipesReducer,
     ingredients: ingredientsReducer,
-    search: searchSlice,
+    search: searchReducer,
   },
 
   middleware: getDefaultMiddleware =>

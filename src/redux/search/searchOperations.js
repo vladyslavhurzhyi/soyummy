@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import api from 'service/Api/axiosBaseURL';
 
 export const getRecipesByQuery = createAsyncThunk(
   'search/getRecipesByQuery',
   async (query, thunkAPI) => {
     try {
-      const response = await axios.get(`/recipes/search?title=${query}`);
+      const response = await api.get(`/recipes?filter%5Btitle%5D=${query}`);
 
       console.log(response.data);
 
@@ -20,7 +20,9 @@ export const getRecipesByIngredient = createAsyncThunk(
   'search/getByIngredient',
   async (query, thunkAPI) => {
     try {
-      const response = await axios.get(`/recipes/search?ingredients=${query}`);
+      const response = await api.get(
+        `/recipes?filter%5Bingredients%5D=${query}`
+      );
 
       console.log(response.data);
 

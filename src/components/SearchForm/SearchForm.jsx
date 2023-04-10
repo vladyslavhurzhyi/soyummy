@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = () => {
   const [searchValue, setInputValue] = useState('');
   const [, setSearchParams] = useSearchParams();
 
@@ -22,9 +22,6 @@ export const SearchForm = ({ onSubmit }) => {
 
     console.log(query);
     setSearchParams({ query });
-
-    onSubmit(query);
-    setInputValue('');
   }
 
   return (

@@ -1,15 +1,13 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import {
-  getRecipesByQuery,
-  getRecipesByIngredients,
-} from 'redux/searchOperations';
+import { getRecipesByQuery } from 'redux/search/searchOperations';
 import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectQueryType } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
+import { getRecipesByIngredient } from 'redux/search/searchOperations';
 
 export const Search = () => {
   const [searchParams] = useSearchParams();
@@ -27,10 +25,8 @@ export const Search = () => {
         dispatch(getRecipesByQuery(query));
         break;
       case 'ingredients':
-        dispatch(getRecipesByIngredients(query));
+        dispatch(getRecipesByIngredient(query));
         break;
-      default:
-        return;
     }
   }, [dispatch, query, queryType]);
 
@@ -38,7 +34,6 @@ export const Search = () => {
     <main>
       <MainPageTitle pageTitle="Search" className="main-title ml-10" />
       <Searchbar />
-      <SearchTypeSelector className="" />
       <SearchedRecipesList />
     </main>
   );
