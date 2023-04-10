@@ -9,7 +9,7 @@ import { selectCurrentCategory } from 'redux/categories/categoriesSelectors';
 const CategoriesPage = () => {
   const navigate = useNavigate();
 
-  const currCategory = useSelector(selectCurrentCategory);
+//   const currCategory = useSelector(selectCurrentCategory);
 
 
   useEffect(() => {
