@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 const CategoriesPage = () => {
   const navigate = useNavigate();
-  const currCategory = useSelector(
-    state => state.currentCategory.currentCategory
-  );
+//   const currCategory = useSelector(
+//     state => state.currentCategory.currentCategory
+//   );
 
   useEffect(() => {
 
