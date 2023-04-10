@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 export const ChooseYourBreakfast = () => {
   return (
-    <div className="hidden  w-[298px] h-28 bg-white rounded-lg p-2 leading-5 text-secondaryText mb-8 md:mb-0 md:flex justify-between flex-col">
-      <p className="font-main font-medium text-sm tracking-tight">
-        <span className="text-accentMain">Delicious and healthy </span>
+    <div className="hidden  w-[298px] h-28 bg-white rounded-lg p-2 leading-5 text-secondaryText mb-8 md:mb-0 md:flex justify-between flex-col dark:bg-accentDark">
+      <p className="font-main font-medium text-sm tracking-tight dark:text-whiteText">
+        <span className="text-accentMain ">Delicious and healthy </span>
         way to enjoy a variety of fresh ingredients in one satisfying meal
       </p>
       <NavLink
         to="/categories/breakfast"
-        className="text-[10px] tracking-[0.2px] flex justify-end items-center hover:text-accentMain"
+        className="text-[10px] tracking-[0.2px] flex justify-end items-center hover:text-accentMain dark:text-whiteText"
       >
         See recipes{' '}
         <svg
