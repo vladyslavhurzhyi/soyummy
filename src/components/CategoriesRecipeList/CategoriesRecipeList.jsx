@@ -1,32 +1,32 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getRecipesByCategory } from 'service/Api/getRecipesApi';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentCategory } from 'redux/categories/categoriesSelectors';
+import { fetchRecipesByCategory } from 'redux/recipes/recipesOperations';
+import { selectRecipes } from 'redux/recipes/recipesSelectors';
 
 const CategoriesRecipesList = () => {
-  const [recipes, setRecipes] = useState([]);
-  // const { category } = useParams();
   const category = useSelector(selectCurrentCategory);
-
+  const dispatch = useDispatch();
+  const recipes = useSelector(selectRecipes);
   useEffect(() => {
-    getRecipesByCategory(category).then(({ data }) => {
-      setRecipes(data);
-    });
-  }, [category]);
-
+    dispatch(fetchRecipesByCategory(category));
+  }, [category, dispatch]);
   return (
     <div>
-      <ul className="flex flex-wrap w-full h-full gap-y-24 mb-48">
+      <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
         {recipes.map(({ thumb, _id, title }) => {
           return (
-            <li key={_id} className="w-1/4 h-80">
+            <li
+              key={_id}
+              className="w-[343px] h-[323px] relative md:w-[47%] xl:w-[24%] object-cover"
+            >
               <NavLink
                 to={`/recipe/${_id}`}
-                className="bg-gray-200 bg-cover bg-center w-full h-full bg-no-repeat relative block"
+                className="bg-gray-200  rounded-lg bg-cover bg-center w-full h-full bg-no-repeat block"
                 style={{ backgroundImage: `url('${thumb}` }}
               >
-                <div className="flex items-center justify-center absolute bottom-6 right-4 w-64 h-12 bg-slate-50 rounded-lg">
+                <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[307px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark">
                   {title}
                 </div>
               </NavLink>
