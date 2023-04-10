@@ -3,7 +3,7 @@ import { selectRecipes } from 'redux/recipes/recipesSelectors';
 import placeholder from 'images/ingred_placeholder.jpg';
 import {
   addShoppingList,
-  deleteShoppingList,
+  deleteShoppingListItem,
 } from 'redux/shoppingList/shoppingListOperations';
 import { selectShoppingListIsError } from 'redux/shoppingList/shoppingListSelector';
 
@@ -25,7 +25,7 @@ export const IngredientList = () => {
     if (event.target.checked) {
       dispatch(addShoppingList(ingredient));
     } else {
-      dispatch(deleteShoppingList({ recipeId, id }));
+      dispatch(deleteShoppingListItem({ recipeId, id }));
     }
   };
 
