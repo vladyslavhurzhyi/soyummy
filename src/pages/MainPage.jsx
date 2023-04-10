@@ -46,7 +46,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className="relative z-[1] text-center xl:mb-28">
+      <div className="relative z-[1] text-center mb-[100px] xl:mb-28">
         <PreviewCategories className="relative z-10 " />
         <Link to="/categories/beef">
           <CurveBtn

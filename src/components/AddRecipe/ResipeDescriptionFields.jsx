@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { Uploader } from 'uploader';
 import { UploadButton } from 'react-uploader';
-import categories from '../../data/category.json';
+// import categories from '../../data/category.json';
 import timeList from '../../data/time.json';
 
-// console.log(categories);
-// console.log(timeList);
-
-export const ResipeDescriptionFields = ({ data, setData }) => {
+export const ResipeDescriptionFields = ({ data, categories, setData }) => {
   const [images, setImages] = useState([]);
   // const [url, setUrl] = useState('');
 

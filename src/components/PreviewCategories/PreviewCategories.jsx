@@ -15,7 +15,7 @@ export const PreviewCategories = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // console.log('route');
+    console.log('route');
 
     if (categories.length <= 0) {
       const params = { categoriesLimit: 4, recipesInCategory: 4 };
