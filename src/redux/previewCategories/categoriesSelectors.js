@@ -4,4 +4,3 @@ export const getIsError = state => state.mainRecipes.isError;
 
 export const getIsCategoryFetching = state =>
   state.mainRecipes.isCategoryFetching;
-export const getPopular = state => state.mainRecipes.popularRecipes;

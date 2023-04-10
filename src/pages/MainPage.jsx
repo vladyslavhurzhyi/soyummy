@@ -2,20 +2,12 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { getPopular } from 'redux/previewCategories/categoriesSelectors';
-import { getPopularRecipes } from 'redux/previewCategories/categoriesOperations';
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const popularRecipes = useSelector(getPopular);
-
-  const dispatch = useDispatch();
 
   const onClick = e => {
     navigate('/categories/beef');
@@ -31,10 +23,6 @@ const MainPage = () => {
       navigate(`/search?query=${query}&type=${type}`);
     }
   };
-
-  useEffect(() => {
-    dispatch(getPopularRecipes());
-  }, [dispatch]);
 
   return (
     <section>

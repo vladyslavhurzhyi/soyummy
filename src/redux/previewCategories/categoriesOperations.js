@@ -1,9 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { getContentForMain } from './categoriesSelectors';
-import {
-  getMainCategoriestAPI,
-  getPopularRecipesAPI,
-} from '../../service/Api/previewCategoriesAPI';
+
+import { getMainCategoriestAPI } from '../../service/Api/previewCategoriesAPI';
 
 export const getMainCategories = createAsyncThunk(
   'mainRecipes/mainCategories',
@@ -15,19 +12,6 @@ export const getMainCategories = createAsyncThunk(
         recipesInCategory
       );
       // console.log(data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.response.status);
-    }
-  }
-);
-
-export const getPopularRecipes = createAsyncThunk(
-  'mainRecipes/popular',
-  async (_, { rejectWithValue }) => {
-    try {
-      const data = await getPopularRecipesAPI();
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
