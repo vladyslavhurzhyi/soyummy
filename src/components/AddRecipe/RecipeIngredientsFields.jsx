@@ -35,7 +35,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
   };
   return (
     <div className="my-11 md:my-24">
-      <h2 className="mb-6 md:mb-9 font-main font-semibold text-secondaryText text-customBase">
+      <h2 className="mb-6 md:mb-9 font-main font-semibold text-secondaryText text-customBase dark:text-whiteText">
         Ingredients
       </h2>
       {items.map(item => {
@@ -46,10 +46,14 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
               data-name="id"
               value={item.id}
               onChange={e => handleFieldChange(e, item.id)}
-              className="pt-2 pb-1 md:pt-3 md:pb-2 pl-2 md:pl-4 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+              className="pt-2 pb-1 md:pt-3 md:pb-2 pl-2 md:pl-4 block w-48 md:w-96 lg:w-[600px] px-0 mr-3.5 md:mr-8 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
             >
               {ingredients.map(({ ttl, _id }) => (
-                <option key={_id} value={_id} className="bg-lime-50 ">
+                <option
+                  key={_id}
+                  value={_id}
+                  className="bg-lime-50 dark:bg-accentMain"
+                >
                   {ttl}
                 </option>
               ))}
@@ -63,13 +67,13 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 step="0.5"
                 min="0.5"
                 required
-                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
                 value={item.amount}
                 onChange={e => handleFieldChange(e, item.id)}
               />
               <label
                 htmlFor="amount"
-                className="absolute duration-300 top-2 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm"
+                className="absolute duration-300 top-2 -z-1 origin-0 text-gray-500 font-main font-normal text-customXs md:text-customSm dark:text-gray-500"
               >
                 amount
               </label>
@@ -81,17 +85,21 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
                 data-name="measure"
                 value={item.measure}
                 onChange={e => handleFieldChange(e, item.id)}
-                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent"
+                className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
               >
                 {measureList.map(({ type }) => (
-                  <option key={type} value={type} className="bg-lime-50 ">
+                  <option
+                    key={type}
+                    value={type}
+                    className="bg-lime-50 dark:bg-accentMain"
+                  >
                     {type}
                   </option>
                 ))}
               </select>
               <label
                 htmlFor="measure"
-                className="absolute duration-300 top-2 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm"
+                className="absolute duration-300 top-2 -z-1 origin-0  text-gray-500 font-main font-normal text-customXs md:text-customSm  dark:text-gray-500"
               >
                 measure
               </label>
@@ -135,7 +143,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
 
       <CurveBtn
         text="add ingredient"
-        cssClass="othercateg-btn"
+        cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring"
         onClick={handleAddClick}
       />
     </div>

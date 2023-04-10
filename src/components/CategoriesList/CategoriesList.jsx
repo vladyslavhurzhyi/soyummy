@@ -1,11 +1,14 @@
 //TODO use when API is ready
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
+import { setCurrentCategory } from 'redux/categories/categoriesSlice';
 import { getCategoriesList } from 'service/Api/getRecipesApi';
 
 const CategoriesList = () => {
   const [categories, setCategories] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getCategoriesList()
@@ -22,6 +25,9 @@ const CategoriesList = () => {
           return (
             <li className="mr-14" key={category._id}>
               <NavLink
+                onClick={() => {
+                  dispatch(setCurrentCategory(category.category));
+                }}
                 to={`/categories/${category.category}`}
                 className="text-#84cc16 font-medium hover:text-gray-400"
                 activeClassName="text-gray-400"

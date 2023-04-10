@@ -26,6 +26,9 @@ module.exports = {
         whiteText: '#FAFAFA',
         greyInput: '#BDBDBD',
       },
+      boxShadow: {
+        custom: '0px 4px 4px rgba(135, 135, 135, 0.2)',
+      },
       spacing: {
         '52px': '52px',
       },

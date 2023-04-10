@@ -30,6 +30,8 @@ export const MainPageTitle = ({ pageTitle, className }) => {
             className="
           absolute 
           bg-accentDark 
+          dark:bg-whiteText
+
           rounded-[3px] 
           rotate-[-25deg] 
           w-1.5 md:w-3 
