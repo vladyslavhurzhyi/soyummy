@@ -24,10 +24,11 @@ export const Search = () => {
       case 'title':
         dispatch(getRecipesByQuery(query));
         break;
-      default: 
+      case 'ingredients':
         dispatch(getRecipesByIngredient(query));
-      
-
+        break;
+      default:
+        return;
     }
   }, [dispatch, query, queryType]);
 
