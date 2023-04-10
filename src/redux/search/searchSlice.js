@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getRecipesByQuery } from './searchOperations';
-import { getRecipesByIngredient } from './searchOperations';
+import {
+  changeQueryType,
+  getRecipesByQuery,
+  getRecipesByIngredient,
+} from './searchOperations';
 
 const initialState = {
   items: [],
@@ -38,6 +41,11 @@ export const searchSlice = createSlice({
       .addCase(getRecipesByIngredient.rejected, (state, action) => {
         state.error = action.payload;
       });
+  },
+  reducers: {
+    changeQueryType(state, action) {
+      state.queryType = action.payload;
+    },
   },
 });
 
