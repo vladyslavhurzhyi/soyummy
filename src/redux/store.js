@@ -39,7 +39,7 @@ export const store = configureStore({
     favoriteRecipes: favoriteRecipesReducer,
     myRecipes: myRecipesReducer,
     ingredients: ingredientsReducer,
-
+    search: searchReducer,
     categories: categoriesReducer,
 
   },
