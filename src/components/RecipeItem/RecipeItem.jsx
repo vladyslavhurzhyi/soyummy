@@ -52,7 +52,7 @@ export const RecipeItem = ({
                     cssClass={cssClass}
                     text="See recipe"
                     onClick={() => {
-                      navigate(`/recipe/${id}`);
+                      navigate(`/recipes/${id}`);
                     }}
                   />
                 </div>

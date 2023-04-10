@@ -25,7 +25,7 @@ export const IngredientList = () => {
     if (event.target.checked) {
       dispatch(addShoppingList(ingredient));
     } else {
-      dispatch(deleteShoppingListItem({ recipeId, id }));
+      dispatch(deleteShoppingListItem({ id, recipeId: recipeId.split() }));
     }
   };
 

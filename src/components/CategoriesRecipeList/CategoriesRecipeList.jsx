@@ -22,7 +22,7 @@ const CategoriesRecipesList = () => {
           return (
             <li key={_id} className="w-1/4 h-80">
               <NavLink
-                to={`/recipe/${_id}`}
+                to={`/recipes/${_id}`}
                 className="bg-gray-200 bg-cover bg-center w-full h-full bg-no-repeat relative block"
                 style={{ backgroundImage: `url('${thumb}` }}
               >

@@ -12,7 +12,7 @@ export const PopularRecipes = ({ data }) => {
             key={_id}
             className="flex md:w-1/2 lg:w-full border-b-2 border-gray-300 pb-3.5 pt-6 pr-2 dark:border-gray-500"
           >
-            <Link to={`/recipe/${_id}`} className="flex">
+            <Link to={`/recipes/${_id}`} className="flex">
               <img
                 className="w-[104px] h-[85px] rounded-md mr-3"
                 src={thumb}
