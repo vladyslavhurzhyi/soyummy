@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-export const SearchForm = ({ handleOnSubmit, type = 'title', startQuery }) => {
-  const [searchValue, setInputValue] = useState(startQuery ?? '');
+
+export const SearchForm = () => {
+  const [searchValue, setInputValue] = useState('');
+  const [, setSearchParams] = useSearchParams();
+
 
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    handleOnSubmit(searchValue, type);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const query = searchValue.toLowerCase();
+    if (query === '') {
+      alert('enter something to find');
+      setSearchParams();
+      return;
+    }
+
+    console.log(query);
+    setSearchParams({ query });
+
   }
 
   return (
