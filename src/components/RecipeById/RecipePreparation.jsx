@@ -4,7 +4,7 @@ import placeholder from 'images/dishes_placeholder.jpg';
 
 export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipes);
-  const { preview, instructions } = recipes.data[0];
+  const { preview, instructions } = recipes;
 
   const steps = instructions.split('\r\n');
   // const filteredSteps = steps.filter(step => step !== '');

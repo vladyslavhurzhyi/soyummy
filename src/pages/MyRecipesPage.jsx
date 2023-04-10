@@ -9,7 +9,7 @@ const MyRecipesPage = () => {
           pageTitle={'My recipes'}
           className={'main-title mb-[72px] md:mb-[100px] px-4 md:px-8 xl:px-24'}
         />
-        <section className="bg-[#FAFAFA]">
+        <section className="bg-[#FAFAFA] dark:bg-accentDarker">
           <MyRecipesList cssClass="seerecipegreen-btn" />
         </section>
       </div>

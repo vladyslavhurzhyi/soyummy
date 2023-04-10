@@ -1,8 +1,8 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { addRecipe, fetchRecipeById } from './recipesOperations';
+import { addRecipe, fetchRecipeById, fetchPopular } from './recipesOperations';
 
 const initialState = {
-  items: {},
+  items: [],
   isLoading: false,
   error: null,
 };
@@ -24,10 +24,19 @@ export const recipesSlice = createSlice({
       .addCase(fetchRecipeById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
+        state.items = action.payload.data;
+      })
+      .addCase(fetchPopular.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
         state.items = action.payload;
       })
       .addMatcher(
-        isAnyOf(addRecipe.rejected, fetchRecipeById.rejected),
+        isAnyOf(
+          addRecipe.rejected,
+          fetchRecipeById.rejected,
+          fetchPopular.rejected
+        ),
         (state, action) => {
           state.isLoading = false;
           state.error = action.payload;
