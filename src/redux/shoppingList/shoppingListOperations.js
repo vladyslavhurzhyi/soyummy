@@ -20,10 +20,10 @@ export const fetchShoppingList = createAsyncThunk(
 export const addShoppingList = createAsyncThunk(
   'shoppingList/addShoppingList',
   async (ingredient, thunkAPI) => {
+    const { recipeId, id, amount, measure, thb, ttl } = ingredient;
+    const toAddIngredient = { recipeId, id, amount, measure };
     try {
-      const {
-        data: { data },
-      } = await api.post('/shopping-list', ingredient);
+      const { data } = await api.post('/shopping-list', toAddIngredient);
       toast.success('Added to Shopping list', {
         position: 'top-right',
         autoClose: 3000,
@@ -34,7 +34,9 @@ export const addShoppingList = createAsyncThunk(
         progress: undefined,
         theme: 'light',
       });
-      return data;
+      if ((data.message = 'success')) {
+      }
+      return { recipeId: [recipeId], id, amount, measure, thb, ttl };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -74,13 +76,14 @@ export const deleteShoppingList = createAsyncThunk(
 export const deleteShoppingListItem = createAsyncThunk(
   'shoppingList/deleteShoppingList',
   async ({ id, recipeId }, thunkAPI) => {
-    console.log(id);
-    console.log(recipeId);
+    const deleteItem = {
+      recipeId: [...recipeId],
+    };
     try {
-      const { data } = await api.delete(`/shopping-list/${id}`, {
-        recipeId: [...recipeId],
+      await api.delete(`/shopping-list/${id}`, {
+        data: deleteItem,
       });
-      return data;
+      return id;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

@@ -18,7 +18,9 @@ export const IngredientList = () => {
     const id = event.target.dataset.ingrid;
     const amount = event.target.dataset.ingramount;
     const measure = event.target.dataset.ingrmeasure;
-    const ingredient = { recipeId, id, amount, measure };
+    const thb = event.target.dataset.thb;
+    const ttl = event.target.dataset.ttl;
+    const ingredient = { recipeId, id, amount, measure, thb, ttl };
 
     if (event.target.checked) {
       dispatch(addShoppingList(ingredient));
@@ -64,6 +66,8 @@ export const IngredientList = () => {
                 data-ingrid={_id}
                 data-ingramount={amount}
                 data-ingrmeasure={measure}
+                data-thb={thb}
+                data-ttl={ttl}
                 className="appearance-none text-accentMain cursor-pointer w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
               />
               {!error && (
