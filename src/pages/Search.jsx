@@ -5,7 +5,6 @@ import {
   getRecipesByQuery,
   getRecipesByIngredient,
 } from 'redux/search/searchOperations';
-// import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectQueryType } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
@@ -24,14 +23,10 @@ export const Search = () => {
 
     switch (queryType) {
       case 'title':
-        dispatch(getRecipesByQuery({ query }));
-        console.log(queryType);
-        console.log(query);
+        dispatch(getRecipesByQuery(query));
         break;
       case 'ingredients':
-        dispatch(getRecipesByIngredient({ query }));
-        console.log(queryType);
-        console.log(query);
+        dispatch(getRecipesByIngredient(query));
         break;
       default:
         return;
