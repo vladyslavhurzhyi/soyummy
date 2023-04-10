@@ -2,11 +2,12 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getRecipesByCategory } from 'service/Api/getRecipesApi';
 import { useSelector } from 'react-redux';
+import { selectCurrentCategory } from 'redux/categories/categoriesSelectors';
 
 const CategoriesRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
   // const { category } = useParams();
-  const category = useSelector(state => state.currentCategory.currentCategory);
+  const category = useSelector(selectCurrentCategory);
 
   useEffect(() => {
     getRecipesByCategory(category).then(({ data }) => {

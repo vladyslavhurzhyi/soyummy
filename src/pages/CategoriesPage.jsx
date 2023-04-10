@@ -4,12 +4,13 @@ import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+// import { selectCurrentCategory } from 'redux/categories/categoriesSelectors';
 
 const CategoriesPage = () => {
   const navigate = useNavigate();
-//   const currCategory = useSelector(
-//     state => state.currentCategory.currentCategory
-//   );
+
+//   const currCategory = useSelector(selectCurrentCategory);
+
 
   useEffect(() => {
 

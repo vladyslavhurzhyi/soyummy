@@ -1,22 +1,29 @@
 //TODO use when API is ready
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
-import { setCurrentCategory } from 'redux/categories/categoriesSlice';
-import { getCategoriesList } from 'service/Api/getRecipesApi';
+import { setCurrentCategory } from 'redux/categories/categoriesOperations';
+// import { setCurrentCategory } from 'redux/categories/categoriesSlice';
+// import { getCategoriesList } from 'service/Api/getRecipesApi';
+import { getCategories } from 'redux/categories/categoriesOperations';
+import { selectCategories } from 'redux/categories/categoriesSelectors';
 
 const CategoriesList = () => {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getCategoriesList()
-      .then(data => {
-        setCategories(data);
-      })
-      .catch(error => console.error(error));
-  }, []);
+    dispatch(getCategories());
+  }, [dispatch]);
+  // useEffect(() => {
+  //   getCategoriesList()
+  //     .then(data => {
+  //       setCategories(data);
+  //     })
+  //     .catch(error => console.error(error));
+  // }, []);
 
   return (
     <nav className="w-full ">

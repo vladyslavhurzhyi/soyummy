@@ -6,9 +6,6 @@ export const getRecipesByQuery = createAsyncThunk(
   async (query, thunkAPI) => {
     try {
       const response = await api.get(`/recipes?filter%5Btitle%5D=${query}`);
-
-      console.log(response.data);
-
       return response.data.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
@@ -17,15 +14,12 @@ export const getRecipesByQuery = createAsyncThunk(
 );
 
 export const getRecipesByIngredient = createAsyncThunk(
-  'search/getByIngredient',
+  'search/getRecipesByIngredient',
   async (query, thunkAPI) => {
     try {
       const response = await api.get(
         `/recipes?filter%5Bingredients%5D=${query}`
       );
-
-      console.log(response.data);
-
       return response.data.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e);

@@ -1,18 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-import { getMainCategoriestAPI } from '../../service/Api/previewCategoriesAPI';
+import api from 'service/Api/axiosBaseURL';
 
 export const getMainCategories = createAsyncThunk(
   'mainRecipes/mainCategories',
   async (params, { rejectWithValue }) => {
     try {
-      const { categoriesLimit, recipesInCategory } = params;
-      const data = await getMainCategoriestAPI(
-        categoriesLimit,
-        recipesInCategory
-      );
-      // console.log(data);
-      return data;
+      const { categoriesLimit = 4, recipesInCategory = 4 } = params;
+      const data = await api
+        .get(
+          `/recipes/main-page/?categoriesLimit=${categoriesLimit}&recipesInCategory=${recipesInCategory}`
+        )
+        .then(({ data }) => {
+          console.log(data);
+          return data;
+        });
+      return data.data;
     } catch (error) {
       return rejectWithValue(error.response.status);
     }

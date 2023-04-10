@@ -25,7 +25,7 @@ export const currentUserAPI = () => {
 };
 
 export const editUserAPI = body => {
-  return api.put('/auth/edit', body).then(({ data }) => {
+  return api.patch('/auth/edit', body).then(({ data }) => {
     return data;
   });
 };
