@@ -1,18 +1,18 @@
-import { useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { changeQueryType } from 'redux/search/searchSlice';
 
 export const SearchTypeSelector = () => {
-  const [, setSearchParams] = useSearchParams();
+  const dispatch = useDispatch();
 
-  const getType = e => {
+  const changeType = e => {
     const type = e.target.value;
-    console.log(type);
-    setSearchParams({ type });
+    dispatch(changeQueryType(type));
   };
 
   return (
     <div className="mx-auto justify-center flex items-center gap-5">
       <label>Search by:</label>
-      <select name="type" onChange={getType}>
+      <select onChange={changeType}>
         <option value="title">title</option>
         <option value="ingredients">ingredient</option>
       </select>

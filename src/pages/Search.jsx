@@ -1,13 +1,14 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getRecipesByQuery } from 'redux/search/searchOperations';
-// import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
+import {
+  getRecipesByQuery,
+  getRecipesByIngredient,
+} from 'redux/search/searchOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectQueryType } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
-import { getRecipesByIngredient } from 'redux/search/searchOperations';
 
 export const Search = () => {
   const [searchParams] = useSearchParams();
