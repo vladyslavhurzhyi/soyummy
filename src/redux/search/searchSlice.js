@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  changeQueryType,
-  getRecipesByQuery,
-  getRecipesByIngredient,
-} from './searchOperations';
+import { getRecipesByQuery, getRecipesByIngredient } from './searchOperations';
 
 const initialState = {
   items: [],
@@ -12,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-export const searchSlice = createSlice({
+const searchSlice = createSlice({
   name: 'search',
   initialState,
   extraReducers: builder => {
@@ -49,4 +45,6 @@ export const searchSlice = createSlice({
   },
 });
 
-export default searchSlice.reducer;
+export const searchReducer = searchSlice.reducer;
+
+export const { changeQueryType } = searchSlice.actions;
