@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { signIn } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
+import { ReactComponent as Svg } from '../../images/svg/OrderFoodPana.svg';
 
 const SigninForm = () => {
   const dispatch = useDispatch();
@@ -18,43 +19,48 @@ const SigninForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+    <div className=" w-full h-full flex-col items-center justify-center bg-gray-600  ">
+      {/* <div className=" max-w-lg flex items-center justify-center lg:grid gap-x-8 gap-y-4 grid-cols-2 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"> */}
+      <div className=" mx-auto h-96 w-96 ">
+        <Svg />
+      </div>
+      {/* <div className=" p-12 h-449px w-500px bg-accentHalfDark rounded-3xl border-ra mx-auto max-w-md w-full space-y-8"> */}
+      <div>
+        <form
+          className="p-12 h-449px w-500px bg-accentHalfDark rounded-3xl mx-auto max-w-md w-full shadow-sm-black space-y-8"
+          onSubmit={handleSubmit}
+        >
+          <h2 className=" pl-2 text-3xl font-extrabold text-whiteText">
             Sign in
           </h2>
-        </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <input type="hidden" name="remember" value="true" />
+          {/* <input type="hidden" name="remember" value="true" /> */}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email" className="sr-only">
-                Email
+              <label htmlFor="email" className="mb-3">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  // className="appearance-none rounded-none relative block w-full px-3 py-2 border border-white placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className=" rounded-lg  block w-full mb-6 px-3 py-2 border border-white bg-accentHalfDark placeholder-white text-whiteText rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Email"
+                />
               </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email"
-              />
             </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
+            <div className="mb-3">
+              <label htmlFor="password">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="rounded-lg  block w-full mb-6 px-3 py-2 border border-white bg-accentHalfDark placeholder-white text-whiteText rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Password"
+                />
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-              />
             </div>
           </div>
 
@@ -66,10 +72,16 @@ const SigninForm = () => {
               Sign in
             </button>
           </div>
-          <NavLink className="" to="/register">
+        </form>
+        <div className="flex justify-center">
+          {' '}
+          <NavLink
+            className="  mr-auto text-white self-center underline text-base  mt-18"
+            to="/register"
+          >
             Registration
           </NavLink>
-        </form>
+        </div>
       </div>
     </div>
   );
