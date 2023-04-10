@@ -7,21 +7,10 @@ export const addRecipe = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const response = await api.post(`/recipes`, formData);
-      toast.success('Recipe was added', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast.success('Recipe was added');
       return response.data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -34,9 +23,7 @@ export const fetchRecipeById = createAsyncThunk(
       const response = await api.get(`/recipes/${recipeId}`);
       return response.data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -49,9 +36,7 @@ export const fetchPopular = createAsyncThunk(
       const response = await api.get(`/recipes/popular`);
       return response.data.data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

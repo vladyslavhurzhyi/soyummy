@@ -13,9 +13,7 @@ export const getFavoriteRecipes = createAsyncThunk(
       const favRecipe = data;
       return favRecipe;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -29,21 +27,10 @@ export const addFavoriteRecipes = createAsyncThunk(
         `/recipes/${recipeId}/favorite`,
         recipeId
       );
-      toast.success('Add to Favorites', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast.success('Add to Favorites');
       return response.data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -54,21 +41,10 @@ export const removeFromFavorite = createAsyncThunk(
   async (recipeId, thunkAPI) => {
     try {
       const { data } = await api.delete(`/recipes/${recipeId}/favorite`);
-      toast.success('Removed from Favorites', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast.success('Removed from Favorites');
       return data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
