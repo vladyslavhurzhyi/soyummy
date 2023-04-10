@@ -12,8 +12,10 @@ const CategoriesPage = () => {
   );
 
   useEffect(() => {
-    navigate(`/categories/${currCategory}`);
-  }, [navigate, currCategory]);
+
+    navigate('/categories/');
+  }, [navigate]);
+
 
   return (
     <div className="mx-auto">
