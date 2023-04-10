@@ -2,7 +2,7 @@ import CategoriesList from 'components/CategoriesList/CategoriesList';
 import CategoriesRecipesList from 'components/CategoriesRecipeList/CategoriesRecipeList';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const CategoriesPage = () => {
