@@ -1,17 +1,22 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getRecipesByCategory } from 'service/Api/getRecipesApi';
+import { useSelector } from 'react-redux';
 
 const CategoriesRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
-  const { category } = useParams();
+  // const { category } = useParams();
+  const category = useSelector(state => state.currentCategory.currentCategory);
+
   useEffect(() => {
-    getRecipesByCategory(category).then(({ data }) => setRecipes(data));
+    getRecipesByCategory(category).then(({ data }) => {
+      setRecipes(data);
+    });
   }, [category]);
 
   return (
     <div>
-      <ul className="flex flex-wrap w-full h-full gap-y-24">
+      <ul className="flex flex-wrap w-full h-full gap-y-24 mb-48">
         {recipes.map(({ thumb, _id, title }) => {
           return (
             <li key={_id} className="w-1/4 h-80">

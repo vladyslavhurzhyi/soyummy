@@ -13,7 +13,7 @@ body {
 }
 
 .main-title {
-  @apply font-main font-semibold text-mainText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[136px] xl:pt-[164px];
+  @apply font-main font-semibold text-mainText dark:text-whiteText text-customLg md:text-customXl xl:text-customXxl pt-[114px] md:pt-[136px] xl:pt-[164px];
 }
 
 .main-title-accent {
@@ -87,22 +87,22 @@ body {
   @apply transition duration-300  flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl;
 }
 .iconLogo {
-  @apply transition duration-300   fill-white w-7 h-7 xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300  w-7 h-7 xl:w-[30px] xl:h-[30px];
 }
 
 .divIconFooterMob {
   @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
 }
 .iconLogoFooterMob {
-  @apply transition duration-300 stroke-current  text-red-600  w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-[#8BAA36] w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
 }
 
 .divIconTrash {
-  @apply transition duration-300  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain hover:fill-zinc-50 dark:bg-accentDarker;
+  @apply transition duration-300  stroke-accentDark dark:stroke-white  hover:stroke-white  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain  dark:bg-transparent dark:hover:bg-accentDark;
 }
 
 .iconTrash {
-  @apply transition duration-300 w-[14px] h-[14px] md:w-[22px] md:h-[22px] xl:w-[24px] xl:h-[24px];
+  @apply w-[14px] h-[14px] md:w-[22px] md:h-[22px] xl:w-[24px] xl:h-[24px];
 }
 
 .-z-1 {
@@ -137,4 +137,20 @@ select:focus ~ label {
   --tw-text-opacity: 1;
   color: rgba(0, 0, 0, var(--tw-text-opacity));
   left: 0px;
+}
+
+.currentPage {
+  @apply z-10 px-[10px] py-[6px] mx-3  leading-tight text-accentDark  rounded-full bg-[#EBF3D4] hover:cursor-not-allowed dark:border-gray-700 dark:bg-gray-700 dark:text-white;
+}
+
+.paginationPage {
+  @apply px-[10px] py-[6px] mx-3  leading-tight text-[#656565] bg-[#FAFAFA] rounded-full  hover:bg-[#9ea38d] hover:rounded-full hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
+
+.nextBtn {
+  @apply mr-[28px] ml-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:hover:text-white dark:bg-transparent;
+}
+
+.prevBtn {
+  @apply ml-[28px] mr-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:bg-transparent  dark:hover:text-white;
 }
