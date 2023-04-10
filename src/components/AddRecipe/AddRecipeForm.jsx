@@ -31,6 +31,7 @@ const initialRecipe = {
   instructions: '',
 };
 export const AddRecipeForm = () => {
+  console.log(ingredientsList);
   const ingredientsList = useSelector(selectIngredients);
   const categoriesList = useSelector(selectCategories);
   const dispatch = useDispatch();

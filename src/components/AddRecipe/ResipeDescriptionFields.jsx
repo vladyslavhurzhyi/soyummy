@@ -136,7 +136,7 @@ export const ResipeDescriptionFields = ({
             type="text"
             name="description"
             placeholder=" "
-            autoComplete="off"
+            // autoComplete="off"
             id="description"
             required
             className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
