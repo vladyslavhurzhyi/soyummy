@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.a448a94f.css",
-    "main.js": "/soyummy/static/js/main.3dfe95e2.js",
+    "main.css": "/soyummy/static/css/main.5156c9d9.css",
+    "main.js": "/soyummy/static/js/main.fe627986.js",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.27c02cb8d863c0b05eab.png",
     "static/media/recipePage.jpg": "/soyummy/static/media/recipePage.9ba730398fc8d30e7b8b.jpg",
     "static/media/bg_main-tablet.png": "/soyummy/static/media/bg_main-tablet.99c267cf8b46e4af849a.png",
     "static/media/bg_main-mob.png": "/soyummy/static/media/bg_main-mob.c03886797b22e1f3a493.png",
     "static/media/bgBottomLeftImage.png": "/soyummy/static/media/bgBottomLeftImage.4ec749f515dddfa62f8d.png",
+    "static/media/OrderFoodPana.svg": "/soyummy/static/media/OrderFoodPana.c1acaf37b89d70dbfb055699404688f2.svg",
     "static/media/emptyShoppingList.gif": "/soyummy/static/media/emptyShoppingList.a8ba52e465ec571d2b95.gif",
     "static/media/bgBottomRightImage.png": "/soyummy/static/media/bgBottomRightImage.2ebd596451eacc0a0501.png",
     "static/media/dishes_placeholder.jpg": "/soyummy/static/media/dishes_placeholder.e75310fba008df23497c.jpg",
@@ -18,11 +19,11 @@
     "static/media/editPen.svg": "/soyummy/static/media/editPen.74bf6552ec98c99b7deafd730ed53b47.svg",
     "static/media/search-icon.svg": "/soyummy/static/media/search-icon.808a38e2b42b6a770b17ffac2f38a2c4.svg",
     "static/media/closeMenuIcon.svg": "/soyummy/static/media/closeMenuIcon.6519e123b5c8a0eed8111c40b0b95edb.svg",
-    "main.a448a94f.css.map": "/soyummy/static/css/main.a448a94f.css.map",
-    "main.3dfe95e2.js.map": "/soyummy/static/js/main.3dfe95e2.js.map"
+    "main.5156c9d9.css.map": "/soyummy/static/css/main.5156c9d9.css.map",
+    "main.fe627986.js.map": "/soyummy/static/js/main.fe627986.js.map"
   },
   "entrypoints": [
-    "static/css/main.a448a94f.css",
-    "static/js/main.3dfe95e2.js"
+    "static/css/main.5156c9d9.css",
+    "static/js/main.fe627986.js"
   ]
 }
