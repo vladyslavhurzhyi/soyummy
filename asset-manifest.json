@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.dc5ce0b4.css",
-    "main.js": "/soyummy/static/js/main.1973c84e.js",
+    "main.css": "/soyummy/static/css/main.f6acd292.css",
+    "main.js": "/soyummy/static/js/main.49ed6f64.js",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.27c02cb8d863c0b05eab.png",
     "static/media/recipePage.jpg": "/soyummy/static/media/recipePage.9ba730398fc8d30e7b8b.jpg",
@@ -11,6 +11,7 @@
     "static/media/emptyShoppingList.gif": "/soyummy/static/media/emptyShoppingList.a8ba52e465ec571d2b95.gif",
     "static/media/bgBottomRightImage.png": "/soyummy/static/media/bgBottomRightImage.2ebd596451eacc0a0501.png",
     "static/media/dishes_placeholder.jpg": "/soyummy/static/media/dishes_placeholder.e75310fba008df23497c.jpg",
+    "static/media/ErrorPlug.gif": "/soyummy/static/media/ErrorPlug.481519e4807601d2262d.gif",
     "static/media/logosvg.svg": "/soyummy/static/media/logosvg.1987482c40bce4af801c48fdab08cbb2.svg",
     "index.html": "/soyummy/index.html",
     "static/media/trash.svg": "/soyummy/static/media/trash.8db8dbe68c85fa8c70c3c88fad048b04.svg",
@@ -18,11 +19,11 @@
     "static/media/search-icon.svg": "/soyummy/static/media/search-icon.808a38e2b42b6a770b17ffac2f38a2c4.svg",
     "static/media/arrow-right.svg": "/soyummy/static/media/arrow-right.baca8947d57e4992eeecacf1fe7d5ebd.svg",
     "static/media/closeMenuIcon.svg": "/soyummy/static/media/closeMenuIcon.6519e123b5c8a0eed8111c40b0b95edb.svg",
-    "main.dc5ce0b4.css.map": "/soyummy/static/css/main.dc5ce0b4.css.map",
-    "main.1973c84e.js.map": "/soyummy/static/js/main.1973c84e.js.map"
+    "main.f6acd292.css.map": "/soyummy/static/css/main.f6acd292.css.map",
+    "main.49ed6f64.js.map": "/soyummy/static/js/main.49ed6f64.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc5ce0b4.css",
-    "static/js/main.1973c84e.js"
+    "static/css/main.f6acd292.css",
+    "static/js/main.49ed6f64.js"
   ]
 }
