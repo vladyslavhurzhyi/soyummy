@@ -7,7 +7,9 @@ import { mainRecipeReduser } from './previewCategories/categoriesSlice';
 import favoriteRecipesReducer from './favoriteRecipes/favoriteRecipesSlice';
 import myRecipesReducer from './myRecipes/myRecipesRecipesSlice';
 import ingredientsReducer from './ingredients/ingredientsSlice';
+
 import categoriesReducer from './categories/categoriesSlice';
+
 
 import {
   persistStore,
@@ -28,27 +30,18 @@ const persistConfig = {
 
 export const persistedReducerAuth = persistReducer(persistConfig, authReducer);
 
-const outerRecipesPersistConfig = {
-  key: 'outerRecipes',
-  storage,
-  whitelist: ['mainCategories'],
-};
-const persistedOuterRecipesReducer = persistReducer(
-  outerRecipesPersistConfig,
-  mainRecipeReduser
-);
-
 export const store = configureStore({
   reducer: {
     auth: persistedReducerAuth,
     recipes: recipesReducer,
     shoppingList: shoppingListReducer,
-    outerRecipes: persistedOuterRecipesReducer,
-    recipe: mainRecipeReduser,
+    mainRecipes: mainRecipeReduser,
     favoriteRecipes: favoriteRecipesReducer,
     myRecipes: myRecipesReducer,
     ingredients: ingredientsReducer,
+
     categories: categoriesReducer,
+
   },
 
   middleware: getDefaultMiddleware =>

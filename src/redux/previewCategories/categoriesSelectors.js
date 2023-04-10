@@ -1,6 +1,6 @@
-export const getContentForMain = state => state.outerRecipes.mainCategories;
+export const getContentForMain = state => state.mainRecipes.mainCategories;
 
-export const getIsError = state => state.outerRecipes.isError;
+export const getIsError = state => state.mainRecipes.isError;
 
 export const getIsCategoryFetching = state =>
-  state.outerRecipes.isCategoryFetching;
+  state.mainRecipes.isCategoryFetching;
