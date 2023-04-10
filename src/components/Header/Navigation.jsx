@@ -8,25 +8,29 @@ export const Navigation = () => {
       <ul className="flex justify-center ">
         <li>
           <NavLink
-            to="/categories/Beef"
+            to="/categories"
             activeClassName="active"
-            className="px-4"
+            className="mr-[30px]"
           >
             Categories
           </NavLink>
         </li>
         <li>
-          <NavLink to="/add" activeClassName="active" className="px-4">
+          <NavLink to="/add" activeClassName="active" className="mr-[30px]">
             Add Recipe
           </NavLink>
         </li>
         <li>
-          <NavLink to="/my" activeClassName="active" className="px-4">
+          <NavLink to="/my" activeClassName="active" className="mr-[30px]">
             My Recipes
           </NavLink>
         </li>
         <li>
-          <NavLink to="/favorite" activeClassName="active" className="px-4">
+          <NavLink
+            to="/favorite"
+            activeClassName="active"
+            className="mr-[30px]"
+          >
             Favorites
           </NavLink>
         </li>
@@ -34,13 +38,13 @@ export const Navigation = () => {
           <NavLink
             to="/shopping-list"
             activeClassName="active"
-            className="px-4"
+            className="mr-[33px]"
           >
             Shopping List
           </NavLink>
         </li>
         <li>
-          <NavLink to="/search" activeclassname="active">
+          <NavLink to="/search" activeclassname="active " className="">
             <Glass className="stroke-black w-5 h-5 "></Glass>
           </NavLink>
         </li>

@@ -42,33 +42,35 @@ export const UserPanel = () => {
 
   const onUserBtnClick = () => openModal('userInfo');
   return (
-    <div className="flex-grow-1 flex justify-end">
-      <div
-        onClick={onUserBtnClick}
-        className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8"
-      >
-        <div className="px-4">{name}</div>
-        <img
-          src={avatarUrl}
-          alt={`User avatar of ${name}`}
-          style={{ width: 50, height: 50, borderRadius: '50%' }}
+    <>
+      <div className="flex-grow-1 flex justify-end">
+        <div
+          onClick={onUserBtnClick}
+          className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8"
+        >
+          <div className="px-4">{name}</div>
+          <img
+            src={avatarUrl}
+            alt={`User avatar of ${name}`}
+            style={{ width: 50, height: 50, borderRadius: '50%' }}
+          />
+        </div>
+        <UserInfoModal
+          isOpen={userInfoModal}
+          handleClose={closeModals}
+          handleOpen={openModal}
+        />
+        <UserLogoutModal
+          isOpen={userLogoutModal}
+          handleClose={closeModals}
+          handleOpen={openModal}
+        />
+        <UserEditModal
+          isOpen={userEditModal}
+          handleClose={closeModals}
+          handleOpen={openModal}
         />
       </div>
-      <UserInfoModal
-        isOpen={userInfoModal}
-        handleClose={closeModals}
-        handleOpen={openModal}
-      />
-      <UserLogoutModal
-        isOpen={userLogoutModal}
-        handleClose={closeModals}
-        handleOpen={openModal}
-      />
-      <UserEditModal
-        isOpen={userEditModal}
-        handleClose={closeModals}
-        handleOpen={openModal}
-      />
-    </div>
+    </>
   );
 };

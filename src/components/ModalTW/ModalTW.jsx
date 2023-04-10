@@ -25,7 +25,7 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
                   <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity z-30" />
                 );
               default:
-                return <div className="fixed inset-0 backdrop-blur-sm" />;
+                return <div className="fixed inset-0 " />;
             }
           }}
         </Transition.Child>
