@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 // possible className:
 // main-title
 // main-title-accent
@@ -9,7 +11,15 @@ export const MainPageTitle = ({ pageTitle, className }) => {
     <div>
       {!isVisible && (
         <div>
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+            whileInView={{
+              opacity: 1,
+            }}
             className="
           absolute 
           bg-accentMain 
@@ -25,8 +35,16 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           xl:left-[328px] 
           size
           "
-          ></div>
-          <div
+          ></motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 1.5 }}
+            whileInView={{
+              opacity: 1,
+            }}
             className="
           absolute 
           bg-accentDark 
@@ -42,9 +60,17 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           md:left-[437px] 
           xl:top-[199px] 
           xl:left-[807px] 
-          size"
-          ></div>
-          <div
+          size animate-pulse"
+          ></motion.div>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 2 }}
+            whileInView={{
+              opacity: 1,
+            }}
             className="
           absolute 
           bg-accentMain 
@@ -60,7 +86,7 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           xl:top-[129px] 
           xl:left-[1250px] 
           size"
-          ></div>
+          ></motion.div>
         </div>
       )}
       <h1 className={className}>{pageTitle}</h1>
