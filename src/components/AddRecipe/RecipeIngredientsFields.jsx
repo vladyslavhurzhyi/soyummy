@@ -5,34 +5,46 @@ import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import measureList from '../../data/measure.json';
 // import categories from '../../data/category.json';
 
-export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
+export const ResipeIngredientsFields = ({
+  items,
+  updateItems,
+  addItem,
+  removeItem,
+  ingredients,
+}) => {
   // console.log(ingredients);
-  const handleAddClick = e => {
-    e.preventDefault();
-    const _items = [...items];
-    _items.push({
-      id: '',
-      amount: '0',
-      measure: 'pcs',
-    });
-    setItems(_items);
-  };
-
-  const handleRemoveClick = id => {
-    const _items = items.filter(item => item.id !== id);
-    setItems([..._items]);
-  };
-
-  const handleFieldChange = (event, id) => {
+  // const handleAddClick = e => {
+  //   e.preventDefault();
+  //   const _items = [...items];
+  //   _items.push({
+  //     id: '',
+  //     amount: '0',
+  //     measure: 'pcs',
+  //   });
+  //   setItems(_items);
+  // };
+  const handleFieldChange = ({ target: { value, dataset } }, id) => {
     const _items = [...items];
     const index = _items.findIndex(item => item.id === id);
-    const {
-      value,
-      dataset: { name },
-    } = event.target;
-    _items[index][name] = value;
-    setItems(_items);
+    _items[index][dataset.name] = value;
+    updateItems([..._items]);
   };
+
+  // const handleRemoveClick = id => {
+  //   const _items = items.filter(item => item.id !== id);
+  //   setItems([..._items]);
+  // };
+
+  // const handleFieldChange = (event, id) => {
+  //   const _items = [...items];
+  //   const index = _items.findIndex(item => item.id === id);
+  //   const {
+  //     value,
+  //     dataset: { name },
+  //   } = event.target;
+  //   _items[index][name] = value;
+  //   setItems(_items);
+  // };
   return (
     <div className="my-11 md:my-24">
       <h2 className="mb-6 md:mb-9 font-main font-semibold text-secondaryText text-customBase dark:text-whiteText">
@@ -109,8 +121,9 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
             </div>
             {items.length > 1 && (
               <button
+                type="button"
                 className="flex ml-1 md:ml-3 lg:ml-5 "
-                onClick={() => handleRemoveClick(item.id)}
+                onClick={() => removeItem(item.id)}
               >
                 <Logo
                   newLogo={logo}
@@ -144,7 +157,7 @@ export const ResipeIngredientsFields = ({ items, setItems, ingredients }) => {
       <CurveBtn
         text="add ingredient"
         cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring"
-        onClick={handleAddClick}
+        onClick={addItem}
       />
     </div>
   );

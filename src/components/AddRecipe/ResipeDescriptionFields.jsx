@@ -1,115 +1,114 @@
-import { useState } from 'react';
-import { Uploader } from 'uploader';
-import { UploadButton } from 'react-uploader';
+// import { useState } from 'react';
+// import { Uploader } from 'uploader';
+// import { UploadButton } from 'react-uploader';
 // import categories from '../../data/category.json';
 import timeList from '../../data/time.json';
 
-export const ResipeDescriptionFields = ({ data, categories, setData }) => {
-  const [images, setImages] = useState([]);
+export const ResipeDescriptionFields = ({
+  data,
+  categories,
+  updateData,
+  updateImg,
+  previewImg,
+}) => {
+  // const [images, setImages] = useState([]);
   // const [url, setUrl] = useState('');
 
   // console.log(images);
 
-  const handleFieldChange = e => {
-    const { id, value } = e.target;
-    let _formData = { ...data };
-    // _formData[id] = id === 'isPublic' ? !_formData.isPublic : value;
-    _formData[id] = value;
+  // const handleFieldChange = e => {
+  //   const { id, value } = e.target;
+  //   let _formData = { ...data };
+  //   // _formData[id] = id === 'isPublic' ? !_formData.isPublic : value;
+  //   _formData[id] = value;
 
-    setData(_formData);
-    // setImgUrl(url);
-  };
+  //   setData(_formData);
+  //   // setImgUrl(url);
+  // };
 
-  const uploader = Uploader({ apiKey: 'free' });
-  const uploaderOptions = {
-    multi: false,
-    styles: {
-      colors: {
-        primary: '#8BAA36',
-      },
-    },
-  };
+  // const uploader = Uploader({ apiKey: 'free' });
+  // const uploaderOptions = {
+  //   multi: false,
+  //   styles: {
+  //     colors: {
+  //       primary: '#8BAA36',
+  //     },
+  //   },
+  // };
 
-  const MyUploadButton = ({ setImages }) => (
-    <UploadButton
-      uploader={uploader}
-      options={uploaderOptions}
-      onComplete={setImages}
-    >
-      {({ onClick }) => (
-        <button
-          onClick={onClick}
-          className="border-dashed border-2 rounded-xl border-accentGray text-zinc-50 py-3 px-2 flex flex-col items-center hover:border-accentLighter  focus:border-accentLighter  hover:text-accentLighter  focus:text-accentLighter"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            className="fill-transparent hover:fill-accentGray focus:fill-accentGray hover:stroke-accentMain focus:stroke-accentMain stroke-accentGray w-12 h-12 stroke-1"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
-            />
-          </svg>
-          upload image
-        </button>
-      )}
-    </UploadButton>
-  );
+  // const MyUploadButton = ({ setImages }) => (
+  //   <UploadButton
+  //     uploader={uploader}
+  //     options={uploaderOptions}
+  //     onComplete={setImages}
+  //   >
+  //     {({ onClick }) => (
+  //       <button
+  //         onClick={onClick}
+  //         className="border-dashed border-2 rounded-xl border-accentGray text-zinc-50 py-3 px-2 flex flex-col items-center hover:border-accentLighter  focus:border-accentLighter  hover:text-accentLighter  focus:text-accentLighter"
+  //       >
+  //         <svg
+  //           xmlns="http://www.w3.org/2000/svg"
+  //           viewBox="0 0 24 24"
+  //           className="fill-transparent hover:fill-accentGray focus:fill-accentGray hover:stroke-accentMain focus:stroke-accentMain stroke-accentGray w-12 h-12 stroke-1"
+  //         >
+  //           <path
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //             d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
+  //           />
+  //           <path
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //             d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
+  //           />
+  //         </svg>
+  //         upload image
+  //       </button>
+  //     )}
+  //   </UploadButton>
+  // );
 
-  const MyUploadedImages = ({ images }) =>
-    images.map(img => {
-      // Tip: save 'filePath' to your DB (not 'fileUrl').
-      const filePath = img.filePath;
-      const fileUrl = uploader.url(filePath, 'thumbnail'); // "raw" for un-transformed file.
-      // setUrl(fileUrl);
-      // console.log(url);
-      return (
-        <img
-          key={fileUrl}
-          src={fileUrl}
-          alt="recipe poster"
-          className="block w-full h-full object-cover"
-        ></img>
-        // <p
-        //   key={fileUrl}
-        //   className="border-dashed border-2 rounded-xl border-accentGray text-zinc-50 py-4 px-2 flex flex-col items-center"
-        // >
-        //   Downloaded successfully
-        //   <a
-        //     href={fileUrl}
-        //     target="_blank"
-        //     rel="noreferrer"
-        //     className="text-accentGray text-xs"
-        //   >
-        //     click to preview
-        //   </a>
-        // </p>
-      );
-    });
+  // const MyUploadedImages = ({ images }) =>
+  //   images.map(img => {
+  //     // Tip: save 'filePath' to your DB (not 'fileUrl').
+  //     const filePath = img.filePath;
+  //     const fileUrl = uploader.url(filePath, 'thumbnail'); // "raw" for un-transformed file.
+  //     // setUrl(fileUrl);
+  //     // console.log(url);
+  //     return (
+  //       <img
+  //         key={fileUrl}
+  //         src={fileUrl}
+  //         alt="recipe poster"
+  //         className="block w-full h-full object-cover"
+  //       ></img>
+  //     );
+  //   });
 
   return (
     <div className="flex flex-col md:flex-row">
       <div className="w-[280px] h-[280px] mx-auto mb-8 xl:w-[360px] xl:h-[360px] md:mx-0 md:mb-o md:mr-8 bg-accentMain rounded-lg flex justify-center items-center">
-        {images.length ? (
+        {/* {images.length ? (
           <MyUploadedImages images={images} />
         ) : (
           <MyUploadButton setImages={setImages} />
-        )}
-
-        {/* <p>Input for photo</p> */}
-        {/* <input
-          type="file"
-          multiple
-          accept="image/*"
-          onChange={e => setImage(e.target.files)}
-        /> */}
+        )} */}
+        <label htmlFor="thumb" className="block w-full h-full object-cover ">
+          <img
+            src={previewImg}
+            alt="recipe poster"
+            className="block w-full h-full object-cover rounded-lg "
+          />
+          <input
+            className="hidden"
+            type="file"
+            id="thumb"
+            name="thumb"
+            onChange={updateImg}
+            accept="image/png, image/jpg, image/jpeg"
+          />
+        </label>
       </div>
       <div className=" flex flex-col md:w-[400px] mt-2">
         <div className="relative z-0 w-full mb-6">
@@ -122,7 +121,7 @@ export const ResipeDescriptionFields = ({ data, categories, setData }) => {
             required
             className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200 dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             value={data.title}
-            onChange={handleFieldChange}
+            onChange={updateData}
           />
           <label
             htmlFor="title"
@@ -137,12 +136,12 @@ export const ResipeDescriptionFields = ({ data, categories, setData }) => {
             type="text"
             name="description"
             placeholder=" "
-            autoComplete="off"
+            // autoComplete="off"
             id="description"
             required
             className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             value={data.description}
-            onChange={handleFieldChange}
+            onChange={updateData}
           />
           <label
             htmlFor="description"
@@ -161,7 +160,7 @@ export const ResipeDescriptionFields = ({ data, categories, setData }) => {
               id="category"
               required
               value={data.category}
-              onChange={handleFieldChange}
+              onChange={updateData}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             >
               <option value="" disabled hidden></option>
@@ -191,7 +190,7 @@ export const ResipeDescriptionFields = ({ data, categories, setData }) => {
               id="time"
               required
               value={data.time}
-              onChange={handleFieldChange}
+              onChange={updateData}
               className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200 dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
             >
               <option value="" disabled hidden></option>
