@@ -1,16 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { getCategories } from './categoriesOperations';
+import { setCurrentCategory } from './categoriesOperations';
 
-const categorySlice = createSlice({
-  name: 'currentCategory',
-  initialState: {
-    currentCategory: 'Beef',
-  },
-  reducers: {
-    setCurrentCategory: (state, action) => {
-      state.currentCategory = action.payload;
-    },
+const initialState = {
+  currentCategory: 'Beef',
+  list: [],
+  isLoading: false,
+  error: null,
+};
+
+const isPendingAction = action => {
+  return action.type.endsWith('pending');
+};
+
+export const categoriesSlice = createSlice({
+  name: 'categories',
+  initialState,
+  extraReducers: builder => {
+    builder
+      .addCase(getCategories.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.list = action.payload;
+      })
+      .addCase(setCurrentCategory.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.currentCategory = action.payload;
+      })
+      .addMatcher(isAnyOf(getCategories.rejected), (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addMatcher(isPendingAction, state => {
+        state.isLoading = true;
+      });
   },
 });
 
-export const { setCurrentCategory } = categorySlice.actions;
-export default categorySlice.reducer;
+export default categoriesSlice.reducer;

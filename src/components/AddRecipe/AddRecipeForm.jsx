@@ -9,11 +9,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addRecipe } from 'redux/recipes/recipesOperations';
 import { getIngredients } from 'redux/ingredients/ingredientsOperations';
-
 import { selectIngredients } from 'redux/ingredients/ingredientsSelectors';
+import { getCategories } from 'redux/categories/categoriesOperations';
+import { selectCategories } from 'redux/categories/categoriesSelectors';
 
 export const AddRecipeForm = () => {
   const ingredientsList = useSelector(selectIngredients);
+  const categoriesList = useSelector(selectCategories);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,6 +38,7 @@ export const AddRecipeForm = () => {
 
   useEffect(() => {
     dispatch(getIngredients());
+    dispatch(getCategories());
   }, [dispatch]);
 
   // const handleFieldChange = e => {
@@ -89,6 +92,7 @@ export const AddRecipeForm = () => {
         <form noValidate="" onSubmit={handleSubmit}>
           <ResipeDescriptionFields
             data={formData}
+            categories={categoriesList}
             setData={handleFieldsChange}
           />
           <ResipeIngredientsFields
