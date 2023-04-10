@@ -48,6 +48,7 @@ export const MyRecipesList = ({ cssClass }) => {
       {data?.length > 0 && (
         <>
           <RecipesList
+            isLoading={isLoading}
             removeRecipe={removeMyRecipes}
             cssClass={cssClass}
             data={data}

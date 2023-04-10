@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { RecipesList } from 'components/RecipesList/RecipesList';
 import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import { Loader } from 'components/Loader/Loader';
@@ -40,7 +41,6 @@ export const FavoriteList = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       {error &&
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
@@ -50,6 +50,7 @@ export const FavoriteList = () => {
           <RecipesList
             removeRecipe={removeFromFavorite}
             data={favoriteRecipes}
+            isLoading={isLoading}
           />
           {total > 0 && (
             <RecipesListPaginator
