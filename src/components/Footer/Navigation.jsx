@@ -16,11 +16,8 @@ export const Navigation = () => {
                             <FollowUs />
                         </div>
                     </div>
-                    <div className='block md:hidden lg:block'>
-                        <SubscribeForm/>
-                    </div>
                 </div>
-                <div className='hidden md:block md:justify-self-center lg:hidden'>
+                <div className='block md:justify-self-center lg:hidden mt-[32px] md:mt-0'>
                     <SubscribeForm/>
                 </div>
                 <div className="block lg:hidden mt-[44px] lg:mt-24">

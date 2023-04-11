@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
 import { Nav } from './Nav';
+import { SubscribeForm } from './SubscribeForm';
 
 export const Footer = () => {
   return (
@@ -15,14 +16,7 @@ export const Footer = () => {
       }}
     >
       <div
-        className="blur-sm absolute left-0 -top-[210px] lg:-top-[425px]"
-        style={{
-          // position: 'absolute',
-          // left: 0,
-          zIndex: -100,
-          // top: -425,
-        }}
-      >
+        className="blur-sm absolute left-0 -top-[210px] lg:-top-[425px] z-[-100]">
         <img
           src={require('./images/bgBottomLeftImage.png')}
           alt="leafs"
@@ -104,19 +98,12 @@ export const Footer = () => {
           <div className='flex justify-center lg:hidden w-full md:mt-[72px]'>
             <Navigation />
           </div>
-          <div className='hidden lg:flex xl:max-w-[800px]'><Navigation /></div>
+          <div className='hidden lg:flex'><Navigation /></div>
+          <div className='hidden lg:flex'><SubscribeForm/></div>
         </div>
       </div>
       <div
-        className="flex pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] lg:py-[50px]"
-        style={{
-          // display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
+        className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] lg:py-[50px]">
         <p
           style={{
             fontFamily: 'Poppins',
@@ -141,19 +128,11 @@ export const Footer = () => {
           Terms of Service
         </NavLink>
         <div
-          className="blur-sm absolute right-0 bottom-0"
-          style={{
-            // position: 'absolute',
-            // right: 0,
-            zIndex: 100,
-            // bottom: 0,
-          }}
-        >
+          className="blur-sm absolute right-0 bottom-0 z-100">
           <img
             src={require('./images/bgBottomRightImage.png')}
             alt="leafs"
             className="w-[180px] h-[172px] lg:w-[438px] lg:h-[474px]"
-            // width={438} height={474}
           />
         </div>
       </div>
