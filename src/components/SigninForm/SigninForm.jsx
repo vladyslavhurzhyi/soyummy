@@ -3,35 +3,23 @@ import { signIn } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Svg } from '../../images/svg/OrderFoodPana.svg';
 import { useFormik } from 'formik';
-import { registerValidationSchema } from 'utils/authValidationSchema/authValidationSchema';
+import { loginValidationSchema } from 'utils/authValidationSchema/authValidationSchema';
 
 const SigninForm = () => {
   const dispatch = useDispatch();
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const form = e.currentTarget;
-  //   dispatch(
-  //     signIn({
-  //       email: form.elements.email.value,
-  //       password: form.elements.password.value,
-  //     })
-  //   );
-  //   form.reset();
-  // };
-
   const formik = useFormik({
     initialValues: {
-      name: '',
       email: '',
       password: '',
     },
-    validationSchema: registerValidationSchema,
+    validationSchema: loginValidationSchema,
     onSubmit: values => {
       dispatch(signIn(values));
       formik.resetForm();
     },
   });
+  console.log('formik', formik);
 
   return (
     <section className=" formWrapSection">
