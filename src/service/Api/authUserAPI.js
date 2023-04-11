@@ -12,6 +12,12 @@ export const signInUserAPI = user => {
   });
 };
 
+export const signInWithGoogleUserAPI = data => {
+  return api.post('/auth/google/signin', data).then(({ data }) => {
+    return data;
+  });
+};
+
 export const logOutUserAPI = user => {
   return api.post('/auth/logout').then(({ data }) => {
     return data;

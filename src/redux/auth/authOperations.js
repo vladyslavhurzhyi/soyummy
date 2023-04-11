@@ -8,6 +8,7 @@ import {
   logOutUserAPI,
   currentUserAPI,
   editUserAPI,
+  signInWithGoogleUserAPI,
 } from 'service/Api/authUserAPI';
 
 export const token = {
@@ -27,6 +28,20 @@ export const signUp = createAsyncThunk(
       await signUpUserAPI(user);
       const data = await signInUserAPI({ email, password });
 
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      toast.error(`${error.response.data.message}`);
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const signInWithGoogle = createAsyncThunk(
+  'auth/signinwithgoogle',
+  async (user, { rejectWithValue }) => {
+    try {
+      const data = await signInWithGoogleUserAPI(user);
       token.set(data.token);
       return data;
     } catch (error) {
