@@ -7,7 +7,7 @@ import { setCurrentCategory } from 'redux/categories/categoriesOperations';
 import { getCategories } from 'redux/categories/categoriesOperations';
 import { selectCategories } from 'redux/categories/categoriesSelectors';
 const activeLink =
-  ' text-accentMain after:absolute  after:h-0.5  after:bg-accentMain after:w-full after:bottom-0 after:right-0';
+  ' text-accentMain after:absolute  after:h-0.5  after:bg-accentMain after:w-full after:bottom-px after:right-0';
 const CategoriesList = () => {
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
