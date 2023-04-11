@@ -1,6 +1,6 @@
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { PreviewCategories } from 'components/PreviewCategories/PreviewCategories';
-import { SearchForm } from 'components/SearchForm/SearchForm';
+import { SearchMain } from 'components/SearchForm/SearchMain';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,15 +13,14 @@ const MainPage = () => {
     navigate('/categories/beef');
   };
 
-  const handelOnSubmit = (query, type) => {
-    if ((query = '')) {
+  const handleOnSubmit = (query, type) => {
+    if (query === '') {
       toast.error(`You didn't enter anything to search`, {
-        position: 'top-center',
+        position: toast.POSITION.TOP_CENTER,
       });
       return;
-    } else {
-      navigate(`/search?query=${query}&type=${type}`);
     }
+    navigate(`/search?query=${query}&type=${type}`);
   };
 
   return (
@@ -40,7 +39,7 @@ const MainPage = () => {
               cookbook. You can add your own recipes to save them for the
               future.
             </p>
-            <SearchForm handleOnSubmit={handelOnSubmit} />
+            <SearchMain handleOnSubmit={handleOnSubmit} />
           </div>
           <ChooseYourBreakfast />
         </div>
