@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
-  const { current_page, data, total, per_page } = useSelector(selectMyRecipes);
+  const { current_page, total, data, per_page } = useSelector(selectMyRecipes);
   const error = useSelector(selectMyError);
   const isLoading = useSelector(selectMyIsLoading);
   // const isFetching = useSelector(selectMyFetching);

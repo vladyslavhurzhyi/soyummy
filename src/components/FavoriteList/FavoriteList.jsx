@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 export const FavoriteList = () => {
   const [paginationPage, setPaginationPage] = useState(1);
   const { current_page, data, total, per_page } = useSelector(selectFavRecipes);
-  const favoriteRecipes = data;
+
   const error = useSelector(selectFavError);
   const isLoading = useSelector(selectFavIsLoading);
   const dispatch = useDispatch();
@@ -44,11 +44,11 @@ export const FavoriteList = () => {
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
         })}
-      {favoriteRecipes?.length > 0 && (
+      {data?.length > 0 && (
         <>
           <RecipesList
             removeRecipe={removeFromFavorite}
-            data={favoriteRecipes}
+            data={data}
             isLoading={isLoading}
           />
           {total > 0 && (
