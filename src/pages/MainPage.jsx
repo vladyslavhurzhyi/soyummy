@@ -4,24 +4,11 @@ import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 const MainPage = () => {
   const navigate = useNavigate();
-
   const onClick = e => {
     navigate('/categories/beef');
-  };
-
-  const handelOnSubmit = (query, type) => {
-    if ((query = '')) {
-      toast.error(`You didn't enter anything to search`, {
-        position: 'top-center',
-      });
-      return;
-    } else {
-      navigate(`/search?query=${query}&type=${type}`);
-    }
   };
 
   return (
@@ -40,7 +27,7 @@ const MainPage = () => {
               cookbook. You can add your own recipes to save them for the
               future.
             </p>
-            <SearchForm handleOnSubmit={handelOnSubmit} />
+            <SearchForm />
           </div>
           <ChooseYourBreakfast />
         </div>
