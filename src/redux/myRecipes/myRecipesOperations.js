@@ -11,9 +11,7 @@ export const getMyRecipes = createAsyncThunk(
       const myRecipes = data;
       return myRecipes;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -24,21 +22,10 @@ export const removeMyRecipes = createAsyncThunk(
   async (recipeId, thunkAPI) => {
     try {
       const { data } = await api.delete(`/recipes/${recipeId}`);
-      toast.success('Removed from myRecipes', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast.success('Removed from myRecipes');
       return data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   addFavoriteRecipes,
   removeFromFavorite,
-  // getFavoriteRecipes,
-  // removeFromFavorite,
 } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
@@ -17,7 +15,7 @@ export const RecipePageHero = data => {
   const favorites = useSelector(selectFavRecipes);
   const { _id: recipeId, title, description, time } = recipes;
 
-  const isFavorites = favorites.some(item => item._id === recipeId);
+  const isFavorites = favorites.data.some(item => item._id === recipeId);
 
   const handleClickAddFavorite = () => {
     dispatch(addFavoriteRecipes(recipeId));

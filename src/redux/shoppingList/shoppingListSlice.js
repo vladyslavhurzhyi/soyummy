@@ -2,7 +2,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   fetchShoppingList,
   addShoppingList,
-  deleteShoppingList,
+  deleteShoppingListItem,
 } from './shoppingListOperations';
 import {
   helperFulfilledAdd,
@@ -26,13 +26,13 @@ const shoppingListSlice = createSlice({
 
       .addCase(addShoppingList.fulfilled, helperFulfilledAdd)
 
-      .addCase(deleteShoppingList.fulfilled, helperFulfilledDelete)
+      .addCase(deleteShoppingListItem.fulfilled, helperFulfilledDelete)
 
       .addMatcher(
         isAnyOf(
           fetchShoppingList.pending,
           addShoppingList.pending,
-          deleteShoppingList.pending
+          deleteShoppingListItem.pending
         ),
         helperPending
       )
@@ -40,7 +40,7 @@ const shoppingListSlice = createSlice({
         isAnyOf(
           fetchShoppingList.rejected,
           addShoppingList.rejected,
-          deleteShoppingList.rejected
+          deleteShoppingListItem.rejected
         ),
         helperRejected
       );

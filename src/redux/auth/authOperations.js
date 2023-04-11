@@ -30,9 +30,7 @@ export const signUp = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast.error(`${error.response.data.message}`, {
-        position: 'top-center',
-      });
+      toast.error(`${error.response.data.message}`);
       return rejectWithValue(error);
     }
   }
@@ -46,9 +44,7 @@ export const signIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast.error(`${error.response.data.message}`, {
-        position: 'top-center',
-      });
+      toast.error(`${error.response.data.message}`);
       return rejectWithValue(error);
     }
   }
@@ -74,9 +70,7 @@ export const edit = createAsyncThunk(
       const data = await editUserAPI(formData);
       return data;
     } catch (error) {
-      toast.error(`${error.response.data.message}`, {
-        position: 'top-center',
-      });
+      toast.error(`${error.response.data.message}`);
       return rejectWithValue(error);
     }
   }

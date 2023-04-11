@@ -34,6 +34,8 @@ export const IngredientsShoppingList = () => {
   }, [dispatch, list]);
 
   const handleDeleteItem = (id, recipeId) => {
+    console.log(id);
+    console.log(recipeId);
     dispatch(deleteShoppingListItem({ id, recipeId }));
   };
   if (error) {

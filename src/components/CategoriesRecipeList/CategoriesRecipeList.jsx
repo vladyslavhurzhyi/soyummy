@@ -22,8 +22,11 @@ const CategoriesRecipesList = () => {
               className="w-[343px] h-[323px] relative md:w-[47%] xl:w-[24%] object-cover"
             >
               <NavLink
+
                 to={`/recipe/${_id}`}
                 className="bg-gray-200  rounded-lg bg-cover bg-center w-full h-full bg-no-repeat block"
+
+
                 style={{ backgroundImage: `url('${thumb}` }}
               >
                 <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[307px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark">
