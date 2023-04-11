@@ -13,10 +13,10 @@ export const UserLogoutModal = ({ isOpen, handleClose }) => {
   return (
     <ModalTW isOpen={isOpen} handleClose={handleClose} backdrop="blur">
       <div className="z-50 top-0 left-0 flex items-center text-center ">
-        <div className=" bg-white rounded-lg shadow-lg p-8 animate-fade-in-down ">
+        <div className=" bg-white rounded-lg shadow-lg p-8 animate-fade-in-down dark:bg-accentGray ">
           <div className="flex justify-end">
             <button
-              className="block w-2 h-2 text-xl"
+              className="block  hover:scale-105 transition duration-200"
               onClick={() => {
                 handleClose();
               }}
@@ -37,7 +37,11 @@ export const UserLogoutModal = ({ isOpen, handleClose }) => {
             >
               Log Out
             </Button>
-            <Button cssClass={'cancel-btn'} onClick={handleClose} text="Cancel">
+            <Button
+              cssClass={'cancel-btn '}
+              onClick={handleClose}
+              text="Cancel"
+            >
               Cancel
             </Button>
           </div>
