@@ -28,7 +28,9 @@ const CategoriesList = () => {
                 }}
                 to={`/categories/${category.category}`}
                 className={({ isActive }) =>
-                  isActive ? activeLink : 'text-greyInput'
+                  isActive
+                    ? activeLink
+                    : 'text-greyInput hover:text-accentMain focus:text-accentMain'
                 }
               >
                 {category.category}
