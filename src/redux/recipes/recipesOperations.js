@@ -42,6 +42,21 @@ export const fetchPopular = createAsyncThunk(
   }
 );
 
+export const fetchRecipesByCategory = createAsyncThunk(
+  'recipes/fetchRecipesByCategory',
+  async (category, thunkAPI) => {
+    try {
+      const response = await api.get(`/recipes/category/${category}`);
+      return response.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later', {
+        autoClose: 3000,
+      });
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 // export const getAllRecipes = createAsyncThunk(
 //   'ownRecipes/getRecipes',
 //   async ({ page, per_page }, { rejectWithValue }) => {
