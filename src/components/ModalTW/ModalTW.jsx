@@ -29,8 +29,7 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
             }
           }}
         </Transition.Child>
-
-        <div className="fixed top-[100px] right-[300px]  z-40 overflow">
+        <div className="fixed top-[100px] right-[600px]  z-40 overflow">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
