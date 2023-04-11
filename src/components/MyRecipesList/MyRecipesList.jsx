@@ -21,7 +21,13 @@ export const MyRecipesList = ({ cssClass }) => {
   const isLoading = useSelector(selectMyIsLoading);
   // const isFetching = useSelector(selectMyFetching);
   const dispatch = useDispatch();
-
+  const totalPages = Math.ceil(Number(total) / Number(per_page));
+  const isEmptyPage = current_page > totalPages;
+  useEffect(() => {
+    if (isEmptyPage) {
+      setPaginationPage(totalPages);
+    }
+  }, [isEmptyPage, totalPages]);
   useEffect(() => {
     dispatch(getMyRecipes(paginationPage));
   }, [dispatch, paginationPage]);
