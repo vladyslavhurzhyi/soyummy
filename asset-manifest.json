@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.80b85831.css",
-    "main.js": "/soyummy/static/js/main.0ee9abbf.js",
+    "main.css": "/soyummy/static/css/main.4d2152a5.css",
+    "main.js": "/soyummy/static/js/main.70cb6887.js",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
     "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.27c02cb8d863c0b05eab.png",
     "static/media/recipePage.jpg": "/soyummy/static/media/recipePage.9ba730398fc8d30e7b8b.jpg",
@@ -20,13 +20,14 @@
     "static/media/trash.svg": "/soyummy/static/media/trash.8db8dbe68c85fa8c70c3c88fad048b04.svg",
     "static/media/editPen.svg": "/soyummy/static/media/editPen.74bf6552ec98c99b7deafd730ed53b47.svg",
     "static/media/search-icon.svg": "/soyummy/static/media/search-icon.808a38e2b42b6a770b17ffac2f38a2c4.svg",
+    "static/media/crossSvg.svg": "/soyummy/static/media/crossSvg.71bfc22556499cd1e79086abd3ddbcc8.svg",
     "static/media/closeMenuIcon.svg": "/soyummy/static/media/closeMenuIcon.e092d0fe6a88f998c6eea4f764848586.svg",
     "static/media/burgerMenu.svg": "/soyummy/static/media/burgerMenu.0f3571adaad47fc06865f7573710d9e0.svg",
-    "main.80b85831.css.map": "/soyummy/static/css/main.80b85831.css.map",
-    "main.0ee9abbf.js.map": "/soyummy/static/js/main.0ee9abbf.js.map"
+    "main.4d2152a5.css.map": "/soyummy/static/css/main.4d2152a5.css.map",
+    "main.70cb6887.js.map": "/soyummy/static/js/main.70cb6887.js.map"
   },
   "entrypoints": [
-    "static/css/main.80b85831.css",
-    "static/js/main.0ee9abbf.js"
+    "static/css/main.4d2152a5.css",
+    "static/js/main.70cb6887.js"
   ]
 }
