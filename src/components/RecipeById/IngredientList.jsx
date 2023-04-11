@@ -34,7 +34,7 @@ export const IngredientList = () => {
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
           key={_id}
-          className="flex justify-between items-center bg-accentLighter pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg "
+          className="flex justify-between items-center bg-accentLighter dark:bg-accentHalfDark pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg "
         >
           <div className="flex items-center gap-6 xl:gap-10">
             {{ thb } ? (
@@ -50,7 +50,7 @@ export const IngredientList = () => {
                 alt="placeholder"
               />
             )}
-            <p className="text-customShoppingList md:text-customBase font-medium text-secondaryText">
+            <p className="text-customShoppingList dark:text-whiteText md:text-customBase font-medium text-secondaryText">
               {ttl}
             </p>
           </div>
@@ -68,10 +68,10 @@ export const IngredientList = () => {
                 data-ingrmeasure={measure}
                 data-thb={thb}
                 data-ttl={ttl}
-                className="appearance-none text-accentMain cursor-pointer w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E] transition-all duration-300 peer"
+                className="appearance-none text-accentMain cursor-pointer w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded bg-transparent border-solid border-opacity-50 checked:opacity-0 border-[#7E7E7E80] dark:border-[#FAFAFA80] transition-all duration-300 peer"
               />
               {!error && (
-                <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100">
+                <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E80] dark:border-[#FAFAFA80] transition-all duration-300 peer-checked:opacity-100">
                   <svg
                     viewBox="0 0 10 10"
                     fill="none"
@@ -86,7 +86,7 @@ export const IngredientList = () => {
                 </div>
               )}
               {error && (
-                <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E] transition-all duration-300 peer-checked:opacity-100"></div>
+                <div className="absolute flex justify-center items-center w-[18px] md:w-[35px] h-[18px] md:h-[35px] rounded pointer-events-none bg-transparent opacity-0 border border-solid border-opacity-50 border-[#7E7E7E80] dark:border-[#FAFAFA80] transition-all duration-300 peer-checked:opacity-100"></div>
               )}
             </div>
           </div>
