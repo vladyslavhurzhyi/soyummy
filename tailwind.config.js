@@ -8,6 +8,7 @@ module.exports = {
         xl: '1440px',
       },
       backgroundImage: {
+        gradientStop: 'linear-gradient(180deg, #ECECEC 53%, #1E1F28 0%)',
         recipePage: "url('/src/images/recipePage.jpg')",
         hero: "url('/src/images/salat.png')",
         main_d: "url('/src/images/bg_main-desc.png')",
