@@ -19,7 +19,7 @@ import { Search } from 'pages/Search';
 import RecipePage from 'pages/RecipePage';
 import CategoriesPage from 'pages/CategoriesPage';
 import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
-import { ErrorPage } from './ErrorComponent/ErrorComponent';
+import ErrorPage from 'pages/ErrorPage';
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -113,7 +113,7 @@ export const App = () => {
             <Route />
           </Route>
         </Route>
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );

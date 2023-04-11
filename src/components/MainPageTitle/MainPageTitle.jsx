@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 // possible className:
 // main-title
 // main-title-accent
+// main-title-empty
 
 export const MainPageTitle = ({ pageTitle, className }) => {
   const isVisible = className.includes('accent') ? true : false;
