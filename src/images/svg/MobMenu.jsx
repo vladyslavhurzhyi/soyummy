@@ -18,9 +18,9 @@ export const MobMenu = () => {
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => setIsNavOpen(prev => !prev)}
           >
-            <span class="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
-            <span class="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
-            <span class="block w-5 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
+            <span className="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
+            <span className="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
+            <span className="block w-5 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
           </div>
 
           <div

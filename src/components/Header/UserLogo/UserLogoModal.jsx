@@ -31,7 +31,7 @@ export const UserLogoModal = ({ onClose, editOpen, logOutOpen }) => {
         <div className="absolute bg-white rounded-md border  top-16 right-4 md:top-20">
           <div className="p-4">
             <button onClick={handleOverlayClick} className="flex px-4 py-2 ">
-              <span className="text-#23262A font-normal mr-[54px] ">
+              <span className="text-#23262A font-normal mr-[54px]">
                 Edit profile
               </span>
               <EditIcon className="w-[12px] h-[12px] " />

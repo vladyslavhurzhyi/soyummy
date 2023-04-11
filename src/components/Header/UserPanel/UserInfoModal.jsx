@@ -11,18 +11,15 @@ export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
 
   return (
     <ModalTW isOpen={isOpen} handleClose={handleClose}>
-      {/* <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50"> */}
-      {/* <div className="max-w-screen-lg h- w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6"> */}
-      {/* <div className="absolute bg-white rounded-md border  top-16 right-4 md:top-20"> */}
-      <div className="flex p-4 min-w-[161px] min-h-[130px] md:min-w-[173px] md:min-h-[134px] flex-col items-center">
+      <div className="flex p-4 min-w-[161px] min-h-[130px] md:min-w-[173px] md:min-h-[134px] flex-col items-center dark:bg-accentGray">
         <button
           onClick={onEditBtnClick}
           className="flex px-4 py-2 mb-[32px] items-center"
         >
-          <span className="text-#23262A font-normal mr-[54px] ">
+          <span className="text-#23262A font-normal mr-[54px] hover:animate-pulse ">
             Edit profile
           </span>
-          <EditIcon className="w-[12px] h-[12px] " />
+          <EditIcon className="w-[12px] h-[12px]  " />
         </button>
         <CurveBtn
           text="Log out"
@@ -30,9 +27,6 @@ export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
           cssClass="addbgreen-btn"
         />
       </div>
-      {/* </div> */}
-      {/* </div> */}
-      {/* </div> */}
     </ModalTW>
   );
 };

@@ -12,7 +12,7 @@ export const Header = () => {
   const shouldShowUser = useSelector(isLoggedIn);
   return (
     <header className="absolute left-0 right-0 mx-auto max-w-[1440px] w-full z-20 px-4 xl:py-6 md:px-9 xl:px-[100px]">
-      <div class="flex items-center ">
+      <div className="flex items-center ">
         <Logo className="" />
 
         <Navigation />

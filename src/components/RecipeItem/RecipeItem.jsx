@@ -23,8 +23,8 @@ export const RecipeItem = ({
   };
   return (
     <>
-      <li className="flex mx-auto mb-10 last:mb-0 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark min-w-[343px] ">
-        <div className="min-w-[343px] md:max-w-[704px] xl:min-w-[1240px] xl:max-w-[1240px] ">
+      <li className="flex mx-auto mb-10 last:mb-0 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark w-full">
+        <div className="min-w-[290px] w-full">
           <div className="flex my-[14px] md:my-7 xl:my-10 ">
             <img
               className="w-[124px] h-[124px] mx-[14px]  md:w-[228px] md:h-[232px]  xl:w-[318px] xl:h-[324px] md:mr-6 md:ml-6 xl:mx-10 rounded-lg object-cover  "
@@ -45,7 +45,7 @@ export const RecipeItem = ({
                 </button>
               </div>
               <div className="flex h-full w-full justify-between flex-col ">
-                <p className="text-[8px] md:text-sm xl:text-lg ">
+                <p className="text-[8px] md:text-sm xl:text-lg mb-4 w-full ">
                   {description}
                 </p>
                 <div className="flex justify-between ">
