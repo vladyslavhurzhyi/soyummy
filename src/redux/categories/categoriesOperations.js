@@ -9,9 +9,7 @@ export const getCategories = createAsyncThunk(
       const { data } = await api.get(`/recipes/category-list`);
       return data.data;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -23,9 +21,7 @@ export const setCurrentCategory = createAsyncThunk(
     try {
       return currentCategory;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

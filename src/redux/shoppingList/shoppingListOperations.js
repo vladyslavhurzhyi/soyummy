@@ -24,50 +24,12 @@ export const addShoppingList = createAsyncThunk(
     const toAddIngredient = { recipeId, id, amount, measure };
     try {
       const { data } = await api.post('/shopping-list', toAddIngredient);
-      toast.success('Added to Shopping list', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
+      toast.success('Added to Shopping list');
       if ((data.message = 'success')) {
       }
       return { recipeId: [recipeId], id, amount, measure, thb, ttl };
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
-
-export const deleteShoppingList = createAsyncThunk(
-  'shoppingList/deleteShoppingList',
-  async ({ recipeId, id }, thunkAPI) => {
-    console.log(id);
-    console.log(recipeId);
-
-    const payload = {
-      recipeId: [recipeId],
-    };
-
-    try {
-      console.log(payload);
-      const { data } = await api.delete(`/shopping-list/${id}`, payload);
-      toast.success('Remove from Shopping list', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-      });
-      return data;
-    } catch (e) {
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -76,6 +38,8 @@ export const deleteShoppingList = createAsyncThunk(
 export const deleteShoppingListItem = createAsyncThunk(
   'shoppingList/deleteShoppingList',
   async ({ id, recipeId }, thunkAPI) => {
+    console.log(id);
+    console.log(recipeId);
     const deleteItem = {
       recipeId: [...recipeId],
     };
@@ -83,8 +47,10 @@ export const deleteShoppingListItem = createAsyncThunk(
       await api.delete(`/shopping-list/${id}`, {
         data: deleteItem,
       });
+      toast.success('Removed from Shopping list');
       return id;
     } catch (e) {
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(e.message);
     }
   }

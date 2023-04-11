@@ -98,7 +98,7 @@ export const App = () => {
             element={<PrivateRoute component={Search} redirectTo="/signin" />}
           />
           <Route
-            path="/recipe/:recipeId"
+            path="/recipes/:recipeId"
             element={
               <PrivateRoute component={RecipePage} redirectTo="/signin" />
             }

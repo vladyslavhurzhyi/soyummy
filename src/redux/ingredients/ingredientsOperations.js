@@ -11,9 +11,7 @@ export const getIngredients = createAsyncThunk(
       const ingredientsList = data.data;
       return ingredientsList;
     } catch (error) {
-      toast.error('Something went wrong, please try again later', {
-        autoClose: 3000,
-      });
+      toast.error('Something went wrong, please try again later');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
