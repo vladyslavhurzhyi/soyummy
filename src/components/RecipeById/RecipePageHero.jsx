@@ -7,11 +7,11 @@ import {
   removeFromFavorite,
 } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import { selectRecipeById } from 'redux/recipes/recipesSelectors';
 
 export const RecipePageHero = data => {
   const dispatch = useDispatch();
-  const recipes = useSelector(selectRecipes);
+  const recipes = useSelector(selectRecipeById);
   const favorites = useSelector(selectFavRecipes);
   const { _id: recipeId, title, description, time } = recipes;
 
