@@ -18,18 +18,18 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
             switch (backdrop) {
               case 'blur':
                 return (
-                  <div className="fixed  inset-0  bg-opacity-75 transition-opacity z-30" />
+                  <div className="fixed mx-0  inset-0  bg-opacity-75 transition-opacity z-30" />
                 );
               case 'grey':
                 return (
-                  <div className="fixed inset-0 bg-opacity-75 transition-opacity z-30" />
+                  <div className="fixed mx-0 inset-0 bg-opacity-75 transition-opacity z-30" />
                 );
               default:
                 return <div className="fixed inset-0 " />;
             }
           }}
         </Transition.Child>
-        <div className="fixed top-[10%] right-[30%]  z-40 overflow">
+        <div className="fixed top-[10%] right-[5%]  mx-0 md:top-[10%] md:right-[10%] xl:top-[10%] xl:right-[25%]  2xl:top-[10%] 2xl:right-[30%]  z-40 overflow">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

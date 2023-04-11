@@ -52,7 +52,7 @@ const UserEditModal = ({ isOpen, handleClose }) => {
         </button>
       </div>
       <form
-        className="bg-white rounded px-8 pt-6 pb-8 mb-4  min-w-[500px] dark:bg-accentGray"
+        className="bg-white rounded px-8 pt-6 pb-8 mb-4 min-w-[290px] md:min-w-[500px] dark:bg-accentGray"
         onSubmit={handleSubmit}
       >
         <div className="mb-4 flex flex-row-reverse">
@@ -78,12 +78,12 @@ const UserEditModal = ({ isOpen, handleClose }) => {
                   />
                 )}
                 {!selectedFile && (
-                  <div className=" bg-[#D9D9D9] rounded-full p-5 dark:bg-accentHalfDark ">
+                  <div className="transition duration-300 hover:bg-transparent hover:animate-pulse  bg-[#D9D9D9] rounded-full p-5 dark:bg-accentHalfDark hover:cursor-pointer  hover:scale-120">
                     <AiOutlineUser className="dark:text-white" size={48} />
                   </div>
                 )}
               </div>
-              <div className="fixed bottom-[58%] right-[42%] w-6 h-6 bg-accentMain rounded-full">
+              <div className=" fixed bottom-[58%] right-[42%] w-6 h-6 bg-accentMain hover:cursor-pointer rounded-full">
                 <p className="flex text-center text-white justify-center">+</p>
               </div>
 

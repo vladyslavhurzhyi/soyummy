@@ -16,7 +16,7 @@ export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
           onClick={onEditBtnClick}
           className="flex px-4 py-2 mb-[32px] items-center"
         >
-          <span className="text-#23262A font-normal mr-[54px] ">
+          <span className="text-#23262A font-normal mr-[54px] hover:animate-pulse ">
             Edit profile
           </span>
           <EditIcon className="w-[12px] h-[12px]  " />
