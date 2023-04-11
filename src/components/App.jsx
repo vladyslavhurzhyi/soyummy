@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
 import { useSelector, useDispatch } from 'react-redux';
-import { useAuth } from 'utils/hooks';
+// import { useAuth } from 'utils/hooks';
 
 import { PrivateRoute, PublicRoute } from 'service/routes';
 import Register from 'pages/RegisterPage';
@@ -23,13 +23,10 @@ import { ErrorPage } from './ErrorComponent/ErrorComponent';
 
 export const App = () => {
   const token = useSelector(getAccessToken);
-
   const dispatcher = useDispatch();
 
-  useEffect(() => {
-    if (token === null) return;
-    dispatcher(current());
-  }, [dispatcher, token]);
+  dispatcher(current());
+  if (token === null) return;
 
   return (
     <>
