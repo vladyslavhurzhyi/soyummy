@@ -82,6 +82,8 @@ export const authSlice = createSlice({
       .addCase(signUp.rejected, rejected)
       .addCase(signIn.rejected, rejected)
       .addCase(signInWithGoogle.rejected, rejected)
-      .addCase(current.rejected, rejected, () => ({ ...initialState })),
+      .addCase(current.rejected, state => {
+        state.isRefreshing = false;
+      }),
 });
 export default authSlice.reducer;

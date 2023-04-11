@@ -20,7 +20,13 @@ export const FavoriteList = () => {
   const error = useSelector(selectFavError);
   const isLoading = useSelector(selectFavIsLoading);
   const dispatch = useDispatch();
-
+  const totalPages = Math.ceil(Number(total) / Number(per_page));
+  const isEmptyPage = current_page > totalPages;
+  useEffect(() => {
+    if (isEmptyPage) {
+      setPaginationPage(totalPages);
+    }
+  }, [isEmptyPage, totalPages]);
   useEffect(() => {
     dispatch(getFavoriteRecipes(paginationPage));
   }, [dispatch, paginationPage]);
