@@ -44,7 +44,7 @@ export const SubscribeForm = () => {
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row lg:flex-col ">
                 {/* w-[204px] md:w-[442px] lg:w-[338px]  */}
                 <div className="relative md:mr-[12px] lg:mr-0">
-                    <div className="absolute top-[13px] md:top-[17px] lg:top-[21.5px] left-[14px] md:left-[15px] lg:left-[15.5px]">
+                    <div className="absolute top-[13px] md:top-[17px] xl:top-[21.5px] left-[14px] md:left-[15px] lg:left-[15.5px]">
                         <SvgMail className="w-[16px] h-[12px] md:w-[20px] md:h-[16px]" />
                     </div>
                     <input type="email" name="email" id="" placeholder="Enter your email address" value={email} 
@@ -53,7 +53,7 @@ export const SubscribeForm = () => {
                         style={{
                             backgroundColor: 'inherit', borderRadius: 6, color: '#ffffff',
                         }}
-                        className="md:w-[260px] lg:w-full mb-[16px] md:mb-0 lg:mb-[16px] py-[11.5px] md:py-[14.5px] lg:py-[17.5px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] w-full"
+                        className="md:w-[260px] lg:w-full mb-[16px] md:mb-0 lg:mb-[16px] py-[11.5px] md:py-[14.5px] xl:py-[17.5px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] w-full"
                     />
                 </div>
                 <Button cssClass="subscribe-btn" text="Subcribe" type='submit' className='bg-accentMain dark:bg-accentDark'></Button>
