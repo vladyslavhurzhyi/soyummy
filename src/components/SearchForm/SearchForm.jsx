@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
+import { toast } from 'react-toastify';
 
 export const SearchForm = () => {
   const [searchValue, setInputValue] = useState('');
   const [, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   function handleInputChange(event) {
     setInputValue(event.target.value);
@@ -14,13 +16,14 @@ export const SearchForm = () => {
     e.preventDefault();
     const query = searchValue.toLowerCase();
     if (query === '') {
-      alert('enter something to find');
+      toast.error(`Enter your query`, {
+        position: 'top-center',
+      });
       setSearchParams();
       return;
     }
-
-    console.log(query);
     setSearchParams({ query });
+    return navigate(`/search?query=${query}`, { replace: true });
   }
 
   return (
@@ -34,6 +37,7 @@ export const SearchForm = () => {
           value={searchValue}
           onChange={handleInputChange}
           className="text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] bg-white dark:bg-accentDarker"
+          placeholder="Beef |"
         />
         <CurveBtn
           type="submit"

@@ -10,7 +10,7 @@ import { selectQueryType } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
 
-export const Search = () => {
+const Search = () => {
   const [searchParams] = useSearchParams();
   const queryType = useSelector(selectQueryType);
   const dispatch = useDispatch();
@@ -41,6 +41,8 @@ export const Search = () => {
     </main>
   );
 };
+
+export default Search;
 
 // const [recipes, setRecipes] = useState(null);
 // const [searchParams, setSearchParams] = useSearchParams();

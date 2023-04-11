@@ -9,6 +9,7 @@ import myRecipesReducer from './myRecipes/myRecipesRecipesSlice';
 import ingredientsReducer from './ingredients/ingredientsSlice';
 import { searchReducer } from './search/searchSlice';
 import categoriesReducer from './categories/categoriesSlice';
+import subscribeReducer from './subscribe/subscribeSlice'
 
 import {
   persistStore,
@@ -40,6 +41,7 @@ export const store = configureStore({
     ingredients: ingredientsReducer,
     search: searchReducer,
     categories: categoriesReducer,
+    subscribe: subscribeReducer,
   },
 
   middleware: getDefaultMiddleware =>
