@@ -139,6 +139,28 @@ select:focus ~ label {
   left: 0px;
 }
 
+/* Reg & SignIn Form */
+
+.formWrapSection {
+  @apply w-screen h-screen flex-col items-center justify-center bg-gradientStop;
+}
+
+.inputField {
+  @apply rounded-lg  block w-full mt-6 px-3 pl-8 border border-[pink-500] bg-transparent placeholder-white  text-whiteText rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm;
+}
+.inputSVG {
+  @apply absolute top-2.5 left-2.5  transform w-4 h-4;
+}
+
+.svgWrap {
+  @apply mx-auto h-96 w-96;
+}
+
+.foraWrap {
+  @apply p-12  bg-accentHalfDark rounded-3xl mx-auto max-w-md w-full space-y-8;
+}
+/*  */
+
 .currentPage {
   @apply z-10 px-[10px] py-[6px] mx-3  leading-tight text-accentDark  rounded-full bg-[#EBF3D4] hover:cursor-not-allowed dark:border-gray-700 dark:bg-gray-700 dark:text-white;
 }
