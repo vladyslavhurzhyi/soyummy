@@ -44,7 +44,7 @@ export const PreviewCategories = () => {
               <p className="font-semibold leading-7 text-[28px] md:text-[44px] md:leading-[44px] tracking-tight text-mainText capitalize mb-10 dark:text-whiteText">
                 {category}
               </p>
-              <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3">
+              <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
                   <div
                     key={_id}
@@ -56,7 +56,7 @@ export const PreviewCategories = () => {
                         alt={title}
                         className="h-[323px] w-full rounded-lg"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[307px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[250px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}
                       </p>
                     </NavLink>

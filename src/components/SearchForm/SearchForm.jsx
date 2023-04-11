@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
-
 export const SearchForm = () => {
   const [searchValue, setInputValue] = useState('');
   const [, setSearchParams] = useSearchParams();
 
-
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,7 +21,6 @@ export const SearchForm = () => {
 
     console.log(query);
     setSearchParams({ query });
-
   }
 
   return (
@@ -37,7 +33,7 @@ export const SearchForm = () => {
           type="text"
           value={searchValue}
           onChange={handleInputChange}
-          className="text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] bg-transparent"
+          className="text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] bg-white dark:bg-accentDarker"
         />
         <CurveBtn
           type="submit"
