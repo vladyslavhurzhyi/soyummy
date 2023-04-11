@@ -46,14 +46,16 @@ export const UserPanel = () => {
       <div className="flex-grow-1 flex justify-end">
         <div
           onClick={onUserBtnClick}
-          className="flex items-center cursor-pointer font-semibold text-sm md:text-base mr-4 md:mr-8"
+          className="flex items-center cursor-pointer mr-7 md:mr-14"
         >
-          <div className="px-4">{name}</div>
           <img
             src={avatarUrl}
             alt={`User avatar of ${name}`}
-            style={{ width: 50, height: 50, borderRadius: '50%' }}
+            className="w-[34px] h-[34px] md:w-[44px] md:h-[44px] rounded-full object-cover "
           />
+          <p className="ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText text-sm md:text-base">
+            {name}
+          </p>
         </div>
         <UserInfoModal
           isOpen={userInfoModal}

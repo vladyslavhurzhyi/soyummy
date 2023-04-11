@@ -2,7 +2,7 @@ import { AuthNav } from '../components/AuthNav/AuthNav';
 
 const WelcomPage = () => {
   return (
-    <section className="  bg-hero  h-screen  text-center gap-4 bg-cover bg-center bg-no-repeat ">
+    <section className="  bg-hero w-screen  text-center gap-4 bg-cover bg-center bg-no-repeat ">
       <div className=" container px-9 pt-72 pb-64 max-w-7xl mx-auto text-center">
         <div className=" p-3 rounded-xl	 justify-center w-12 m-auto bg-lime-400">
           {' '}

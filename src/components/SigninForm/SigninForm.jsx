@@ -2,65 +2,124 @@ import { useDispatch } from 'react-redux';
 import { signIn } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Svg } from '../../images/svg/OrderFoodPana.svg';
+import { useFormik } from 'formik';
+import { registerValidationSchema } from 'utils/authValidationSchema/authValidationSchema';
 
 const SigninForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      signIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   const form = e.currentTarget;
+  //   dispatch(
+  //     signIn({
+  //       email: form.elements.email.value,
+  //       password: form.elements.password.value,
+  //     })
+  //   );
+  //   form.reset();
+  // };
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
+    validationSchema: registerValidationSchema,
+    onSubmit: values => {
+      dispatch(signIn(values));
+      formik.resetForm();
+    },
+  });
 
   return (
-    <div className=" w-full h-full flex-col items-center justify-center bg-gray-600  ">
-      {/* <div className=" max-w-lg flex items-center justify-center lg:grid gap-x-8 gap-y-4 grid-cols-2 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"> */}
-      <div className=" mx-auto h-96 w-96 ">
+    <section className=" formWrapSection">
+      <div className=" svgWrap ">
         <Svg />
       </div>
-      {/* <div className=" p-12 h-449px w-500px bg-accentHalfDark rounded-3xl border-ra mx-auto max-w-md w-full space-y-8"> */}
       <div>
-        <form
-          className="p-12 h-449px w-500px bg-accentHalfDark rounded-3xl mx-auto max-w-md w-full shadow-sm-black space-y-8"
-          onSubmit={handleSubmit}
-        >
+        <form className="foraWrap" onSubmit={formik.handleSubmit}>
           <h2 className=" pl-2 text-3xl font-extrabold text-whiteText">
             Sign in
           </h2>
-          {/* <input type="hidden" name="remember" value="true" /> */}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email" className="mb-3">
+              <label className=" relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="white"
+                  className="inputSVG"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"
+                  />
+                </svg>
+
                 <input
                   id="email"
                   name="email"
                   type="email"
                   autoComplete="email"
                   required
-                  // className="appearance-none rounded-none relative block w-full px-3 py-2 border border-white placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  className=" rounded-lg  block w-full mb-6 px-3 py-2 border border-white bg-accentHalfDark placeholder-white text-whiteText rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className={`inputField ${
+                    formik.errors.email && formik.touched.email
+                      ? 'border-red-600'
+                      : 'border-gray-300'
+                  }`}
                   placeholder="Email"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
                 />
               </label>
+              {formik.errors.email && formik.touched.email && (
+                <p className="text-red-500 text-xs italic">
+                  {formik.errors.email}
+                </p>
+              )}
             </div>
-            <div className="mb-3">
-              <label htmlFor="password">
+            <div className="relative">
+              <label className=" relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="white"
+                  className="inputSVG"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                    clipRule="evenodd"
+                  />
+                </svg>
                 <input
                   id="password"
                   name="password"
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="rounded-lg  block w-full mb-6 px-3 py-2 border border-white bg-accentHalfDark placeholder-white text-whiteText rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className={` ${
+                    formik.errors.password && formik.touched.password
+                      ? 'border-red-600'
+                      : 'border-gray-300'
+                  } inputField `}
                   placeholder="Password"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.password}
                 />
               </label>
+              {formik.errors.password && formik.touched.password && (
+                <p className="text-red-500 text-xs italic">
+                  {formik.errors.password}
+                </p>
+              )}
             </div>
           </div>
 
@@ -76,14 +135,14 @@ const SigninForm = () => {
         <div className="flex justify-center">
           {' '}
           <NavLink
-            className="  mr-auto text-white self-center underline text-base  mt-18"
+            className=" text-center mt-4 text-white self-center underline text-base  "
             to="/register"
           >
             Registration
           </NavLink>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
