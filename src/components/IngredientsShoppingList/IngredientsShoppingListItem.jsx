@@ -1,5 +1,6 @@
 import { Reorder } from 'framer-motion';
 import { ReactComponent as Svg } from '../../images/svg/trash.svg';
+import { Loader } from 'components/Loader/Loader';
 
 export const IngredientsShoppingListItem = ({
   id,
@@ -11,6 +12,7 @@ export const IngredientsShoppingListItem = ({
   idx,
   arr,
   handleDeleteItem,
+  loading,
 }) => {
   return (
     <Reorder.Item
@@ -44,7 +46,11 @@ export const IngredientsShoppingListItem = ({
         className="ml-[46px] mr-5 md:mr-12 md:ml-28 xl:ml-44  hover:animate-pulse"
       >
         <div className="divIconTrash dark:bg-transparent dark:hover:bg-accentHalfDark">
-          <Svg className="stroke-black dark:stroke-white" />
+          {loading ? (
+            <Loader />
+          ) : (
+            <Svg className="stroke-black dark:stroke-white" />
+          )}
         </div>
       </button>
     </Reorder.Item>

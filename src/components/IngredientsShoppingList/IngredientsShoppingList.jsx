@@ -15,10 +15,10 @@ import {
 } from 'redux/shoppingList/shoppingListSelector';
 import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
 import { ErrorPage } from 'components/ErrorPage/ErrorPage';
-import { Loader } from 'components/Loader/Loader';
+// import { Loader } from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -27,11 +27,11 @@ export const IngredientsShoppingList = () => {
   const error = useSelector(selectShoppingListIsError);
 
   useEffect(() => {
-    if (list.length <= 0) {
+    if (list.length <= 0 && data === null) {
       dispatch(fetchShoppingList());
     }
     setData(list);
-  }, [dispatch, list]);
+  }, [data, dispatch, list]);
 
   const handleDeleteItem = (id, recipeId) => {
     console.log(id);
@@ -44,7 +44,7 @@ export const IngredientsShoppingList = () => {
 
   return (
     <>
-      {data.length > 0 ? (
+      {data?.length > 0 ? (
         <>
           <motion.div
             initial={{
@@ -69,30 +69,31 @@ export const IngredientsShoppingList = () => {
               Remove
             </h3>
           </motion.div>
-          {loading ? (
+          {/* {loading ? (
             <div className="mx-auto flex items-center justify-center h-64">
               <Loader />
-            </div>
-          ) : (
-            <Reorder.Group className="mt-2" values={data} onReorder={setData}>
-              {data?.map(
-                ({ id, thb, ttl, amount, measure, recipeId }, idx, arr) => (
-                  <IngredientsShoppingListItem
-                    key={id}
-                    id={id}
-                    thb={thb}
-                    ttl={ttl}
-                    amount={amount}
-                    measure={measure}
-                    recipeId={recipeId}
-                    idx={idx}
-                    arr={arr}
-                    handleDeleteItem={handleDeleteItem}
-                  />
-                )
-              )}
-            </Reorder.Group>
-          )}
+            </div> */}
+          {/* ) : ( */}
+          <Reorder.Group className="mt-2" values={data} onReorder={setData}>
+            {data?.map(
+              ({ id, thb, ttl, amount, measure, recipeId }, idx, arr) => (
+                <IngredientsShoppingListItem
+                  key={id}
+                  id={id}
+                  thb={thb}
+                  ttl={ttl}
+                  amount={amount}
+                  measure={measure}
+                  recipeId={recipeId}
+                  idx={idx}
+                  arr={arr}
+                  loading={loading}
+                  handleDeleteItem={handleDeleteItem}
+                />
+              )
+            )}
+          </Reorder.Group>
+          {/* )} */}
         </>
       ) : (
         <EmptyShoppingList />
