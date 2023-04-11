@@ -12,7 +12,6 @@ import {
   selectError,
   selectIsLoading,
   selectRecipeById,
-  selectRecipes,
 } from 'redux/recipes/recipesSelectors';
 
 const RecipePage = () => {

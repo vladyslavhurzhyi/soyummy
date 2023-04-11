@@ -1,8 +1,5 @@
 import { useSelector } from 'react-redux';
-import {
-  selectRecipeById,
-  selectRecipes,
-} from 'redux/recipes/recipesSelectors';
+import { selectRecipeById } from 'redux/recipes/recipesSelectors';
 import placeholder from 'images/dishes_placeholder.jpg';
 
 export const RecipePreparation = () => {
