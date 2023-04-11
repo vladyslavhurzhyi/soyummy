@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
 import { Nav } from './Nav';
+import { SubscribeForm } from './SubscribeForm';
 
 export const Footer = () => {
   return (
@@ -15,51 +16,24 @@ export const Footer = () => {
       }}
     >
       <div
-        className="blur-sm absolute left-0 -top-[210px] xl:-top-[425px]"
-        style={{
-          // position: 'absolute',
-          // left: 0,
-          zIndex: -100,
-          // top: -425,
-        }}
-      >
+        className="blur-sm absolute left-0 -top-[210px] lg:-top-[425px] z-[-100]">
         <img
           src={require('./images/bgBottomLeftImage.png')}
           alt="leafs"
-          className="w-[256px] h-[392px] xl:w-[558px] xl:h-[852px]"
+          className="w-[256px] h-[392px] lg:w-[558px] lg:h-[852px]"
         />
       </div>
       <div
-        className="px-[85px] md:pl-[32px] md:pr-[94px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] flex justify-center items-center flex-col"
+        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] lg:px-[60px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] lg:pt-[64px] lg:pb-[50px] "
         style={{
-          backgroundColor: '#22252A',
-          // display: 'flex',
-          // alignItems: 'center',
-          // justifyContent: 'center',
-          // flexDirection: 'column',
-          // paddingTop: 64,
-          // paddingBottom: 50,
           marginLeft: 'auto',
           marginRight: 'auto',
-          // paddingHorizontal: 100,
-          // position: 'relative',
-          // overflow: 'visible',
-          // zIndex: 1000,
         }}
       >
-        <div
-          className="flex flex-col xl:flex-row md:items-start md:justify-center xl:justify-between xl:w-full"
-          style={
-            {
-              // display: 'flex',
-              // alignItems: 'flex-start',
-              // justifyContent: 'space-between',
-            }
-          }
-        >
-          <div className="flex md:justify-between">
+        <div className="flex flex-col lg:flex-row lg:items-start md:justify-center lg:justify-between w-full max-w-[1240px]">
+          <div className="flex justify-center">
             <div
-              className="flex flex-col mr-0 xl:mr-[159px]"
+              className="flex flex-col mr-0 lg:mr-[0px]"
               style={{
                 // display: 'flex',
                 alignItems: 'flex-start',
@@ -68,34 +42,23 @@ export const Footer = () => {
                 // marginRight: 159,
               }}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 40,
-                }}
-              >
+              <div className='flex items-center justify-center mb-[40px]'>
                 <Logo
                   cssClassIcon="iconLogoFooterMob"
                   cssClassDiv="divIconFooterMob"
                 />
-
                 <h2
-                  className="text-[18px]/[18px] md:text-[28px]/[28px]"
+                  className="text-[18px]/[18px] md:text-[28px]/[28px] ml-[12px]"
                   style={{
                     fontFamily: 'Poppins',
                     fontWeight: 700,
-                    // fontSize: 28,
                     color: 'white',
-                    marginLeft: 12,
                   }}
                 >
                   So Yummy
                 </h2>
               </div>
-              <ul
-                className="hidden md:block xl:block"
+              <ul className="hidden md:block lg:block lg:min-w-[340px] lg:max-w-[360px] xl:min-w-[380px] xl:max-w-[420px]"
                 style={{
                   fontFamily: 'Poppins',
                   // fontWeight: 400,
@@ -106,46 +69,40 @@ export const Footer = () => {
                 }}
               >
                 <li>
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[18px]">
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
                     Database of recipes that can be replenished
                   </p>
                 </li>
                 <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[18px]">
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
                     Flexible search for desired and unwanted ingredients
                   </p>
                 </li>
                 <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[18px]">
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
                     Ability to add your own recipes with photos
                   </p>
                 </li>
                 <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[18px]">
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
                     Convenient and easy to use
                   </p>
                 </li>
               </ul>
             </div>
-            <div className="hidden md:block xl:hidden md:ml-[173px]">
+            <div className="hidden md:block lg:hidden md:ml-[173px]">
               <Nav />
             </div>
           </div>
-          {/* <div className='flex justify-self-center'> */}
-          <Navigation />
-          {/* </div> */}
+          <div className='flex justify-center lg:hidden w-full md:mt-[72px]'>
+            <Navigation />
+          </div>
+          <div className='hidden lg:flex'><Navigation /></div>
+          <div className='hidden lg:flex'><SubscribeForm/></div>
         </div>
       </div>
       <div
-        className="pt-[28px] pb-[28px] xl:py-[50px]"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
+        className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] lg:py-[50px]">
         <p
           style={{
             fontFamily: 'Poppins',
@@ -157,32 +114,24 @@ export const Footer = () => {
         >
           © 2023 All Rights Reserved.
         </p>
-        <NavLink
+        <NavLink className='ml-[14px] md:ml-[28px] lg:ml-[40px]'
           style={{
             fontFamily: 'Poppins',
             fontWeight: 400,
             fontSize: 14,
             color: '#22252A',
             opacity: 0.5,
-            marginLeft: 40,
+            // marginLeft: 40,
           }}
         >
           Terms of Service
         </NavLink>
         <div
-          className="blur-sm absolute right-0 bottom-0"
-          style={{
-            // position: 'absolute',
-            // right: 0,
-            zIndex: 100,
-            // bottom: 0,
-          }}
-        >
+          className="blur-sm absolute right-0 bottom-0 z-100">
           <img
             src={require('./images/bgBottomRightImage.png')}
             alt="leafs"
-            className="w-[180px] h-[172px] xl:w-[438px] xl:h-[474px]"
-            // width={438} height={474}
+            className="w-[180px] h-[172px] lg:w-[438px] lg:h-[474px]"
           />
         </div>
       </div>

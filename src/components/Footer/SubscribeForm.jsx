@@ -1,10 +1,29 @@
 import React from "react";
+import { useDispatch } from 'react-redux';
+import { subscribe } from "redux/subscribe/subscribeOperations";
 import { Button } from "components/Button/Button";
+import { ReactComponent as SvgMail } from './images/mailIcon.svg';
+import { emailRegExp } from "utils/regExp/regExp";
 
 export const SubscribeForm = () => {
+    const dispatch = useDispatch();
+    const [email, setEmail] = React.useState('');
+
+    const isEmailValid = email.match(emailRegExp);
+
+    const handleInputChange = (event) => {
+        setEmail(event.target.value);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isEmailValid) {
+            dispatch(subscribe(email));
+            setEmail('');
+        }
+    }
     return (
-        <div className="ml-0 md:ml-0 xl:ml-[235px] justify-center">
-            <div className="hidden md:hidden xl:block"
+        <div className="ml-0 justify-center justify-self-center">
+            <div className="hidden md:hidden lg:block lg:mb-[28px]"
                 style={{ width: 339 }}>
                 <h3 style={{
                     fontFamily: 'Poppins',
@@ -22,21 +41,23 @@ export const SubscribeForm = () => {
                     marginTop: 14,
                 }}>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</p>
             </div>
-            <div className="flex flex-col md:flex-row xl:flex-col mt-[32px] xl:mt-[28px] w-[204px] md:w-[442px] xl:w-[338px] "
-                // style={{ marginTop: 28 }}
-            >
-                <input type="email" name="email" id="" placeholder="Enter your email address"
-                    placeholdertextcolor='#ffffff'
-                    style={{
-                        backgroundColor: 'inherit', borderRadius: 6,
-                        // width: '100%',
-                        color: '#ffffff',
-                        //   fontSize: 18,
-                    }}
-                    className="mb-[16px] md:mb-0 xl:mb-[16px] py-[11.5px] md:py-[14.5px] xl:py-[17.5px] px-[42px] text-[10px]/[15px] md:text-[14px]/[21px] md:mr-[14px] xl:mr-0 w-full"
-                />
-                <Button cssClass="subscribe-btn" text="Subcribe"></Button>
-            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col md:flex-row lg:flex-col ">
+                {/* w-[204px] md:w-[442px] lg:w-[338px]  */}
+                <div className="relative md:mr-[12px] lg:mr-0">
+                    <div className="absolute top-[13px] md:top-[17px] lg:top-[21.5px] left-[14px] md:left-[15px] lg:left-[15.5px]">
+                        <SvgMail className="w-[16px] h-[12px] md:w-[20px] md:h-[16px]" />
+                    </div>
+                    <input type="email" name="email" id="" placeholder="Enter your email address" value={email} 
+                        onChange={handleInputChange}
+                        placeholdertextcolor='#ffffff'
+                        style={{
+                            backgroundColor: 'inherit', borderRadius: 6, color: '#ffffff',
+                        }}
+                        className="md:w-[260px] lg:w-full mb-[16px] md:mb-0 lg:mb-[16px] py-[11.5px] md:py-[14.5px] lg:py-[17.5px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] w-full"
+                    />
+                </div>
+                <Button cssClass="subscribe-btn" text="Subcribe" type='submit' className='bg-accentMain dark:bg-accentDark'></Button>
+            </form>
         </div>
     )
 }
