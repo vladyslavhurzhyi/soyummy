@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
+import { toast } from 'react-toastify';
 
 export const SearchForm = () => {
   const [searchValue, setInputValue] = useState('');
   const [, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   function handleInputChange(event) {
     setInputValue(event.target.value);
@@ -14,13 +16,12 @@ export const SearchForm = () => {
     e.preventDefault();
     const query = searchValue.toLowerCase();
     if (query === '') {
-      alert('enter something to find');
+      toast('enter something to find');
       setSearchParams();
       return;
     }
-
-    console.log(query);
     setSearchParams({ query });
+    return navigate(`/search?query=${query}`, { replace: true });
   }
 
   return (
