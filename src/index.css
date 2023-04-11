@@ -20,6 +20,10 @@ body {
   @apply font-main font-semibold text-accentMain text-customBase md:text-customXxl pt-[114px] mb-[18px] md:pt-[136px] md:mb-6 xl:pt-[164px];
 }
 
+.main-title-empty {
+  @apply pt-[114px] mb-[18px] md:pt-[136px] md:mb-6 xl:pt-[164px];
+}
+
 .main-btn {
   @apply py-5 px-52px ml-2  rounded-tr-3xl rounded-br-lg rounded-bl-3xl rounded-tl-lg border font-main text-zinc-50 text-base bg-accentMain hover:bg-accentDark  focus:ring;
 }
