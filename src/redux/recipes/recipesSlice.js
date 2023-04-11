@@ -7,6 +7,7 @@ import {
 } from './recipesOperations';
 
 const initialState = {
+  recipeById: {},
   items: [],
   isLoading: false,
   error: null,
@@ -29,7 +30,7 @@ export const recipesSlice = createSlice({
       .addCase(fetchRecipeById.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload.data;
+        state.recipeById = action.payload.data;
       })
       .addCase(fetchPopular.fulfilled, (state, action) => {
         state.isLoading = false;

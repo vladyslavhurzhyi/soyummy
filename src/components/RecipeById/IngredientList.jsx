@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import {
+  selectRecipeById,
+  selectRecipes,
+} from 'redux/recipes/recipesSelectors';
 import placeholder from 'images/ingred_placeholder.jpg';
 import {
   addShoppingList,
@@ -9,7 +12,7 @@ import { selectShoppingListIsError } from 'redux/shoppingList/shoppingListSelect
 
 export const IngredientList = () => {
   const dispatch = useDispatch();
-  const recipes = useSelector(selectRecipes);
+  const recipes = useSelector(selectRecipeById);
   const error = useSelector(selectShoppingListIsError);
 
   const { _id: recipeId, ingredients } = recipes;

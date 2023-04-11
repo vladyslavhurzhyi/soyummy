@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import {
+  selectRecipeById,
+  selectRecipes,
+} from 'redux/recipes/recipesSelectors';
 import placeholder from 'images/dishes_placeholder.jpg';
 
 export const RecipePreparation = () => {
-  const recipes = useSelector(selectRecipes);
+  const recipes = useSelector(selectRecipeById);
   const { preview, instructions } = recipes;
 
   const steps = instructions.split('\r\n');

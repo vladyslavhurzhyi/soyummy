@@ -11,11 +11,12 @@ import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
   selectError,
   selectIsLoading,
+  selectRecipeById,
   selectRecipes,
 } from 'redux/recipes/recipesSelectors';
 
 const RecipePage = () => {
-  const recipes = useSelector(selectRecipes);
+  const recipes = useSelector(selectRecipeById);
   const favorites = useSelector(selectFavRecipes);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
