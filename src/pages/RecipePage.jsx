@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
+import { selectFavRecipes } from 'redux/favoriteRecipes/favoriteRecipesSelectors';
 import { fetchRecipeById } from 'redux/recipes/recipesOperations';
 import {
   selectError,
@@ -15,6 +16,7 @@ import {
 
 const RecipePage = () => {
   const recipes = useSelector(selectRecipes);
+  const favorites = useSelector(selectFavRecipes);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -28,7 +30,7 @@ const RecipePage = () => {
 
   return (
     <main>
-      {recipes._id && (
+      {recipes._id && favorites.data && (
         <>
           <RecipePageHero />
           <RecipeIngredientsList />
