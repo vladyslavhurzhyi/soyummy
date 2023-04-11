@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
@@ -6,20 +6,23 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from 'utils/hooks';
 
 import { PrivateRoute, PublicRoute } from 'service/routes';
-import Register from 'pages/RegisterPage';
-import Signin from 'pages/SigninPage';
-import MainPage from 'pages/MainPage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import AddRecipe from 'pages/AddRecipe';
-import FavoritesPage from 'pages/FavoritesPage';
-import WellcomPage from 'pages/WellcomPage';
-import ShoppingListPage from 'pages/ShoppingListPage';
-import MyRecipesPage from 'pages/MyRecipesPage';
-import { Search } from 'pages/Search';
-import RecipePage from 'pages/RecipePage';
-import CategoriesPage from 'pages/CategoriesPage';
-import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
-import ErrorPage from 'pages/ErrorPage';
+
+const Register = lazy(() => import('pages/RegisterPage'));
+const Signin = lazy(() => import('pages/SigninPage'));
+const MainPage = lazy(() => import('pages/MainPage'));
+const AddRecipe = lazy(() => import('pages/AddRecipe'));
+const FavoritesPage = lazy(() => import('pages/FavoritesPage'));
+const WellcomPage = lazy(() => import('pages/WellcomPage'));
+const ShoppingListPage = lazy(() => import('pages/ShoppingListPage'));
+const MyRecipesPage = lazy(() => import('pages/MyRecipesPage'));
+const SearchPage = lazy(() => import('pages/Search'));
+const RecipePage = lazy(() => import('pages/RecipePage'));
+const CategoriesPage = lazy(() => import('pages/CategoriesPage'));
+const CategoriesRecipesList = lazy(() =>
+  import('./CategoriesRecipeList/CategoriesRecipeList')
+);
+const ErrorPage = lazy(() => import('pages/ErrorPage'));
 
 export const App = () => {
   // const token = useSelector(getAccessToken);
@@ -101,7 +104,9 @@ export const App = () => {
           />
           <Route
             path="/search"
-            element={<PrivateRoute component={Search} redirectTo="/signin" />}
+            element={
+              <PrivateRoute component={SearchPage} redirectTo="/signin" />
+            }
           />
           <Route
             path="/recipes/:recipeId"
