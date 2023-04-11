@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button } from "components/Button/Button";
 import { ReactComponent as SvgMail } from './images/mailIcon.svg';
+import { emailRegExp } from "utils/regExp/regExp";
 
 export const SubscribeForm = () => {
+    const [email, setEmail] = useState('');
+    const isEmailValid = email.match(emailRegExp);
     return (
         <div className="ml-0 justify-center justify-self-center">
             <div className="hidden md:hidden lg:block lg:mb-[28px]"
@@ -29,7 +32,8 @@ export const SubscribeForm = () => {
                     <div className="absolute top-[13px] md:top-[17px] lg:top-[21.5px] left-[14px] md:left-[15px] lg:left-[15.5px]">
                         <SvgMail className="w-[16px] h-[12px] md:w-[20px] md:h-[16px]" />
                     </div>
-                    <input type="email" name="email" id="" placeholder="Enter your email address"
+                    <input type="email" name="email" id="" placeholder="Enter your email address" value={email} 
+                        onChange={(text) => setEmail(text)}
                         placeholdertextcolor='#ffffff'
                         style={{
                             backgroundColor: 'inherit', borderRadius: 6, color: '#ffffff',
