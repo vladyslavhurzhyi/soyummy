@@ -36,12 +36,12 @@ body {
 }
 
 .logout-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm
-   rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-zinc-50  bg-accentMain hover:bg-accentDark focus:ring sm:leading-4 md:leading-4 xl:leading-4;
+  @apply max-h-[54px] flex justify-center items-center transition duration-300 text-sm
+   rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-zinc-50  bg-accentMain hover:bg-accentDark focus:ring sm:leading-4 md:leading-4 xl:leading-4 whitespace-nowrap;
 }
 
 .cancel-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm 
+  @apply max-h-[54px] flex justify-center items-center transition duration-300 text-sm 
    rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-accentDark bg-accentGray hover:bg-transparent hover:outline hover:outline-1 hover:outline-accentDark m-2 focus:ring sm:leading-4 md:leading-4 xl:leading-4;
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .addblack-btn {
-  @apply transition duration-300 px-[48px] py-[12px] xl:px-[64px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6;
+  @apply transition duration-300  px-[48px] py-[12px] xl:px-[64px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6;
 }
 
 .addbgreen-btn {
@@ -76,11 +76,11 @@ body {
 }
 
 .seerecipe-btn {
-  @apply transition duration-300 px-[48px] py-[12px] xl:px-[38px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6 whitespace-nowrap;
+  @apply transition duration-300 text-customRecipesTime px-[14px] py-[6px] md:px-[32px] md:py-[12px]  xl:px-[38px] xl:py-[14px] rounded-tr-full font-main text-zinc-50  md:text-sm xl:text-base bg-accentDark hover:bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6 whitespace-nowrap;
 }
 
 .seerecipegreen-btn {
-  @apply transition duration-300 px-[48px] py-[12px] xl:px-[38px] xl:py-[14px] rounded-tr-full font-main text-zinc-50 text-sm md:text-base hover:bg-accentDark bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6 whitespace-nowrap;
+  @apply transition duration-300 text-customRecipesTime px-[14px] py-[6px] md:px-[32px] md:py-[12px]  xl:px-[38px] xl:py-[14px] rounded-tr-full font-main text-zinc-50  md:text-sm xl:text-base hover:bg-accentDark bg-accentMain focus:ring sm:leading-6 md:leading-6 xl:leading-6 whitespace-nowrap;
 }
 
 .divIconLogo {
@@ -98,7 +98,7 @@ body {
 }
 
 .divIconTrash {
-  @apply transition duration-300  stroke-accentDark dark:stroke-white  hover:stroke-white  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px]   xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-xl hover:bg-accentMain  dark:bg-transparent dark:hover:bg-accentDark;
+  @apply transition duration-300  rounded-[4px]  stroke-accentDark dark:stroke-white  hover:stroke-white  flex items-center justify-center w-[24px] h-[24px] md:w-[38px] md:h-[38px] md:rounded   xl:w-11 xl:h-11 bg-[#EBF3D4] xl:rounded-xl hover:bg-accentMain  dark:bg-transparent dark:hover:bg-accentDark hover:animate-pulse;
 }
 
 .iconTrash {
@@ -141,6 +141,10 @@ select:focus ~ label {
 
 .currentPage {
   @apply z-10 px-[10px] py-[6px] mx-3  leading-tight text-accentDark  rounded-full bg-[#EBF3D4] hover:cursor-not-allowed dark:border-gray-700 dark:bg-gray-700 dark:text-white;
+}
+
+.loadingPagination {
+  @apply animate-bounce;
 }
 
 .paginationPage {

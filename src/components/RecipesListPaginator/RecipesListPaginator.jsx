@@ -7,6 +7,7 @@ export const RecipesListPaginator = ({
   handlePaginationClick,
   pageIncrement,
   pageDecrement,
+  isLoading,
 }) => {
   const pageNumber = [];
   const allPage = Math.ceil(total / per_page);
@@ -25,7 +26,7 @@ export const RecipesListPaginator = ({
           <ul className="flex items-center border border-gray-300 rounded-3xl shadow-custom text-[12px] py-[14px] max-h-[55px]">
             <button
               disabled={current_page === 1 ? true : false}
-              className={`nextBtn ${
+              className={`nextBtn  ${
                 current_page === 1
                   ? 'hover:text-[#A9A9A9] cursor-not-allowed'
                   : 'hover:text-gray-700'
@@ -55,9 +56,13 @@ export const RecipesListPaginator = ({
                   onClick={handlePaginationClick}
                   key={item}
                   aria-current="page"
-                  className={
+                  className={`${
                     item === current_page ? 'currentPage' : 'paginationPage'
-                  }
+                  } ${
+                    isLoading && item === current_page
+                      ? 'loadingPagination'
+                      : ''
+                  }`}
                 >
                   {item}
                 </button>
@@ -66,7 +71,7 @@ export const RecipesListPaginator = ({
 
             <button
               disabled={current_page === allPage ? true : false}
-              className={`prevBtn ${
+              className={`prevBtn  ${
                 current_page === allPage
                   ? 'hover:text-[#A9A9A9] cursor-not-allowed'
                   : 'hover:text-gray-700'
