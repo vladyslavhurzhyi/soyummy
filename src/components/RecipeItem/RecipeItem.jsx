@@ -3,6 +3,7 @@ import { Logo } from 'components/Logo/Logo';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 
 export const RecipeItem = ({
   img,
@@ -12,10 +13,14 @@ export const RecipeItem = ({
   time,
   cssClass = 'seerecipe-btn',
   remove,
+  paginationPage,
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const deleteHandler = async () => {
+    await dispatch(remove(id));
+    await dispatch(getFavoriteRecipes(paginationPage));
+  };
   return (
     <>
       <li className="flex mx-auto mb-10 last:mb-0 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark min-w-[343px] ">
@@ -31,12 +36,7 @@ export const RecipeItem = ({
                 <h2 className="text-sm xl:text-2xl md:text-[24px]  dark:text-[#FAFAFA]">
                   {title}
                 </h2>
-                <button
-                  className="flex ml-auto "
-                  onClick={() => {
-                    dispatch(remove(id));
-                  }}
-                >
+                <button className="flex ml-auto " onClick={deleteHandler}>
                   <Logo
                     trash
                     cssClassIcon="iconTrash"

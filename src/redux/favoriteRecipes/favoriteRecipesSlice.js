@@ -21,9 +21,9 @@ export const favoriteRecipesSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getFavoriteRecipes.fulfilled, (state, action) => {
-        state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+        state.isLoading = false;
       })
       .addCase(addFavoriteRecipes.fulfilled, (state, action) => {
         state.isLoading = false;

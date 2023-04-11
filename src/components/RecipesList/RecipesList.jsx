@@ -1,7 +1,13 @@
 import { SkeletonRecipe } from 'components/Skeleton/Skeleton';
 import { RecipeItem } from '../RecipeItem/RecipeItem';
 
-export const RecipesList = ({ data, cssClass, removeRecipe, isLoading }) => {
+export const RecipesList = ({
+  data,
+  cssClass,
+  removeRecipe,
+  isLoading,
+  paginationPage,
+}) => {
   return (
     <>
       <div>
@@ -13,6 +19,7 @@ export const RecipesList = ({ data, cssClass, removeRecipe, isLoading }) => {
               {data.map(itemProps => {
                 return (
                   <RecipeItem
+                    paginationPage={paginationPage}
                     remove={removeRecipe}
                     key={itemProps._id}
                     id={itemProps._id}
