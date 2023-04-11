@@ -30,7 +30,7 @@ export const RecipePageHero = data => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="flex flex-col justify-between bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 md:mb-[50px] px-8 md:px-26 xl:px-96 ">
+      <div className="flex flex-col justify-between bg-recipePage bg-cover bg-center bg-no-repeat w-full h-[455px] md:h-[495px] xl:h-[493px] text-center mb-8 md:mb-[50px] px-8 md:px-26 xl:px-96 object-cover">
         <div>
           <MainPageTitle
             pageTitle={title}
