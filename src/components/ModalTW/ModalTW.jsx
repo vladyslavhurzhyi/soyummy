@@ -18,7 +18,7 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
             switch (backdrop) {
               case 'blur':
                 return (
-                  <div className="fixed inset-0 backdrop-blur-sm backdrop-filter bg-opacity-75 transition-opacity z-30" />
+                  <div className="fixed  inset-0 backdrop-blur-sm backdrop-filter bg-opacity-75 transition-opacity z-30" />
                 );
               case 'grey':
                 return (
@@ -30,8 +30,8 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
           }}
         </Transition.Child>
 
-        <div className="fixed inset-0 z-40 overflow-y-auto">
-          <div className="flex  mt-[78px] items-end justify-end p-4 text-center sm:items-center sm:p-0">
+        <div className="fixed top-[100px] right-[300px]  z-40 overflow-y-auto">
+          <div className="flex items-end  p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -41,7 +41,7 @@ const ModalTW = ({ children, isOpen = false, handleClose, backdrop }) => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative min-h-[327px] min-w-[330px] transform overflow-hidden rounded-3xl h-full bg-white text-left shadow-xl transition-all">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-3xl h-full bg-white text-left shadow-xl transition-all">
                 {children}
               </Dialog.Panel>
             </Transition.Child>
