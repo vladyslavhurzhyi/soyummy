@@ -19,7 +19,7 @@ import { Search } from 'pages/Search';
 import RecipePage from 'pages/RecipePage';
 import CategoriesPage from 'pages/CategoriesPage';
 import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
-import { ErrorPage } from './ErrorPage/ErrorPage';
+import { ErrorPage } from './ErrorComponent/ErrorComponent';
 
 export const App = () => {
   const token = useSelector(getAccessToken);

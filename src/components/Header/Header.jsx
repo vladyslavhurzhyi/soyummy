@@ -11,7 +11,7 @@ import { MobMenu } from './MobMenu';
 export const Header = () => {
   const shouldShowUser = useSelector(isLoggedIn);
   return (
-    <header className="absolute w-full z-20 px-4 py-6 md:px-9 xl:px-[100px]">
+    <header className="absolute left-0 right-0 mx-auto max-w-[1440px] w-full z-20 px-4 py-6 md:px-9 xl:px-[100px]">
       <div class="flex items-center ">
         <Logo className="" />
 
