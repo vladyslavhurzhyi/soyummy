@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
 import { ToggleButton } from 'components/ToggleButton/ToggleButton';
-import { ReactComponent as Burger } from '../../images/svg/burgerMenu.svg';
-import { ReactComponent as CloseBurger } from '../../images/svg/closeMenuIcon.svg';
 
 const activeLinkGradient =
   'text-transparent bg-clip-text bg-gradient-to-r from-black to-black via-accentMain animate-gradient-x';
@@ -20,7 +18,9 @@ export const MobMenu = () => {
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => setIsNavOpen(prev => !prev)}
           >
-            <Burger className="w-7 md:w-8 h-7 md:h-8 stroke-accentDark dark:stroke-whiteText animate-pulse" />
+            <span class="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
+            <span class="block w-8 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
+            <span class="block w-5 h-0.5 bg-accentDark dark:bg-whiteText animate-pulse"></span>
           </div>
 
           <div
@@ -31,7 +31,18 @@ export const MobMenu = () => {
             <div className="CROSS-ICON absolute w-full top-0 px-4 pt-[22px] flex items-center justify-between">
               <Logo />
               <button type="button" onClick={() => setIsNavOpen(false)}>
-                <CloseBurger className="w-8 h-8 md:w-9 md:h-9 stroke-accentDark dark:stroke-whiteText animate-pulse" />
+                <svg
+                  className="h-8 w-8 text-accentDark dark:text-whiteText"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </button>
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between gap-8 md:gap-10 font-main font-medium text-[18px] md:text-[24px] leading-[18px] md:leading-6 tracking-[-0.02em] text-accentDark dark:text-whiteText cursor-pointer">
