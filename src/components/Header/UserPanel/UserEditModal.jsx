@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { edit } from 'redux/auth/authOperations';
 import { AiOutlineUser, AiOutlineReload } from 'react-icons/ai';
 import { Button } from 'components/Button/Button';
+import { ReactComponent as Svg } from '../../../images/svg/crossSvg.svg';
 
 const UserEditModal = ({ isOpen, handleClose }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -40,19 +41,21 @@ const UserEditModal = ({ isOpen, handleClose }) => {
   const onNameInputChange = e => setName(e.target.value);
   return (
     <ModalTW isOpen={isOpen} handleClose={clearExit} backdrop="grey">
+      <div className="flex justify-end mt-6 mr-6">
+        <button
+          className="flex text-xl "
+          onClick={() => {
+            clearExit();
+          }}
+        >
+          <Svg />
+        </button>
+      </div>
       <form
-        className="bg-white rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-white rounded px-8 pt-6 pb-8 mb-4  min-w-[500px]"
         onSubmit={handleSubmit}
       >
         <div className="mb-4 flex flex-row-reverse">
-          <button
-            className="flex w-2 h-2 text-xl"
-            onClick={() => {
-              clearExit();
-            }}
-          >
-            x
-          </button>
           <label
             className="flex text-gray-700 text-sm font-bold mb-2"
             htmlFor="photo"

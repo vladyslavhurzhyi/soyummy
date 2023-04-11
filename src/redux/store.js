@@ -10,7 +10,6 @@ import ingredientsReducer from './ingredients/ingredientsSlice';
 import { searchReducer } from './search/searchSlice';
 import categoriesReducer from './categories/categoriesSlice';
 
-
 import {
   persistStore,
   FLUSH,
@@ -25,7 +24,7 @@ import {
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['accessToken'],
+  whitelist: ['accessToken', 'Login'],
 };
 
 export const persistedReducerAuth = persistReducer(persistConfig, authReducer);
@@ -41,7 +40,6 @@ export const store = configureStore({
     ingredients: ingredientsReducer,
     search: searchReducer,
     categories: categoriesReducer,
-
   },
 
   middleware: getDefaultMiddleware =>

@@ -47,6 +47,7 @@ export const FavoriteList = () => {
       {data?.length > 0 && (
         <>
           <RecipesList
+            paginationPage={paginationPage}
             removeRecipe={removeFromFavorite}
             data={data}
             isLoading={isLoading}

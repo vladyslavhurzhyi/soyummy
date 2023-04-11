@@ -48,6 +48,7 @@ export const MyRecipesList = ({ cssClass }) => {
       {data?.length > 0 && (
         <>
           <RecipesList
+            paginationPage={paginationPage}
             isLoading={isLoading}
             removeRecipe={removeMyRecipes}
             cssClass={cssClass}

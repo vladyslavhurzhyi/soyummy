@@ -30,10 +30,8 @@ export const App = () => {
     if (token === null) return;
     dispatcher(current());
   }, [dispatcher, token]);
-  const { isRefreshing } = useAuth();
-  return isRefreshing ? (
-    'Refreshing user ...'
-  ) : (
+
+  return (
     <>
       <Routes>
         <Route

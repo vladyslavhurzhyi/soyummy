@@ -14,7 +14,7 @@ export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
       {/* <div className="fixed inset-0 flex justify-center items-center bg-transparentz-50"> */}
       {/* <div className="max-w-screen-lg h- w-full relative px-4 mx-auto md:max-w-screen-xl md:px-6"> */}
       {/* <div className="absolute bg-white rounded-md border  top-16 right-4 md:top-20"> */}
-      <div className="p-4 min-w-[161px] min-h-[130px] md:min-w-[173px] md:min-h-[134px] ">
+      <div className="flex p-4 min-w-[161px] min-h-[130px] md:min-w-[173px] md:min-h-[134px] flex-col items-center">
         <button
           onClick={onEditBtnClick}
           className="flex px-4 py-2 mb-[32px] items-center"
