@@ -3,7 +3,7 @@ import { PreviewCategories } from 'components/PreviewCategories/PreviewCategorie
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ChooseYourBreakfast } from 'components/ChooseYourBreakfast/ChooseYourBreakfast';
 
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
   const navigate = useNavigate();
