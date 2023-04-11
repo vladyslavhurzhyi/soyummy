@@ -4,10 +4,10 @@ import { AddRecipeForm } from 'components/AddRecipe/AddRecipeForm';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { PopularRecipes } from 'components/PopularRecipes/PopularRecipes';
 import { fetchPopular } from 'redux/recipes/recipesOperations';
-import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import { selectNewRecipe } from 'redux/recipes/recipesSelectors';
 
 const AddRecipe = () => {
-  const popular = useSelector(selectRecipes);
+  const popular = useSelector(selectNewRecipe);
   const dispatch = useDispatch();
 
   useEffect(() => {
