@@ -1,51 +1,72 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as Glass } from './images/search-icon.svg';
+import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
+
+const activeLinkGradient =
+  'text-transparent bg-clip-text bg-gradient-to-r from-black to-black via-accentMain animate-gradient-x';
 
 export const Navigation = () => {
   return (
-    <nav className="">
-      <ul className="flex justify-center ">
-        <li>
+    <nav className="hidden xl:block ml-48">
+      <ul className="flex justify-center items-center gap-8 font-main font-medium text-[18px] xl:text-[14px] leading-[18px] xl:leading-[22px] tracking-[-0.02em] text-accentDark dark:text-whiteText">
+        <li className="hover:text-accentMain focus:text-accentMain">
           <NavLink
+            className={({ isActive }) =>
+              isActive ? activeLinkGradient : undefined
+            }
             to="/categories"
-            activeClassName="active"
-            className="mr-[30px]"
           >
             Categories
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/add" activeClassName="active" className="mr-[30px]">
+        <li className="hover:text-accentMain focus:text-accentMain">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? activeLinkGradient : undefined
+            }
+            to="/add"
+          >
             Add Recipe
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/my" activeClassName="active" className="mr-[30px]">
+        <li className="hover:text-accentMain focus:text-accentMain">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? activeLinkGradient : undefined
+            }
+            to="/my"
+          >
             My Recipes
           </NavLink>
         </li>
-        <li>
+        <li className="hover:text-accentMain focus:text-accentMain">
           <NavLink
+            className={({ isActive }) =>
+              isActive ? activeLinkGradient : undefined
+            }
             to="/favorite"
-            activeClassName="active"
-            className="mr-[30px]"
           >
             Favorites
           </NavLink>
         </li>
-        <li>
+        <li className="hover:text-accentMain focus:text-accentMain">
           <NavLink
+            className={({ isActive }) =>
+              isActive ? activeLinkGradient : undefined
+            }
             to="/shopping-list"
-            activeClassName="active"
-            className="mr-[33px]"
           >
             Shopping List
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/search" activeclassname="active " className="">
-            <Glass className="stroke-black w-5 h-5 "></Glass>
+        <li className="hover:text-accentMain focus:text-accentMain">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? 'animate-pulse' : undefined
+            }
+            to="/search"
+          >
+            <Glass className="stroke-accentDark dark:stroke-whiteText w-5 h-5 " />
           </NavLink>
         </li>
       </ul>
