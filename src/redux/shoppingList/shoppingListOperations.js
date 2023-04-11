@@ -38,8 +38,6 @@ export const addShoppingList = createAsyncThunk(
 export const deleteShoppingListItem = createAsyncThunk(
   'shoppingList/deleteShoppingList',
   async ({ id, recipeId }, thunkAPI) => {
-    console.log(id);
-    console.log(recipeId);
     const deleteItem = {
       recipeId: [...recipeId],
     };
