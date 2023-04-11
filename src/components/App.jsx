@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useAuth } from 'utils/hooks';
+import { useAuth } from 'utils/hooks';
 
 import { PrivateRoute, PublicRoute } from 'service/routes';
 import Register from 'pages/RegisterPage';
@@ -30,8 +30,10 @@ export const App = () => {
     if (token === null) return;
     dispatcher(current());
   }, [dispatcher, token]);
-
-  return (
+  const { isRefreshing } = useAuth();
+  return isRefreshing ? (
+    'Refreshing user ...'
+  ) : (
     <>
       <Routes>
         <Route
