@@ -24,9 +24,8 @@ export const Footer = () => {
         />
       </div>
       <div
-        className="flex justify-center items-center flex-col px-[85px] md:pl-[32px] md:pr-[94px] lg:px-[60px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] lg:pt-[64px] lg:pb-[50px] "
+        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] lg:px-[60px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] lg:pt-[64px] lg:pb-[50px] "
         style={{
-          backgroundColor: '#22252A',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}

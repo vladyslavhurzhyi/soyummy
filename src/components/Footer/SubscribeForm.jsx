@@ -8,7 +8,7 @@ import { emailRegExp } from "utils/regExp/regExp";
 export const SubscribeForm = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = React.useState('');
-    
+
     const isEmailValid = email.match(emailRegExp);
 
     const handleInputChange = (event) => {
@@ -19,7 +19,6 @@ export const SubscribeForm = () => {
         if (isEmailValid) {
             dispatch(subscribe(email));
             setEmail('');
-            return;
         }
     }
     return (
@@ -57,7 +56,7 @@ export const SubscribeForm = () => {
                         className="md:w-[260px] lg:w-full mb-[16px] md:mb-0 lg:mb-[16px] py-[11.5px] md:py-[14.5px] lg:py-[17.5px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] w-full"
                     />
                 </div>
-                <Button cssClass="subscribe-btn" text="Subcribe" type='submit'></Button>
+                <Button cssClass="subscribe-btn" text="Subcribe" type='submit' className='bg-accentMain dark:bg-accentDark'></Button>
             </form>
         </div>
     )

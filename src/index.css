@@ -28,7 +28,7 @@ body {
 }
 
 .subscribe-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm rounded-md px-[71px] py-[11px]  gap-2 md:px-[50px] md:py-[16px]  xl:px-[138px] xl:py-[21px] font-main text-zinc-50 md:text-base bg-accentMain hover:text-accentDark focus:ring  sm:leading-4 md:leading-4 xl:leading-4;
+  @apply flex justify-center items-center transition duration-300 text-sm rounded-md px-[71px] py-[11px]  gap-2 md:px-[50px] md:py-[16px]  xl:px-[138px] xl:py-[21px] font-main text-zinc-50 md:text-base bg-accentMain dark:bg-accentDark hover:text-accentDark focus:ring  sm:leading-4 md:leading-4 xl:leading-4;
 }
 
 .signup-btn {
