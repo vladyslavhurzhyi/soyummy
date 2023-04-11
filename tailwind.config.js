@@ -13,6 +13,8 @@ module.exports = {
         main_d: "url('/src/images/bg_main-desc.png')",
         main_t: "url('/src/images/bg_main-tablet.png')",
         main_m: "url('/src/images/bg_main-mob.png')",
+        mob_menu_leaf: "url('/src/images/bgLeafMobMenu.png')",
+        tablet_mob_menu_leaf: "url('/src/images/bgLeafTabletMobMenu.png')",
       },
       colors: {
         accentMain: '#8BAA36',
@@ -51,6 +53,21 @@ module.exports = {
       height: {
         13: '51px',
         48.5: '777px',
+      },
+      animation: {
+        'gradient-x': 'gradient-x 3s ease infinite',
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
     },
   },
