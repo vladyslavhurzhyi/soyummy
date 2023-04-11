@@ -1,27 +1,17 @@
-// import { useAuth } from "components/hooks";
-// import { NavLink } from 'react-router-dom';
 import { Nav } from './Nav';
 import { SubscribeForm } from './SubscribeForm';
 import { FollowUs } from 'components/FollowUs/FollowUs';
 
 export const Navigation = () => {
-    // const {isLoggedIn} = useAuth();
-
     return (
-        <nav className='flex justify-center lg:justify-between '>
+        <nav className='flex justify-center lg:justify-between lg:w-full'>
             <div className='md:w-full justify-center justify-items-center justify-self-center md:pl-[62px] lg:pl-0 content-start'>
-                <div className='flex flex-col lg:flex-row lg:items-start lg:min-w-[500px] xl:max-w-[687px]'
-                    style={{
-                        // display: 'flex',
-                        // width: '100%',
-                    // alignItems: 'flex-start',
-                    justifyContent: 'space-between',
-                }}>
+                <div className='flex flex-col lg:flex-row lg:items-start justify-between'>
+                    {/*  lg:min-w-[500px] lg:max-w-[700px] xl:min-w-[700px] lg:max-w-[700px] */}
                     <div className='flex flex-col justify-center items-center'>
                         <div className="block md:hidden lg:block">
                             <Nav /> 
                         </div>
-                        
                         <div className="hidden lg:block lg:mt-24">
                             <FollowUs />
                         </div>

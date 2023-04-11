@@ -104,7 +104,7 @@ export const Footer = () => {
           <div className='flex justify-center lg:hidden w-full md:mt-[72px]'>
             <Navigation />
           </div>
-          <div className='hidden lg:block xl:max-w-[800px]'><Navigation /></div>
+          <div className='hidden lg:flex xl:max-w-[800px]'><Navigation /></div>
         </div>
       </div>
       <div

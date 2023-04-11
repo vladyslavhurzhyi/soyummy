@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import { Button } from "components/Button/Button";
 import { ReactComponent as SvgMail } from './images/mailIcon.svg';
-import { emailRegExp } from "utils/regExp/regExp";
+// import { emailRegExp } from "utils/regExp/regExp";
 
 export const SubscribeForm = () => {
     const [email, setEmail] = useState('');
-    const isEmailValid = email.match(emailRegExp);
+    // const isEmailValid = email.match(emailRegExp);
     return (
         <div className="ml-0 justify-center justify-self-center">
             <div className="hidden md:hidden lg:block lg:mb-[28px]"
