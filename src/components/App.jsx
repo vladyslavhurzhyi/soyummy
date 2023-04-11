@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
@@ -19,21 +19,16 @@ import { Search } from 'pages/Search';
 import RecipePage from 'pages/RecipePage';
 import CategoriesPage from 'pages/CategoriesPage';
 import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
-import { ErrorPage } from './ErrorComponent/ErrorComponent';
+import ErrorPage from 'pages/ErrorPage';
 
 export const App = () => {
   const token = useSelector(getAccessToken);
-
   const dispatcher = useDispatch();
 
-  useEffect(() => {
-    if (token === null) return;
-    dispatcher(current());
-  }, [dispatcher, token]);
-  const { isRefreshing } = useAuth();
-  return isRefreshing ? (
-    'Refreshing user ...'
-  ) : (
+  dispatcher(current());
+  if (token === null) return;
+
+  return (
     <>
       <Routes>
         <Route
@@ -118,7 +113,7 @@ export const App = () => {
             <Route />
           </Route>
         </Route>
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
