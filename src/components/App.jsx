@@ -1,10 +1,9 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
-// import { useAuth } from 'utils/hooks';
+import { useAuth } from 'utils/hooks';
 
 import { PrivateRoute, PublicRoute } from 'service/routes';
 import Register from 'pages/RegisterPage';
@@ -23,10 +22,21 @@ import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 import ErrorPage from 'pages/ErrorPage';
 
 export const App = () => {
-  //   const token = useSelector(getAccessToken);
-  const dispatcher = useDispatch();
+  // const token = useSelector(getAccessToken);
 
-  dispatcher(current());
+  const dispatcher = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatcher(current());
+  }, [dispatcher]);
+
+  // dispatcher(current());
+  // if (token === null) return;
+
+  if (isRefreshing) {
+    return <b>Refreshing user...</b>;
+  }
 
   return (
     <>
