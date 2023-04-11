@@ -1,9 +1,8 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { getAccessToken } from 'redux/auth/authSelectors';
+import { getAccessToken } from 'redux/auth/authSelectors';
 import { current } from 'redux/auth/authOperations';
-import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // import { useAuth } from 'utils/hooks';
 
 import { PrivateRoute, PublicRoute } from 'service/routes';
@@ -23,10 +22,14 @@ import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
 import ErrorPage from 'pages/ErrorPage';
 
 export const App = () => {
-  //   const token = useSelector(getAccessToken);
+  const token = useSelector(getAccessToken);
+
   const dispatcher = useDispatch();
 
-  dispatcher(current());
+  useEffect(() => {
+    if (token === null) return;
+    dispatcher(current());
+  }, [dispatcher, token]);
 
   return (
     <>
