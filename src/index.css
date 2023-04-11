@@ -36,12 +36,12 @@ body {
 }
 
 .logout-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm
-   rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-zinc-50  bg-accentMain hover:bg-accentDark focus:ring sm:leading-4 md:leading-4 xl:leading-4;
+  @apply max-h-[54px] flex justify-center items-center transition duration-300 text-sm
+   rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-zinc-50  bg-accentMain hover:bg-accentDark focus:ring sm:leading-4 md:leading-4 xl:leading-4 whitespace-nowrap;
 }
 
 .cancel-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm 
+  @apply max-h-[54px] flex justify-center items-center transition duration-300 text-sm 
    rounded-md px-[42.5px] py-[15.5px]  gap-2 md:px-[65.5px] md:py-[20.5px] md:text-base font-main text-accentDark bg-accentGray hover:bg-transparent hover:outline hover:outline-1 hover:outline-accentDark m-2 focus:ring sm:leading-4 md:leading-4 xl:leading-4;
 }
 

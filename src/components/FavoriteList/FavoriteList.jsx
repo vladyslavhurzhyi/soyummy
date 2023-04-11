@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { RecipesList } from 'components/RecipesList/RecipesList';
 import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
-import { Loader } from 'components/Loader/Loader';
 import { removeFromFavorite } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import {
   selectFavRecipes,
