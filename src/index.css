@@ -28,7 +28,7 @@ body {
 }
 
 .subscribe-btn {
-  @apply flex justify-center items-center transition duration-300 text-sm rounded-md px-[71px] py-[11px]  gap-2 md:px-[50px] md:py-[16px]  xl:px-[138px] xl:py-[21px] font-main text-zinc-50 md:text-base bg-accentMain dark:bg-accentDark hover:text-accentDark focus:ring  sm:leading-4 md:leading-4 xl:leading-4;
+  @apply flex justify-center items-center transition duration-300 text-sm rounded-md px-[71px] py-[11px]  gap-2 md:px-[50px] md:py-[16px]  xl:px-[138px] xl:py-[21px] font-main text-zinc-50 md:text-base bg-accentMain dark:bg-accentDark hover:text-accentDark hover:dark:text-accentMain focus:ring  sm:leading-4 md:leading-4 xl:leading-4;
 }
 
 .signup-btn {
@@ -91,10 +91,10 @@ body {
 }
 
 .divIconFooterMob {
-  @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
+  @apply transition duration-300  flex items-center justify-center w-8 h-8  lg:w-11 lg:h-11 bg-[#EBF3D4] rounded-md lg:rounded-xl;
 }
 .iconLogoFooterMob {
-  @apply transition duration-300 stroke-[#8BAA36] w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-[#8BAA36] w-[18px] h-[18px] lg:w-[30px] lg:h-[30px];
 }
 
 .divIconTrash {
