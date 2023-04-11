@@ -24,7 +24,7 @@ export const RecipeItem = ({
   return (
     <>
       <li className="flex mx-auto mb-10 last:mb-0 bg-[#ffffff] rounded-lg dark:bg-accentHalfDark min-w-[343px] ">
-        <div className="min-w-[343px] md:max-w-[704px] xl:max-w-[1240px] ">
+        <div className="min-w-[343px] md:max-w-[704px] xl:min-w-[1240px] xl:max-w-[1240px] ">
           <div className="flex my-[14px] md:my-7 xl:my-10 ">
             <img
               className="w-[124px] h-[124px] mx-[14px]  md:w-[228px] md:h-[232px]  xl:w-[318px] xl:h-[324px] md:mr-6 md:ml-6 xl:mx-10 rounded-lg object-cover  "
