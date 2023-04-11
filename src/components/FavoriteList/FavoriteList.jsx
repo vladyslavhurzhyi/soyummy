@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { RecipesList } from 'components/RecipesList/RecipesList';
 import { getFavoriteRecipes } from 'redux/favoriteRecipes/favoriteRecipesOperations';
-import { Loader } from 'components/Loader/Loader';
 import { removeFromFavorite } from 'redux/favoriteRecipes/favoriteRecipesOperations';
 import {
   selectFavRecipes,
@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 export const FavoriteList = () => {
   const [paginationPage, setPaginationPage] = useState(1);
   const { current_page, data, total, per_page } = useSelector(selectFavRecipes);
-  const favoriteRecipes = data;
+
   const error = useSelector(selectFavError);
   const isLoading = useSelector(selectFavIsLoading);
   const dispatch = useDispatch();
@@ -40,16 +40,17 @@ export const FavoriteList = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
       {error &&
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
         })}
-      {favoriteRecipes?.length > 0 && (
+      {data?.length > 0 && (
         <>
           <RecipesList
+            paginationPage={paginationPage}
             removeRecipe={removeFromFavorite}
-            data={favoriteRecipes}
+            data={data}
+            isLoading={isLoading}
           />
           {total > 0 && (
             <RecipesListPaginator

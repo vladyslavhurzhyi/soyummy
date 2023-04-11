@@ -19,6 +19,7 @@ import { Search } from 'pages/Search';
 import RecipePage from 'pages/RecipePage';
 import CategoriesPage from 'pages/CategoriesPage';
 import CategoriesRecipesList from './CategoriesRecipeList/CategoriesRecipeList';
+import { ErrorPage } from './ErrorComponent/ErrorComponent';
 
 export const App = () => {
   const token = useSelector(getAccessToken);
@@ -29,10 +30,8 @@ export const App = () => {
     if (token === null) return;
     dispatcher(current());
   }, [dispatcher, token]);
-  const { isRefreshing } = useAuth();
-  return isRefreshing ? (
-    'Refreshing user ...'
-  ) : (
+
+  return (
     <>
       <Routes>
         <Route
@@ -117,6 +116,7 @@ export const App = () => {
             <Route />
           </Route>
         </Route>
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </>
   );

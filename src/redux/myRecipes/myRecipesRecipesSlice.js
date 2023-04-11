@@ -5,6 +5,7 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
+  // isFetching: false,
 };
 
 const isPendingAction = action => {
@@ -17,22 +18,22 @@ export const myRecipesSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getMyRecipes.fulfilled, (state, action) => {
-        state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+        state.isLoading = false;
       })
 
       .addCase(removeMyRecipes.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = state.items.findIndex(
-          item => item.id === action.payload.id
+        const index = state.items.data.findIndex(
+          item => item._id === action.payload.data._id
         );
-        state.items.splice(index, 1);
+        state.items.data.splice(index, 1);
       })
       .addMatcher(isAnyOf(getMyRecipes.rejected), (state, action) => {
-        state.isLoading = false;
         state.error = action.payload;
+        state.isLoading = false;
       })
       .addMatcher(isPendingAction, state => {
         state.isLoading = true;

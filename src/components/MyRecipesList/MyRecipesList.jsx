@@ -6,20 +6,20 @@ import {
   getMyRecipes,
   removeMyRecipes,
 } from 'redux/myRecipes/myRecipesOperations';
-import { Loader } from 'components/Loader/Loader';
 import {
   selectMyError,
   selectMyIsLoading,
   selectMyRecipes,
+  // selectMyFetching,
 } from 'redux/myRecipes/myRecipesSelectors';
 import { toast } from 'react-toastify';
 
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
-  const { current_page, data, total, per_page } = useSelector(selectMyRecipes);
-  const myRecipes = data;
+  const { current_page, total, data, per_page } = useSelector(selectMyRecipes);
   const error = useSelector(selectMyError);
   const isLoading = useSelector(selectMyIsLoading);
+  // const isFetching = useSelector(selectMyFetching);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,17 +41,18 @@ export const MyRecipesList = ({ cssClass }) => {
 
   return (
     <>
-      {isLoading && <Loader />}
       {error &&
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
         })}
-      {myRecipes?.length > 0 && (
+      {data?.length > 0 && (
         <>
           <RecipesList
+            paginationPage={paginationPage}
+            isLoading={isLoading}
             removeRecipe={removeMyRecipes}
             cssClass={cssClass}
-            data={myRecipes}
+            data={data}
           />
           {total > 0 && (
             <RecipesListPaginator
@@ -61,6 +62,7 @@ export const MyRecipesList = ({ cssClass }) => {
               handlePaginationClick={handlePaginationClick}
               pageIncrement={pageIncrement}
               pageDecrement={pageDecrement}
+              isLoading={isLoading}
             />
           )}
         </>
