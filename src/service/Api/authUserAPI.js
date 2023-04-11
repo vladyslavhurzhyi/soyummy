@@ -37,7 +37,7 @@ export const editUserAPI = body => {
 };
 
 export const subscribeUserAPI = email => {
-  return api.patch('/auth/subscribe', email).then(({ data }) => {
+  return api.post('/subscribe', email).then(({ data }) => {
     return data;
   });
 };
