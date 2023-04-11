@@ -28,6 +28,7 @@ module.exports = {
         secondaryText: '#3E4462',
         whiteText: '#FAFAFA',
         greyInput: '#BDBDBD',
+        listUnderline: '#E0E0E0',
       },
       boxShadow: {
         custom: '0px 4px 4px rgba(135, 135, 135, 0.2)',
@@ -74,6 +75,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
     // ...
   ],
 };

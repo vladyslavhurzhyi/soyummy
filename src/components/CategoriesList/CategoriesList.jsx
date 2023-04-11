@@ -6,7 +6,8 @@ import { setCurrentCategory } from 'redux/categories/categoriesOperations';
 
 import { getCategories } from 'redux/categories/categoriesOperations';
 import { selectCategories } from 'redux/categories/categoriesSelectors';
-
+const activeLink =
+  ' text-accentMain after:absolute  after:h-0.5  after:bg-accentMain after:w-full after:bottom-px after:right-0';
 const CategoriesList = () => {
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
@@ -16,18 +17,19 @@ const CategoriesList = () => {
   }, [dispatch]);
 
   return (
-    <nav className="container w-full ">
-      <ul className="flex  pb-7  overflow-x-auto mb-8 ">
+    <nav className="container  w-full ">
+      <ul className="flex relative after:absolute after:h-px after:w-full after:bottom-0 after:left-0 after:bg-listUnderline scrollbar-none overflow-x-auto mb-8 ">
         {categories.map(category => {
           return (
-            <li className="mr-14 after:content-none " key={category._id}>
+            <li className="mr-14 relative pb-7 " key={category._id}>
               <NavLink
                 onClick={() => {
                   dispatch(setCurrentCategory(category.category));
                 }}
                 to={`/categories/${category.category}`}
-                className=" font-medium text-greyInput hover:text-accentMain"
-                activeClassName="text-white-500 font-bold"
+                className={({ isActive }) =>
+                  isActive ? activeLink : 'text-greyInput'
+                }
               >
                 {category.category}
               </NavLink>
