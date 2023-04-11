@@ -124,7 +124,7 @@ export const MobMenu = () => {
         left: 0;
 		overflow: hidden;
 
-        z-index: 10;
+        z-index: 30;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;

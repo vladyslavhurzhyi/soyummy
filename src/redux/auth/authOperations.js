@@ -78,12 +78,14 @@ export const edit = createAsyncThunk(
 
 export const current = createAsyncThunk(
   'auth/current',
+
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
     const persistedAccessToken = state.auth.accessToken;
     if (!persistedAccessToken) {
       return rejectWithValue();
     }
+
     token.set(persistedAccessToken);
     try {
       const data = await currentUserAPI();
