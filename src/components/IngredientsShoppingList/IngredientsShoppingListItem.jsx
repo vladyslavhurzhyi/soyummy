@@ -1,6 +1,6 @@
 import { Reorder } from 'framer-motion';
-import { ReactComponent as Svg } from '../../images/svg/trash.svg';
 import { Loader } from 'components/Loader/Loader';
+import { Logo } from 'components/Logo/Logo';
 
 export const IngredientsShoppingListItem = ({
   id,
@@ -49,7 +49,11 @@ export const IngredientsShoppingListItem = ({
           {loading ? (
             <Loader />
           ) : (
-            <Svg className="stroke-black dark:stroke-white" />
+            <Logo
+              trash
+              cssClassIcon="iconTrash"
+              cssClassDiv="stroke-black dark:stroke-white"
+            />
           )}
         </div>
       </button>

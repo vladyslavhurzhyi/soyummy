@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import ErrorPlug from '../../images/gif/ErrorPlug.gif';
-import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 
 export const ErrorPage = () => {
   return (
@@ -8,12 +8,16 @@ export const ErrorPage = () => {
         Oops 😨 Something go's wrong ...
       </h2>
       <img src={ErrorPlug} alt="error plug" />
-      <CurveBtn
-        text={'Go Home'}
-        cssClass={
-          'othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring'
-        }
-      />
+      <Link
+        to="/main"
+        replace={true}
+        style={{
+          borderRadius: '9% 23% 11% 21% / 26% 57% 34% 60%  ',
+        }}
+        className="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring"
+      >
+        Go Home
+      </Link>
     </div>
   );
 };

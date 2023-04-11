@@ -14,7 +14,7 @@ import {
   selectShoppingListIsLoading,
 } from 'redux/shoppingList/shoppingListSelector';
 import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
-import { ErrorPage } from 'components/ErrorPage/ErrorPage';
+import { ErrorPage } from 'components/ErrorComponent/ErrorComponent';
 // import { Loader } from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
