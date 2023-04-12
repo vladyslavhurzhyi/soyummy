@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
 body {
   @apply bg-whiteText dark:bg-accentDarker font-main;
 }

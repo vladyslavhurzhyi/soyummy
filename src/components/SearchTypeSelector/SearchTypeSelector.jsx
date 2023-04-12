@@ -11,10 +11,17 @@ export const SearchTypeSelector = () => {
 
   return (
     <div className="mx-auto justify-center flex items-center gap-5">
-      <label>Search by:</label>
-      <select onChange={changeType}>
-        <option value="title">title</option>
-        <option value="ingredients">ingredient</option>
+      <label className="text-[18px]">Search by:</label>
+      <select
+        onChange={changeType}
+        className="border-none bg-accentGray color-greenSelectArrow h-[49px] text-[14px]"
+      >
+        <option className="bg-whiteText border-none" value="title">
+          title
+        </option>
+        <option value="ingredients" className="bg-whiteText border-none">
+          ingredient
+        </option>
       </select>
     </div>
   );
