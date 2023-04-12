@@ -28,7 +28,7 @@ const RegisterForm = () => {
         <Svg />
       </div>
       <div>
-        <form className="foraWrap xl:w-500px" onSubmit={formik.handleSubmit}>
+        <form className="foraWrap md:w-[500px]" onSubmit={formik.handleSubmit}>
           <h2 className=" pl-2 text-3xl font-extrabold text-whiteText ">
             Register
           </h2>
@@ -68,7 +68,7 @@ const RegisterForm = () => {
                 value={formik.values.name}
               />
               {formik.errors.name && formik.touched.name && (
-                <p className="text-red-500 text-xs italic">
+                <p className="absolute text-red-500 text-xs italic">
                   {formik.errors.name}
                 </p>
               )}
@@ -106,12 +106,12 @@ const RegisterForm = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
                 />
+                {formik.errors.email && formik.touched.email && (
+                  <p className="absolute text-red-500 text-xs italic">
+                    {formik.errors.email}
+                  </p>
+                )}
               </label>
-              {formik.errors.email && formik.touched.email && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.email}
-                </p>
-              )}
             </div>
             <div>
               <label className=" relative">
@@ -143,12 +143,12 @@ const RegisterForm = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
                 />
+                {formik.errors.password && formik.touched.password && (
+                  <p className="absolute text-red-500 text-xs italic">
+                    {formik.errors.password}
+                  </p>
+                )}
               </label>
-              {formik.errors.password && formik.touched.password && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.password}
-                </p>
-              )}
             </div>
           </div>
 
@@ -162,9 +162,8 @@ const RegisterForm = () => {
           </div>
         </form>
         <div className="flex justify-center">
-          {' '}
           <NavLink
-            className=" text-center mt-4 text-white self-center underline text-base  "
+            className=" text-center mt-4 text-white hover:text-accentMain self-center underline text-base  "
             to="/signin"
           >
             Sign in

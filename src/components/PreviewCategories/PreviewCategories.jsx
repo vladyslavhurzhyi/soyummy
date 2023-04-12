@@ -48,7 +48,7 @@ export const PreviewCategories = () => {
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
                   <div
                     key={_id}
-                    className="w-[343px] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
+                    className="w-[100%] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
@@ -56,14 +56,14 @@ export const PreviewCategories = () => {
                         alt={title}
                         className="h-[323px] w-full rounded-lg"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[250px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}
                       </p>
                     </NavLink>
                   </div>
                 ))}
               </ul>
-              <Link to="/categories/beef" className="flex justify-end">
+              <Link to="/categories/breakfast" className="flex justify-end">
                 <CurveBtn
                   type={'button'}
                   onClick={onClick}
