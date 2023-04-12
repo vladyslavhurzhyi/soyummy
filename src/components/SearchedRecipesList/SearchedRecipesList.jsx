@@ -18,7 +18,7 @@ export const SearchedRecipesList = () => {
           autoClose: 3000,
         })}
       {isLoading && !error && <Loader />}
-      {recipes.length < 1 ? (
+      {recipes.length === 0 ? (
         <p className="text-center">Try to look for something else</p>
       ) : (
         <div>

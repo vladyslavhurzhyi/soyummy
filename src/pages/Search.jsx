@@ -46,38 +46,3 @@ const Search = () => {
 };
 
 export default Search;
-
-// const [recipes, setRecipes] = useState(null);
-// const [searchParams, setSearchParams] = useSearchParams();
-
-// const query = searchParams.get('query'); //get from store
-// const type = searchParams.get('type'); // ^
-
-// useEffect(() => {
-//   if (!query) {
-//     return;
-//   }
-//   async function findByQuery() {
-//     try {
-//       const recipes = await getRecipesByQuery(query, type);
-//       if (!recipes) {
-//         alert('nothing was found');
-//         return;
-//       }
-//       console.log(recipes.data);
-//       setRecipes(recipes.data);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-//   findByQuery(query, type);
-// }, [query, type]);
-
-// const handleChange = newType => {
-//   return newType;
-// };
-
-// const handleFormSubmit = (newQuery, type = 'title') => {
-//   type = handleChange(type);
-//   setSearchParams({ query: newQuery, type });
-// };
