@@ -13,7 +13,7 @@ const MainPage = () => {
 
   return (
     <section>
-      <div className=" bg-main_m md:bg-main_t xl:bg-main_d bg-no-repeat bg-center bg-size_main h-48.5 md:h-[640px] xl:h-[777px] pt-[68px]  xl:pt-52  md:flex items-center">
+      <div className=" bg-main_m md:bg-main_t xl:bg-main_d bg-no-repeat bg-center bg-size_main h-48.5 md:h-[640px] xl:h-[777px] pt-[68px]  xl:pt-52  md:flex items-center justify-center">
         <div className="container relative mx-auto xl:mx-0  w-full px-[16px] md:px-[2.25rem] lg:px-[60px] xl:px-[6rem] block md:flex justify-between flex-row items-end xl:pb-64">
           <div className="flex  flex-col mx-auto md:mx-0 xl:justify-start  mb-8 ">
             <h1 className="text-accentDark text-center md:text-left font-normal text-[60px] md:text-[72px] xl:text-[100px] font-main dark:text-whiteText">
