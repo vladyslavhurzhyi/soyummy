@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { useState, useEffect } from 'react';
 import { ResipeDescriptionFields } from './ResipeDescriptionFields';
 import { ResipeIngredientsFields } from './RecipeIngredientsFields';
@@ -16,32 +16,20 @@ import { selectCategories } from 'redux/categories/categoriesSelectors';
 
 const IMG_PREVIEW = 'https://placehold.co/357x344?text=Upload+image';
 
+const initialRecipe = {
+  title: '',
+  description: '',
+  category: '',
+  time: '',
+  ingredients: [],
+  isPublic: false,
+  instructions: '',
+};
 export const AddRecipeForm = () => {
   const ingredientsList = useSelector(selectIngredients);
   const categoriesList = useSelector(selectCategories);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const initialIgredient = {
-    id: ingredientsList[0]?._id ?? '',
-    amount: '1',
-    measure: 'pcs',
-  };
-  const initialRecipe = {
-    title: '',
-    description: '',
-    category: '',
-    time: '',
-    ingredients: [
-      {
-        id: ingredientsList[0]?._id,
-        amount: '1',
-        measure: 'pcs',
-        key: nanoid(),
-      },
-    ],
-    isPublic: false,
-    instructions: '',
-  };
 
   // useEffect(() => {
   //   if (ingredientsList.length !== 0) {
@@ -125,12 +113,6 @@ export const AddRecipeForm = () => {
     setRecipe({ ...recipe, ingredients });
   };
 
-  const handleAddIngredient = () => {
-    const _ingredients = [...recipe.ingredients];
-    _ingredients.push({ ...initialIgredient, key: nanoid() });
-    handleIngredientsChange(_ingredients);
-  };
-
   const handleRemoveIngredient = id => {
     const _ingredients = recipe.ingredients.filter(item => item.id !== id);
     handleIngredientsChange(_ingredients);
@@ -177,7 +159,7 @@ export const AddRecipeForm = () => {
     form.reset();
     setRecipe({
       ...initialRecipe,
-      ingredients: [{ ...initialIgredient, id: nanoid() }],
+      ingredients: [],
     });
     setPreview(IMG_PREVIEW);
   };
@@ -196,7 +178,6 @@ export const AddRecipeForm = () => {
             ingredients={ingredientsList}
             items={recipe.ingredients}
             updateItems={handleIngredientsChange}
-            addItem={handleAddIngredient}
             removeItem={handleRemoveIngredient}
           />
           <ResipeMethodFields data={recipe} updateData={handleFieldChange} />
