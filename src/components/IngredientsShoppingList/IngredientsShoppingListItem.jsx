@@ -21,7 +21,6 @@ export const IngredientsShoppingListItem = ({
         x: idx % 2 === 0 ? -200 : 200,
         opacity: 0,
       }}
-      whileTap={{ scale: 0.8 }}
       transition={{ duration: 0.6 }}
       whileInView={{
         x: 0,

@@ -58,7 +58,7 @@ export const UserPanel = () => {
           />
           <p
             className={`ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText text-[12px] md:text-sm ${
-              currentPath === '/main'
+              currentPath === '/main' || currentPath.includes('/recipes')
                 ? 'xl:dark:text-accentDark'
                 : 'dark:text-whiteText'
             }`}
