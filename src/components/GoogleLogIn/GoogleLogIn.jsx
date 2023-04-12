@@ -6,6 +6,7 @@ const GoogleLogIn = () => {
   const dispatch = useDispatch();
 
   const handleSuccess = response => {
+    console.log('response', response);
     dispatch(signInWithGoogle(response));
   };
 
