@@ -12,6 +12,7 @@ import {
 import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import placeholder from '../../images/placeholder.png';
 
 export const FavoriteList = () => {
   const [paginationPage, setPaginationPage] = useState(1);
@@ -50,7 +51,7 @@ export const FavoriteList = () => {
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
         })}
-      {data?.length > 0 && (
+      {data?.length > 0 ? (
         <>
           <RecipesList
             paginationPage={paginationPage}
@@ -69,6 +70,23 @@ export const FavoriteList = () => {
             />
           )}
         </>
+      ) : (
+        <div
+          className="flex flex-col items-center
+         object-center text-center"
+        >
+          <img
+            src={placeholder}
+            alt="error"
+            className="rounded mb-3.5 md:mb-8 pt-4 md:h-[327px] xl:h-[331px]"
+          />
+          <p className="text-[18px] md:text-customBase font-semibold mb-2 md:mb-3.5 dark:text-whiteText">
+            We are sorry,
+          </p>
+          <p className="text-customXxs md:text-[18px] leading-[18px] mb-[100px] md:mb-[204px] w-48 md:w-full md:min-w-[430px] dark:text-[#FAFAFA80]">
+            You don't have any added recipes ...
+          </p>
+        </div>
       )}
     </>
   );
