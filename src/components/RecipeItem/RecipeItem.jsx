@@ -50,7 +50,7 @@ export const RecipeItem = ({
                 </p>
                 <div className="flex justify-between ">
                   <p className="mt-auto text-[10px] md:text-sm xl:text-lg font-medium font-main dark:text-[#FAFAFA]">
-                    {time} min
+                    {time}
                   </p>
                   <CurveBtn
                     cssClass={cssClass}
