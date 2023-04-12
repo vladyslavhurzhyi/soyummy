@@ -16,26 +16,38 @@ import { selectCategories } from 'redux/categories/categoriesSelectors';
 
 const IMG_PREVIEW = 'https://placehold.co/357x344?text=Upload+image';
 
-const initialIgredient = {
-  id: '',
-  amount: '1',
-  measure: '',
-};
-const initialRecipe = {
-  title: '',
-  description: '',
-  category: '',
-  time: '',
-  ingredients: [{ ...initialIgredient, id: nanoid() }],
-  isPublic: false,
-  instructions: '',
-};
 export const AddRecipeForm = () => {
-  // console.log(ingredientsList);
   const ingredientsList = useSelector(selectIngredients);
   const categoriesList = useSelector(selectCategories);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const initialIgredient = {
+    id: ingredientsList[0]?._id ?? '',
+    amount: '1',
+    measure: 'pcs',
+  };
+  const initialRecipe = {
+    title: '',
+    description: '',
+    category: '',
+    time: '',
+    ingredients: [
+      {
+        id: ingredientsList[0]?._id,
+        amount: '1',
+        measure: 'pcs',
+        key: nanoid(),
+      },
+    ],
+    isPublic: false,
+    instructions: '',
+  };
+
+  // useEffect(() => {
+  //   if (ingredientsList.length !== 0) {
+  //     initialRecipe.ingredients.push(initialIgredient);
+  //   }
+  // }, [ingredientsList, initialIgredient, initialRecipe.ingredients]);
 
   useEffect(() => {
     dispatch(getIngredients());
@@ -115,26 +127,13 @@ export const AddRecipeForm = () => {
 
   const handleAddIngredient = () => {
     const _ingredients = [...recipe.ingredients];
-    _ingredients.push({ ...initialIgredient, id: nanoid() });
+    _ingredients.push({ ...initialIgredient, key: nanoid() });
     handleIngredientsChange(_ingredients);
   };
 
   const handleRemoveIngredient = id => {
     const _ingredients = recipe.ingredients.filter(item => item.id !== id);
     handleIngredientsChange(_ingredients);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    // some validations !isValid(recipe)...
-    const formData = new FormData();
-    const [file] = e.target.thumb.files;
-    if (!file) {
-      return alert('Select a recipe image!');
-    }
-    formData.append('thumb', file);
-    formData.append('jsonData', JSON.stringify(recipe));
-    sendForm(e.target, formData);
   };
 
   const sendForm = async (form, formData) => {
@@ -151,6 +150,27 @@ export const AddRecipeForm = () => {
     // } finally {
     //   setIsSubmitting(false);
     // }
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // some validations !isValid(recipe)...
+    const formData = new FormData();
+    const [file] = e.target.thumb.files;
+    if (!file) {
+      return alert('Select a recipe image!');
+    }
+    formData.append('thumb', file);
+    const formattedRecipe = {
+      ...recipe,
+      ingredients: recipe.ingredients.map(({ id, amount, measure }) => ({
+        id,
+        amount,
+        measure,
+      })),
+    };
+    formData.append('jsonData', JSON.stringify(formattedRecipe));
+    sendForm(e.target, formData);
   };
 
   const resetForm = form => {
