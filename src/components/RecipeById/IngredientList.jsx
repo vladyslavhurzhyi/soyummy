@@ -34,9 +34,9 @@ export const IngredientList = () => {
       {ingredients.map(({ _id, thb, ttl, amount, measure }) => (
         <li
           key={_id}
-          className="flex justify-between items-center bg-accentLighter dark:bg-accentHalfDark pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg "
+          className="flex justify-between items-center bg-accentLighter dark:bg-accentHalfDark pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg"
         >
-          <div className="flex items-center gap-6 xl:gap-10">
+          <div className="flex items-center gap-6 xl:gap-10 w-40 md:w-80 lg:w-[500px] xl:w-[600px] overflow-hidden">
             {{ thb } ? (
               <img
                 src={thb}
@@ -55,9 +55,12 @@ export const IngredientList = () => {
             </p>
           </div>
           <div className="flex items-center gap-[28px] md:gap-[78px] xl:gap-[151px]">
-            <div className="flex justify-center items-center h-6 md:h-[36px] bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime md:text-lg my-[31px] md:my-[71px] xl:my-[73px] gap-1 px-1 min-w-max w-10 md:w-16 xl:w-20">
-              {amount && <p className="">{amount}</p>}
-              {measure && <p className="">{measure}</p>}
+            <div className="flex flex-wrap justify-center h-auto bg-accentMain rounded font-semibold text-whiteText text-customRecipesTime md:text-lg my-[31px] md:my-[71px] xl:my-[73px] gap-1 px-1 max-w-[92px] md:max-w-[175px]">
+              {amount && measure && (
+                <p className="text-center  min-w-[60px] md:min-w-20 max-w-fit">
+                  {amount} {measure}
+                </p>
+              )}
             </div>
             <div className="flex relative">
               <input

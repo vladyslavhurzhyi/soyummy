@@ -4,10 +4,11 @@ import { AddRecipeForm } from 'components/AddRecipe/AddRecipeForm';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { PopularRecipes } from 'components/PopularRecipes/PopularRecipes';
 import { fetchPopular } from 'redux/recipes/recipesOperations';
-import { selectNewRecipe } from 'redux/recipes/recipesSelectors';
+import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import { Helmet } from 'react-helmet-async';
 
 const AddRecipe = () => {
-  const popular = useSelector(selectNewRecipe);
+  const popular = useSelector(selectRecipes);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,6 +17,9 @@ const AddRecipe = () => {
 
   return (
     <div className="container mb-16 md:mb-24 xl:mb-52 relative z-10">
+      <Helmet>
+        <title>Add new recipe</title>
+      </Helmet>
       <MainPageTitle
         pageTitle="Add recipe"
         className="main-title mb-[72px] md:mb-[100px]"
