@@ -27,7 +27,7 @@ const SigninForm = () => {
         <Svg />
       </div>
       <div>
-        <form className="foraWrap" onSubmit={formik.handleSubmit}>
+        <form className="foraWrap md:w-[500px]" onSubmit={formik.handleSubmit}>
           <h2 className=" pl-2 text-3xl font-extrabold text-whiteText">
             Sign in
           </h2>
@@ -65,12 +65,12 @@ const SigninForm = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
                 />
+                {formik.errors.email && formik.touched.email && (
+                  <p className="absolute text-red-500 text-xs italic">
+                    {formik.errors.email}
+                  </p>
+                )}
               </label>
-              {formik.errors.email && formik.touched.email && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.email}
-                </p>
-              )}
             </div>
             <div className="relative">
               <label className=" relative">
@@ -102,12 +102,12 @@ const SigninForm = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
                 />
+                {formik.errors.password && formik.touched.password && (
+                  <p className="absolute text-red-500 text-xs italic">
+                    {formik.errors.password}
+                  </p>
+                )}
               </label>
-              {formik.errors.password && formik.touched.password && (
-                <p className="text-red-500 text-xs italic">
-                  {formik.errors.password}
-                </p>
-              )}
             </div>
           </div>
 
@@ -121,9 +121,8 @@ const SigninForm = () => {
           </div>
         </form>
         <div className="flex justify-center">
-          {' '}
           <NavLink
-            className=" text-center mt-4 text-white self-center underline text-base  "
+            className=" text-center mt-4 text-white hover:text-accentMain  self-center underline text-base  "
             to="/register"
           >
             Registration
