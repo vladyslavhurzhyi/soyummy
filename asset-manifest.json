@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/soyummy/static/css/main.c557cf55.css",
-    "main.js": "/soyummy/static/js/main.d7c43e10.js",
+    "main.css": "/soyummy/static/css/main.2a3e26f0.css",
+    "main.js": "/soyummy/static/js/main.3842c2a5.js",
     "static/js/751.08ed6f29.chunk.js": "/soyummy/static/js/751.08ed6f29.chunk.js",
     "static/js/592.2b2dd378.chunk.js": "/soyummy/static/js/592.2b2dd378.chunk.js",
-    "static/js/180.1f30aa66.chunk.js": "/soyummy/static/js/180.1f30aa66.chunk.js",
+    "static/js/180.80a1b1c9.chunk.js": "/soyummy/static/js/180.80a1b1c9.chunk.js",
     "static/js/802.da3dc0ea.chunk.js": "/soyummy/static/js/802.da3dc0ea.chunk.js",
     "static/js/25.5b659bcf.chunk.js": "/soyummy/static/js/25.5b659bcf.chunk.js",
     "static/js/947.9a13511b.chunk.js": "/soyummy/static/js/947.9a13511b.chunk.js",
@@ -20,15 +20,17 @@
     "static/js/805.22c99500.chunk.js": "/soyummy/static/js/805.22c99500.chunk.js",
     "static/js/896.b1c60bf1.chunk.js": "/soyummy/static/js/896.b1c60bf1.chunk.js",
     "static/media/salat.png": "/soyummy/static/media/salat.c4f37c1611c5da2ac79f.png",
-    "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.27c02cb8d863c0b05eab.png",
     "static/media/recipePage.jpg": "/soyummy/static/media/recipePage.9ba730398fc8d30e7b8b.jpg",
-    "static/media/bg_main-tablet.png": "/soyummy/static/media/bg_main-tablet.99c267cf8b46e4af849a.png",
-    "static/media/bg_main-mob.png": "/soyummy/static/media/bg_main-mob.c03886797b22e1f3a493.png",
+    "static/media/spoon.png": "/soyummy/static/media/spoon.7ecd64cfc7c8ba1fde5d.png",
+    "static/media/bg_main-desc.png": "/soyummy/static/media/bg_main-desc.ceae1b7fde0af607dc47.png",
     "static/media/bgBottomLeftImage.png": "/soyummy/static/media/bgBottomLeftImage.4ec749f515dddfa62f8d.png",
+    "static/media/bg_main-tablet.png": "/soyummy/static/media/bg_main-tablet.7b01e01adf4f4280767f.png",
+    "static/media/bg_main-mob.png": "/soyummy/static/media/bg_main-mob.3f161f554c18f564007a.png",
     "static/media/OrderFoodPana.svg": "/soyummy/static/media/OrderFoodPana.c1acaf37b89d70dbfb055699404688f2.svg",
     "static/media/bgLeafTabletMobMenu.png": "/soyummy/static/media/bgLeafTabletMobMenu.fe5fceceef4be437a011.png",
     "static/media/placeholder.png": "/soyummy/static/media/placeholder.3c0232a5f0c7332b77cc.png",
     "static/media/emptyShoppingList.gif": "/soyummy/static/media/emptyShoppingList.a8ba52e465ec571d2b95.gif",
+    "static/media/arrow.png": "/soyummy/static/media/arrow.f5a84af47e40671a7e9e.png",
     "static/media/bgBottomRightImage.png": "/soyummy/static/media/bgBottomRightImage.2ebd596451eacc0a0501.png",
     "static/media/bgLeafMobMenu.png": "/soyummy/static/media/bgLeafMobMenu.a4fc01d4c55b4b4ea161.png",
     "static/media/dishes_placeholder.jpg": "/soyummy/static/media/dishes_placeholder.e75310fba008df23497c.jpg",
@@ -43,11 +45,11 @@
     "static/media/crossSvg.svg": "/soyummy/static/media/crossSvg.71bfc22556499cd1e79086abd3ddbcc8.svg",
     "static/media/closeMenuIcon.svg": "/soyummy/static/media/closeMenuIcon.e092d0fe6a88f998c6eea4f764848586.svg",
     "static/media/burgerMenu.svg": "/soyummy/static/media/burgerMenu.0f3571adaad47fc06865f7573710d9e0.svg",
-    "main.c557cf55.css.map": "/soyummy/static/css/main.c557cf55.css.map",
-    "main.d7c43e10.js.map": "/soyummy/static/js/main.d7c43e10.js.map",
+    "main.2a3e26f0.css.map": "/soyummy/static/css/main.2a3e26f0.css.map",
+    "main.3842c2a5.js.map": "/soyummy/static/js/main.3842c2a5.js.map",
     "751.08ed6f29.chunk.js.map": "/soyummy/static/js/751.08ed6f29.chunk.js.map",
     "592.2b2dd378.chunk.js.map": "/soyummy/static/js/592.2b2dd378.chunk.js.map",
-    "180.1f30aa66.chunk.js.map": "/soyummy/static/js/180.1f30aa66.chunk.js.map",
+    "180.80a1b1c9.chunk.js.map": "/soyummy/static/js/180.80a1b1c9.chunk.js.map",
     "802.da3dc0ea.chunk.js.map": "/soyummy/static/js/802.da3dc0ea.chunk.js.map",
     "25.5b659bcf.chunk.js.map": "/soyummy/static/js/25.5b659bcf.chunk.js.map",
     "947.9a13511b.chunk.js.map": "/soyummy/static/js/947.9a13511b.chunk.js.map",
@@ -64,7 +66,7 @@
     "896.b1c60bf1.chunk.js.map": "/soyummy/static/js/896.b1c60bf1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c557cf55.css",
-    "static/js/main.d7c43e10.js"
+    "static/css/main.2a3e26f0.css",
+    "static/js/main.3842c2a5.js"
   ]
 }
