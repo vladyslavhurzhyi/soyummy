@@ -45,24 +45,20 @@ export const App = () => {
           <Route
             path="/welcome"
             element={
-              <PublicRoute
-                component={WellcomPage}
-                redirectTo="/main"
-                restricted
-              />
+              <PublicRoute component={WellcomPage} redirectTo="/" restricted />
             }
           />
 
           <Route
             path="/register"
             element={
-              <PublicRoute component={Register} redirectTo="/main" restricted />
+              <PublicRoute component={Register} redirectTo="/" restricted />
             }
           />
           <Route
             path="/signin"
             element={
-              <PublicRoute component={Signin} redirectTo="/main" restricted />
+              <PublicRoute component={Signin} redirectTo="/" restricted />
             }
           />
 
@@ -73,7 +69,7 @@ export const App = () => {
             }
           >
             <Route
-              path="/main"
+              index
               element={
                 <PrivateRoute component={MainPage} redirectTo="/signin" />
               }
