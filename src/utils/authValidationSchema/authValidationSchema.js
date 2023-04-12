@@ -26,7 +26,5 @@ export const loginValidationSchema = Yup.object({
   email: Yup.string()
     .required('Email is required')
     .matches(emailRegExp, 'Invalid email address'),
-  password: Yup.string()
-    .required('Password is required')
-    .matches(notSecurePasswordRegExp, 'Enter a valid Password'),
+  password: Yup.string().required('Password is required'),
 });
