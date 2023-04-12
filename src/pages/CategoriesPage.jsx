@@ -16,10 +16,10 @@ const CategoriesPage = () => {
   }, [navigate, currCategory]);
 
   return (
-    <div className="mx-auto">
+    <div className="container">
       <MainPageTitle
         pageTitle={'Categories'}
-        className={'main-title pb-[50px] md:pb-[72px] px-4 md:px-8 xl:px-24'}
+        className={'main-title pb-[50px] md:pb-[72px] '}
       />
       <CategoriesList />
       <CategoriesRecipesList />
