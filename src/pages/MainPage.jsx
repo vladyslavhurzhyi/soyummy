@@ -40,7 +40,7 @@ const MainPage = () => {
             type={'button'}
             onClick={onClick}
             text={'Other categories'}
-            cssClass="othercateg-btn dark:text-whiteText"
+            cssClass="othercateg-btn dark:text-whiteText mt-10"
           />
         </Link>
       </div>
