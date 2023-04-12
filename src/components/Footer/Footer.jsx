@@ -59,7 +59,7 @@ export const Footer = () => {
                   So Yummy
                 </h2>
               </div>
-              <ul className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[420px]"
+              <ul className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[430px]"
                 style={{
                   fontFamily: 'Poppins',
                   // fontWeight: 400,
@@ -67,25 +67,25 @@ export const Footer = () => {
                   color: 'white',
                 }}
               >
-                <li className='flex flex-row justify-start items-center'>
+                <li className='flex flex-row justify-start items-center ml-[10px]'>
                   <Svg alt='elipse'></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Database of recipes that can be replenished
                   </p>
                 </li>
-                <li className="mt-3 flex flex-row justify-start items-start">
+                <li className="mt-3 flex flex-row justify-start items-start ml-[10px]">
                   <Svg alt='elipse' className='mt-[9px] w-[4.8px] h-[4.5px]'></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Flexible search for desired and unwanted ingredients
                   </p>
                 </li>
-                <li className="mt-3 flex flex-row justify-start items-center">
+                <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
                   <Svg alt='elipse'></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Ability to add your own recipes with photos
                   </p>
                 </li>
-                <li className="mt-3 flex flex-row justify-start items-center">
+                <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
                   <Svg alt='elipse'></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Convenient and easy to use
