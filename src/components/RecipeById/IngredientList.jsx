@@ -36,7 +36,7 @@ export const IngredientList = () => {
           key={_id}
           className="flex justify-between items-center bg-accentLighter dark:bg-accentHalfDark pl-[14px] md:pl-6 pr-[29px] md:pr-[58px] rounded-lg"
         >
-          <div className="flex items-center gap-6 xl:gap-10 w-40 md:w-80 min-[1024px]:w-500px xl:w-[600px] overflow-hidden">
+          <div className="flex items-center gap-6 xl:gap-10 w-40 md:w-80 lg:w-[500px] xl:w-[600px] overflow-hidden">
             {{ thb } ? (
               <img
                 src={thb}

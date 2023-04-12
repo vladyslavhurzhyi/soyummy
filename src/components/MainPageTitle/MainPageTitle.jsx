@@ -9,7 +9,7 @@ export const MainPageTitle = ({ pageTitle, className }) => {
   const isVisible = className.includes('accent') ? true : false;
 
   return (
-    <div>
+    <div className="relative">
       {!isVisible && (
         <div>
           <motion.div
@@ -59,6 +59,8 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           left-[247px] 
           md:top-155px] 
           md:left-[437px] 
+          lg:top-155px] 
+          lg:left-[437px] 
           xl:top-[199px] 
           xl:left-[807px] 
           size animate-pulse"
