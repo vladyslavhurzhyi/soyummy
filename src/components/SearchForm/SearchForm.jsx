@@ -37,7 +37,6 @@ export const SearchForm = () => {
           value={searchValue}
           onChange={handleInputChange}
           className="text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] bg-white dark:bg-accentDarker"
-          placeholder="Beef |"
         />
         <CurveBtn
           type="submit"
