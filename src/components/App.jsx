@@ -9,6 +9,7 @@ import { PrivateRoute, PublicRoute } from 'service/routes';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Suspense } from 'react';
 import { Loader } from './Loader/Loader';
+import { Helmet } from 'react-helmet-async';
 
 const Register = lazy(() => import('pages/RegisterPage'));
 const Signin = lazy(() => import('pages/SigninPage'));
@@ -40,29 +41,29 @@ export const App = () => {
 
   return (
     <>
+      <Helmet>
+        <title>SoYummy</title>
+      </Helmet>
+
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route
             path="/welcome"
             element={
-              <PublicRoute
-                component={WellcomPage}
-                redirectTo="/main"
-                restricted
-              />
+              <PublicRoute component={WellcomPage} redirectTo="/" restricted />
             }
           />
 
           <Route
             path="/register"
             element={
-              <PublicRoute component={Register} redirectTo="/main" restricted />
+              <PublicRoute component={Register} redirectTo="/" restricted />
             }
           />
           <Route
             path="/signin"
             element={
-              <PublicRoute component={Signin} redirectTo="/main" restricted />
+              <PublicRoute component={Signin} redirectTo="/" restricted />
             }
           />
 
@@ -73,7 +74,7 @@ export const App = () => {
             }
           >
             <Route
-              path="/main"
+              index
               element={
                 <PrivateRoute component={MainPage} redirectTo="/signin" />
               }

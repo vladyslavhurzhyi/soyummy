@@ -29,6 +29,7 @@ module.exports = {
         whiteText: '#FAFAFA',
         greyInput: '#BDBDBD',
         listUnderline: '#E0E0E0',
+        greenSelectArrow: '8BAA36',
       },
       boxShadow: {
         custom: '0px 4px 4px rgba(135, 135, 135, 0.2)',

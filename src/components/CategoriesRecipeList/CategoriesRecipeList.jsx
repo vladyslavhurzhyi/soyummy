@@ -14,7 +14,7 @@ const CategoriesRecipesList = () => {
   }, [category, dispatch]);
   return (
     <div>
-      <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
+      <ul className="flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
         {recipes.map(({ thumb, _id, title }) => {
           return (
             <li
