@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectQueryType } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
+import { Helmet } from 'react-helmet-async';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
@@ -36,6 +37,9 @@ const Search = () => {
   return (
     <main>
       <div className="container">
+        <Helmet>
+          <title>Search</title>
+        </Helmet>
         <MainPageTitle pageTitle="Search" className="main-title mb-[50px]" />
         <Searchbar />
         <SearchedRecipesList />

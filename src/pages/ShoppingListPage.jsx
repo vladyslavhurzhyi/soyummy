@@ -1,10 +1,14 @@
 import { IngredientsShoppingList } from 'components/IngredientsShoppingList/IngredientsShoppingList';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ShoppingListPage = () => {
   return (
     <div className="container">
+      <Helmet>
+        <title>Shopping list</title>
+      </Helmet>
       <MainPageTitle
         pageTitle={'Shopping list'}
         className={'main-title pb-[50px] md:pb-[72px]'}
