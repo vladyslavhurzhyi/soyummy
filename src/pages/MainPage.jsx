@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const MainPage = () => {
   const navigate = useNavigate();
   const onClick = e => {
-    navigate('/categories/beef');
+    navigate('/categories/breakfast');
   };
 
   return (

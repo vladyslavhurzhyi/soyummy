@@ -3,7 +3,7 @@ import { getCategories } from './categoriesOperations';
 import { setCurrentCategory } from './categoriesOperations';
 
 const initialState = {
-  currentCategory: 'Beef',
+  currentCategory: 'Breakfast',
   list: [],
   isLoading: false,
   error: null,
