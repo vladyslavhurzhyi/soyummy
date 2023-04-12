@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { motion, Reorder } from 'framer-motion';
 
@@ -15,7 +14,6 @@ import {
 } from 'redux/shoppingList/shoppingListSelector';
 import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
 import { ErrorPage } from 'components/ErrorComponent/ErrorComponent';
-// import { Loader } from 'components/Loader/Loader';
 
 export const IngredientsShoppingList = () => {
   const [data, setData] = useState(null);
@@ -31,11 +29,9 @@ export const IngredientsShoppingList = () => {
       dispatch(fetchShoppingList());
     }
     setData(list);
-  }, [data, dispatch, list]);
+  }, [dispatch, list]); // eslint-disable-line
 
   const handleDeleteItem = (id, recipeId) => {
-    console.log(id);
-    console.log(recipeId);
     dispatch(deleteShoppingListItem({ id, recipeId }));
   };
   if (error) {
@@ -69,16 +65,16 @@ export const IngredientsShoppingList = () => {
               Remove
             </h3>
           </motion.div>
-          {/* {loading ? (
-            <div className="mx-auto flex items-center justify-center h-64">
-              <Loader />
-            </div> */}
-          {/* ) : ( */}
-          <Reorder.Group className="mt-2" values={data} onReorder={setData}>
+          <Reorder.Group
+            className="mt-2"
+            values={data}
+            axis="y"
+            onReorder={setData}
+          >
             {data?.map(
               ({ id, thb, ttl, amount, measure, recipeId }, idx, arr) => (
                 <IngredientsShoppingListItem
-                  key={id}
+                  key={`${recipeId}${measure}${id}`}
                   id={id}
                   thb={thb}
                   ttl={ttl}
@@ -93,7 +89,6 @@ export const IngredientsShoppingList = () => {
               )
             )}
           </Reorder.Group>
-          {/* )} */}
         </>
       ) : (
         <EmptyShoppingList />
