@@ -35,10 +35,7 @@ const Search = () => {
 
   return (
     <main>
-      <MainPageTitle
-        pageTitle="Search"
-        className="main-title ml-10  relative z-10"
-      />
+      <MainPageTitle pageTitle="Search" className="main-title ml-10" />
       <Searchbar />
       <SearchedRecipesList />
     </main>
