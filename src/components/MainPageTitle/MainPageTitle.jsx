@@ -86,7 +86,7 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           md:left-[726px] 
           xl:top-[129px] 
           xl:left-[1250px] 
-          size"
+          size bg-gradient-to-r from-white to-white via-accentMain animate-gradient-x"
           ></motion.div>
         </div>
       )}
