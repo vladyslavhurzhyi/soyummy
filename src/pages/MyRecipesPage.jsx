@@ -1,9 +1,13 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { MyRecipesList } from 'components/MyRecipesList/MyRecipesList';
+import { Helmet } from 'react-helmet-async';
 
 const MyRecipesPage = () => {
   return (
     <>
+      <Helmet>
+        <title>My recipes</title>
+      </Helmet>
       <div className="container">
         <MainPageTitle
           pageTitle={'My recipes'}
