@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContentForMain } from 'redux/previewCategories/categoriesSelectors';
 import { getMainCategories } from 'redux/previewCategories/categoriesOperations';
+import { setCurrentCategory } from 'redux/categories/categoriesOperations';
 import { useMediaQuery } from 'react-responsive';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const PreviewCategories = () => {
   const categories = useSelector(getContentForMain);
@@ -32,12 +33,18 @@ export const PreviewCategories = () => {
     numCard = 1;
   }
 
+  const onClick = category => {
+    dispatch(setCurrentCategory(category));
+    navigate(`/categories/${category}`);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <ul className="container   xl:px-0 flex flex-col gap-24">
       {categories.map(({ category, recipes }) => {
-        const onClick = e => {
-          navigate(`/categories/${category}`);
-        };
         if (recipes.length >= 4)
           return (
             <li key={category} className="text-left ">
@@ -63,14 +70,15 @@ export const PreviewCategories = () => {
                   </div>
                 ))}
               </ul>
-              <Link to="/categories/beef" className="flex justify-end">
+              <div className="flex justify-end">
                 <CurveBtn
                   type={'button'}
-                  onClick={onClick}
+                  onClick={() => onClick(category)}
                   text={'See all'}
                   cssClass="logout-btn"
+                  className="flex justify-end"
                 />
-              </Link>
+              </div>
             </li>
           );
         return '';
