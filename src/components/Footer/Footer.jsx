@@ -74,7 +74,7 @@ export const Footer = () => {
                   </p>
                 </li>
                 <li className="mt-3 flex flex-row justify-start items-start">
-                  <Svg alt='elipse' className='mt-[7px]'></Svg>
+                  <Svg alt='elipse' className='mt-[9px] w-[4.8px] h-[4.5px]'></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Flexible search for desired and unwanted ingredients
                   </p>
