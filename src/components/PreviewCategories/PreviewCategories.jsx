@@ -56,7 +56,7 @@ export const PreviewCategories = () => {
                         alt={title}
                         className="h-[323px] w-full rounded-lg"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[250px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}
                       </p>
                     </NavLink>
