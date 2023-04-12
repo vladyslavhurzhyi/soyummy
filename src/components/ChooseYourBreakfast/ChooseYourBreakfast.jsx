@@ -3,7 +3,7 @@ import spoon from 'images/spoon.png';
 import arrow from 'images/arrow.png';
 export const ChooseYourBreakfast = () => {
   return (
-    <div className="relative w-full z-0">
+    <div className="relative w-full z-0 mx-auto">
       <img
         src={spoon}
         alt=""
