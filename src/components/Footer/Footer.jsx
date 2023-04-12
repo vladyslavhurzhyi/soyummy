@@ -4,6 +4,7 @@ import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
 import { Nav } from './Nav';
 import { SubscribeForm } from './SubscribeForm';
+import { ReactComponent as Svg } from './images/elipse.svg'
 
 export const Footer = () => {
   return (
@@ -64,27 +65,29 @@ export const Footer = () => {
                   // fontWeight: 400,
                   lineHeight: 1.33,
                   color: 'white',
-                  listStyleType: 'disc',
-                  // width: 418,
                 }}
               >
-                <li>
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
+                <li className='flex flex-row justify-start items-center'>
+                  <Svg alt='elipse'></Svg>
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Database of recipes that can be replenished
                   </p>
                 </li>
-                <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
+                <li className="mt-3 flex flex-row justify-start items-start">
+                  <Svg alt='elipse' className='mt-[7px]'></Svg>
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Flexible search for desired and unwanted ingredients
                   </p>
                 </li>
-                <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
+                <li className="mt-3 flex flex-row justify-start items-center">
+                  <Svg alt='elipse'></Svg>
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Ability to add your own recipes with photos
                   </p>
                 </li>
-                <li className="mt-3">
-                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px]">
+                <li className="mt-3 flex flex-row justify-start items-center">
+                  <Svg alt='elipse'></Svg>
+                  <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Convenient and easy to use
                   </p>
                 </li>
