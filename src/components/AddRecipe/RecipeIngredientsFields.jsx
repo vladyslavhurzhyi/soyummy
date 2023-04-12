@@ -85,7 +85,7 @@ export const ResipeIngredientsFields = ({
 
     updateItems([...items, newIgredient]);
 
-    setIngredientName('');
+    setIngredientName(' ');
     setCurrent('');
     setCurrentAmount('1');
     setCurrentMeasure('pcs');
