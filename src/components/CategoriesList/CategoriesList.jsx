@@ -18,7 +18,7 @@ const CategoriesList = () => {
 
   return (
     <nav className=" w-full ">
-      <ul className="flex relative after:absolute after:h-px after:w-full after:bottom-0 after:left-0 after:bg-listUnderline scrollbar-none overflow-x-auto mb-8 ">
+      <ul className="flex scrollbar-thin scrollbar-track-stone-100  overflow-x-auto mb-8 ">
         {categories.map(category => {
           return (
             <li className="mr-14 relative pb-7 " key={category._id}>

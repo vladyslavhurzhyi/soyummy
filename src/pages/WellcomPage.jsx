@@ -5,7 +5,7 @@ const WelcomPage = () => {
     <section className="  bg-hero w-screen  text-center gap-4 bg-cover bg-center bg-no-repeat h-screen">
       <div className=" flex items-center h-full">
         <div className=" container mx-auto text-center  ">
-          <div className=" p-3 rounded-xl	 justify-center w-12 m-auto bg-lime-400">
+          <div className=" p-3 rounded-xl	 justify-center w-[54px] h-[54px] m-auto bg-accentMain">
             <svg
               width="30"
               height="30"

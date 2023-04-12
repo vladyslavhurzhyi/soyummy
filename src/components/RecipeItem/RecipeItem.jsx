@@ -15,6 +15,7 @@ export const RecipeItem = ({
   remove,
   paginationPage,
 }) => {
+  console.log('time', time);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const deleteHandler = async () => {
@@ -50,7 +51,7 @@ export const RecipeItem = ({
                 </p>
                 <div className="flex justify-between ">
                   <p className="mt-auto text-[10px] md:text-sm xl:text-lg font-medium font-main dark:text-[#FAFAFA]">
-                    {time} min
+                    {time} {time.includes('min') ? '' : 'min'}
                   </p>
                   <CurveBtn
                     cssClass={cssClass}

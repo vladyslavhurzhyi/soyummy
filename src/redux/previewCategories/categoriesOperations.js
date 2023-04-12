@@ -11,7 +11,6 @@ export const getMainCategories = createAsyncThunk(
           `/recipes/main-page/?categoriesLimit=${categoriesLimit}&recipesInCategory=${recipesInCategory}`
         )
         .then(({ data }) => {
-          console.log(data);
           return data;
         });
       return data.data;

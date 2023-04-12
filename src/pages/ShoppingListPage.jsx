@@ -13,7 +13,7 @@ const ShoppingListPage = () => {
         pageTitle={'Shopping list'}
         className={'main-title pb-[50px] md:pb-[72px]'}
       />
-      <section className="dark:bg-accentDarker">
+      <section className="dark:bg-accentDarker relative z-10">
         <div className=" max-w-[375px] md:max-w-3xl xl:max-w-7xl mx-auto px-2 md:px-8 xl:px-[100px] pb-24 md:pb-48">
           <IngredientsShoppingList />
         </div>
