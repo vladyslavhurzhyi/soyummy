@@ -17,11 +17,11 @@ export const Footer = () => {
       }}
     >
       <div
-        className="blur-sm absolute left-0 -top-[210px] lg:-top-[425px] z-[-100]">
+        className="blur-sm absolute left-[-30px] -top-[230px] md:left-[-40px] md:-top-[370px] xl:left-[-60px] xl:-top-[480px] z-[-100] rotate-[149deg]">
         <img
-          src={require('./images/bgBottomLeftImage.png')}
+          src={require('./images/leafs.png')}
           alt="leafs"
-          className="w-[256px] h-[392px] lg:w-[558px] lg:h-[852px]"
+          className="w-[296px] h-[392px] md:w-[493px] md:h-[646px] xl:w-[748px] xl:h-[852px]"
         />
       </div>
       <div
@@ -130,11 +130,11 @@ export const Footer = () => {
           Terms of Service
         </NavLink>
         <div
-          className="blur-sm absolute right-0 bottom-0 z-100">
+          className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
           <img
-            src={require('./images/bgBottomRightImage.png')}
+            src={require('./images/leafs.png')}
             alt="leafs"
-            className="w-[180px] h-[172px] lg:w-[438px] lg:h-[474px]"
+            className="w-[190px] h-[172px] md:w-[328px] md:h-[314px] xl:w-[488px] xl:h-[474px]"
           />
         </div>
       </div>
