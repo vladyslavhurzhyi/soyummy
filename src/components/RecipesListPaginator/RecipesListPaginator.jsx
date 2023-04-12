@@ -18,7 +18,7 @@ export const RecipesListPaginator = ({
 
   return (
     <>
-      <div className="relative flex justify-center mb-[100px]  dark:bg-accentDarker z-[19]">
+      <div className="relative flex justify-center mb-[100px]  dark:bg-transparent z-[19] ">
         <nav
           className="inline-flex items-center -space-x-px "
           aria-label="Pagination"
