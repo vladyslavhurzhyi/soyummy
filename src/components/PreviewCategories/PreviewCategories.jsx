@@ -8,15 +8,13 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 export const PreviewCategories = () => {
   const categories = useSelector(getContentForMain);
-  // console.log(categories);
+
   const dispatch = useDispatch();
   const isDesktop = useMediaQuery({ minWidth: 1440 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('route');
-
     if (categories.length <= 0) {
       const params = { categoriesLimit: 4, recipesInCategory: 4 };
       dispatch(getMainCategories(params));
