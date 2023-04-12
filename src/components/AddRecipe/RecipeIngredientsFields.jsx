@@ -52,7 +52,7 @@ export const ResipeIngredientsFields = ({
       </h2>
       {items.map(item => {
         return (
-          <div key={item.id} className="flex mb-4 md:mb-6">
+          <div key={item.key} className="flex mb-4 md:mb-6">
             <select
               name="name"
               data-name="id"

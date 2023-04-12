@@ -4,7 +4,7 @@ import placeholder from 'images/dishes_placeholder.jpg';
 
 export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipeById);
-  const { preview, instructions } = recipes;
+  const { thumb, instructions } = recipes;
 
   const steps = instructions.split('\r\n');
   // const filteredSteps = steps.filter(step => step !== '');
@@ -33,9 +33,9 @@ export const RecipePreparation = () => {
             </ul>
           </div>
           <div className="max-w-[343px] md:max-w-[433px] xl:w-[433px] h-[250px] md:h-[332px] overflow-hidden align-middle">
-            {{ preview } ? (
+            {{ thumb } ? (
               <img
-                src={preview}
+                src={thumb}
                 className="block w-full rounded align-middle h-full object-cover"
                 alt="ingredient_photo"
               />
