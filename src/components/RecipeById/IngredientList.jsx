@@ -5,12 +5,16 @@ import {
   addShoppingList,
   deleteShoppingListItem,
 } from 'redux/shoppingList/shoppingListOperations';
-import { selectShoppingListIsError } from 'redux/shoppingList/shoppingListSelector';
+import {
+  selectShoppingListIsError,
+  selectShoppingListIsLoading,
+} from 'redux/shoppingList/shoppingListSelector';
 
 export const IngredientList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipeById);
   const error = useSelector(selectShoppingListIsError);
+  const isLoading = useSelector(selectShoppingListIsLoading);
 
   const { _id: recipeId, ingredients } = recipes;
 
@@ -65,6 +69,7 @@ export const IngredientList = () => {
             <div className="flex relative">
               <input
                 type="checkbox"
+                disabled={isLoading}
                 onChange={handleChange}
                 data-ingrid={_id}
                 data-ingramount={amount}
