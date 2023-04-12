@@ -35,9 +35,11 @@ const Search = () => {
 
   return (
     <main>
-      <MainPageTitle pageTitle="Search" className="main-title ml-10" />
-      <Searchbar />
-      <SearchedRecipesList />
+      <div className="container">
+        <MainPageTitle pageTitle="Search" className="main-title mb-[50px]" />
+        <Searchbar />
+        <SearchedRecipesList />
+      </div>
     </main>
   );
 };

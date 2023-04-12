@@ -7,7 +7,7 @@ const MyRecipesPage = () => {
       <div className="container">
         <MainPageTitle
           pageTitle={'My recipes'}
-          className={'main-title pb-[50px] md:pb-[72px] px-4 md:px-8 xl:px-24'}
+          className={'main-title pb-[50px] md:pb-[72px]'}
         />
         <section className="bg-[#FAFAFA] dark:bg-accentDarker">
           <MyRecipesList cssClass="seerecipegreen-btn" />
