@@ -1,4 +1,4 @@
-import { SkeletonRecipe } from 'components/Skeleton/Skeleton';
+import { Loader } from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -17,8 +17,9 @@ export const SearchedRecipesList = () => {
         toast.error('Something went wrong, please try again later', {
           autoClose: 3000,
         })}
-      {isLoading ? (
-        <SkeletonRecipe className="w-[300px] h-[140px] md:w-[700px] md:h-[288px] xl:w-[900px] xl:h-[300px]" />
+      {isLoading && !error && <Loader />}
+      {recipes.length === 0 ? (
+        <p className="text-center">Try to look for something else</p>
       ) : (
         <div>
           <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
