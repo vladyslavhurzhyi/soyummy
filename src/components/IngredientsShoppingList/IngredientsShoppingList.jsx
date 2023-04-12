@@ -74,7 +74,7 @@ export const IngredientsShoppingList = () => {
             {data?.map(
               ({ id, thb, ttl, amount, measure, recipeId }, idx, arr) => (
                 <IngredientsShoppingListItem
-                  key={`${recipeId}${measure}${id}`}
+                  key={`${recipeId}${measure}${id}${idx}`}
                   id={id}
                   thb={thb}
                   ttl={ttl}
