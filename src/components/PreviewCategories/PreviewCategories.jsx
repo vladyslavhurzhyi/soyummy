@@ -63,7 +63,7 @@ export const PreviewCategories = () => {
                   </div>
                 ))}
               </ul>
-              <Link to="/categories/beef" className="flex justify-end">
+              <Link to="/categories/breakfast" className="flex justify-end">
                 <CurveBtn
                   type={'button'}
                   onClick={onClick}
