@@ -11,28 +11,28 @@ export const Nav = () => {
                     Ingredients
                 </NavLink>
             </li>
-            <li className="mt-3.5 md:mt-5 lg:mt-6 self-center  md:self-start">
+            <li className="mt-3.5 md:mt-5 xl:mt-6 self-center  md:self-start">
                 <NavLink to='/add'
                     className='font-medium text-white text-[14px]/[18px]'
                 >
                     Add recipes
                 </NavLink>
             </li>
-            <li className="mt-3.5 md:mt-5 lg:mt-6 self-center  md:self-start">
+            <li className="mt-3.5 md:mt-5 xl:mt-6 self-center  md:self-start">
                 <NavLink to="/my"
                     className='font-medium text-white text-[14px]/[18px]'
                 >
                     My recipes
                 </NavLink>
             </li>
-            <li className="mt-3.5 md:mt-5 lg:mt-6 self-center  md:self-start">
+            <li className="mt-3.5 md:mt-5 xl:mt-6 self-center  md:self-start">
                 <NavLink to='favorite'
                     className='font-medium text-white text-[14px]/[18px]'
                 >
                     Favorite
                 </NavLink>
             </li>
-            <li className="mt-3.5 md:mt-5 lg:mt-6 self-center  md:self-start">
+            <li className="mt-3.5 md:mt-5 xl:mt-6 self-center  md:self-start">
                 <NavLink to='shopping-list'
                     className='font-medium text-white text-[14px]/[18px]'
                 >

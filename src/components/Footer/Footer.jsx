@@ -25,16 +25,16 @@ export const Footer = () => {
         />
       </div>
       <div
-        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] lg:px-[60px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] lg:pt-[64px] lg:pb-[50px] "
+        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] "
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
       >
-        <div className="flex flex-col lg:flex-row lg:items-start md:justify-center lg:justify-between w-full max-w-[1240px]">
+        <div className="flex flex-col xl:flex-row xl:items-start md:justify-center xl:justify-between w-full max-w-[1240px]">
           <div className="flex justify-center">
             <div
-              className="flex flex-col mr-0 lg:mr-[0px]"
+              className="flex flex-col mr-0 xl:mr-[0px]"
               style={{
                 // display: 'flex',
                 alignItems: 'flex-start',
@@ -59,7 +59,7 @@ export const Footer = () => {
                   So Yummy
                 </h2>
               </div>
-              <ul className="hidden md:block lg:block lg:min-w-[340px] lg:max-w-[360px] xl:min-w-[380px] xl:max-w-[420px]"
+              <ul className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[420px]"
                 style={{
                   fontFamily: 'Poppins',
                   // fontWeight: 400,
@@ -93,19 +93,19 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="hidden md:block lg:hidden md:ml-[173px]">
+            <div className="hidden md:block xl:hidden md:ml-[173px]">
               <Nav />
             </div>
           </div>
-          <div className='flex justify-center lg:hidden w-full md:mt-[72px]'>
+          <div className='flex justify-center xl:hidden w-full md:mt-[72px]'>
             <Navigation />
           </div>
-          <div className='hidden lg:flex'><Navigation /></div>
-          <div className='hidden lg:flex'><SubscribeForm/></div>
+          <div className='hidden xl:flex'><Navigation /></div>
+          <div className='hidden xl:flex'><SubscribeForm/></div>
         </div>
       </div>
       <div
-        className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] lg:py-[50px]">
+        className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
         <p
           style={{
             fontFamily: 'Poppins',
@@ -117,7 +117,7 @@ export const Footer = () => {
         >
           © 2023 All Rights Reserved.
         </p>
-        <NavLink className='ml-[14px] md:ml-[28px] lg:ml-[40px]'
+        <NavLink className='ml-[14px] md:ml-[28px] xl:ml-[40px]'
           style={{
             fontFamily: 'Poppins',
             fontWeight: 400,
