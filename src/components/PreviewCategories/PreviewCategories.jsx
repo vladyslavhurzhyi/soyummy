@@ -48,7 +48,7 @@ export const PreviewCategories = () => {
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
                   <div
                     key={_id}
-                    className="w-[343px] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
+                    className="w-[100%] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
