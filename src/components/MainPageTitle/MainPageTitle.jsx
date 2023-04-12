@@ -29,11 +29,11 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           w-2 md:w-3.5 
           h-2 md:h-3.5 
           top-[76px] 
-          left-[120px] 
+          left-[104px] 
           md:top-[85px] 
-          md:left-[219px] 
+          md:left-[187px] 
           xl:top-[116px] 
-          xl:left-[328px] 
+          xl:left-[228px] 
           size
           "
           ></motion.div>
@@ -56,13 +56,13 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           w-1.5 md:w-3 
           h-1.5 md:h-3 
           top-[142px] 
-          left-[247px] 
-          md:top-155px] 
-          md:left-[437px] 
-          lg:top-155px] 
+          left-[231px] 
+          md:top-[155px] 
+          md:left-[405px] 
+          lg:top-[155px] 
           lg:left-[437px] 
           xl:top-[199px] 
-          xl:left-[807px] 
+          xl:left-[707px] 
           size animate-pulse"
           ></motion.div>
           <motion.div
@@ -83,11 +83,10 @@ export const MainPageTitle = ({ pageTitle, className }) => {
           w-2 md:w-3.5 
           h-2 md:h-3.5
           top-[109px] 
-          left-[349px]  
+          right-[0px]  
           md:top-[98px] 
-          md:left-[726px] 
           xl:top-[129px] 
-          xl:left-[1250px] 
+          xl:right-[71px] 
           size"
           ></motion.div>
         </div>
