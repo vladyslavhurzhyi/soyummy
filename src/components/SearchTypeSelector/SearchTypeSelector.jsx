@@ -27,7 +27,7 @@ export const SearchTypeSelector = () => {
           <option
             key={searchType}
             value={searchType}
-            className="bg-accentGray dark:bg-accentMain text-center  rounded-lg"
+            className="bg-accentGray dark:bg-accentMain text-center"
           >
             {searchType}
           </option>
