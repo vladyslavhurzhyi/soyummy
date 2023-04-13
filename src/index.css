@@ -196,10 +196,10 @@ select:focus ~ label {
   @apply ml-[28px] mr-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:bg-transparent  dark:hover:text-white;
 }
 
-.Toastify__toast-container {
+/* .Toastify__toast-container {
   width: 320px;
-  min-height: 42px;
-}
+  min-height: 25px;
+} */
 
 .Toastify__toast-container--top-right {
   top: 65px;
@@ -212,7 +212,7 @@ select:focus ~ label {
 }
 
 .Toastify__progress-bar {
-  background-color: #fafafa;
+  background-color: transparent;
 }
 
 .Toastify__toast-icon svg {

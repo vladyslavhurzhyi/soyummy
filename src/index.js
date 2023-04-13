@@ -23,16 +23,16 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
     <ToastContainer
       position="top-right"
-      autoClose={2000}
+      autoClose={300}
       hideProgressBar={false}
-      newestOnTop={true}
+      newestOnTop={false}
       closeOnClick
       rtl={false}
-      transition={Zoom}
       pauseOnFocusLoss
       draggable
       pauseOnHover
       theme="light"
+      transition={Zoom}
     />
   </React.StrictMode>
 );
