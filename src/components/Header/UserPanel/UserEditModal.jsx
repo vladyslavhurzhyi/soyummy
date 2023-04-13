@@ -1,16 +1,22 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ModalTW } from 'components/ModalTW';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { edit } from 'redux/auth/authOperations';
 import { AiOutlineUser, AiOutlineReload } from 'react-icons/ai';
 import { Button } from 'components/Button/Button';
 import { ReactComponent as Svg } from '../../../images/svg/crossSvg.svg';
+import { getUser } from 'redux/auth/authSelectors';
 
 const UserEditModal = ({ isOpen, handleClose }) => {
+  const user = useSelector(getUser);
   const [selectedFile, setSelectedFile] = useState(null);
   const [name, setName] = useState('');
   const [backgroundImage, setBackgroundImage] = useState(null);
   const dispatch = useDispatch();
+  useEffect(() => {
+    setName(user.name);
+    setBackgroundImage(user.avatarUrl);
+  }, [user, isOpen]);
 
   const clearExit = () => {
     setSelectedFile(null);
@@ -71,22 +77,25 @@ const UserEditModal = ({ isOpen, handleClose }) => {
               }}
             >
               <div className="flex relative items-center justify-center  w-20 h-20 ">
-                {selectedFile && (
+                {(selectedFile || backgroundImage) && (
                   <AiOutlineReload
                     size={48}
                     className="text-white opacity-75 "
                   />
                 )}
-                {!selectedFile && (
-                  <div className="transition duration-300 hover:bg-transparent hover:animate-pulse  bg-[#D9D9D9] rounded-full p-5 dark:bg-accentHalfDark hover:cursor-pointer  hover:scale-120">
-                    <AiOutlineUser className="dark:text-white" size={48} />
-                  </div>
+                {!selectedFile && !backgroundImage && (
+                  <>
+                    <div className="transition duration-300 hover:bg-transparent hover:animate-pulse  bg-[#D9D9D9] rounded-full p-5 dark:bg-accentHalfDark hover:cursor-pointer  hover:scale-120">
+                      <AiOutlineUser className="dark:text-white" size={48} />
+                    </div>
+                    <div className=" fixed bottom-[58%] right-[42%] w-6 h-6 bg-accentMain hover:cursor-pointer rounded-full">
+                      <p className="flex text-center text-white justify-center">
+                        +
+                      </p>
+                    </div>
+                  </>
                 )}
               </div>
-              <div className=" fixed bottom-[58%] right-[42%] w-6 h-6 bg-accentMain hover:cursor-pointer rounded-full">
-                <p className="flex text-center text-white justify-center">+</p>
-              </div>
-
               <input
                 type="file"
                 className="hidden "
