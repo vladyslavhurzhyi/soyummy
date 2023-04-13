@@ -22,7 +22,7 @@ export const MobMenu = () => {
   return (
     <div className="flex items-center justify-between py-8">
       <nav>
-        <div className="MOBILE-MENU flex xl:hidden">
+        <div className="MOBILE-MENU flex lg:hidden">
           <div
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => setIsNavOpen(prev => !prev)}

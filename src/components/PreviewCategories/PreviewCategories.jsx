@@ -41,7 +41,7 @@ export const PreviewCategories = () => {
   };
 
   return (
-    <ul className="container   xl:px-0 flex flex-col gap-24">
+    <ul className="xl:px-0 flex flex-col gap-24">
       {categories.map(({ category, recipes }) => {
         if (recipes.length >= 4)
           return (
