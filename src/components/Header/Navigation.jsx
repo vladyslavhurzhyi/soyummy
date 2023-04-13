@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
 

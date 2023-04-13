@@ -1,7 +1,6 @@
+import { Helmet } from 'react-helmet-async';
 import { IngredientsShoppingList } from 'components/IngredientsShoppingList/IngredientsShoppingList';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 const ShoppingListPage = () => {
   return (

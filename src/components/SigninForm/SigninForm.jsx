@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as Svg } from '../../images/svg/OrderFoodPana.svg';
 import { useFormik } from 'formik';
 import { loginValidationSchema } from 'utils/authValidationSchema/authValidationSchema';
+import { GoogleLogIn } from 'components/GoogleLogIn';
 
 const SigninForm = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const SigninForm = () => {
       formik.resetForm();
     },
   });
-  console.log('formik', formik);
 
   return (
     <section className=" formWrapSection">
@@ -118,6 +118,9 @@ const SigninForm = () => {
             >
               Sign in
             </button>
+          </div>
+          <div className="flex justify-center">
+            <GoogleLogIn />
           </div>
         </form>
         <div className="flex justify-center">
