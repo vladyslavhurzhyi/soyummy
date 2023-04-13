@@ -19,14 +19,14 @@ const CategoriesRecipesList = () => {
           return (
             <li
               key={_id}
-              className="w-[343px] h-[323px] relative md:w-[47%] xl:w-[24%] object-cover"
+              className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white"
             >
               <NavLink
                 to={`/recipes/${_id}`}
                 className="bg-gray-200  rounded-lg bg-cover bg-center w-full h-full bg-no-repeat block"
                 style={{ backgroundImage: `url('${thumb}` }}
               >
-                <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[307px] md:w-[300px] xl:w-[268px] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark">
+                <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white">
                   {title}
                 </div>
               </NavLink>
