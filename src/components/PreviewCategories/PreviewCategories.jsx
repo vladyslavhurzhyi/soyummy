@@ -59,7 +59,7 @@ export const PreviewCategories = () => {
                       <img
                         src={preview}
                         alt={title}
-                        className="h-[323px] w-full rounded-lg"
+                        className="h-[323px] w-full rounded-lg object-cover"
                       />
                       <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}
