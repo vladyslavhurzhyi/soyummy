@@ -57,7 +57,7 @@ export const UserPanel = () => {
             className="w-[34px] h-[34px] md:w-[44px] md:h-[44px] rounded-full object-cover "
           />
           <p
-            className={`ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText text-[12px] md:text-sm ${
+            className={`ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText xl:dark:text-accentDark  text-[12px] md:text-sm ${
               currentPath === '/main' || currentPath.includes('/recipes')
                 ? 'xl:dark:text-accentDark'
                 : 'dark:text-whiteText'
