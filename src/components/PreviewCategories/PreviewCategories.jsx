@@ -51,21 +51,21 @@ export const PreviewCategories = () => {
               </p>
               <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
-                  <div
+                  <li
                     key={_id}
-                    className="w-[100%] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
+                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover"
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
                         src={preview}
                         alt={title}
-                        className="h-[323px] w-full rounded-lg object-cover"
+                        className="h-full w-full rounded-lg object-cover"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}
                       </p>
                     </NavLink>
-                  </div>
+                  </li>
                 ))}
               </ul>
               <div className="flex justify-end">
