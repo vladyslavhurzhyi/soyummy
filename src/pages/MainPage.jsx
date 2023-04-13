@@ -33,7 +33,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <div className="relative z-[1] text-center mb-[100px] xl:mb-28 container">
+      <div className="relative z-[1] text-center  container">
         <PreviewCategories className="relative z-10 " />
         <Link to="/categories/beef">
           <CurveBtn
