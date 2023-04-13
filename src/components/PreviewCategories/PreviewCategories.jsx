@@ -53,7 +53,7 @@ export const PreviewCategories = () => {
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
                   <li
                     key={_id}
-                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover"
+                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-sm  shadow-black hover:shadow-black dark:shadow-white dark:hover:shadow-white"
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
@@ -61,7 +61,7 @@ export const PreviewCategories = () => {
                         alt={title}
                         className="h-full w-full rounded-lg object-cover"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white ">
                         {title}
                       </p>
                     </NavLink>
