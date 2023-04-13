@@ -25,16 +25,6 @@ export const ResipeMethodFields = ({ data, updateData }) => {
         onChange={updateData}
         className="p-3 block w-full h-40 my-[18px] md:my-[32px] md:w-2/3 lg:w-1/2 rounded-lg bg-accentGray border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 focus:border-accentMain border-transparent dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
       ></textarea>
-      {/* <label className="text-gray-500 text-customXs md:text-customSm ">
-        <input
-          type="checkbox"
-          id="isPublic"
-          value={data.isPublic}
-          onChange={updateData}
-          className="appearance-none "
-        />{' '}
-        add to the public recipe database SoYummy
-      </label> */}
       <div className="flex relative">
         <input
           type="checkbox"
