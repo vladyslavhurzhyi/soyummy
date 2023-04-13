@@ -16,6 +16,7 @@ export const Footer = () => {
         width: '100%',
       }}
     >
+      
       <div className="blur-sm absolute left-[-30px] -top-[230px] md:left-[-40px] md:-top-[370px] xl:left-[-60px] xl:-top-[480px] z-[-100] rotate-[149deg]">
         <img
           src={require('./images/leafs.png')}
@@ -24,24 +25,13 @@ export const Footer = () => {
         />
       </div>
       <div
-        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] "
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
+        className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] "
       >
-        <div className="flex flex-col xl:flex-row xl:items-start md:justify-center xl:justify-between w-full max-w-[1240px]">
-          <div className="flex justify-center">
+        <div className='container'>
+        <div className="flex flex-col lg:flex-row lg:items-start md:justify-center lg:justify-between w-full">
+          <div className="flex justify-center md:justify-between">
             <div
-              className="flex flex-col mr-0 xl:mr-[0px]"
-              style={{
-                // display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'center',
-                // flexDirection: 'column',
-                // marginRight: 159,
-              }}
-            >
+              className="flex flex-col mr-0 lg:mr-[0px] items-start justify-center">
               <div className="flex items-center justify-center mb-[40px]">
                 <Logo
                   cssClassIcon="iconLogoFooterMob"
@@ -50,7 +40,6 @@ export const Footer = () => {
                 <h2
                   className="text-[18px]/[18px] md:text-[28px]/[28px] ml-[12px]"
                   style={{
-                    fontFamily: 'Poppins',
                     fontWeight: 700,
                     color: 'white',
                   }}
@@ -59,9 +48,8 @@ export const Footer = () => {
                 </h2>
               </div>
               <ul
-                className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[430px]"
+                className="hidden md:block lg:block lg:min-w-[380px] lg:max-w-[430px]"
                 style={{
-                  fontFamily: 'Poppins',
                   // fontWeight: 400,
                   lineHeight: 1.33,
                   color: 'white',
@@ -96,27 +84,28 @@ export const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="hidden md:block xl:hidden md:ml-[173px]">
+            <div className="hidden md:block lg:hidden">
               <Nav />
             </div>
           </div>
-          <div className="flex justify-center xl:hidden w-full md:mt-[72px]">
+          <div className="flex justify-center lg:hidden w-full md:mt-[72px]">
             <Navigation />
           </div>
-          <div className="hidden xl:flex">
+          <div className="hidden lg:flex">
             <Navigation />
           </div>
-          <div className="hidden xl:flex">
+          <div className="hidden lg:flex">
             <SubscribeForm />
           </div>
         </div>
+        </div>
       </div>
-      <div className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
+      <div className="text-[10px]/[10px] md:text-[14px]/[18px] flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
         <p
           style={{
             fontFamily: 'Poppins',
             fontWeight: 500,
-            fontSize: 14,
+            // fontSize: 14,
             color: '#22252A',
             opacity: 0.5,
           }}
@@ -124,11 +113,11 @@ export const Footer = () => {
           © 2023 All Rights Reserved.
         </p>
         <NavLink
-          className="ml-[14px] md:ml-[28px] xl:ml-[40px]"
+          className="text-[10px]/[10px] md:text-[14px]/[18px] ml-[14px] md:ml-[28px] xl:ml-[40px]"
           style={{
             fontFamily: 'Poppins',
             fontWeight: 400,
-            fontSize: 14,
+            // fontSize: 14,
             color: '#22252A',
             opacity: 0.5,
             // marginLeft: 40,
@@ -143,7 +132,8 @@ export const Footer = () => {
             className="w-[190px] h-[172px] md:w-[328px] md:h-[314px] xl:w-[488px] xl:h-[474px]"
           />
         </div>
-      </div>
+        </div>
+      
     </footer>
   );
 };
