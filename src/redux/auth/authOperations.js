@@ -104,7 +104,6 @@ export const current = createAsyncThunk(
     token.set(persistedAccessToken);
     try {
       const data = await currentUserAPI();
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error);

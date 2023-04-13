@@ -236,31 +236,31 @@ export const ResipeIngredientsFields = ({
 
       <CurveBtn
         text="add ingredient"
-        cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring"
+        cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring mb-3 md:mb-5"
         onClick={newIngredientField}
       />
-      <ul>
+      <ul className="w-full md:w-2/3 xl:w-1/2">
         {items.length >= 1 &&
           items.map(({ ttl, id, amount, measure }) => (
             <li
               key={id}
-              // value={_id}
-              // onClick={() => handleIngredient(, item.id)}
-              // onClick={() => chooseItem(ttl, _id, item.id)}
-              className="m-2 flex bg-lime-50 dark:bg-accentMain"
+              className="m-1 px-2 py-[2px] lg:px-4 flex items-center justify-between  bg-lime-50 rounded-lg focus:outline-none focus:ring-0 focus:border-accentMain border-transparent dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
             >
-              <p>{ttl}____</p>
-              <p>{amount}_____</p>
-              <p>{measure}</p>
+              <div className=" p-[1px] md:p-2 font-normal md:font-medium  text-customXs md:text-customSm bg-[#EBF3D4] dark:bg-lime-50 flex rounded-md ">
+                <p className="mr-4">{ttl}:</p>
+                <p>{amount}</p>
+                <p>{measure}</p>
+              </div>
+
               <button
                 type="button"
-                className="flex ml-1 md:ml-3 lg:ml-5 "
+                className="flex ml-1 md:ml-3 lg:ml-5"
                 onClick={() => removeItem(id)}
               >
                 <Logo
                   trash="true"
                   cssClassIcon="iconTrash"
-                  cssClassDiv="divIconTrash"
+                  cssClassDiv="divIconTrash dark:bg-lime-50 dark:stroke-accentDarker hover:dark:stroke-whiteText focus:dark:stroke-whiteText"
                 />
               </button>
             </li>

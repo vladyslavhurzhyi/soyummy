@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
-import { motion, Reorder } from 'framer-motion';
-
-import { EmptyShoppingList } from './EmptyShoppingList';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   deleteShoppingListItem,
   fetchShoppingList,
 } from 'redux/shoppingList/shoppingListOperations';
+import { EmptyShoppingList } from './EmptyShoppingList';
+import { ErrorPage } from 'components/ErrorComponent/ErrorComponent';
+import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
+import { motion, Reorder } from 'framer-motion';
 import {
   selectShoppingList,
   selectShoppingListIsError,
   selectShoppingListIsLoading,
 } from 'redux/shoppingList/shoppingListSelector';
-import { IngredientsShoppingListItem } from './IngredientsShoppingListItem';
-import { ErrorPage } from 'components/ErrorComponent/ErrorComponent';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 export const IngredientsShoppingList = () => {
   const [data, setData] = useState(null);

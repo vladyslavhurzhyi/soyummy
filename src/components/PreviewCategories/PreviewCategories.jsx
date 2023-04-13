@@ -41,7 +41,7 @@ export const PreviewCategories = () => {
   };
 
   return (
-    <ul className="container   xl:px-0 flex flex-col gap-24">
+    <ul className="xl:px-0 flex flex-col gap-24">
       {categories.map(({ category, recipes }) => {
         if (recipes.length >= 4)
           return (
@@ -59,7 +59,7 @@ export const PreviewCategories = () => {
                       <img
                         src={preview}
                         alt={title}
-                        className="h-[323px] w-full rounded-lg"
+                        className="h-[323px] w-full rounded-lg object-cover"
                       />
                       <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
                         {title}

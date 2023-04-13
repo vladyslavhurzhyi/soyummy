@@ -8,10 +8,6 @@ const initialState = {
   // isFetching: false,
 };
 
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
-};
-
 export const myRecipesSlice = createSlice({
   name: 'myRecipes',
   initialState,
@@ -31,13 +27,19 @@ export const myRecipesSlice = createSlice({
         );
         state.items.data.splice(index, 1);
       })
-      .addMatcher(isAnyOf(getMyRecipes.rejected), (state, action) => {
-        state.error = action.payload;
-        state.isLoading = false;
-      })
-      .addMatcher(isPendingAction, state => {
-        state.isLoading = true;
-      });
+      .addMatcher(
+        isAnyOf(getMyRecipes.rejected, removeMyRecipes.rejected),
+        (state, action) => {
+          state.error = action.payload;
+          state.isLoading = false;
+        }
+      )
+      .addMatcher(
+        isAnyOf(getMyRecipes.pending, removeMyRecipes.pending),
+        state => {
+          state.isLoading = true;
+        }
+      );
   },
 });
 

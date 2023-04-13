@@ -12,7 +12,7 @@ export const RecipePreparation = () => {
   return (
     <>
       <div className="container">
-        <div className="xl:flex justify-between mb-[100px] xl:mb-[200px] xl:gap-[50px]">
+        <div className="xl:flex justify-between mb-[100px] md:mb-[200px] xl:gap-[50px]">
           <div className="xl:w-[757px]">
             <h2 className="text-customBase text-secondaryText dark:text-whiteText font-semibold mb-[28px] md:mb-8">
               Recipe Preparation

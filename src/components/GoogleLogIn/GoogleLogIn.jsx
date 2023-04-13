@@ -16,15 +16,20 @@ const GoogleLogIn = () => {
 
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
   return (
-    <GoogleOAuthProvider clientId={clientId}>
-      <GoogleLogin
-        clientId={clientId}
-        buttonText="Sign in with Google"
-        onSuccess={handleSuccess}
-        onFailure={handleFailure}
-        cookiePolicy={'single_host_origin'}
-      />
-    </GoogleOAuthProvider>
+    <>
+      <GoogleOAuthProvider clientId={clientId}>
+        <GoogleLogin
+          clientId={clientId}
+          shape="circle"
+          theme="filled_black"
+          text="continue_with"
+          locale="en_US"
+          onSuccess={handleSuccess}
+          onFailure={handleFailure}
+          cookiePolicy={'single_host_origin'}
+        />
+      </GoogleOAuthProvider>
+    </>
   );
 };
 

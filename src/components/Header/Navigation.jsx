@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
 
@@ -7,8 +6,8 @@ const activeLinkGradient =
 
 export const Navigation = () => {
   return (
-    <nav className="hidden xl:block ml-48">
-      <ul className="flex justify-center items-center gap-8 font-main font-medium text-[18px] xl:text-[14px] leading-[18px] xl:leading-[22px] tracking-[-0.02em] text-accentDark dark:text-whiteText">
+    <nav className="hidden lg:block lg:ml-10 xl:ml-48">
+      <ul className="flex justify-center items-center gap-8 lg:gap-6 font-main font-medium text-[18px] lg:text-[14px] leading-[18px] md:leading-[22px] tracking-[-0.02em] text-accentDark dark:text-whiteText">
         <li className="hover:text-accentMain focus:text-accentMain">
           <NavLink
             className={({ isActive }) =>
