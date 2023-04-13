@@ -5,13 +5,14 @@ const WelcomPage = () => {
     <section className="  bg-hero w-screen  text-center gap-4 bg-cover bg-center bg-no-repeat h-screen">
       <div className=" flex items-center h-full">
         <div className=" container mx-auto text-center  ">
-          <div className=" p-3 rounded-xl	 justify-center w-[54px] h-[54px] m-auto bg-accentMain">
+          <div className=" p-2 rounded-xl	 justify-center w-[54px] h-[54px] m-auto bg-accentMain">
             <svg
-              width="30"
-              height="30"
+              // width="35"
+              // height="35"
               viewBox="0 0 30 30"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="w-[39px] h-[39px]"
             >
               <path
                 d="M3 3.10248V8.5561V8.6661V8.5561C3 10.1132 3.67941 11.4919 4.73282 12.3841C5.24788 12.8205 5.58824 13.4096 5.58824 14.0635V23.1667C5.58824 24.1787 6.45788 25.0001 7.52941 25.0001C8.60094 25.0001 9.47059 24.1787 9.47059 23.1667V14.0635C9.47059 13.4096 9.81094 12.8205 10.326 12.3841C11.3794 11.4919 12.0588 10.1132 12.0588 8.5561V3.10248V8.5561"

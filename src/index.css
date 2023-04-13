@@ -102,14 +102,14 @@ body {
   @apply transition duration-300  flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl;
 }
 .iconLogo {
-  @apply transition duration-300 stroke-white w-7 h-7 xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-white w-8 h-8 xl:w-[30px] xl:h-[30px];
 }
 
 .divIconFooterMob {
   @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
 }
 .iconLogoFooterMob {
-  @apply transition duration-300 stroke-[#8BAA36] w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-[#8BAA36] w-[24px] h-[24px] xl:w-[30px] xl:h-[30px];
 }
 
 .divIconTrash {
