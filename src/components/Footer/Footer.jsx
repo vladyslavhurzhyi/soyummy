@@ -8,21 +8,7 @@ import { ReactComponent as Svg } from './images/elipse.svg';
 
 export const Footer = () => {
   return (
-    <footer
-      style={{
-        zIndex: 0,
-        position: 'relative',
-        overflow: 'visible',
-        width: '100%',
-      }}
-    >
-      <div className="blur-sm absolute left-[-30px] -top-[230px] md:left-[-40px] md:-top-[370px] xl:left-[-60px] xl:-top-[480px] z-[-100] rotate-[149deg]">
-        <img
-          src={require('./images/leafs.png')}
-          alt="leafs"
-          className="w-[296px] h-[392px] md:w-[493px] md:h-[646px] xl:w-[748px] xl:h-[852px]"
-        />
-      </div>
+    <footer className="before:bg-main_container_mob_leaf md:before:bg-main_container_tab_leaf xl:before:bg-main_container_desc_leaf before:bg-no-repeat before:bg-[left_0_bottom_-270px] md:before:bg-[left_0_bottom_-370px] xl:before:bg-[left_0_bottom_-515px] before:content-[''] before:block before:m-0 before:w-full before:h-[92px] md:before:h-[215px] xl:before:h-[255px] z-0 relative w-full">
       <div
         className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain px-[85px] md:pl-[32px] md:pr-[94px] xl:px-[100px] pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] "
         style={{
