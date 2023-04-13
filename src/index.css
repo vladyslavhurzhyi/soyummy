@@ -99,10 +99,10 @@ body {
 }
 
 .divIconLogo {
-  @apply transition duration-300  flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl;
+  @apply transition duration-300  flex items-center justify-center w-10 h-10  md:w-11 md:h-11 bg-accentMain rounded-xl;
 }
 .iconLogo {
-  @apply transition duration-300 stroke-white w-8 h-8 xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-white w-[28px] h-[28px] md:w-[31px] md:h-[31px];
 }
 
 .divIconFooterMob {
