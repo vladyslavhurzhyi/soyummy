@@ -20,7 +20,6 @@ const RecipePage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
-  console.log(isLoading);
 
   const { recipeId } = useParams();
 

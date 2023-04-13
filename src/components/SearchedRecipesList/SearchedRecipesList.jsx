@@ -22,12 +22,12 @@ export const SearchedRecipesList = () => {
         <p className="text-center">Try to look for something else</p>
       ) : (
         <div>
-          <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
+          <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 xl:gap-y-24 mb-28">
             {recipes.map(({ thumb, _id, title }) => {
               return (
                 <li
                   key={_id}
-                  className="w-[343px] h-[323px] relative md:w-[47%] xl:w-[24%] object-cover"
+                  className="w-[343px] h-[323px] relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover"
                 >
                   <NavLink
                     to={`/recipes/${_id}`}
