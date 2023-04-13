@@ -14,10 +14,6 @@ const initialState = {
   error: null,
 };
 
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
-};
-
 export const recipesSlice = createSlice({
   name: 'recipes',
   initialState,
@@ -55,9 +51,17 @@ export const recipesSlice = createSlice({
           state.error = action.payload;
         }
       )
-      .addMatcher(isPendingAction, state => {
-        state.isLoading = true;
-      });
+      .addMatcher(
+        isAnyOf(
+          addRecipe.pending,
+          fetchRecipeById.pending,
+          fetchPopular.pending,
+          fetchRecipesByCategory.pending
+        ),
+        state => {
+          state.isLoading = true;
+        }
+      );
   },
 });
 

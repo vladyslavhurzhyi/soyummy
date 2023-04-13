@@ -1,14 +1,10 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { getIngredients } from './ingredientsOperations';
 
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
-};
-
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
 };
 
 export const ingredientsSlice = createSlice({
@@ -22,11 +18,11 @@ export const ingredientsSlice = createSlice({
         state.items = action.payload;
       })
 
-      .addMatcher(isAnyOf(getIngredients.rejected), (state, action) => {
+      .addMatcher(getIngredients.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addMatcher(isPendingAction, state => {
+      .addMatcher(getIngredients.pending, state => {
         state.isLoading = true;
       });
   },

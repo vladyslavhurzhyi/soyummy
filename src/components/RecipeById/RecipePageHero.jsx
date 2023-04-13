@@ -88,7 +88,7 @@ export const RecipePageHero = data => {
             </svg>
             {time && (
               <p className="text-customRecipesTime text-[#23262A]">
-                {time} min
+                {time} {time.includes('min') ? '' : 'min'}
               </p>
             )}
           </div>

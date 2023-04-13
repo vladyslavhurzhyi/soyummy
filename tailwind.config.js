@@ -16,6 +16,10 @@ module.exports = {
         main_m: "url('/src/images/bg_main-mob.png')",
         mob_menu_leaf: "url('/src/images/bgLeafMobMenu.png')",
         tablet_mob_menu_leaf: "url('/src/images/bgLeafTabletMobMenu.png')",
+        main_container_mob_leaf: "url('/src/images/bgMainContainerMob.png')",
+        main_container_tab_leaf: "url('/src/images/bgMainContainerTab.png')",
+        main_container_desc_leaf:
+          "url('/src/images/bgMainContainerDesctop.png')",
       },
       colors: {
         accentMain: '#8BAA36',
@@ -38,7 +42,7 @@ module.exports = {
         '52px': '52px',
       },
       fontFamily: {
-        main: ['Poppins'],
+        main: ['Poppins', 'sans-serif'],
       },
       fontSize: {
         customRecipesText: ['8px', '10px'],
