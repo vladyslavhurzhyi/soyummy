@@ -195,3 +195,26 @@ select:focus ~ label {
 .prevBtn {
   @apply ml-[28px] mr-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:bg-transparent  dark:hover:text-white;
 }
+
+.Toastify__toast-container {
+  width: 320px;
+  min-height: 42px;
+}
+
+.Toastify__toast-container--top-right {
+  top: 65px;
+}
+
+.Toastify__toast-theme--light {
+  background-color: #8baa36b8;
+  color: #3e4462;
+  font-family: Poppins;
+}
+
+.Toastify__progress-bar {
+  background-color: #fafafa;
+}
+
+.Toastify__toast-icon svg {
+  fill: #fafafa;
+}
