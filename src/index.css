@@ -218,3 +218,11 @@ select:focus ~ label {
 .Toastify__toast-icon svg {
   fill: #fafafa;
 }
+
+.Toastify__close-button {
+  color: #fafafa;
+}
+
+.Toastify__close-button svg {
+  fill: #fafafa;
+}
