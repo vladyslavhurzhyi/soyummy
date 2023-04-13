@@ -3,6 +3,7 @@ import { signUp } from 'redux/auth/authOperations';
 import { NavLink } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { registerValidationSchema } from 'utils/authValidationSchema/authValidationSchema';
+import { GoogleLogIn } from 'components/GoogleLogIn';
 
 import { ReactComponent as Svg } from '../../images/svg/OrderFoodPana.svg';
 
@@ -159,6 +160,9 @@ const RegisterForm = () => {
             >
               Register
             </button>
+          </div>
+          <div className="flex justify-center">
+            <GoogleLogIn />
           </div>
         </form>
         <div className="flex justify-center">
