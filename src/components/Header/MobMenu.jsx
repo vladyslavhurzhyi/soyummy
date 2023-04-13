@@ -27,7 +27,7 @@ export const MobMenu = () => {
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => setIsNavOpen(prev => !prev)}
           >
-            <Burger className="w-7 md:w-8 h-7 md:h-8 stroke-accentDark dark:stroke-whiteText animate-pulse" />
+            <Burger className="w-7 md:w-8 h-7 md:h-8 stroke-accentDark dark:stroke-whiteText md:dark:stroke-accentDark animate-pulse" />
           </div>
 
           <div

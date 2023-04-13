@@ -115,18 +115,15 @@ export const ResipeIngredientsFields = ({
       <h2 className="mb-6 md:mb-9 font-main font-semibold text-secondaryText text-customBase dark:text-whiteText">
         Ingredients
       </h2>
-      {/* {items.map(item => {
-        return ( */}
       <div key={current} className="flex mb-4 md:mb-6">
         <div className="relative z-0 w-1/2 ">
           <input
             type="text"
             name="ingredient"
             placeholder=" "
-            // data-name="id"
             autoComplete="off"
             required
-            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
             value={ingredientName}
             onInput={onInput}
           />
@@ -136,7 +133,6 @@ export const ResipeIngredientsFields = ({
                 <li
                   key={_id}
                   value={_id}
-                  // onClick={() => handleIngredient(, item.id)}
                   onClick={() => chooseItem(ttl, _id)}
                   className="bg-lime-50 dark:bg-accentMain"
                 >
@@ -177,7 +173,7 @@ export const ResipeIngredientsFields = ({
             step="0.5"
             min="0.5"
             required
-            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
             value={currentAmount}
             onChange={e => handleFieldChange(e, current)}
           />
@@ -195,7 +191,7 @@ export const ResipeIngredientsFields = ({
             data-name="measure"
             value={currentMeasure}
             onChange={e => handleFieldChange(e, current)}
-            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
           >
             {measureList.map(({ type }) => (
               <option
@@ -236,31 +232,31 @@ export const ResipeIngredientsFields = ({
 
       <CurveBtn
         text="add ingredient"
-        cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring"
+        cssClass="othercateg-btn dark:bg-accentDarker dark:text-accentMain  dark:hover:text-accentLighter dark:hover:border-accentLighter dark:focus:ring mb-3 md:mb-5"
         onClick={newIngredientField}
       />
-      <ul>
+      <ul className="w-full md:w-2/3 xl:w-1/2">
         {items.length >= 1 &&
           items.map(({ ttl, id, amount, measure }) => (
             <li
               key={id}
-              // value={_id}
-              // onClick={() => handleIngredient(, item.id)}
-              // onClick={() => chooseItem(ttl, _id, item.id)}
-              className="m-2 flex bg-lime-50 dark:bg-accentMain"
+              className="m-1 px-2 py-[2px] lg:px-4 flex items-center justify-between  bg-lime-50 rounded-lg focus:outline-none focus:ring-0 focus:border-accentMain border-transparent dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
             >
-              <p>{ttl}____</p>
-              <p>{amount}_____</p>
-              <p>{measure}</p>
+              <div className=" p-[1px] md:p-2 font-normal md:font-medium  text-customXs md:text-customSm bg-[#EBF3D4] dark:bg-lime-50 flex rounded-md ">
+                <p className="mr-4">{ttl}:</p>
+                <p>{amount}</p>
+                <p>{measure}</p>
+              </div>
+
               <button
                 type="button"
-                className="flex ml-1 md:ml-3 lg:ml-5 "
+                className="flex ml-1 md:ml-3 lg:ml-5"
                 onClick={() => removeItem(id)}
               >
                 <Logo
                   trash="true"
                   cssClassIcon="iconTrash"
-                  cssClassDiv="divIconTrash"
+                  cssClassDiv="divIconTrash dark:bg-lime-50 dark:stroke-accentDarker hover:dark:stroke-whiteText focus:dark:stroke-whiteText"
                 />
               </button>
             </li>

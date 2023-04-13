@@ -10,7 +10,7 @@ export const PopularRecipes = ({ data }) => {
         {data.map(({ _id, title, description, thumb }) => (
           <li
             key={_id}
-            className="flex md:w-1/2 lg:w-full border-b-2 border-gray-300 pb-3.5 pt-6 pr-2 dark:border-gray-500"
+            className="flex md:w-1/2 lg:w-full border-b-2 border-gray-300 pb-3.5 pt-6 pr-2 dark:border-gray-500 hover:border-accentMain focus:border-accentMain dark:hover:border-accentMain dark:focus:border-accentMain"
           >
             <Link to={`/recipes/${_id}`} className="flex">
               <img

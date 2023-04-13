@@ -21,10 +21,15 @@ export const IngredientsShoppingListItem = ({
         x: idx % 2 === 0 ? -200 : 200,
         opacity: 0,
       }}
-      transition={{ duration: 0.6 }}
+      transition={{
+        duration: 0.6,
+      }}
       whileInView={{
         x: 0,
         opacity: 1,
+      }}
+      whileHover={{
+        scale: 1.01,
       }}
       className="flex flex-row items-center py-6 md:py-11 px-2 border-b xl:px-10"
     >
