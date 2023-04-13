@@ -115,18 +115,15 @@ export const ResipeIngredientsFields = ({
       <h2 className="mb-6 md:mb-9 font-main font-semibold text-secondaryText text-customBase dark:text-whiteText">
         Ingredients
       </h2>
-      {/* {items.map(item => {
-        return ( */}
       <div key={current} className="flex mb-4 md:mb-6">
         <div className="relative z-0 w-1/2 ">
           <input
             type="text"
             name="ingredient"
             placeholder=" "
-            // data-name="id"
             autoComplete="off"
             required
-            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-3 pb-2 pl-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-gray-200  dark:text-whiteText dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
             value={ingredientName}
             onInput={onInput}
           />
@@ -136,7 +133,6 @@ export const ResipeIngredientsFields = ({
                 <li
                   key={_id}
                   value={_id}
-                  // onClick={() => handleIngredient(, item.id)}
                   onClick={() => chooseItem(ttl, _id)}
                   className="bg-lime-50 dark:bg-accentMain"
                 >
@@ -177,7 +173,7 @@ export const ResipeIngredientsFields = ({
             step="0.5"
             min="0.5"
             required
-            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 text-sm md:text-base bg-accentGray rounded-lg border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
             value={currentAmount}
             onChange={e => handleFieldChange(e, current)}
           />
@@ -195,7 +191,7 @@ export const ResipeIngredientsFields = ({
             data-name="measure"
             value={currentMeasure}
             onChange={e => handleFieldChange(e, current)}
-            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
+            className="pt-2 pb-1 md:pt-3 md:pb-2 pl-3 block w-full px-0 mt-0 text-sm md:text-base bg-accentGray rounded-lg  border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-transparent  dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
           >
             {measureList.map(({ type }) => (
               <option
