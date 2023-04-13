@@ -4,7 +4,7 @@ import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
 import { Nav } from './Nav';
 import { SubscribeForm } from './SubscribeForm';
-import { ReactComponent as Svg } from './images/elipse.svg'
+import { ReactComponent as Svg } from './images/elipse.svg';
 
 export const Footer = () => {
   return (
@@ -16,8 +16,7 @@ export const Footer = () => {
         width: '100%',
       }}
     >
-      <div
-        className="blur-sm absolute left-[-30px] -top-[230px] md:left-[-40px] md:-top-[370px] xl:left-[-60px] xl:-top-[480px] z-[-100] rotate-[149deg]">
+      <div className="blur-sm absolute left-[-30px] -top-[230px] md:left-[-40px] md:-top-[370px] xl:left-[-60px] xl:-top-[480px] z-[-100] rotate-[149deg]">
         <img
           src={require('./images/leafs.png')}
           alt="leafs"
@@ -43,7 +42,7 @@ export const Footer = () => {
                 // marginRight: 159,
               }}
             >
-              <div className='flex items-center justify-center mb-[40px]'>
+              <div className="flex items-center justify-center mb-[40px]">
                 <Logo
                   cssClassIcon="iconLogoFooterMob"
                   cssClassDiv="divIconFooterMob"
@@ -59,7 +58,8 @@ export const Footer = () => {
                   So Yummy
                 </h2>
               </div>
-              <ul className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[430px]"
+              <ul
+                className="hidden md:block xl:block xl:min-w-[380px] xl:max-w-[430px]"
                 style={{
                   fontFamily: 'Poppins',
                   // fontWeight: 400,
@@ -67,26 +67,29 @@ export const Footer = () => {
                   color: 'white',
                 }}
               >
-                <li className='flex flex-row justify-start items-center ml-[10px]'>
-                  <Svg alt='elipse'></Svg>
+                <li className="flex flex-row justify-start items-center ml-[10px]">
+                  <Svg alt="elipse"></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Database of recipes that can be replenished
                   </p>
                 </li>
                 <li className="mt-3 flex flex-row justify-start items-start ml-[10px]">
-                  <Svg alt='elipse' className='mt-[9px] w-[4.8px] h-[4.5px]'></Svg>
+                  <Svg
+                    alt="elipse"
+                    className="mt-[9px] w-[4.8px] h-[4.5px]"
+                  ></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Flexible search for desired and unwanted ingredients
                   </p>
                 </li>
                 <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
-                  <Svg alt='elipse'></Svg>
+                  <Svg alt="elipse"></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Ability to add your own recipes with photos
                   </p>
                 </li>
                 <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
-                  <Svg alt='elipse'></Svg>
+                  <Svg alt="elipse"></Svg>
                   <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
                     Convenient and easy to use
                   </p>
@@ -97,15 +100,18 @@ export const Footer = () => {
               <Nav />
             </div>
           </div>
-          <div className='flex justify-center xl:hidden w-full md:mt-[72px]'>
+          <div className="flex justify-center xl:hidden w-full md:mt-[72px]">
             <Navigation />
           </div>
-          <div className='hidden xl:flex'><Navigation /></div>
-          <div className='hidden xl:flex'><SubscribeForm/></div>
+          <div className="hidden xl:flex">
+            <Navigation />
+          </div>
+          <div className="hidden xl:flex">
+            <SubscribeForm />
+          </div>
         </div>
       </div>
-      <div
-        className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
+      <div className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
         <p
           style={{
             fontFamily: 'Poppins',
@@ -117,7 +123,8 @@ export const Footer = () => {
         >
           © 2023 All Rights Reserved.
         </p>
-        <NavLink className='ml-[14px] md:ml-[28px] xl:ml-[40px]'
+        <NavLink
+          className="ml-[14px] md:ml-[28px] xl:ml-[40px]"
           style={{
             fontFamily: 'Poppins',
             fontWeight: 400,
@@ -129,8 +136,7 @@ export const Footer = () => {
         >
           Terms of Service
         </NavLink>
-        <div
-          className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
+        <div className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
           <img
             src={require('./images/leafs.png')}
             alt="leafs"

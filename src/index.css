@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-whiteText dark:bg-accentDarker font-main;
+  @apply bg-whiteText dark:bg-accentDarker font-main transition-colors duration-1000;
 }
 
 .container {
