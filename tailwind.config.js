@@ -42,7 +42,7 @@ module.exports = {
         '52px': '52px',
       },
       fontFamily: {
-        main: ['Poppins'],
+        main: ['Poppins', 'sans-serif'],
       },
       fontSize: {
         customRecipesText: ['8px', '10px'],
