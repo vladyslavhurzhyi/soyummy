@@ -23,7 +23,7 @@ export const ResipeMethodFields = ({ data, updateData }) => {
         required
         placeholder="Enter recipe method"
         onChange={updateData}
-        className="p-3 block w-full h-40 my-[18px] md:my-[32px] md:w-2/3 lg:w-1/2 rounded-lg bg-accentGray border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 focus:border-accentMain border-transparent dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain"
+        className="p-3 block w-full h-40 my-[18px] md:my-[32px] md:w-2/3 lg:w-1/2 rounded-lg bg-accentGray border-0 border-b-2 appearance-none  focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain border-transparent dark:text-whiteText dark:bg-accentDarker dark:border-2 dark:border-gray-500 dark:focus:border-accentMain dark:hover:border-accentMain"
       ></textarea>
       <div className="flex relative">
         <input
@@ -45,7 +45,7 @@ export const ResipeMethodFields = ({ data, updateData }) => {
             />
           </svg>
         </div>
-        <p className="absolute top-1 left-6 md:top-2 md:left-11 text-gray-500 text-customRecipesTime md:text-customSm">
+        <p className="absolute top-1 left-6 md:top-2 md:left-11 text-gray-500 text-customRecipesTime md:text-customSm dark:text-whiteText">
           add to the public recipe database SoYummy
         </p>
       </div>

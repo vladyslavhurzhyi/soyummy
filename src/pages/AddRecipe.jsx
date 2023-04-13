@@ -16,7 +16,7 @@ const AddRecipe = () => {
   }, [dispatch]);
 
   return (
-    <div className="container mb-16 md:mb-24 xl:mb-52 relative z-10">
+    <div className="container  relative z-10">
       <Helmet>
         <title>Add new recipe</title>
       </Helmet>
