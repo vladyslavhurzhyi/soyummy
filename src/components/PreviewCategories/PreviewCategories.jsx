@@ -53,7 +53,7 @@ export const PreviewCategories = () => {
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
                   <li
                     key={_id}
-                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-sm  shadow-black hover:shadow-black dark:shadow-white dark:hover:shadow-white"
+                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white "
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
@@ -74,7 +74,7 @@ export const PreviewCategories = () => {
                   onClick={() => onClick(category)}
                   text={'See all'}
                   cssClass="logout-btn"
-                  className="flex justify-end"
+                  className="flex justify-end "
                 />
               </div>
             </li>
