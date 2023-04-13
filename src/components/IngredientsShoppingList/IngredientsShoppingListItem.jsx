@@ -1,6 +1,6 @@
-import { Reorder } from 'framer-motion';
-import { Loader } from 'components/Loader/Loader';
+import { Circles } from 'react-loader-spinner';
 import { Logo } from 'components/Logo/Logo';
+import { Reorder } from 'framer-motion';
 
 export const IngredientsShoppingListItem = ({
   id,
@@ -46,7 +46,14 @@ export const IngredientsShoppingListItem = ({
       >
         <div className="divIconTrash dark:bg-transparent dark:hover:bg-accentHalfDark">
           {loading ? (
-            <Loader />
+            <Circles
+              height="24"
+              width="24"
+              color="#8BAA36"
+              ariaLabel="circles-loading"
+              wrapperStyle={{}}
+              wrapperClass="Loader"
+            />
           ) : (
             <Logo
               trash

@@ -1,12 +1,10 @@
-import { Logo } from 'components/Logo/Logo';
-import React from 'react';
-import { Navigation } from './Navigation';
-import { UserPanel } from './UserPanel/UserPanel';
-import { ToggleButton } from 'components/ToggleButton/ToggleButton';
-// import { UserLogoModal } from './UserLogo/UserLogoModal';
-import { useSelector } from 'react-redux';
 import { isLoggedIn } from 'redux/auth/authSelectors';
+import { Logo } from 'components/Logo/Logo';
 import { MobMenu } from './MobMenu';
+import { Navigation } from './Navigation';
+import { ToggleButton } from 'components/ToggleButton/ToggleButton';
+import { UserPanel } from './UserPanel/UserPanel';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
   const shouldShowUser = useSelector(isLoggedIn);

@@ -1,16 +1,23 @@
 import { Logo } from 'components/Logo/Logo';
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
-import { ToggleButton } from 'components/ToggleButton/ToggleButton';
 import { ReactComponent as Burger } from '../../images/svg/burgerMenu.svg';
 import { ReactComponent as CloseBurger } from '../../images/svg/closeMenuIcon.svg';
+import { ReactComponent as Glass } from '../../images/svg/search-icon.svg';
+import { ToggleButton } from 'components/ToggleButton/ToggleButton';
+import { useState } from 'react';
 
 const activeLinkGradient =
   'text-transparent bg-clip-text bg-gradient-to-r from-black to-black via-accentMain animate-gradient-x';
 
+const showMenuNav =
+  'fixed w-full h-screen top-0 left-0 overflow-hidden z-30 flex flex-col justify-evenly items-center';
+
 export const MobMenu = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  isNavOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = '');
 
   return (
     <div className="flex items-center justify-between py-8">
@@ -25,8 +32,8 @@ export const MobMenu = () => {
 
           <div
             className={`${
-              isNavOpen ? 'showMenuNav' : 'hideMenuNav'
-            } bg-accentLighter dark:bg-accentDarker bg-mob_menu_leaf md:bg-tablet_mob_menu_leaf bg-no-repeat bg-right-bottom`}
+              isNavOpen ? showMenuNav : 'hidden'
+            } bg-accentLighter dark:bg-accentDarker bg-mob_menu_leaf md:bg-tablet_mob_menu_leaf bg-no-repeat bg-right-bottom z-50 transition-colors duration-1000`}
           >
             <div className="CROSS-ICON absolute w-full top-0 px-4 pt-[22px] flex items-center justify-between">
               <Logo />
@@ -111,26 +118,6 @@ export const MobMenu = () => {
           </div>
         </div>
       </nav>
-      <style>{`
-      .hideMenuNav {
-        display: none;
-      }
-      .showMenuNav {
-        display: block;
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-		overflow: hidden;
-
-        z-index: 30;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-    `}</style>
     </div>
   );
 };
