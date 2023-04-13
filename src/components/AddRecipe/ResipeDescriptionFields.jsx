@@ -9,7 +9,7 @@ export const ResipeDescriptionFields = ({
 }) => {
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="w-[280px] h-[280px] mx-auto mb-8 xl:w-[360px] xl:h-[360px] md:mx-0 md:mb-o md:mr-8 bg-accentMain rounded-lg flex justify-center items-center">
+      <div className="w-[280px] h-[280px] mx-auto mb-8 xl:w-[360px] xl:h-[360px] md:mx-0 md:mb-o md:mr-8 bg-accentMain rounded-lg flex justify-center items-center border-4 focus:outline-none focus:ring-0 focus:border-accentMain hover:border-accentMain">
         <label htmlFor="thumb" className="block w-full h-full object-cover ">
           <img
             src={previewImg}
@@ -45,7 +45,6 @@ export const ResipeDescriptionFields = ({
           >
             Enter Recipe Title
           </label>
-          {/* <span className="text-sm text-red-600 hidden" id="error">Title is required</span> */}
         </div>
         <div className="relative z-0 w-full ">
           <input
@@ -65,9 +64,6 @@ export const ResipeDescriptionFields = ({
           >
             Enter adout recipe
           </label>
-          {/* <span className="text-sm text-red-600 hidden" id="error">
-          Description is required
-          </span> */}
         </div>
         <div className="flex flex-row space-x-4 my-6">
           <div className="relative z-0 w-full ">
@@ -96,9 +92,6 @@ export const ResipeDescriptionFields = ({
             >
               Category
             </label>
-            {/* <span className="text-sm text-red-600 hidden" id="error">
-            Category has to be selected
-          </span> */}
           </div>
           <div className="relative z-0 w-full ">
             <select
@@ -126,34 +119,9 @@ export const ResipeDescriptionFields = ({
             >
               Cooking time
             </label>
-            {/* <span className="text-sm text-red-600 hidden" id="error">
-            Time has to be selected
-          </span> */}
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-// ('use strict');
-
-// document.getElementById('button').addEventListener('click', toggleError);
-// const errMessages = document.querySelectorAll('#error');
-
-// function toggleError() {
-//   // Show error message
-//   errMessages.forEach(el => {
-//     el.classList.toggle('hidden');
-//   });
-
-//   // Highlight input and label with red
-//   const allBorders = document.querySelectorAll('.border-gray-200');
-//   const allTexts = document.querySelectorAll('.text-gray-500');
-//   allBorders.forEach(el => {
-//     el.classList.toggle('border-red-600');
-//   });
-//   allTexts.forEach(el => {
-//     el.classList.toggle('text-red-600');
-//   });
-// }
