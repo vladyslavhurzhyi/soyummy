@@ -1,5 +1,5 @@
-// import { nanoid } from 'nanoid';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { ResipeDescriptionFields } from './ResipeDescriptionFields';
 import { ResipeIngredientsFields } from './RecipeIngredientsFields';
 import { ResipeMethodFields } from './RecipeMethodFields';
@@ -31,71 +31,13 @@ export const AddRecipeForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (ingredientsList.length !== 0) {
-  //     initialRecipe.ingredients.push(initialIgredient);
-  //   }
-  // }, [ingredientsList, initialIgredient, initialRecipe.ingredients]);
-
   useEffect(() => {
     dispatch(getIngredients());
     dispatch(getCategories());
   }, [dispatch]);
 
-  // const [formData, setFormData] = useState({
-  //   title: '',
-  //   description: '',
-  //   category: '',
-  //   time: '',
-  //   ingredients: [
-  //     {
-  //       id: '',
-  //       amount: '0',
-  //       measure: 'pcs',
-  //     },
-  //   ],
-  //   thumb: '',
-  //   isPublic: false,
-  //   instructions: '',
-  // });
-
-  // const handleFieldsChange = fields => {
-  //   let _formData = { ...formData, ...fields };
-  //   setFormData(_formData);
-  // };
-
-  // const handleIngredientsChange = ingredients => {
-  //   let _formData = { ...formData, ingredients };
-  //   setFormData(_formData);
-  //   console.log(formData);
-  // };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   // simple validation..
-  //   const { title, description, category, time, ingredients, instructions } =
-  //     formData;
-
-  //   if (
-  //     !title ||
-  //     !description ||
-  //     !category ||
-  //     !time ||
-  //     ingredients.length === 0 ||
-  //     !instructions
-  //   ) {
-  //     alert('Please, provide all required fields');
-  //   }
-
-  //   console.log(formData);
-  //   console.table(formData.ingredients);
-
-  //   dispatch(addRecipe(formData));
-  //   navigate(`/my`);
-  // };
   const [preview, setPreview] = useState(IMG_PREVIEW);
   const [recipe, setRecipe] = useState({ ...initialRecipe });
-  // const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFileChange = e => {
     const [_file] = e.target.files;
@@ -119,28 +61,19 @@ export const AddRecipeForm = () => {
   };
 
   const sendForm = async (form, formData) => {
-    // setIsSubmitting(true);
     dispatch(addRecipe(formData));
     navigate(`/my`);
     resetForm(form);
-    // try {
-    //   const { data } = await API.post("/recipes", formData);
-    //   resetForm(form);
-    //   console.log(data);
-    // } catch (err) {
-    //   alert(err.response.data.message);
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    // some validations !isValid(recipe)...
     const formData = new FormData();
     const [file] = e.target.thumb.files;
     if (!file) {
-      return alert('Select a recipe image!');
+      return toast.error('Select a recipe image!', {
+        autoClose: 3000,
+      });
     }
     formData.append('thumb', file);
     const formattedRecipe = {
