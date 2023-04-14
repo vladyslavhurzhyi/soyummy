@@ -30,7 +30,7 @@ const CategoriesList = () => {
     <nav className=" w-full relative ">
       <ul
         ref={listRef}
-        className="flex scrollbar-thin scrollbar-track-stone-100  overflow-x-auto mb-8 "
+        className="flex scrollbar-none overflow-x-auto mb-8 border-b-2"
       >
         {categories.map(category => {
           return (
@@ -50,7 +50,7 @@ const CategoriesList = () => {
           );
         })}
       </ul>
-      <div className="flex gap-2 absolute top-3/4 left-2/4 -translate-x-2/4">
+      <div className="flex gap-2 absolute top-2/4 left-2/4 -translate-x-2/4">
         <button type="button" onClick={handleClickLeft}>
           <HiArrowSmLeft />
         </button>
