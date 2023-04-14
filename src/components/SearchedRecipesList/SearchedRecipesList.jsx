@@ -22,7 +22,7 @@ export const SearchedRecipesList = () => {
       {recipes.length === 0 ? (
         <div className="flex flex-col gap-[32px] items-center mt-[50px] mb-[200px] w-[350]">
           <img src={placeholder} alt="vegetables assortment" />
-          <p className="text-center Poppins text-customBase">
+          <p className="text-center Poppins text-customBase dark:text-white">
             Try looking for something else..
           </p>
         </div>

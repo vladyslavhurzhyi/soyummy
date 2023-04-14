@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeQuery } from 'redux/search/searchSlice';
 
 export const SearchForm = () => {

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeQueryType, changeQuery } from 'redux/search/searchSlice';
+import { changeQueryType } from 'redux/search/searchSlice';
 import { useLocation } from 'react-router-dom';
 const typesList = [{ searchType: 'title' }, { searchType: 'ingredients' }];
 
 export const SearchTypeSelector = () => {
-  // const location = useLocation();
-  // console.log(location.state);
+  const location = useLocation();
+  console.log(location.state);
 
   const [currentValue, setCurrentValue] = useState('title');
   const dispatch = useDispatch();
