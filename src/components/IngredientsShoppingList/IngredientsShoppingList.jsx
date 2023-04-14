@@ -58,9 +58,9 @@ export const IngredientsShoppingList = () => {
               Product
             </h3>
             <h3 className="font-main font-semibold text-customShoppingList md:text-lg xl:tracking-[0.03em] text-whiteText">
-              Number
+              Measure
             </h3>
-            <h3 className="ml-6 md:ml-[78px] xl:ml-[142px] font-main font-semibold text-customShoppingList md:text-lg xl:tracking-[0.03em] text-whiteText">
+            <h3 className="ml-10 md:ml-28 xl:ml-48 font-main font-semibold text-customShoppingList md:text-lg xl:tracking-[0.03em] text-whiteText">
               Remove
             </h3>
           </motion.div>
