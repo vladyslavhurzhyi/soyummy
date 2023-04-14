@@ -1,13 +1,4 @@
 export const ResipeMethodFields = ({ data, updateData }) => {
-  // const [method, setMethod] = useState('');
-  // console.log(data);
-  // const handleFieldChange = e => {
-  //   const { id, value } = e.target;
-  //   let _recipe = { ...data };
-  //   _recipe[id] = id === 'isPublic' ? !_recipe.isPublic : value;
-  //   setData(_recipe);
-  // };
-
   return (
     <div className="w-full ">
       <label
