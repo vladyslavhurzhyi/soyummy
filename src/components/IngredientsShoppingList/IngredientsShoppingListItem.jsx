@@ -1,6 +1,7 @@
 import { Circles } from 'react-loader-spinner';
 import { Logo } from 'components/Logo/Logo';
 import { Reorder } from 'framer-motion';
+import { PopUpDraggable } from './PopUpDraggable';
 
 export const IngredientsShoppingListItem = ({
   id,
@@ -31,8 +32,10 @@ export const IngredientsShoppingListItem = ({
       whileHover={{
         scale: 1.01,
       }}
-      className="flex flex-row items-center py-6 md:py-11 px-2 border-b xl:px-10"
+      whileTap={{ scale: 0.98 }}
+      className="flex relative flex-row items-center py-6 md:py-11 px-2 border-b xl:px-10"
     >
+      {arr.length > 1 && idx === 1 && <PopUpDraggable />}
       <img
         src={thb}
         alt="ingredient"
