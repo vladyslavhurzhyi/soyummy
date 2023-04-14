@@ -9,6 +9,7 @@ const CategoriesRecipesList = () => {
   const category = useSelector(selectCurrentCategory);
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
+
   useEffect(() => {
     dispatch(fetchRecipesByCategory(category));
   }, [category, dispatch]);
