@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { selectSearchedRecipes } from 'redux/search/selectors';
 import { selectIsLoading } from 'redux/search/selectors';
 import { selectError } from 'redux/search/selectors';
+import placeholder from '../../images/placeholder.png';
 
 export const SearchedRecipesList = () => {
   const recipes = useSelector(selectSearchedRecipes);
@@ -19,10 +20,15 @@ export const SearchedRecipesList = () => {
         })}
       {isLoading && !error && <Loader />}
       {recipes.length === 0 ? (
-        <p className="text-center">Try to look for something else</p>
+        <div className="flex flex-col gap-[32px] items-center mt-[50px] mb-[200px] w-[350]">
+          <img src={placeholder} alt="vegetables assortment" />
+          <p className="text-center Poppins text-customBase">
+            Try looking for something else..
+          </p>
+        </div>
       ) : (
         <div>
-          <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
+          <ul className="container flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6">
             {recipes.map(({ thumb, _id, title }) => {
               return (
                 <li

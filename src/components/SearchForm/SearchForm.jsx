@@ -2,27 +2,31 @@ import React, { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeQuery } from 'redux/search/searchSlice';
 
 export const SearchForm = () => {
-  const [searchValue, setInputValue] = useState('');
-  const [, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+  function handleInputChange(e) {
+    setSearchQuery(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const query = searchValue.toLowerCase();
+    const query = searchQuery.toLowerCase();
     if (query === '') {
       toast.error(`Enter your query`, {
         position: 'top-center',
       });
-      setSearchParams();
-      return;
+      setSearchQuery();
     }
-    setSearchParams({ query });
+    console.log(searchQuery);
+    setSearchQuery(query);
+    dispatch(changeQuery(searchQuery));
+    console.log(searchQuery);
     return navigate(`/search?query=${query}`);
   }
 
@@ -34,7 +38,7 @@ export const SearchForm = () => {
       >
         <input
           type="text"
-          value={searchValue}
+          value={searchQuery}
           onChange={handleInputChange}
           className="text-secondaryText dark:text-greyInput font-main text-base leading-6 w-full h-full  border-none outline-none rounded-tl-[45px] rounded-bl-[80px] rounded-tr-[80px] rounded-br-[45px] bg-white dark:bg-accentDarker pl-[48px]"
         />
