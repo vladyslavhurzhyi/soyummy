@@ -1,6 +1,6 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import {
   getRecipesByQuery,
   getRecipesByIngredient,
