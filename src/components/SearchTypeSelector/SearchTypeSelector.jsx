@@ -6,8 +6,10 @@ const typesList = [{ searchType: 'title' }, { searchType: 'ingredients' }];
 
 export const SearchTypeSelector = () => {
   const location = useLocation();
-
-  const [currentValue, setCurrentValue] = useState(location.state?.title);
+  console.log(location.state);
+  const [currentValue, setCurrentValue] = useState(
+    location.state?.from || 'title'
+  );
   console.log(currentValue);
   const dispatch = useDispatch();
 

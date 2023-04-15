@@ -7,7 +7,7 @@ export const Nav = () => {
       <li className="self-center md:self-start">
         <NavLink
           to="/search"
-          state={'ingredients'}
+          state={{ from: 'ingredients' }}
           className="font-medium text-whiteText hover:text-accentMain focus:text-accentMain dark:hover:text-accentDark dark:focus:text-accentDark text-[14px]/[18px]"
         >
           Ingredients
