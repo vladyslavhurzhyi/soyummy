@@ -1,6 +1,5 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import {
   getRecipesByQuery,
   getRecipesByIngredient,
@@ -16,7 +15,6 @@ const Search = () => {
   const queryType = useSelector(selectQueryType);
 
   const dispatch = useDispatch();
-  console.log(queryType);
 
   useEffect(() => {
     if (!query) {
@@ -25,13 +23,9 @@ const Search = () => {
     switch (queryType) {
       case 'title':
         dispatch(getRecipesByQuery(query));
-        console.log(query);
-        console.log(queryType);
         break;
       case 'ingredients':
         dispatch(getRecipesByIngredient(query));
-        console.log(query);
-        console.log(queryType);
         break;
       default:
         return;

@@ -7,6 +7,7 @@ export const Nav = () => {
       <li className="self-center md:self-start">
         <NavLink
           to="/search"
+          state={'ingredients'}
           className="font-medium text-white text-[14px]/[18px]"
         >
           Ingredients

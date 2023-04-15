@@ -6,14 +6,13 @@ const typesList = [{ searchType: 'title' }, { searchType: 'ingredients' }];
 
 export const SearchTypeSelector = () => {
   const location = useLocation();
-  console.log(location.state);
 
-  const [currentValue, setCurrentValue] = useState('title');
+  const [currentValue, setCurrentValue] = useState(location.state?.title);
+  console.log(currentValue);
   const dispatch = useDispatch();
 
   const changeType = e => {
     const type = e.target.value;
-    console.log(type);
     setCurrentValue(type);
     dispatch(changeQueryType(type));
   };
