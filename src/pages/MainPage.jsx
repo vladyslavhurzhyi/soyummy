@@ -35,7 +35,7 @@ const MainPage = () => {
 
       <div className="relative z-[1] text-center  container">
         <PreviewCategories className="relative z-10 " />
-        <Link to="/categories/beef">
+        <Link to="/categories/beef" className="block">
           <CurveBtn
             type={'button'}
             onClick={onClick}

@@ -5,15 +5,16 @@ import { getMainCategories } from 'redux/previewCategories/categoriesOperations'
 import { setCurrentCategory } from 'redux/categories/categoriesOperations';
 import { useMediaQuery } from 'react-responsive';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import RecipeCard from 'components/RecipeCard';
 
 export const PreviewCategories = (idx, arr) => {
   const categories = useSelector(getContentForMain);
 
   const dispatch = useDispatch();
-  const isDesktop = useMediaQuery({ minWidth: 1440 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export const PreviewCategories = (idx, arr) => {
   };
 
   return (
-    <ul className="xl:px-0 flex flex-col gap-24">
+    <ul className="xl:px-0 inline-flex flex-col gap-24">
       {categories.map(({ category, recipes }) => {
         if (recipes.length >= 4)
           return (
@@ -62,35 +63,33 @@ export const PreviewCategories = (idx, arr) => {
               >
                 {category}
               </motion.p>
-              <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
-                {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
-                  <motion.li
-                    initial={{
-                      y: -20,
-                      opacity: 0,
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    whileInView={{
-                      y: 0,
-                      opacity: 1,
-                    }}
-                    key={_id}
-                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white "
-                  >
-                    <NavLink to={`/recipes/${_id}`}>
-                      <img
-                        src={preview}
-                        loading="lazy"
-                        alt={title}
-                        className="h-full w-full rounded-lg object-cover"
+              <ul className="flex flex-col md:flex-row md:gap-8 lg:gap-4 flex-wrap gap-6 mb-[50px]">
+                {recipes
+                  .slice(0, numCard)
+                  .map(({ _id, title, thumb, description, time }) => (
+                    <motion.li
+                      initial={{
+                        y: -20,
+                        opacity: 0,
+                      }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1 }}
+                      whileInView={{
+                        y: 0,
+                        opacity: 1,
+                      }}
+                      key={_id}
+                      className="mx-auto md:mx-0 max-w-sm md:max-w-none md:w-[calc(50%-16px)] lg:w-[calc(25%-12px)]"
+                    >
+                      <RecipeCard
+                        id={_id}
+                        title={title}
+                        text={description}
+                        thumb={thumb}
+                        time={time}
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white ">
-                        {title}
-                      </p>
-                    </NavLink>
-                  </motion.li>
-                ))}
+                    </motion.li>
+                  ))}
               </ul>
               <div className="flex justify-end">
                 <CurveBtn
