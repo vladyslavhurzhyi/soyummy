@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/soyummy/static/css/main.52ff21dc.css",
-    "main.js": "/soyummy/static/js/main.e7291b39.js",
+    "main.js": "/soyummy/static/js/main.1f620658.js",
     "static/js/751.4d3b68d0.chunk.js": "/soyummy/static/js/751.4d3b68d0.chunk.js",
     "static/js/772.a364c06c.chunk.js": "/soyummy/static/js/772.a364c06c.chunk.js",
     "static/js/180.08f931c7.chunk.js": "/soyummy/static/js/180.08f931c7.chunk.js",
@@ -26,13 +26,13 @@
     "static/media/salat.webp": "/soyummy/static/media/salat.d34bc680f00b9204a84a.webp",
     "static/media/arrow.webp": "/soyummy/static/media/arrow.c2729fb5a4ab20aa7ea5.webp",
     "static/media/bgMainContainerDesctop.webp": "/soyummy/static/media/bgMainContainerDesctop.a7dc481d1b678285f9f5.webp",
-    "static/media/leafs.png": "/soyummy/static/media/leafs.83b69db8697df6523f7c.png",
     "static/media/spoon.webp": "/soyummy/static/media/spoon.2b541a8828f77dd268bd.webp",
     "static/media/bg_main-desc.webp": "/soyummy/static/media/bg_main-desc.4ffca43e196faa065119.webp",
     "static/media/bgMainContainerTab.webp": "/soyummy/static/media/bgMainContainerTab.70ef8b9fadd53fa14fe5.webp",
     "static/media/bgLeafTabletMobMenu.webp": "/soyummy/static/media/bgLeafTabletMobMenu.156841ce94462567f496.webp",
     "static/media/bg_main-tablet.webp": "/soyummy/static/media/bg_main-tablet.3306d93e4428f8a2b58e.webp",
     "static/media/bg_main-mob.webp": "/soyummy/static/media/bg_main-mob.c3e6555396d52b094b88.webp",
+    "static/media/leafs.webp": "/soyummy/static/media/leafs.dc3311ee2e1ff6ec0994.webp",
     "static/media/placeholder.webp": "/soyummy/static/media/placeholder.1c1989f753467a764aa9.webp",
     "static/media/ErrorPlug.gif": "/soyummy/static/media/ErrorPlug.481519e4807601d2262d.gif",
     "static/media/bgMainContainerMob.webp": "/soyummy/static/media/bgMainContainerMob.ac34a1025a33123168b5.webp",
@@ -52,7 +52,7 @@
     "static/media/burgerMenu.svg": "/soyummy/static/media/burgerMenu.0f3571adaad47fc06865f7573710d9e0.svg",
     "static/media/elipse.svg": "/soyummy/static/media/elipse.b1b8dc86b94bd0974d23dca89871ca02.svg",
     "main.52ff21dc.css.map": "/soyummy/static/css/main.52ff21dc.css.map",
-    "main.e7291b39.js.map": "/soyummy/static/js/main.e7291b39.js.map",
+    "main.1f620658.js.map": "/soyummy/static/js/main.1f620658.js.map",
     "751.4d3b68d0.chunk.js.map": "/soyummy/static/js/751.4d3b68d0.chunk.js.map",
     "772.a364c06c.chunk.js.map": "/soyummy/static/js/772.a364c06c.chunk.js.map",
     "180.08f931c7.chunk.js.map": "/soyummy/static/js/180.08f931c7.chunk.js.map",
@@ -74,6 +74,6 @@
   },
   "entrypoints": [
     "static/css/main.52ff21dc.css",
-    "static/js/main.e7291b39.js"
+    "static/js/main.1f620658.js"
   ]
 }
