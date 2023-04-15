@@ -10,7 +10,6 @@ import placeholder from '../../images/placeholder.png';
 
 import { motion } from 'framer-motion';
 
-
 export const SearchedRecipesList = () => {
   const recipes = useSelector(selectSearchedRecipes);
   const isLoading = useSelector(selectIsLoading);
@@ -25,7 +24,7 @@ export const SearchedRecipesList = () => {
       {isLoading && !error && <Loader />}
       {recipes.length === 0 ? (
         <div className="flex flex-col gap-[32px] items-center mt-[50px] mb-[200px] w-[350]">
-          <img src={placeholder} alt="vegetables assortment" />
+          <img src={placeholder} loading="lazy" alt="vegetables assortment" />
           <p className="text-center Poppins text-customBase dark:text-white">
             Try looking for something else..
           </p>

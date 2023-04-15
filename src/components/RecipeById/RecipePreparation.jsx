@@ -36,6 +36,7 @@ export const RecipePreparation = () => {
             {{ thumb } ? (
               <img
                 src={thumb}
+                loading="lazy"
                 className="block w-full rounded align-middle h-full object-cover"
                 alt="ingredient_photo"
               />
@@ -43,6 +44,7 @@ export const RecipePreparation = () => {
               <img
                 className="block  bg-cover bg-center w-full rounded object-cover"
                 src={placeholder}
+                loading="lazy"
                 alt="placeholder"
               />
             )}
