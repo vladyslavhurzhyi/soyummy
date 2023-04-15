@@ -35,7 +35,7 @@ export const SubscribeForm = () => {
                     </div>
                     <input type="email" name="email" id="" placeholder="Enter your email address" value={email} 
                         onChange={handleInputChange}
-                        className="bg-transparent rounded-md text-whiteText md:w-[260px] lg:w-full py-[11.5px] md:py-[14.5px] xl:py-[17px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] xl:text-[18px]/[27px] w-full"
+                        className="bg-transparent rounded-md text-whiteText font-normal dark:border-white placeholder:font-normal placeholder:text-whiteText placeholder:text-slate-300 dark:placeholder:text-whiteText md:w-[260px] lg:w-full py-[11.5px] md:py-[14.5px] xl:py-[17px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] xl:text-[18px]/[27px] w-full"
                     />
                 </div>
                 <Button cssClass="subscribe-btn" text="Subcribe" type='submit' className='bg-accentMain dark:bg-accentDark'></Button>
