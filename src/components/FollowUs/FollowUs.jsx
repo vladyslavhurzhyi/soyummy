@@ -16,13 +16,7 @@ export const FollowUs = ({ className }) => {
   }
 
   return (
-    <ul
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <ul className="flex items-center justify-center">
       <li className="mr-3.5 md:mr-5 ">
         <a
           className={fill}

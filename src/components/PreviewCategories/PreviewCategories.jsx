@@ -6,8 +6,9 @@ import { setCurrentCategory } from 'redux/categories/categoriesOperations';
 import { useMediaQuery } from 'react-responsive';
 import { CurveBtn } from 'components/CurveBtn/CurveBtn';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-export const PreviewCategories = () => {
+export const PreviewCategories = (idx, arr) => {
   const categories = useSelector(getContentForMain);
 
   const dispatch = useDispatch();
@@ -41,31 +42,53 @@ export const PreviewCategories = () => {
   };
 
   return (
-    <ul className="container   xl:px-0 flex flex-col gap-24">
+    <ul className="xl:px-0 flex flex-col gap-24">
       {categories.map(({ category, recipes }) => {
         if (recipes.length >= 4)
           return (
             <li key={category} className="text-left ">
-              <p className="font-semibold leading-7 text-[28px] md:text-[44px] md:leading-[44px] tracking-tight text-mainText capitalize mb-10 dark:text-whiteText">
+              <motion.p
+                initial={{
+                  y: -20,
+                  opacity: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                whileInView={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                className="font-semibold leading-7 text-[28px] md:text-[44px] md:leading-[44px] tracking-tight text-mainText capitalize mb-10 dark:text-whiteText"
+              >
                 {category}
-              </p>
+              </motion.p>
               <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
                 {recipes.slice(0, numCard).map(({ _id, title, preview }) => (
-                  <div
+                  <motion.li
+                    initial={{
+                      y: -20,
+                      opacity: 0,
+                    }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    whileInView={{
+                      y: 0,
+                      opacity: 1,
+                    }}
                     key={_id}
-                    className="w-[100%] h-[323px] rounded-lg relative md:w-[47%] xl:w-[24%] object-cover"
+                    className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white "
                   >
                     <NavLink to={`/recipes/${_id}`}>
                       <img
                         src={preview}
                         alt={title}
-                        className="h-[323px] w-full rounded-lg"
+                        className="h-full w-full rounded-lg object-cover"
                       />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-[18px] rounded-lg w-[90%] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark ">
+                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white ">
                         {title}
                       </p>
                     </NavLink>
-                  </div>
+                  </motion.li>
                 ))}
               </ul>
               <div className="flex justify-end">
@@ -74,7 +97,7 @@ export const PreviewCategories = () => {
                   onClick={() => onClick(category)}
                   text={'See all'}
                   cssClass="logout-btn"
-                  className="flex justify-end"
+                  className="flex justify-end "
                 />
               </div>
             </li>

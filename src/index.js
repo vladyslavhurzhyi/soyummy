@@ -6,7 +6,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import { persistor, store } from 'redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
@@ -22,12 +22,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Provider>
     </BrowserRouter>
     <ToastContainer
-      position="top-right"
-      autoClose={3000}
+      position="bottom-right"
+      autoClose={300}
       hideProgressBar={false}
       newestOnTop={true}
       closeOnClick
       rtl={false}
+      transition={Zoom}
       pauseOnFocusLoss
       draggable
       pauseOnHover

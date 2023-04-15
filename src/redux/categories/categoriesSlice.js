@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { getCategories } from './categoriesOperations';
 import { setCurrentCategory } from './categoriesOperations';
 
@@ -7,10 +7,6 @@ const initialState = {
   list: [],
   isLoading: false,
   error: null,
-};
-
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
 };
 
 export const categoriesSlice = createSlice({
@@ -28,11 +24,11 @@ export const categoriesSlice = createSlice({
         state.error = null;
         state.currentCategory = action.payload;
       })
-      .addMatcher(isAnyOf(getCategories.rejected), (state, action) => {
+      .addMatcher(getCategories.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addMatcher(isPendingAction, state => {
+      .addMatcher(getCategories.pending, state => {
         state.isLoading = true;
       });
   },

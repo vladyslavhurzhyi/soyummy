@@ -10,7 +10,7 @@ export const UserInfoModal = ({ isOpen, handleClose, handleOpen }) => {
   const onLogoutBtnClick = () => handleOpen('userLogout');
 
   return (
-    <ModalTW isOpen={isOpen} handleClose={handleClose}>
+    <ModalTW isOpen={isOpen} handleClose={handleClose} position="topRight">
       <div className="flex p-4 min-w-[161px] min-h-[130px] md:min-w-[173px] md:min-h-[134px] flex-col items-center dark:bg-accentGray">
         <button
           onClick={onEditBtnClick}

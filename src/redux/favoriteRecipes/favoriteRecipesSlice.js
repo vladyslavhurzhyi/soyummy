@@ -11,10 +11,6 @@ const initialState = {
   error: null,
 };
 
-const isPendingAction = action => {
-  return action.type.endsWith('pending');
-};
-
 export const favoriteRecipesSlice = createSlice({
   name: 'favoriteRecipes',
   initialState,
@@ -49,9 +45,16 @@ export const favoriteRecipesSlice = createSlice({
           state.error = action.payload;
         }
       )
-      .addMatcher(isPendingAction, state => {
-        state.isLoading = true;
-      });
+      .addMatcher(
+        isAnyOf(
+          getFavoriteRecipes.pending,
+          addFavoriteRecipes.pending,
+          removeFromFavorite.pending
+        ),
+        state => {
+          state.isLoading = true;
+        }
+      );
   },
 });
 

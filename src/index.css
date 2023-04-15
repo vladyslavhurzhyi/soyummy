@@ -99,17 +99,17 @@ body {
 }
 
 .divIconLogo {
-  @apply transition duration-300  flex items-center justify-center w-10 h-10  xl:w-11 xl:h-11 bg-accentMain rounded-xl;
+  @apply transition duration-300  flex items-center justify-center w-10 h-10  md:w-11 md:h-11 bg-accentMain rounded-xl;
 }
 .iconLogo {
-  @apply transition duration-300 stroke-white w-7 h-7 xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-white w-[28px] h-[28px] md:w-[31px] md:h-[31px];
 }
 
 .divIconFooterMob {
   @apply transition duration-300  flex items-center justify-center w-8 h-8  xl:w-11 xl:h-11 bg-[#EBF3D4] rounded-md xl:rounded-xl;
 }
 .iconLogoFooterMob {
-  @apply transition duration-300 stroke-[#8BAA36] w-[18px] h-[18px] xl:w-[30px] xl:h-[30px];
+  @apply transition duration-300 stroke-[#8BAA36] w-[24px] h-[24px] xl:w-[30px] xl:h-[30px];
 }
 
 .divIconTrash {
@@ -194,4 +194,30 @@ select:focus ~ label {
 
 .prevBtn {
   @apply ml-[28px] mr-6 block  py-2 leading-tight text-[#A9A9A9]   hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400  dark:bg-transparent  dark:hover:text-white;
+}
+
+.Toastify__toast-container--top-right {
+  top: 65px;
+}
+
+.Toastify__toast-theme--light {
+  background-color: #8baa36b8;
+  color: #3e4462;
+  font-family: Poppins;
+}
+
+.Toastify__progress-bar {
+  background-color: transparent;
+}
+
+.Toastify__toast-icon svg {
+  fill: #fafafa;
+}
+
+.Toastify__close-button {
+  color: #fafafa;
+}
+
+.Toastify__close-button svg {
+  fill: #fafafa;
 }

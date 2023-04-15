@@ -49,7 +49,7 @@ export const UserPanel = () => {
       <div className="flex-grow-1 flex justify-end  hover:animate-pulse transition duration-300">
         <div
           onClick={onUserBtnClick}
-          className="flex items-center cursor-pointer mr-7 md:mr-14"
+          className="flex items-center cursor-pointer mr-7 md:mr-14 lg:mr-10"
         >
           <img
             src={avatarUrl}
@@ -57,10 +57,9 @@ export const UserPanel = () => {
             className="w-[34px] h-[34px] md:w-[44px] md:h-[44px] rounded-full object-cover "
           />
           <p
-            className={`ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText text-[12px] md:text-sm ${
-              currentPath === '/main' || currentPath.includes('/recipes')
-                ? 'xl:dark:text-accentDark'
-                : 'dark:text-whiteText'
+            className={`ml-[14px] font-main font-semibold text-accentDark dark:text-whiteText xl:dark:text-accentDark  text-[12px] md:text-sm ${
+              (currentPath === '/' && 'xl:dark:text-accentDark') ||
+              (currentPath !== '/' && 'xl:dark:text-whiteText')
             }`}
           >
             {name}
