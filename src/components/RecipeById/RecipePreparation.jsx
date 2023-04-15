@@ -6,7 +6,7 @@ export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipeById);
   const { thumb, instructions } = recipes;
 
-  const steps = instructions.split('\r\n');
+  const steps = instructions.split('\n');
   // const filteredSteps = steps.filter(step => step !== '');
 
   return (

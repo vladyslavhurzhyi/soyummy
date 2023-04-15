@@ -1,7 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const Nav = () => {
+
     return (
         <ul className="flex w-full md:w-[100px] flex-col justify-center ">
             <li className="self-center md:self-start">
@@ -40,5 +41,5 @@ export const Nav = () => {
                 </NavLink>
             </li>
         </ul>
-    )
-}
+    );
+};
