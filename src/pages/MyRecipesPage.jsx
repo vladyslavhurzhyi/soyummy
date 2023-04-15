@@ -1,8 +1,14 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { MyRecipesList } from 'components/MyRecipesList/MyRecipesList';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const MyRecipesPage = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <>
       <Helmet>

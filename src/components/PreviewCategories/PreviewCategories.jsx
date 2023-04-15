@@ -91,6 +91,7 @@ export const PreviewCategories = (idx, arr) => {
                       {/* <NavLink to={`/recipes/${_id}`}>
                       <img
                         src={preview}
+                        loading="lazy"
                         alt={title}
                         className="h-full w-full rounded-lg object-cover"
                       />

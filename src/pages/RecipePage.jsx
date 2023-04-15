@@ -13,6 +13,7 @@ import {
   selectIsLoading,
   selectRecipeById,
 } from 'redux/recipes/recipesSelectors';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const RecipePage = () => {
   const recipes = useSelector(selectRecipeById);
@@ -26,6 +27,7 @@ const RecipePage = () => {
   useEffect(() => {
     dispatch(fetchRecipeById(recipeId));
     dispatch(getFavoriteRecipes());
+    scrollToTop();
   }, [dispatch, recipeId]);
 
   return (

@@ -6,6 +6,10 @@ import { selectIsLoading } from 'redux/search/selectors';
 import { selectError } from 'redux/search/selectors';
 import RecipeCard from 'components/RecipeCard';
 
+import placeholder from '../../images/placeholder.webp';
+
+import { motion } from 'framer-motion';
+
 export const SearchedRecipesList = () => {
   const recipes = useSelector(selectSearchedRecipes);
   const isLoading = useSelector(selectIsLoading);
@@ -19,13 +23,28 @@ export const SearchedRecipesList = () => {
         })}
       {isLoading && !error && <Loader />}
       {recipes.length === 0 ? (
-        <p className="text-center">Try to look for something else</p>
+        <div className="flex flex-col gap-[32px] items-center mt-[50px] mb-[200px] w-[350]">
+          <img src={placeholder} loading="lazy" alt="vegetables assortment" />
+          <p className="text-center Poppins text-customBase dark:text-white">
+            Try looking for something else..
+          </p>
+        </div>
       ) : (
         <div>
           <ul className="flex flex-col md:flex-row md:gap-8 lg:gap-4 flex-wrap gap-6 mb-28">
             {recipes.map(({ _id, title, description, thumb, time }) => {
               return (
-                <li
+                <motion.li
+                  initial={{
+                    y: -20,
+                    opacity: 0,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
                   key={_id}
                   className="mx-auto md:mx-0 max-w-sm md:max-w-none md:w-[calc(50%-16px)] lg:w-[calc(25%-12px)]"
                 >
@@ -44,8 +63,9 @@ export const SearchedRecipesList = () => {
                     <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white">
                       {title}
                     </div>
+
                   </NavLink> */}
-                </li>
+                </motion.li>
               );
             })}
           </ul>

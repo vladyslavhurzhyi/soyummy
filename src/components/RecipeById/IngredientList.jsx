@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRecipeById } from 'redux/recipes/recipesSelectors';
-import placeholder from 'images/ingred_placeholder.jpg';
+import placeholder from 'images/ingred_placeholder.webp';
 import {
   addShoppingList,
   deleteShoppingListItem,
@@ -44,6 +44,7 @@ export const IngredientList = () => {
             {{ thb } ? (
               <img
                 src={thb}
+                loading="lazy"
                 className="w-14 md:w-28 xl:w-32 h-14 md:h-28 xl:h-32"
                 alt="ingredient_photo"
               />
@@ -51,6 +52,7 @@ export const IngredientList = () => {
               <img
                 className="w-14 md:w-28 xl:w-32 h-14 md:h-28 xl:h-32 rounded-[3px]"
                 src={placeholder}
+                loading="lazy"
                 alt="placeholder"
               />
             )}

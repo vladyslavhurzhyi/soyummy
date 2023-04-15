@@ -38,6 +38,7 @@ export const IngredientsShoppingListItem = ({
       {arr.length > 1 && idx === 1 && <PopUpDraggable />}
       <img
         src={thb}
+        loading="lazy"
         alt="ingredient"
         className="rounded-md object-cover max-w-[60px] h-[60px] md:max-w-[93px] md:h-[97px] dark:bg-accentHalfDark"
       />

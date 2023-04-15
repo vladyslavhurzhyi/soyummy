@@ -30,6 +30,7 @@ export const RecipeItem = ({
             <img
               className="w-[124px] h-[124px] mx-[14px]  md:w-[228px] md:h-[232px]  xl:w-[318px] xl:h-[324px] md:mr-6 md:ml-6 xl:mx-10 rounded-lg object-cover  "
               src={img}
+              loading="lazy"
               alt={img}
             />
             <div className="flex flex-col mr-[9px] md:mr-6 xl:mr-10 w-full">

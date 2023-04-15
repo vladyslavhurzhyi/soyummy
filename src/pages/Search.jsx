@@ -1,37 +1,44 @@
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import {
   getRecipesByQuery,
   getRecipesByIngredient,
 } from 'redux/search/searchOperations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectQueryType } from 'redux/search/selectors';
+import { selectQueryType, selectQuery } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
 import { Helmet } from 'react-helmet-async';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const Search = () => {
-  const [searchParams] = useSearchParams();
+  const query = useSelector(selectQuery);
   const queryType = useSelector(selectQueryType);
+
   const dispatch = useDispatch();
-  const query = searchParams.get('query');
+  console.log(queryType);
 
   useEffect(() => {
     if (!query) {
       return;
     }
-
     switch (queryType) {
       case 'title':
         dispatch(getRecipesByQuery(query));
+        console.log(query);
+        console.log(queryType);
         break;
       case 'ingredients':
         dispatch(getRecipesByIngredient(query));
+        console.log(query);
+        console.log(queryType);
         break;
       default:
         return;
     }
+
+    scrollToTop();
   }, [dispatch, query, queryType]);
 
   return (

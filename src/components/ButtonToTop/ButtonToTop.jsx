@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { scrollToTop } from 'utils/scrollToTop';
 import { ReactComponent as ToTopSvg } from '../../images/svg/ToTop.svg';
 
 export const ButtonToTop = () => {
@@ -11,13 +12,6 @@ export const ButtonToTop = () => {
     } else if (scrolled <= 300) {
       setVisible(false);
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
   };
 
   window.addEventListener('scroll', toggleVisible);
