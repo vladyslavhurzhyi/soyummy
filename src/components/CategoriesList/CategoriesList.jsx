@@ -27,11 +27,8 @@ const CategoriesList = () => {
   }, [dispatch]);
 
   return (
-    <nav className=" w-full relative ">
-      <ul
-        ref={listRef}
-        className="flex scrollbar-none overflow-x-auto mb-8 border-b-2"
-      >
+    <nav className=" w-full relative mb-8 border-b-2 ">
+      <ul ref={listRef} className="flex scrollbar-none overflow-x-auto  ">
         {categories.map(category => {
           return (
             <li className="mr-14 relative pb-7 " key={category._id}>
@@ -50,12 +47,12 @@ const CategoriesList = () => {
           );
         })}
       </ul>
-      <div className="flex gap-2 absolute top-2/4 left-2/4 -translate-x-2/4">
+      <div className="flex justify-between  ">
         <button type="button" onClick={handleClickLeft}>
-          <HiArrowSmLeft />
+          <HiArrowSmLeft className="dark:fill-white size animate-pulse" />
         </button>
         <button type="button" onClick={handleClickRight}>
-          <HiArrowSmRight />
+          <HiArrowSmRight className="dark:fill-white size animate-pulse" />
         </button>
       </div>
     </nav>
