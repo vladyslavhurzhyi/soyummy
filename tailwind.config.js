@@ -76,6 +76,9 @@ module.exports = {
           },
         },
       },
+      transitionProperty: {
+        filterOpacity: 'filter opacity',
+      },
     },
   },
   plugins: [
