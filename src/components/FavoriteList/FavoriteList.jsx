@@ -13,6 +13,7 @@ import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesLis
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import placeholder from '../../images/placeholder.png';
+import { scrollToTop } from 'utils/scrollToTop';
 
 export const FavoriteList = () => {
   const [paginationPage, setPaginationPage] = useState(1);
@@ -41,7 +42,7 @@ export const FavoriteList = () => {
 
   const handlePaginationClick = event => {
     const buttonValue = Number(event.target.textContent);
-
+    scrollToTop();
     setPaginationPage(buttonValue);
   };
 
