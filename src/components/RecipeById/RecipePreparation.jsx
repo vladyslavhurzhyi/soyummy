@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectRecipeById } from 'redux/recipes/recipesSelectors';
-import placeholder from 'images/dishes_placeholder.jpg';
+import placeholder from 'images/dishes_placeholder.webp';
 
 export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipeById);

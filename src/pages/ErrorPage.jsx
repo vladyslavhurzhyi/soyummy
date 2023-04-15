@@ -1,7 +1,7 @@
 import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
-import error from '../images/error.png';
+import error from '../images/error.webp';
 
 const ErrorPage = () => {
   return (

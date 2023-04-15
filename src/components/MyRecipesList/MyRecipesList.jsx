@@ -13,7 +13,7 @@ import {
   // selectMyFetching,
 } from 'redux/myRecipes/myRecipesSelectors';
 import { toast } from 'react-toastify';
-import placeholder from '../../images/placeholder.png';
+import placeholder from '../../images/placeholder.webp';
 
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
