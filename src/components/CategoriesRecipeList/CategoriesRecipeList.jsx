@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentCategory } from 'redux/categories/categoriesSelectors';
 import { fetchRecipesByCategory } from 'redux/recipes/recipesOperations';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
+import { motion } from 'framer-motion';
 
 const CategoriesRecipesList = () => {
   const category = useSelector(selectCurrentCategory);
   const dispatch = useDispatch();
   const recipes = useSelector(selectRecipes);
+
   useEffect(() => {
     dispatch(fetchRecipesByCategory(category));
   }, [category, dispatch]);
@@ -17,7 +19,17 @@ const CategoriesRecipesList = () => {
       <ul className="flex flex-col md:flex-row md:gap-8 xl:gap-4 flex-wrap gap-6 mb-28">
         {recipes.map(({ thumb, _id, title }) => {
           return (
-            <li
+            <motion.li
+              initial={{
+                y: -20,
+                opacity: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+              }}
               key={_id}
               className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white"
             >
@@ -30,7 +42,7 @@ const CategoriesRecipesList = () => {
                   {title}
                 </div>
               </NavLink>
-            </li>
+            </motion.li>
           );
         })}
       </ul>

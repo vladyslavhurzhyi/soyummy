@@ -5,7 +5,11 @@ import { toast } from 'react-toastify';
 import { selectSearchedRecipes } from 'redux/search/selectors';
 import { selectIsLoading } from 'redux/search/selectors';
 import { selectError } from 'redux/search/selectors';
+
 import placeholder from '../../images/placeholder.png';
+
+import { motion } from 'framer-motion';
+
 
 export const SearchedRecipesList = () => {
   const recipes = useSelector(selectSearchedRecipes);
@@ -31,7 +35,17 @@ export const SearchedRecipesList = () => {
           <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
             {recipes.map(({ thumb, _id, title }) => {
               return (
-                <li
+                <motion.li
+                  initial={{
+                    y: -20,
+                    opacity: 0,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
                   key={_id}
                   className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white"
                 >
@@ -44,7 +58,7 @@ export const SearchedRecipesList = () => {
                       {title}
                     </div>
                   </NavLink>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
