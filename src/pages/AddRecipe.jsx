@@ -6,6 +6,7 @@ import { PopularRecipes } from 'components/PopularRecipes/PopularRecipes';
 import { fetchPopular } from 'redux/recipes/recipesOperations';
 import { selectRecipes } from 'redux/recipes/recipesSelectors';
 import { Helmet } from 'react-helmet-async';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const AddRecipe = () => {
   const popular = useSelector(selectRecipes);
@@ -13,6 +14,7 @@ const AddRecipe = () => {
 
   useEffect(() => {
     dispatch(fetchPopular());
+    scrollToTop();
   }, [dispatch]);
 
   return (

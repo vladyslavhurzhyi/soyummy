@@ -9,6 +9,7 @@ import { selectQueryType, selectQuery } from 'redux/search/selectors';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { SearchedRecipesList } from 'components/SearchedRecipesList/SearchedRecipesList';
 import { Helmet } from 'react-helmet-async';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const Search = () => {
   const query = useSelector(selectQuery);
@@ -30,6 +31,8 @@ const Search = () => {
       default:
         return;
     }
+
+    scrollToTop();
   }, [dispatch, query, queryType]);
 
   return (

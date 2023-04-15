@@ -1,8 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 import { IngredientsShoppingList } from 'components/IngredientsShoppingList/IngredientsShoppingList';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
+import { useEffect } from 'react';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const ShoppingListPage = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <div className="container">
       <Helmet>
