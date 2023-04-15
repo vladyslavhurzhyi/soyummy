@@ -1,10 +1,10 @@
 import { Loader } from 'components/Loader/Loader';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { selectSearchedRecipes } from 'redux/search/selectors';
 import { selectIsLoading } from 'redux/search/selectors';
 import { selectError } from 'redux/search/selectors';
+import RecipeCard from 'components/RecipeCard';
 
 export const SearchedRecipesList = () => {
   const recipes = useSelector(selectSearchedRecipes);
@@ -22,14 +22,21 @@ export const SearchedRecipesList = () => {
         <p className="text-center">Try to look for something else</p>
       ) : (
         <div>
-          <ul className="mb-[50px] flex flex-wrap w-full gap-0 md:gap-8 xl:gap-3 justify-center md:justify-between">
-            {recipes.map(({ thumb, _id, title }) => {
+          <ul className="flex flex-col md:flex-row md:gap-8 lg:gap-4 flex-wrap gap-6 mb-28">
+            {recipes.map(({ _id, title, description, thumb, time }) => {
               return (
                 <li
                   key={_id}
-                  className="w-[100%] h-[343px] md:h-[336px] xl:h-[300px] rounded-lg relative md:w-[calc(50%-16px)] xl:w-[calc(25%-12px)] object-cover shadow hover:shadow-lg focus:shadow-lg  shadow-black hover:shadow-black focus:shadow-black  dark:shadow-white dark:hover:shadow-white dark:focus:shadow-white"
+                  className="mx-auto md:mx-0 max-w-sm md:max-w-none md:w-[calc(50%-16px)] lg:w-[calc(25%-12px)]"
                 >
-                  <NavLink
+                  <RecipeCard
+                    id={_id}
+                    title={title}
+                    text={description}
+                    thumb={thumb}
+                    time={time}
+                  />
+                  {/* <NavLink
                     to={`/recipes/${_id}`}
                     className="bg-gray-200  rounded-lg bg-cover bg-center w-full h-full bg-no-repeat block"
                     style={{ backgroundImage: `url('${thumb}` }}
@@ -37,7 +44,7 @@ export const SearchedRecipesList = () => {
                     <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white">
                       {title}
                     </div>
-                  </NavLink>
+                  </NavLink> */}
                 </li>
               );
             })}
