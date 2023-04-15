@@ -1,8 +1,14 @@
 import { FavoriteList } from 'components/FavoriteList/FavoriteList';
 import { MainPageTitle } from 'components/MainPageTitle/MainPageTitle';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { scrollToTop } from 'utils/scrollToTop';
 
 const FavoritesPage = () => {
+  useEffect(() => {
+    scrollToTop();
+  }, []);
+
   return (
     <>
       <Helmet>
