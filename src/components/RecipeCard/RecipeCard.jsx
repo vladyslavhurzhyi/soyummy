@@ -30,7 +30,7 @@ const RecipeCard = ({ id, title, text, thumb, time }) => {
           </div>
           <h3
             title={title}
-            className="w-full overflow-hidden whitespace-nowrap text-ellipsis mt-auto p-4 pb-5 lg:p-3 lg:pb-4 xl:p-4 xl:pb-5 rounded-lg lg:text-sm xl:text-base font-medium bg-white dark:bg-accentHalfDark text-secondaryText dark:text-whiteText transition-all duration-500"
+            className="w-full overflow-hidden whitespace-nowrap text-ellipsis mt-auto p-4 pb-5 lg:p-3 lg:pb-4 xl:p-4 xl:pb-5 rounded-lg lg:text-sm xl:text-base font-medium bg-white dark:bg-accentHalfDark text-secondaryText dark:text-whiteText transition-colors duration-500"
           >
             {title}
           </h3>
