@@ -24,35 +24,18 @@ export const SubscribeForm = () => {
     return (
         <div className="ml-0 justify-center justify-self-center lg:w-[300px] xl:w-[339px]">
             <div className="hidden md:hidden lg:block lg:mb-[28px] ">
-                <h3 style={{
-                    fontFamily: 'Poppins',
-                    fontWeight: 700,
-                    fontSize: 18,
-                    lineHeight: 1.5,
-                    color: 'white',
-                }}>Subscribe to our Newsletter</h3>
-                <p style={{
-                    fontFamily: 'Poppins',
-                    fontWeight: 400,
-                    fontSize: 14,
-                    lineHeight: 1.29,
-                    color: 'white',
-                    marginTop: 14,
-                }}>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</p>
+                <h3 className="text-whiteText text-[18px]/[27px] font-bold">Subscribe to our Newsletter</h3>
+                <p className="text-whiteText text-[14px]/[18px] font-normal mt-[14px]">
+                    Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</p>
             </div>
             <form onSubmit={handleSubmit} className="flex flex-col md:flex-row lg:flex-col ">
-                {/* w-[204px] md:w-[442px] lg:w-[338px]  */}
-                <div className="relative md:mr-[12px] lg:mr-0">
+                <div className="relative md:mr-[12px] lg:mr-0 mb-[16px] md:mb-0 lg:mb-[16px]">
                     <div className="absolute top-[13px] md:top-[17px] xl:top-[23.5px] left-[14px] md:left-[15px] lg:left-[15.5px]">
                         <SvgMail className="w-[16px] h-[12px] md:w-[20px] md:h-[16px]" />
                     </div>
                     <input type="email" name="email" id="" placeholder="Enter your email address" value={email} 
                         onChange={handleInputChange}
-                        // placeholderTextColor='#ffffff'
-                        // style={{
-                        //     backgroundColor: 'inherit', borderRadius: 6, color: '#ffffff',
-                        // }}
-                        className="bg-transparent rounded-md text-whiteText md:w-[260px] lg:w-full mb-[16px] md:mb-0 lg:mb-[16px] py-[11.5px] md:py-[14.5px] xl:py-[17.5px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] xl:text-[18px]/[27px] w-full"
+                        className="bg-transparent rounded-md text-whiteText font-normal dark:border-white placeholder:font-normal placeholder:text-whiteText placeholder:text-slate-300 dark:placeholder:text-whiteText md:w-[260px] lg:w-full py-[11.5px] md:py-[14.5px] xl:py-[17px] pl-[42px] lg:pl-[51px] pr-[14px] text-[10px]/[15px] md:text-[14px]/[21px] xl:text-[18px]/[27px] w-full"
                     />
                 </div>
                 <Button cssClass="subscribe-btn" text="Subcribe" type='submit' className='bg-accentMain dark:bg-accentDark'></Button>

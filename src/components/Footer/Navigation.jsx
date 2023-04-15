@@ -5,9 +5,8 @@ import { FollowUs } from 'components/FollowUs/FollowUs';
 export const Navigation = () => {
   return (
     <nav className="flex justify-center lg:justify-between lg:w-full">
-      <div className="md:w-full justify-center  md:pl-[62px] lg:pl-0 content-start">
+      <div className="md:w-full justify-center md:pl-[62px] lg:pl-0 content-start">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between">
-          {/*  lg:min-w-[500px] lg:max-w-[700px] lg:min-w-[700px] lg:max-w-[700px] */}
           <div className="flex flex-col justify-center items-center">
             <div className="block md:hidden lg:block">
               <Nav />
