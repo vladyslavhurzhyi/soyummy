@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { selectRecipeById } from 'redux/recipes/recipesSelectors';
-import placeholder from 'images/dishes_placeholder.jpg';
+import placeholder from 'images/dishes_placeholder.webp';
 
 export const RecipePreparation = () => {
   const recipes = useSelector(selectRecipeById);
   const { thumb, instructions } = recipes;
 
-  const steps = instructions.split('\r\n');
+  const steps = instructions.split('\n');
   // const filteredSteps = steps.filter(step => step !== '');
 
   return (
@@ -36,6 +36,7 @@ export const RecipePreparation = () => {
             {{ thumb } ? (
               <img
                 src={thumb}
+                loading="lazy"
                 className="block w-full rounded align-middle h-full object-cover"
                 alt="ingredient_photo"
               />
@@ -43,6 +44,7 @@ export const RecipePreparation = () => {
               <img
                 className="block  bg-cover bg-center w-full rounded object-cover"
                 src={placeholder}
+                loading="lazy"
                 alt="placeholder"
               />
             )}

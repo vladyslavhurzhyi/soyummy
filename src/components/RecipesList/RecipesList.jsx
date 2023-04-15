@@ -1,4 +1,5 @@
-import { SkeletonRecipe } from 'components/Skeleton/Skeleton';
+import { Loader } from 'components/Loader/Loader';
+// import { SkeletonRecipe } from 'components/Skeleton/Skeleton';
 import { RecipeItem } from '../RecipeItem/RecipeItem';
 
 export const RecipesList = ({
@@ -13,7 +14,7 @@ export const RecipesList = ({
       <div>
         <ul className="flex flex-col mt-[100px] mb-[50px]  font-main dark:bg-accentDarker dark:text-[#FAFAFA99]">
           {isLoading ? (
-            <SkeletonRecipe className="w-[300px] h-[140px] md:w-[700px] md:h-[288px] xl:w-[900px] xl:h-[300px]" />
+            <Loader />
           ) : (
             <>
               {data.map(itemProps => {

@@ -19,27 +19,14 @@ export const Footer = () => {
                     cssClassIcon="iconLogoFooterMob"
                     cssClassDiv="divIconFooterMob"
                   />
-                  <h2
-                    className="text-[18px]/[18px] md:text-[28px]/[28px] ml-[12px]"
-                    style={{
-                      fontWeight: 700,
-                      color: 'white',
-                    }}
-                  >
+                  <h2 className="text-[18px]/[18px] md:text-[28px]/[28px] ml-[12px] font-bold text-whiteText">
                     So Yummy
                   </h2>
                 </div>
-                <ul
-                  className="hidden md:block lg:block lg:min-w-[380px] lg:max-w-[430px]"
-                  style={{
-                    // fontWeight: 400,
-                    lineHeight: 1.33,
-                    color: 'white',
-                  }}
-                >
+                <ul className="hidden md:block lg:block lg:min-w-[380px] lg:max-w-[430px]">
                   <li className="flex flex-row justify-start items-center ml-[10px]">
                     <Svg alt="elipse"></Svg>
-                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
+                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px] font-normal text-whiteText">
                       Database of recipes that can be replenished
                     </p>
                   </li>
@@ -48,19 +35,19 @@ export const Footer = () => {
                       alt="elipse"
                       className="mt-[9px] w-[4.8px] h-[4.5px]"
                     ></Svg>
-                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
+                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px] font-normal text-whiteText">
                       Flexible search for desired and unwanted ingredients
                     </p>
                   </li>
                   <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
                     <Svg alt="elipse"></Svg>
-                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
+                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px] font-normal text-whiteText">
                       Ability to add your own recipes with photos
                     </p>
                   </li>
                   <li className="mt-3 flex flex-row justify-start items-center ml-[10px]">
                     <Svg alt="elipse"></Svg>
-                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px]">
+                    <p className="md:text-[14px]/[18px] xl:text-[18px]/[24px] ml-[10px] font-normal text-whiteText">
                       Convenient and easy to use
                     </p>
                   </li>
@@ -82,34 +69,22 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-[10px]/[10px] md:text-[14px]/[18px] flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
-        <p
-          style={{
-            fontFamily: 'Poppins',
-            fontWeight: 500,
-            // fontSize: 14,
-            color: '#22252A',
-            opacity: 0.5,
-          }}
-        >
+      <div className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
+        <p className="text-[10px]/[10px] md:text-[14px]/[14px] font-medium text-accentDark dark:text-whiteText opacity-50">
           © 2023 All Rights Reserved.
         </p>
         <NavLink
-          className="text-[10px]/[10px] md:text-[14px]/[18px] ml-[14px] md:ml-[28px] xl:ml-[40px]"
-          style={{
-            fontFamily: 'Poppins',
-            fontWeight: 400,
-            // fontSize: 14,
-            color: '#22252A',
-            opacity: 0.5,
-            // marginLeft: 40,
-          }}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          href="/"
+          className="text-[10px]/[10px] md:text-[14px]/[14px] ml-[14px] md:ml-[28px] xl:ml-[40px] font-normal text-accentDark hover:text-accentMain focus:text-accentMain dark:text-whiteText dark:hover:text-accentMain dark:focus:text-accentMain opacity-60"
         >
           Terms of Service
         </NavLink>
         <div className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
           <img
-            src={require('./images/leafs.png')}
+            src={require('images/leafs.webp')}
+            loading="lazy"
             alt="leafs"
             className="w-[190px] h-[172px] md:w-[328px] md:h-[314px] xl:w-[488px] xl:h-[474px]"
           />
