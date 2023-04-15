@@ -83,7 +83,7 @@ export const Footer = () => {
         </NavLink>
         <div className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
           <img
-            src={require('./images/leafs.png')}
+            src={require('images/leafs.webp')}
             loading="lazy"
             alt="leafs"
             className="w-[190px] h-[172px] md:w-[328px] md:h-[314px] xl:w-[488px] xl:h-[474px]"
