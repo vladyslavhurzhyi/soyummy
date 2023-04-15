@@ -25,11 +25,11 @@ const ModalTW = ({
   const positionStyles = position => {
     switch (position) {
       case 'center':
-        return 'flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0';
+        return 'flex min-h-full items-center md:p-4 text-center justify-center p-0';
       case 'topRight':
         return 'fixed top-[10%] right-[5%] mx-0 md:top-[10%] md:right-[10%] xl:top-[10%] xl:right-[25%] 2xl:top-[10%] 2xl:right-[30%] z-40 overflow';
       default:
-        return 'flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0';
+        return 'flex min-h-full items-center md:p-4 text-center justify-center p-0';
     }
   };
   return (
