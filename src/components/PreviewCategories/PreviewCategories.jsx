@@ -88,17 +88,6 @@ export const PreviewCategories = (idx, arr) => {
                         thumb={thumb}
                         time={time}
                       />
-                      {/* <NavLink to={`/recipes/${_id}`}>
-                      <img
-                        src={preview}
-                        loading="lazy"
-                        alt={title}
-                        className="h-full w-full rounded-lg object-cover"
-                      />
-                      <p className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white ">
-                        {title}
-                      </p>
-                    </NavLink> */}
                     </motion.li>
                   ))}
               </ul>

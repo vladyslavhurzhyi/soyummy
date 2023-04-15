@@ -55,16 +55,6 @@ export const SearchedRecipesList = () => {
                     thumb={thumb}
                     time={time}
                   />
-                  {/* <NavLink
-                    to={`/recipes/${_id}`}
-                    className="bg-gray-200  rounded-lg bg-cover bg-center w-full h-full bg-no-repeat block"
-                    style={{ backgroundImage: `url('${thumb}` }}
-                  >
-                    <div className="absolute font-medium text-base leading-5 tracking-tight text-secondaryText p-4 bg-white bottom-[26px] left-0 right-0 mx-auto rounded-lg w-[calc(100%-18px)] xl:w-[calc(100%-16px)] whitespace-nowrap overflow-hidden text-ellipsis dark:text-whiteText dark:bg-accentDark shadow shadow-black dark:shadow-white">
-                      {title}
-                    </div>
-
-                  </NavLink> */}
                 </motion.li>
               );
             })}
