@@ -82,29 +82,12 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-[10px]/[10px] md:text-[14px]/[18px] flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
-        <p
-          style={{
-            fontFamily: 'Poppins',
-            fontWeight: 500,
-            // fontSize: 14,
-            color: '#22252A',
-            opacity: 0.5,
-          }}
-        >
+      <div className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
+        <p className='text-[10px]/[10px] md:text-[14px]/[14px] font-medium text-accentDark dark:text-whiteText opacity-50'>
           © 2023 All Rights Reserved.
         </p>
-        <NavLink
-          className="text-[10px]/[10px] md:text-[14px]/[18px] ml-[14px] md:ml-[28px] xl:ml-[40px]"
-          style={{
-            fontFamily: 'Poppins',
-            fontWeight: 400,
-            // fontSize: 14,
-            color: '#22252A',
-            opacity: 0.5,
-            // marginLeft: 40,
-          }}
-        >
+        <NavLink target="_blank" rel="noopener noreferrer nofollow" href="/"
+          className="text-[10px]/[10px] md:text-[14px]/[14px] ml-[14px] md:ml-[28px] xl:ml-[40px] font-normal text-accentDark dark:text-whiteText opacity-60">
           Terms of Service
         </NavLink>
         <div className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
