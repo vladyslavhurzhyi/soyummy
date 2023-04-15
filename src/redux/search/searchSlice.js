@@ -3,6 +3,7 @@ import { getRecipesByQuery, getRecipesByIngredient } from './searchOperations';
 
 const initialState = {
   items: [],
+  query: '',
   queryType: 'title',
   isLoading: false,
   error: null,
@@ -17,13 +18,11 @@ const searchSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-        state.queryType = action.payload;
       })
       .addCase(getRecipesByIngredient.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-        state.queryType = action.payload;
       })
       .addCase(getRecipesByQuery.pending, state => {
         state.isLoading = true;
@@ -42,9 +41,13 @@ const searchSlice = createSlice({
     changeQueryType(state, action) {
       state.queryType = action.payload;
     },
+    changeQuery(state, action) {
+      state.query = action.payload;
+    },
   },
 });
 
 export const searchReducer = searchSlice.reducer;
 
 export const { changeQueryType } = searchSlice.actions;
+export const { changeQuery } = searchSlice.actions;
