@@ -10,17 +10,17 @@ import {
   selectMyError,
   selectMyIsLoading,
   selectMyRecipes,
-  // selectMyFetching,
 } from 'redux/myRecipes/myRecipesSelectors';
 import { toast } from 'react-toastify';
 import placeholder from '../../images/placeholder.png';
+import { scrollToTop } from 'utils/scrollToTop';
 
 export const MyRecipesList = ({ cssClass }) => {
   const [paginationPage, setPaginationPage] = useState(1);
   const { current_page, total, data, per_page } = useSelector(selectMyRecipes);
   const error = useSelector(selectMyError);
   const isLoading = useSelector(selectMyIsLoading);
-  // const isFetching = useSelector(selectMyFetching);
+
   const dispatch = useDispatch();
   const totalPages = Math.ceil(Number(total) / Number(per_page));
   const isEmptyPage = current_page > totalPages;
@@ -42,7 +42,7 @@ export const MyRecipesList = ({ cssClass }) => {
 
   const handlePaginationClick = event => {
     const buttonValue = Number(event.target.textContent);
-
+    scrollToTop();
     setPaginationPage(buttonValue);
   };
 
