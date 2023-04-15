@@ -12,7 +12,7 @@ import {
 import { RecipesListPaginator } from 'components/RecipesListPaginator/RecipesListPaginator';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import placeholder from '../../images/placeholder.png';
+import placeholder from '../../images/placeholder.webp';
 import { scrollToTop } from 'utils/scrollToTop';
 
 export const FavoriteList = () => {

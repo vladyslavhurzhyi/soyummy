@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRecipeById } from 'redux/recipes/recipesSelectors';
-import placeholder from 'images/ingred_placeholder.jpg';
+import placeholder from 'images/ingred_placeholder.webp';
 import {
   addShoppingList,
   deleteShoppingListItem,

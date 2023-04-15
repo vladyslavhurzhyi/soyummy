@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import spoon from 'images/spoon.png';
-import arrow from 'images/arrow.png';
+import spoon from 'images/spoon.webp';
+import arrow from 'images/arrow.webp';
 export const ChooseYourBreakfast = () => {
   return (
     <div className="relative w-full z-0 mx-auto">

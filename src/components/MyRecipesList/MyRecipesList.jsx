@@ -12,7 +12,7 @@ import {
   selectMyRecipes,
 } from 'redux/myRecipes/myRecipesSelectors';
 import { toast } from 'react-toastify';
-import placeholder from '../../images/placeholder.png';
+import placeholder from '../../images/placeholder.webp';
 import { scrollToTop } from 'utils/scrollToTop';
 
 export const MyRecipesList = ({ cssClass }) => {

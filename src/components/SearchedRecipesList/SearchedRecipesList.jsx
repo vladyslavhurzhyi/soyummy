@@ -6,7 +6,7 @@ import { selectSearchedRecipes } from 'redux/search/selectors';
 import { selectIsLoading } from 'redux/search/selectors';
 import { selectError } from 'redux/search/selectors';
 
-import placeholder from '../../images/placeholder.png';
+import placeholder from '../../images/placeholder.webp';
 
 import { motion } from 'framer-motion';
 
