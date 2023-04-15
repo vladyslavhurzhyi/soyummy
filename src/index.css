@@ -157,7 +157,7 @@ select:focus ~ label {
 /* Reg & SignIn Form */
 
 .formWrapSection {
-  @apply flex w-screen h-screen flex-col xl:flex-row xl:justify-evenly	 items-center justify-center bg-gradientStop;
+  @apply flex flex-col xl:flex-row xl:justify-evenly items-center justify-center bg-gradientStop;
 }
 
 .inputField {
