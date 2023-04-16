@@ -22,7 +22,7 @@ const SigninForm = () => {
   });
 
   return (
-    <section className=" formWrapSection">
+    <section className=" formWrapSection xl:h-[100vh]">
       <div className=" svgWrap ">
         <Svg />
       </div>
