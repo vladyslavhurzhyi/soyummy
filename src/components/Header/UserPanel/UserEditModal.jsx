@@ -54,7 +54,7 @@ const UserEditModal = ({ isOpen, handleClose }) => {
             clearExit();
           }}
         >
-          <Svg />
+          <Svg className="stroke-secondaryText" />
         </button>
       </div>
       <form

@@ -21,7 +21,7 @@ export const UserLogoutModal = ({ isOpen, handleClose }) => {
                 handleClose();
               }}
             >
-              <Svg />
+              <Svg className="stroke-secondaryText" />
             </button>
           </div>
 
