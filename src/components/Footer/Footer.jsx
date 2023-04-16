@@ -1,12 +1,29 @@
-import React from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { Logo } from 'components/Logo/Logo';
 import { Nav } from './Nav';
 import { SubscribeForm } from './SubscribeForm';
+import { TeamModal } from './TeamModal';
 import { ReactComponent as Svg } from './images/elipse.svg';
 
 export const Footer = () => {
+  const [teamModal, setTeamModal] = useState(false);
+
+  const openModal = modalName => {
+    switch (modalName) {
+      case 'teamModal':
+        setTeamModal(true);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const closeModals = () => {
+    setTeamModal(false);
+  };
+
   return (
     <footer className="before:bg-main_container_mob_leaf md:before:bg-main_container_tab_leaf xl:before:bg-main_container_desc_leaf before:bg-no-repeat before:bg-[left_0_bottom_-240px] md:before:bg-[left_0_bottom_-370px] xl:before:bg-[left_0_bottom_-515px] before:content-[''] before:block before:m-0 before:w-full before:h-[120px] md:before:h-[215px] xl:before:h-[255px] z-0 relative w-full">
       <div className="flex justify-center items-center flex-col bg-accentDark dark:bg-accentMain pt-[28px] pb-[18px] md:pt-[50px] md:pb-[24px] xl:pt-[64px] xl:pb-[50px] ">
@@ -69,19 +86,40 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center relative overflow-hidden pt-[28px] pb-[28px] md:pt-[32px] md:pb-[32px] xl:py-[50px]">
-        <p className="text-[10px]/[10px] md:text-[14px]/[14px] font-medium text-accentDark dark:text-whiteText opacity-50">
-          © 2023 All Rights Reserved.
-        </p>
-        <NavLink
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-          href="/"
-          className="text-[10px]/[10px] md:text-[14px]/[14px] ml-[14px] md:ml-[28px] xl:ml-[40px] font-normal text-accentDark hover:text-accentMain focus:text-accentMain dark:text-whiteText dark:hover:text-accentMain dark:focus:text-accentMain opacity-60"
-        >
-          Terms of Service
-        </NavLink>
-        <div className="blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
+      <div className="relative overflow-hidden py-5 md:py-8 xl:py-[50px]">
+        <div className="container flex flex-wrap gap-y-4 md:gap-y-6 justify-center items-center relative z-10 text-[10px]/[10px] md:text-[14px]/[14px]">
+          <p className="font-medium text-accentDark dark:text-whiteText opacity-50">
+            &copy; 2023 All Rights Reserved.
+          </p>
+
+          <NavLink
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            href="/"
+            className="ml-[14px] md:ml-[28px] xl:ml-[40px] font-normal text-accentDark hover:text-accentMain focus:text-accentMain dark:text-whiteText dark:hover:text-accentMain dark:focus:text-accentMain opacity-60 hover:opacity-100 transition-colorOpacity duration-500"
+          >
+            Terms of Service
+          </NavLink>
+
+          <button
+            onClick={() => openModal('teamModal')}
+            type="button"
+            className="w-full md:w-auto mx-auto md:ml-[28px] xl:ml-[40px] opacity-60 text-accentDark hover:text-accentMain hover:opacity-100 dark:text-whiteText transition-colorOpacity duration-500"
+          >
+            Developed with{' '}
+            <span className="inline-block scale-x-125 text-accentMain animate-pulse">
+              &hearts;
+            </span>{' '}
+            by GoITStudents
+          </button>
+
+          <TeamModal
+            isOpen={teamModal}
+            handleClose={closeModals}
+            handleOpen={openModal}
+          />
+        </div>
+        <div className="pointer-events-none blur-sm absolute right-[-20px] bottom-[-40px] md:right-[-10px] md:bottom-[-105px] xl:right-[0px] xl:bottom-[-150px] z-100 -rotate-[24deg]">
           <img
             src={require('images/leafs.webp')}
             loading="lazy"

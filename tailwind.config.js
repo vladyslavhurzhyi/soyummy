@@ -78,6 +78,7 @@ module.exports = {
       },
       transitionProperty: {
         filterOpacity: 'filter opacity',
+        colorOpacity: 'color opacity',
       },
     },
   },
