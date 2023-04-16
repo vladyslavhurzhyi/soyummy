@@ -23,10 +23,9 @@ export const SearchForm = () => {
       });
       setSearchQuery();
     }
-    console.log(searchQuery);
+
     setSearchQuery(query);
     dispatch(changeQuery(searchQuery));
-    console.log(searchQuery);
     return navigate(`/search?query=${query}`);
   }
 
