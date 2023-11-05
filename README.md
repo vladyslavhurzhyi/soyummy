@@ -1,22 +1,17 @@
-## Студентський проект "SoYummy"
+As the backend is hosted on a free server, accessing the website may require some time for the server to start up. Please try logging in (since the server is currently asleep, this won't work), and return to the page in a couple of minutes.
 
-_Привіт!_ :wave:
+## Student Project "SoYummy"
+Hello! 👋
 
-Ми студенти группи під назвою **&laquo;WALKTEAM&raquo;** академії GOIT. :rocket:
+We are students from the "WALKTEAM" group at GOIT Academy. 🚀
 
-Після завершення курсу **&laquo;Fullstack-розробник&raquo;**, нам потрібно було
-**закріпити** :pushpin: отримані знання і навички **реалізувавши**
-:page_with_curl: практичний проект протягом 14 днів.
+After completing the "Fullstack Developer" course, we needed to solidify 📌 the knowledge and skills we acquired by implementing 📃 a practical project within 14 days.
 
-:art: Дизайнерами для нас був розроблений **макет командного проекту** - три
-версії сайту **&laquo;SoYummy&raquo;**: mobile, tablet, desktop
+🎨 Our project received design mockups for the "SoYummy" website, including three versions: mobile, tablet, and desktop.
 
-:hammer_and_wrench: Також нам було надано ТЗ з описом фунціоналу майбутнього
-сайту.
+🛠️ We were also provided with a project specification detailing the website's functionality.
 
-:man_student: Проєкт виконували **12 розробників**. Кожен з яких працював над
-**персональними тасками**, а також **спільними завданнями**, котрі розподілював
-і контролював Team-lead, з допомогою Scrum-master:
+👨‍🎓 The project involved the work of 12 developers. Each of us worked on individual tasks as well as shared tasks, which were assigned and supervised by the Team Lead, with the assistance of the Scrum Master:
 
 <a href="https://github.com/vladyslavhurzhyi/soyummy"><img src="https://i.ibb.co/8PbRxyQ/team.jpg" alt="Filmoteka-team" border="0"></a>
 
@@ -44,20 +39,17 @@ _Привіт!_ :wave:
 
 - [**Front-end developer**: Sergey Pochapskiy](https://github.com/SergeyPochapskiy)
 
-:computer: **Нашою метою** було створити сайт, що відповідає макету, а також
-виконати всі поставлені задачі з ТЗ.Основне призначення сайту – відображення
-кулінарних рецептів, популярних категорій, додавання нових рецептів, пошук
-певного рецепту, а також організація колекції користувача для керування списками
-(доданих/улюблених) рецептів та списку покупок інгредієнтів для приготування.
+**Our goal** was to create a website that matched the design mockup and fulfilled all the tasks specified in the project specification. The main purpose of the website is to display culinary recipes, popular categories, add new recipes, search for specific recipes, and allow users to organize their recipe collections, manage their lists of added/favorite recipes, and create a shopping list for ingredients.
 
-:white_check_mark: **Протягом всього проекту ми**:
+✅ **Throughout the project, we:**
 
-- практикували навики командної роботи з Git;
-- використовували методологію Scrum;
-- закріпили знання з HTML, CSS та JavaScript;
-- закріпили отримані на курсі навички по ReactJS;
-- опанували використання бібліотеки Tailwindcss.
+Practiced teamwork using Git.
+Utilized the Scrum methodology.
+Reinforced our knowledge of HTML, CSS, and JavaScript.
+Applied the ReactJS skills we acquired during the course.
+Mastered the use of the Tailwind CSS library.
+As a result of our collaborative efforts 🤝, our project was successfully completed.
 
-В результаті злагодженої командної роботи :handshake: вийшов наш проект:
+
 
 [_Welcome!_](https://vladyslavhurzhyi.github.io/soyummy/)
